@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <chase-distance-m type="double" archive="y"> -10 </chase-distance-m>
+
+   <view n="0">
+   <internal archive="y">true</internal>
+   <name>Cockpit_View </name>
+
+   <config>
+     <x-offset-m archive="y">-0.05</x-offset-m>
+     <y-offset-m archive="y">0.5</y-offset-m>
+     <z-offset-m archive="y">2.6</z-offset-m>
+     <pitch-offset-deg>-14</pitch-offset-deg>
+     <roll-offset-deg>0.3</roll-offset-deg>
+     
+     <default-field-of-view-deg type="double">73.4</default-field-of-view-deg>
+   </config>
+  </view>
+  
+  <view n="2">
+  <internal archive="y">true</internal>
+   <name>Chase_View </name>
+   <config>
+    <target-z-offset-m archive="y" type="double">3.0</target-z-offset-m>
+     <x-offset-m archive="y">0</x-offset-m>
+     <y-offset-m archive="y">0</y-offset-m>
+     <z-offset-m archive="y">0</z-offset-m>
+     <default-field-of-view-deg type="double">66</default-field-of-view-deg>
+     <heading-offset-deg>-35</heading-offset-deg>
+   </config>
+  </view>
+
+  <view n="7">
+  <config>
+  <internal archive="y">true</internal>
+   <name>Model_View </name>
+    <target-z-offset-m archive="y" type="double">3.0</target-z-offset-m>
+     <x-offset-m archive="y">0</x-offset-m>
+     <y-offset-m archive="y">0</y-offset-m>
+     <z-offset-m archive="y">0</z-offset-m>
+     <default-field-of-view-deg type="double">66</default-field-of-view-deg>
+     <heading-offset-deg>35</heading-offset-deg>
+   </config>
+  </view>
+
+  
+  <view n="5">
+  <internal archive="y">true</internal>
+   <name>Chase_without Yaw </name>
+   <config>
+     <x-offset-m archive="y">25</x-offset-m>
+     <y-offset-m archive="y">2</y-offset-m>
+     <z-offset-m archive="y">-10</z-offset-m>
+     <default-field-of-view-deg type="double">47</default-field-of-view-deg>
+     <heading-offset-deg>110</heading-offset-deg>
+   </config>
+  </view>
+
+
+
+
+   <view n="103">
+    <name>Left Wing View</name>
+    <type>lookfrom</type>
+    <internal archive="y">true</internal>
+    <config>
+      <from-model type="bool">true</from-model>
+      <from-model-idx type="int">0</from-model-idx>
+      <ground-level-nearplane-m type="double">0.01</ground-level-nearplane-m>
+      <default-field-of-view-deg type="double">55</default-field-of-view-deg>
+      <pitch-offset-deg>-7.0</pitch-offset-deg>
+      <heading-offset-deg type="double">90</heading-offset-deg> <!-- parallel to the panel -->
+      <x-offset-m type="double">-2.74375</x-offset-m> <!--Left/Right-->
+      <y-offset-m type="double">1.298888889</y-offset-m> <!--Up/Down-->
+      <z-offset-m type="double">9.153333333</z-offset-m> <!--Fdw/Back-->
+    </config>
+  </view>
+  
+  <view n="111">
+    <name>Tail View</name>
+    <type>lookfrom</type>
+    <internal archive="y">true</internal>
+    <config>
+      <from-model type="bool">true</from-model>
+      <from-model-idx type="int">0</from-model-idx>
+      <ground-level-nearplane-m type="double">0.01f</ground-level-nearplane-m>
+      <default-field-of-view-deg type="double">90</default-field-of-view-deg>
+      <pitch-offset-deg>-20.0</pitch-offset-deg>
+      <heading-offset-deg type="double">0</heading-offset-deg>
+      <x-offset-m type="double">0</x-offset-m> <!--Left/Right-->
+      <y-offset-m type="double">12.74</y-offset-m> <!--Up/Down-->
+    </config>
+  </view>
+
+  	<view n="123">
+		<name>Right_Wing View</name>
+		<type>lookfrom</type>
+		<internal type="bool" archive="y">false</internal>
+		<config>
+			<from-model type="bool">true</from-model>
+			<x-offset-m archive="y">10.71</x-offset-m>
+			<y-offset-m archive="y">-0.6</y-offset-m>
+			<z-offset-m archive="y">4.24</z-offset-m>
+			<pitch-offset-deg>-1</pitch-offset-deg>
+			<heading-offset-deg>130</heading-offset-deg>
+			<default-field-of-view-deg type="double">65</default-field-of-view-deg>
+		</config>
+	</view>
+</PropertyList>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

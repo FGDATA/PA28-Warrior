@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <path>casque.ac</path>
+  
+   <animation>
+  <type>scale</type>
+  <x-offset>0.6</x-offset>
+  <y-offset>0.6</y-offset>
+  <z-offset>0.6</z-offset>
+ </animation>
+
+  <animation>
+    <!-- Objets opaques -->
+    <object-name>casque</object-name>
+    <object-name>oreilles</object-name>
+    <object-name>touroreilles</object-name>
+    <object-name>micro</object-name>
+    <object-name>cable</object-name>
+
+    <!-- Objets transparents -->
+  </animation>
+  
+  <animation>
+    <type>pick</type>
+    <type>material</type>
+     <object-name>casque</object-name>
+    <object-name>oreilles</object-name>
+   <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-cycle</command>
+        <property>sim/sound/volume</property>
+        <value>0.8</value>
+        <value>0</value>
+      </binding>
+       </action>
+      <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <tooltip-id>Tooglemute</tooltip-id>
+                <label>Toggle Sound</label>
+            </binding>
+        </hovered>
+  </animation>
+
+</PropertyList>
+
+
+
+
+
+

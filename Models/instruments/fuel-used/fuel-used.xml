@@ -1,0 +1,142 @@
+<?xml version="1.0"?>
+<!-- fuel used 
+Syd Adams
+-->
+<PropertyList>
+
+    <path>fuel-used.ac</path>
+    
+    <animation>
+        <type>material</type>
+        <object-name>FUface</object-name>
+        <emission>
+            <red>0.28</red>
+            <green>0.14</green>
+            <blue>0.07</blue>
+            <factor-prop>systems/electrical/outputs/instrument-lights-norm</factor-prop>
+        </emission>
+    </animation>
+
+	<animation>
+        <type>translate</type>
+        <object-name>FUreset</object-name>
+        <property>/controls/switches/fuel_used_reset-click</property>
+        <factor>0.002</factor>
+        <axis>
+            <x>-1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+	</animation>
+	<animation>
+		<type>pick</type>
+		<visible>true</visible>
+		<object-name>FUreset</object-name>
+		<action>
+			<button>0</button>
+			<repeatable>true</repeatable>
+			<binding>
+				<command>property-assign</command>
+				<property>/controls/switches/fuel_used_reset-click</property>
+				<value type="double">1.0</value>
+			</binding>
+			<binding>
+			<command>nasal</command>
+				<script>pc6.reset_fuel_used()</script>
+			</binding>
+			<mod-up>
+				<binding>
+					<command>property-assign</command>
+					<property>/controls/switches/fuel_used_reset-click</property>
+					<value type="double">0.0</value>
+				</binding>
+			</mod-up>
+		</action>
+	</animation>
+
+ <animation>
+        <type>textranslate</type>
+        <object-name>FU.101</object-name>
+        <property>/consumables/fuel/total-fuel-used-lbs</property>
+        <factor>0.001</factor>
+        <step>100</step>
+        <bias>0.005</bias>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+ 
+    <animation>
+        <type>textranslate</type>
+        <object-name>FU.102</object-name>
+        <property>/consumables/fuel/total-fuel-used-lbs</property>
+        <factor>0.01</factor>
+        <step>10</step>
+        <bias>0.005</bias>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+ 
+    <animation>
+        <type>textranslate</type>
+        <object-name>FU.103</object-name>
+        <property>/consumables/fuel/total-fuel-used-lbs</property>
+        <factor>0.1</factor>
+        <step>1</step>
+        <bias>0.005</bias>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+ 
+    <animation>
+        <type>textranslate</type>
+        <object-name>FU.104</object-name>
+        <property>/consumables/fuel/total-fuel-used-lbs</property>
+        <factor>1.0</factor>
+        <step>0.1</step>
+        <bias>0.005</bias>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+ 
+    <animation>
+        <type>textranslate</type>
+        <object-name>FU.105</object-name>
+        <property>/consumables/fuel/total-fuel-used-lbs</property>
+        <factor>10.0</factor>
+        <step>0.01</step>
+        <bias>0.005</bias>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+	<animation>
+		<type>select</type>
+		<object-name>FU.101</object-name>
+		<object-name>FU.102</object-name>
+		<object-name>FU.103</object-name>
+		<object-name>FU.104</object-name>
+		<object-name>FU.105</object-name>
+		<object-name>FUdec</object-name>
+		<condition>
+			<equals>
+				<property>/instrumentation/fuel-used-indicator/serviceable</property>
+				<value>true</value>
+			</equals>
+		</condition>
+	</animation>
+</PropertyList>

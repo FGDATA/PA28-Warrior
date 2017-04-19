@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <path>iaL.ac</path>
+
+  <animation>
+    <object-name>base</object-name>
+    <object-name>button</object-name>
+
+  </animation>
+
+  <animation>
+    <type>scale</type>
+    <x-offset>0.8</x-offset>
+    <y-offset>0.8</y-offset>
+    <z-offset>0.8</z-offset>
+  </animation>
+
+
+  <animation>
+    <type>translate</type>
+    <object-name>button</object-name>
+    <property>controls/engines/engine[2]/starter</property>
+    <factor> 0.005 </factor>
+    <axis>
+      <x> -1 </x>
+      <y>  0 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <visible>true</visible>
+    <object-name>button</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      
+      <binding>
+         <command>nasal</command>
+         <script>pa28.f_pump_switch()</script>
+      </binding>
+
+      <binding>
+        <command>nasal</command>
+        <script>pa28.fin_strobe_light_switch()</script>
+     </binding>
+
+     <binding>
+       <command>nasal</command>
+       <script>pa28.wing_strobe_light_switch()</script>
+     </binding>
+
+     <binding>
+        <command>nasal</command>
+        <script>pa28.pitot_heat_switch()</script>
+     </binding>
+     
+      <mod-up>
+        <binding>
+          <command>property-assign</command>
+          <property>controls/engines/engine[2]/starter</property>
+          <value>0</value>
+        </binding>
+      </mod-up>
+    </action>
+    
+    <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <tooltip-id>MLight</tooltip-id>
+                <label>Master Light Toggle </label>
+            </binding>
+        </hovered>
+  </animation>
+
+</PropertyList>
+
+
+
+
+
+
+
+
+
+

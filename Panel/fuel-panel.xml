@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE PropertyList SYSTEM "panel.dtd">
+
+<PropertyList>
+
+ <name>pa28-Fuel-Panel</name>
+ <background>Aircraft/pa28-161/Panel/transparent-bg.rgb</background>
+ <w>1024</w>
+ <h>768</h>
+
+<instruments>
+
+<instrument>
+  <name>panel hotspots</name>
+  <x>512</x>
+  <y>384</y>
+  <w>1024</w>
+  <h>768</h>
+  <w-base>1024</w-base>
+  <h-base>768</h-base>
+
+ <actions> 
+   
+   <action>
+     <name>fuel select</name>
+     <button>0</button>
+     <x>-450</x>
+     <y>-300</y>
+     <w>1024</w>
+     <h>600</h>
+     <binding>
+       <command>nasal</command>
+       <script>pa28.fuel_switch()</script>
+     </binding>
+   </action>
+     
+  </actions>
+
+ </instrument>
+
+</instruments>
+
+</PropertyList>

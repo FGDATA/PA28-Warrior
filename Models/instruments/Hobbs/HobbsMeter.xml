@@ -1,0 +1,154 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+<path>HobbsMeter.ac</path>
+
+<animation>
+	<type>material</type>
+	<object-name>Base_02</object-name>
+	<object-name>Counter_1000</object-name>
+	<object-name>Counter_100</object-name>
+	<object-name>Counter_10</object-name>
+	<object-name>Counter_1</object-name>
+	<object-name>Counter_0</object-name>
+	<emission>
+		<red>0.7</red>
+		<green>0.7</green>
+		<blue>0.7</blue>
+		<factor-prop>controls/lighting/panel-norm</factor-prop>
+	</emission>
+</animation>
+
+<animation>
+    <type>rotate</type>
+    <object-name>Counter_1000</object-name>
+    <property>instrumentation/hobbs-meter/thousands</property>
+    <factor>-36</factor>
+    <step>1</step>
+    <center>
+		<x-m>-0.0070</x-m>
+		<y-m>-0.01077</y-m>
+		<z-m>-0.00125</z-m>
+    </center>
+    <axis>
+		<x>0</x>
+		<y>1</y>
+		<z>0</z>
+    </axis>
+</animation>
+
+<animation>
+    <type>rotate</type>
+    <object-name>Counter_100</object-name>
+    <property>instrumentation/hobbs-meter/hundreds</property>
+    <factor>-36</factor>
+    <step>1</step>
+    <center>
+		<x-m>-0.0070</x-m>
+		<y-m>-0.006859</y-m>
+		<z-m>-0.00125</z-m>
+    </center>
+    <axis>
+		<x>0</x>
+		<y>1</y>
+		<z>0</z>
+    </axis>
+</animation>
+
+<animation>
+    <type>rotate</type>
+    <object-name>Counter_10</object-name>
+    <property>instrumentation/hobbs-meter/tens</property>
+    <factor>-36</factor>
+    <step>1</step>
+    <center>
+		<x-m>-0.0070</x-m>
+		<y-m>-0.002948</y-m>
+		<z-m>-0.00125</z-m>
+    </center>
+    <axis>
+		<x>0</x>
+		<y>1</y>
+		<z>0</z>
+    </axis>
+</animation>
+
+<animation>
+    <type>rotate</type>
+    <object-name>Counter_1</object-name>
+    <property>instrumentation/hobbs-meter/hours</property>
+    <factor>-36</factor>
+    <center>
+		<x-m>-0.0070</x-m>
+		<y-m>0.000964</y-m>
+		<z-m>-0.00125</z-m>
+    </center>
+    <axis>
+		<x>0</x>
+		<y>1</y>
+		<z>0</z>
+    </axis>
+</animation>
+
+<animation>
+    <type>rotate</type>
+    <object-name>Counter_0</object-name>
+    <property>instrumentation/hobbs-meter/tenths</property>
+    <factor>-36</factor>
+    <center>
+		<x-m>-0.0070</x-m>
+		<y-m>0.004875</y-m>
+		<z-m>-0.00125</z-m>
+    </center>
+    <axis>
+		<x>0</x>
+		<y>1</y>
+		<z>0</z>
+    </axis>
+</animation>
+
+<!-- Label Text -->
+
+<text>
+	<name>LabelText</name>
+	<type type="string">literal</type>
+		<text type="string">Hours Meter</text>
+	<draw-text type="bool">true</draw-text>
+	<font>Helvetica.txf</font>
+		<character-size type="double">0.012</character-size>
+		<character-aspect-ratio type="double">1.0</character-aspect-ratio>
+	<axis-alignment>yz-plane</axis-alignment>
+	<max-height>0.2</max-height>
+	<max-width>0.07</max-width>
+	<font-resolution>
+		<width type="int">32</width>
+		<height type="int">32</height>
+	</font-resolution>
+	<alignment>center-center</alignment>
+	<offsets>
+		<x-m> 0.01</x-m>
+		<y-m> 0.0 </y-m>
+		<z-m> 0.0 </z-m>
+	</offsets>
+</text>
+
+<animation>
+	<type>material</type>
+    <object-name>LabelText</object-name>
+	<emission>
+		<red>1.0</red>
+		<green>0.8</green>
+		<blue>0.0</blue>
+	</emission>
+</animation>
+
+<animation>
+	<type>select</type>
+    <object-name>LabelText</object-name>
+	<condition>
+		<property>/sim/panel-hotspots</property>
+	</condition>
+</animation>
+
+</PropertyList>

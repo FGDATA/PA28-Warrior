@@ -1,0 +1,101 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE PropertyList SYSTEM "panel.dtd">
+
+<PropertyList>
+
+ <name>Flap-Trim-Panel</name>
+ <background>Aircraft/pa28-161/Panel/transparent-bg.rgb</background>
+ <w>1024</w>
+ <h>768</h>
+
+<instruments>
+
+<instrument>
+  <name>panel hotspots</name>
+  <x>512</x>
+  <y>384</y>
+  <w>1024</w>
+  <h>768</h>
+  <w-base>1024</w-base>
+  <h-base>768</h-base>
+
+ <actions> 
+
+   <action>
+     <name>flaps up</name>
+     <button>0</button>
+     <x>10</x>
+     <y>200</y>
+     <w>75</w>
+     <h>184</h>
+    <repeatable type="bool">true</repeatable>
+     <binding>
+      <command>nasal</command>
+      <script>controls.flapsDown(-1)</script>
+     </binding>
+     <mod-up>
+      <binding>
+       <command>nasal</command>
+       <script>controls.flapsDown(0)</script>
+      </binding>
+     </mod-up>
+   </action>   
+
+   <action>
+     <name>flaps down</name>
+     <button>0</button>
+     <x>10</x>
+     <y>16</y>
+     <w>75</w>
+     <h>184</h>
+     <repeatable type="bool">true</repeatable>
+     <binding>
+      <command>nasal</command>
+      <script>controls.flapsDown(1)</script>
+     </binding>
+     <mod-up>
+      <binding>
+       <command>nasal</command>
+       <script>controls.flapsDown(0)</script>
+      </binding>
+     </mod-up>
+   </action>   
+
+   <action>
+     <name>Elevator Trim down</name>
+     <button>0</button>
+     <x>35</x>
+     <y>-184</y>
+     <w>25</w>
+     <h>100</h>
+    <repeatable type="bool">true</repeatable>
+    <binding>
+      <command>property-adjust</command>
+      <property>/controls/flight/elevator-trim</property>
+      <step>0.00125</step>
+    </binding>
+  </action>
+
+   <action>
+     <name>Elevator Trim up</name>
+     <button>0</button>
+     <x>35</x>
+     <y>-284</y>
+     <w>25</w>
+     <h>100</h>
+     <repeatable>true</repeatable>
+     <binding>
+       <command>property-adjust</command>
+       <property>/controls/flight/elevator-trim</property>
+       <step>-0.00125</step>
+     </binding>
+   </action>
+     
+  </actions>
+
+ </instrument>
+
+</instruments>
+
+</PropertyList>

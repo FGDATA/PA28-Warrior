@@ -1,0 +1,404 @@
+<?xml version="1.0"?>
+<!-- KLN90B GPS receiver
+Syd Adams
+ -->
+
+<PropertyList>
+
+    <path>kln90b.ac</path>
+	
+	<animation>
+    <type>scale</type>
+    <x-offset>1.1</x-offset>
+    <y-offset>1.1</y-offset>
+    <z-offset>1.1</z-offset>
+   </animation>
+   
+	<animation>
+		<type>material</type>
+		<object-name>CRSR.btn</object-name>
+		<object-name>MSG.btn</object-name>
+		<object-name>ALT.btn.001</object-name>
+		<object-name>DIRECT.btn</object-name>
+		<object-name>CLR.btn</object-name>
+		<object-name>ENT.btn</object-name>
+		<object-name>KLN90B.lhknob1</object-name>
+		<object-name>KLN90B.lhknob</object-name>
+		<object-name>KLN90B.rhknob1</object-name>
+		<object-name>KLN90B.rhknob</object-name>
+		<object-name>KLN90B.rhknob1</object-name>
+		<object-name>KLN90B</object-name>
+		<emission>
+			<red>0.28</red>
+			<green>0.14</green>
+			<blue>0.07</blue>
+			<factor-prop>systems/electrical/outputs/instrument-lights-norm</factor-prop>
+		</emission>
+	</animation>
+	
+	 <animation>
+    <type>pick</type>
+    <type>material</type>
+    <object-name>KLN90B</object-name>
+   <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+				<command>dialog-show</command>
+				<dialog-name>gps</dialog-name>
+			</binding>
+       </action>
+      <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <tooltip-id>gps</tooltip-id>
+                <label>Open GPS</label>
+            </binding>
+        </hovered>
+  </animation>
+	
+    <panel>
+        <name>GPS screen</name>
+        <path>Aircraft/pa28-161/Models/Instruments/KLN90B/gps.xml</path>
+        <bottom-left>
+            <x-m>0.003</x-m>
+            <y-m>-0.033</y-m>
+            <z-m>-0.013</z-m>
+        </bottom-left>
+        <bottom-right>
+            <x-m>0.003</x-m>
+            <y-m>0.033</y-m>
+            <z-m>-0.013</z-m>
+        </bottom-right>
+        <top-left>
+            <x-m>0.003</x-m>
+            <y-m>-0.033</y-m>
+            <z-m>0.018</z-m>
+        </top-left>
+    </panel>
+
+<!--  hotspots  -->
+<!-- LH knob -->
+	<animation>
+		<type>rotate</type>
+		<object-name>KLN90B.lhknob</object-name>
+		<property>/instrumentation/gps-annunciator/LHknobMenu</property>
+		<factor>-45</factor>
+		<center>
+			<x-m>-0.024</x-m>
+			<y-m>-0.0546</y-m>
+			<z-m>-0.0118</z-m>
+		</center>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+    <animation>
+        <type>pick</type>
+        <object-name>KLN90B.lhknob</object-name>
+        <action>
+            <button>1</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>nasal</command>
+                <script>systems.Gps.lh_menu(-1)</script>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>KLN90B.lhknob</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>nasal</command>
+                <script>systems.Gps.lh_menu(1)</script>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>KLN90B.lhknob</object-name>
+        <action>
+            <button>4</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>nasal</command>
+                <script>systems.Gps.lh_menu(-1)</script>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>KLN90B.lhknob</object-name>
+        <action>
+            <button>3</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>nasal</command>
+                <script>systems.Gps.lh_menu(1)</script>
+            </binding>
+        </action>
+    </animation>
+<!--
+	<animation>
+		<type>rotate</type>
+		<object-name>KLN90B.lhknob1</object-name>
+		<property>/instrumentation/gps-annunciator/LHknobPage</property>
+		<factor>-60</factor>
+		<center>
+			<x-m>-0.024</x-m>
+			<y-m>-0.0546</y-m>
+			<z-m>-0.0118</z-m>
+		</center>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+-->
+    <animation>
+        <type>pick</type>
+        <object-name>KLN90B.lhknob1</object-name>
+        <action>
+            <button>1</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>nasal</command>
+                <script>systems.Gps.lh_page(-1)</script>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>KLN90B.lhknob1</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>nasal</command>
+                <script>systems.Gps.lh_page(1)</script>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>KLN90B.lhknob1</object-name>
+        <action>
+            <button>4</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>nasal</command>
+                <script>systems.Gps.lh_page(-1)</script>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>KLN90B.lhknob1</object-name>
+        <action>
+            <button>3</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>nasal</command>
+                <script>systems.Gps.lh_page(1)</script>
+            </binding>
+        </action>
+    </animation>
+
+<!-- RH knob -->
+
+	<animation>
+		<type>rotate</type>
+		<object-name>KLN90B.rhknob</object-name>
+		<property>/instrumentation/gps-annunciator/RHknobMenu</property>
+		<factor>-36</factor>
+		<center>
+			<x-m>-0.024</x-m>
+			<y-m>0.0535</y-m>
+			<z-m>-0.0118</z-m>
+		</center>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+    <animation>
+        <type>pick</type>
+        <object-name>KLN90B.rhknob</object-name>
+        <action>
+            <button>1</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>nasal</command>
+                <script>systems.Gps.rh_menu(-1)</script>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>KLN90B.rhknob</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>nasal</command>
+                <script>systems.Gps.rh_menu(1)</script>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>KLN90B.rhknob</object-name>
+        <action>
+            <button>4</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>nasal</command>
+                <script>systems.Gps.rh_menu(-1)</script>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>KLN90B.rhknob</object-name>
+        <action>
+            <button>3</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>nasal</command>
+                <script>systems.Gps.rh_menu(1)</script>
+            </binding>
+        </action>
+    </animation>
+<!--
+	<animation>
+		<type>rotate</type>
+		<object-name>KLN90B.rhknob1</object-name>
+		<property>/instrumentation/gps-annunciator/RHknobPage</property>
+		<factor>-60</factor>
+		<center>
+			<x-m>-0.024</x-m>
+			<y-m>0.0535</y-m>
+			<z-m>-0.0118</z-m>
+		</center>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+-->
+    <animation>
+        <type>pick</type>
+        <object-name>KLN90B.rhknob1</object-name>
+        <action>
+            <button>1</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>nasal</command>
+                <script>systems.Gps.rh_page(-1)</script>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>KLN90B.rhknob1</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>nasal</command>
+                <script>systems.Gps.rh_page(1)</script>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>KLN90B.rhknob1</object-name>
+        <action>
+            <button>4</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>nasal</command>
+                <script>systems.Gps.rh_page(-1)</script>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>KLN90B.rhknob1</object-name>
+        <action>
+            <button>3</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>nasal</command>
+                <script>systems.Gps.rh_page(1)</script>
+            </binding>
+        </action>
+    </animation>
+
+<!-- Buttons -->
+
+    <animation>
+        <type>translate</type>
+        <object-name>KLN90B.pwr</object-name>
+        <property>/instrumentation/gps/serviceable</property>
+        <factor>-0.007</factor>
+        <axis>
+            <x>1.0</x>
+            <y>0.0</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
+    
+    <animation>
+        <type>pick</type>
+        <object-name>KLN90B.pwr</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                 <command>property-toggle</command>
+				<property>instrumentation/gps/serviceable</property>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>DIRECT.btn</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                 <command>nasal</command>
+         <script>systems.Gps.direct_to();</script>
+            </binding>
+        </action>
+    </animation>
+
+</PropertyList>
+
+
+
+

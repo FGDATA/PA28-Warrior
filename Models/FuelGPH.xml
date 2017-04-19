@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<PropertyList>
+
+    <path>FFlowGauge.ac</path>
+
+    <animation>
+        <type>material</type>
+        <object-name>FFlow.face</object-name>
+        <object-name>FFlow.RHneedle</object-name>
+        <object-name>FFlow.LHneedle</object-name>
+        <emission>
+            <red>0.8</red>
+            <green>0.4</green>
+            <blue>0.2</blue>
+            <factor-prop>systems/electrical/outputs/instrument-lights-norm</factor-prop>
+        </emission>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>FFlow.LHneedle</object-name>
+        <property>engines/engine/fuel-flow-gph</property>
+        <interpolation>
+            <entry><ind>0</ind><dep>0</dep></entry>
+            <entry><ind>20</ind><dep>144</dep></entry>
+            <entry><ind>40</ind><dep>288</dep></entry>
+        </interpolation>
+        <center>
+            <x-m>0</x-m>
+            <y-m>-0.0</y-m>
+            <z-m>0.0</z-m>
+        </center>
+        <axis>
+            <x>-1.0</x>
+            <y>0.0</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
+    
+    <animation>
+        <type>rotate</type>
+        <object-name>FFlow.RHneedle</object-name>
+        <property>engines/engine/fuel-flow-gph</property>
+        <interpolation>
+            <entry><ind>0</ind><dep>0</dep></entry>
+            <entry><ind>20</ind><dep>144</dep></entry>
+            <entry><ind>40</ind><dep>288</dep></entry>
+        </interpolation>
+        <center>
+            <x-m>0</x-m>
+            <y-m>-0.0</y-m>
+            <z-m>0.0</z-m>
+        </center>
+        <axis>
+            <x>-1.0</x>
+            <y>0.0</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
+    
+      <animation>
+  <type>pick</type>
+  <object-name>FFlow.face</object-name>
+   <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <tooltip-id>fflow</tooltip-id>
+                <mapping>fflow</mapping>
+                <label>Fuel Flow: %3d gph</label>
+               <property>engines/engine/fuel-flow-gph</property>
+            </binding>
+        </hovered>
+</animation>
+
+</PropertyList>
+
+
+

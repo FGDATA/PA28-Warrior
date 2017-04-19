@@ -1,0 +1,96 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+<path>stall_warning.ac</path>
+
+
+    <animation>
+    <condition>
+       <equals>
+          <property>gear/gear/compression-norm</property>
+               <value>0</value>
+       </equals>
+ </condition>
+        <type>material</type>
+        <object-name>stall_annunciator.light</object-name>
+        <emission>
+            <red>1.0</red>
+            <green>1.0</green>
+            <blue>0.0</blue>
+            <factor-prop>/sim/alarms/stall-warning</factor-prop>
+        </emission>
+
+    </animation>
+
+    <animation>
+    <condition>
+       <equals>
+          <property>gear/gear/compresson-norm</property>
+               <value>0</value>
+       </equals>
+ </condition>
+		<type>pick</type>
+		<object-name>stall_annunciator.light</object-name>
+		<visible>true</visible>
+		<action>
+			<button>0</button>
+			<repeatable>true</repeatable>
+			<binding>
+				<command>property-assign</command>
+				<property>/controls/switches/stall_annunciator-click</property>
+				<value>0</value>
+			</binding>
+			<mod-up>
+				<binding>
+					<command>property-assign</command>
+					<property>/controls/switches/stall_annunciator-click</property>
+					<value>1</value>
+				</binding>
+    			</mod-up>
+				</action>
+			 <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <tooltip-id>Stall-Warn</tooltip-id>
+                <label>Stall Indicator</label>
+            </binding>
+        </hovered>
+
+
+	</animation>
+	
+	<animation>
+	<condition>
+       <equals>
+          <property>gear/gear/compression-norm</property>
+               <value>0</value>
+       </equals>
+ </condition>
+		<type>translate</type>
+		<object-name>stall_annunciator.light</object-name>
+		<property>/controls/switches/stall_annunciator-click</property>
+		<factor>0.002</factor>
+		<axis>
+			<x>1.0</x>
+			<y>0.0</y>
+			<z>0.0</z>
+		</axis>
+	</animation>
+	
+
+
+
+</PropertyList>
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,22 @@
+AC3Db
+MATERIAL "DefaultWhite" rgb 1 1 1  amb 1 1 1  emis 0.15 0.15 0.15  spec 0.5 0.5 0.5  shi 64  trans 0
+OBJECT world
+kids 1
+OBJECT poly
+name "Face"
+texture "FlightCom.rgb"
+crease 45.000000
+numvert 4
+6.99382e-09 0.04 -0.04
+6.99382e-09 -0.04 -0.04
+-6.99382e-09 -0.04 0.04
+-6.99382e-09 0.04 0.04
+numsurf 1
+SURF 0x0
+mat 0
+refs 4
+0 0.92518 0.909509
+3 0.0788254 0.909509
+2 0.0788254 0.0877263
+1 0.92518 0.0877263
+kids 0

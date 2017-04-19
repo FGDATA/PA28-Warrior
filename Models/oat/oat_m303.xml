@@ -1,0 +1,208 @@
+<?xml version="1.0"?>
+
+<!--
+Outside Air Temperature indicator, loosely based on the Davtron 303
+Gary "Buckaroo" Neely
+-->
+
+<PropertyList>
+
+<path>oat_m303.ac</path>
+
+<animation>
+  <type>material</type>
+  <object-name>Bezel</object-name>
+  <emission>
+    <red>0.2</red>
+    <green>0.1</green>
+    <blue>0.05</blue>
+     <factor-prop>/sim/model//material/instruments/factor</factor-prop>
+  </emission>
+</animation>
+<animation>
+  <type>material</type>
+  <object-name>LabelF</object-name>
+  <object-name>LabelC</object-name>
+  <object-name>LabelE</object-name>
+  <object-name>VoltsDigit1</object-name>
+  <object-name>VoltsDigit2</object-name>
+  <object-name>VoltsDigit3</object-name>
+  <object-name>CenDigit1</object-name>
+  <object-name>CenDigit2</object-name>
+  <object-name>FarDigit1</object-name>
+  <object-name>FarDigit2</object-name>
+  <object-name>Decimal</object-name>
+  <object-name>DegreeC</object-name>
+  <object-name>DegreeF</object-name>
+  <emission>
+    <red>0.8</red>
+    <green>0.4</green>
+    <blue>0.2</blue>
+     <factor-prop>/sim/model//material/instruments/factor</factor-prop>
+  </emission>
+</animation>
+
+<animation>
+  <type>select</type>
+  <object-name>CenDigit1</object-name>
+  <object-name>CenDigit2</object-name>
+  <object-name>DegreeC</object-name>
+  <object-name>LabelC</object-name>
+  <condition>
+    <and>
+      <property>/systems/electrical/outputs/oat</property>
+      <equals>
+        <property>/instrumentation/oat/mode</property>
+        <value>0</value>
+      </equals>
+    </and>
+  </condition>
+</animation>
+<animation>
+  <type>select</type>
+  <object-name>FarDigit1</object-name>
+  <object-name>FarDigit2</object-name>
+  <object-name>DegreeF</object-name>
+  <object-name>LabelF</object-name>
+  <condition>
+    <and>
+      <property>/systems/electrical/outputs/oat</property>
+      <equals>
+        <property>/instrumentation/oat/mode</property>
+        <value>1</value>
+      </equals>
+    </and>
+  </condition>
+</animation>
+<animation>
+  <type>select</type>
+  <object-name>VoltsDigit1</object-name>
+  <object-name>VoltsDigit2</object-name>
+  <object-name>Decimal</object-name>
+  <object-name>VoltsDigit3</object-name>
+  <object-name>LabelE</object-name>
+  <condition>
+    <and>
+      <property>/systems/electrical/outputs/oat</property>
+      <equals>
+        <property>/instrumentation/oat/mode</property>
+        <value>2</value>
+      </equals>
+    </and>
+  </condition>
+</animation>
+
+
+<animation>
+  <type>textranslate</type>
+  <object-name>CenDigit1</object-name>
+  <property>/environment/temperature-degc</property>
+  <factor>0.01</factor>
+  <step>10</step>
+  <axis>
+    <x>0</x>
+    <y>1</y>
+    <z>0</z>
+  </axis>
+</animation>
+<animation>
+  <type>textranslate</type>
+  <object-name>CenDigit2</object-name>
+  <property>/environment/temperature-degc</property>
+  <factor>0.1</factor>
+  <step>1</step>
+  <axis>
+    <x>0</x>
+    <y>1</y>
+    <z>0</z>
+  </axis>
+</animation>
+
+
+<animation>
+  <type>textranslate</type>
+  <object-name>FarDigit1</object-name>
+  <property>/environment/temperature-degf</property>
+  <factor>0.01</factor>
+  <step>10</step>
+  <axis>
+    <x>0</x>
+    <y>1</y>
+    <z>0</z>
+  </axis>
+</animation>
+<animation>
+  <type>textranslate</type>
+  <object-name>FarDigit2</object-name>
+  <property>/environment/temperature-degf</property>
+  <factor>0.1</factor>
+  <step>1</step>
+  <axis>
+    <x>0</x>
+    <y>1</y>
+    <z>0</z>
+  </axis>
+</animation>
+
+
+<animation>
+  <type>textranslate</type>
+  <object-name>VoltsDigit1</object-name>
+  <property>/systems/electrical/outputs/oat</property>
+  <factor>0.01</factor>
+  <step>10</step>
+  <axis>
+    <x>0</x>
+    <y>1</y>
+    <z>0</z>
+  </axis>
+</animation>
+<animation>
+  <type>textranslate</type>
+  <object-name>VoltsDigit2</object-name>
+  <property>/systems/electrical/outputs/oat</property>
+  <factor>0.1</factor>
+  <step>1</step>
+  <axis>
+    <x>0</x>
+    <y>1</y>
+    <z>0</z>
+  </axis>
+</animation>
+<animation>
+  <type>textranslate</type>
+  <object-name>VoltsDigit3</object-name>
+  <property>/systems/electrical/outputs/oat</property>
+  <factor>1.0</factor>
+  <step>0.1</step>
+  <axis>
+    <x>0</x>
+    <y>1</y>
+    <z>0</z>
+  </axis>
+</animation>
+
+<animation>
+  <type>pick</type>
+  <object-name>Bezel</object-name>
+  <action>
+    <button>0</button>
+    <repeatable>false</repeatable>
+    <binding>
+      <condition>
+        <property>/systems/electrical/outputs/oat</property>
+      </condition>
+      <command>property-adjust</command>
+      <property>/instrumentation/oat/mode</property>
+      <step>1</step>
+      <min>0</min>
+      <max>3</max> <!-- max should be 2, but property-adjust doeesn't work quite right -->
+      <wrap>true</wrap>
+    </binding>
+  </action>
+</animation>
+
+</PropertyList>
+
+
+

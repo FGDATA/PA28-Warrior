@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <keyboard>
+
+   <key n="102">
+   <name>f</name>
+   <desc>fuel tank select</desc>
+   <binding>
+    <command>nasal</command>
+     <script>pa28.fuel_switch()</script>
+   </binding>
+   </key>
+
+    <key n="126">
+  <name>~</name>
+  <desc>Toggle Nav Lights</desc>
+  <binding>
+   <command>nasal</command>
+   <script>pa28.nav_light_switch()</script>
+  </binding>
+  </key>
+
+  <key n="33">
+  <name>!</name>
+  <desc>Toggle Battery Switch</desc>
+  <binding>
+   <command>nasal</command>
+   <script>pa28.battery_switch()</script>
+  </binding>
+  </key>
+
+  <key n="64">
+  <name>@</name>
+  <desc>Toggle Alternator Switch</desc>
+  <binding>
+   <command>nasal</command>
+   <script>pa28.alternator_switch()</script>
+  </binding>
+  </key>
+
+  <key n="35">
+  <name>#</name>
+  <desc>Toggle Fuel Pump</desc>
+  <binding>
+   <command>nasal</command>
+   <script>pa28.f_pump_switch()</script>
+  </binding>
+  </key>
+
+  <key n="107">
+  <name>k</name>
+  <desc>Show Map</desc>
+  <binding>
+				<command>dialog-show</command>
+				<dialog-name>map</dialog-name>
+			</binding>
+  </key>
+
+  <key n="36">
+  <name>$</name>
+  <desc>Toggle Landing Light</desc>
+  <binding>
+   <command>nasal</command>
+   <script>pa28.landing_light_switch()</script>
+  </binding>
+  </key>
+
+  <key n="37">
+  <name>%</name>
+  <desc>Toggle Fin Anti CLL Lights</desc>
+  <binding>
+   <command>nasal</command>
+   <script>pa28.fin_strobe_light_switch()</script>
+  </binding>
+  </key>
+
+  <key n="94">
+  <name>^</name>
+  <desc>Toggle Wing Anti CLL Lights</desc>
+  <binding>
+   <command>nasal</command>
+   <script>pa28.wing_strobe_light_switch()</script>
+  </binding>
+  </key>
+
+  <key n="42">
+  <name>*</name>
+  <desc>Toggle Pitot Heat</desc>
+  <binding>
+   <command>nasal</command>
+   <script>pa28.pitot_heat_switch()</script>
+  </binding>
+  </key>
+
+  <key n="40">
+  <name>(</name>
+  <desc>Increase Panel Lights</desc>
+  <repeatable>true</repeatable>
+  <binding>
+   <command>nasal</command>
+   <script>pa28.panel_light_switch(1)</script>
+  </binding>
+  </key>
+
+  <key n="57">
+  <name>9</name>
+  <desc>Decrease Panel Lights</desc>
+  <repeatable>true</repeatable>
+  <binding>
+   <command>nasal</command>
+   <script>pa28.panel_light_switch(-1)</script>
+  </binding>
+  </key>
+
+  <key n="116">
+  <name>t</name>
+  <desc>Toggle Carb Heat</desc>
+  <binding>
+   <command>nasal</command>
+   <script>pa28.carb_heat()</script>
+  </binding>
+  </key>
+
+  <key n="16">
+  <name>ctrl-P</name>
+  <desc>Toggle Prime Pump</desc>
+  <binding>
+   <command>nasal</command>
+   <script>pa28.primer()</script>
+  </binding>
+  </key>
+
+  <key n="115">
+  <name>s</name>
+  <desc>Toggle Starter Switch</desc>
+   <binding>
+     <command>property-assign</command>
+     <property>/controls/switches/starter</property>
+     <value>1</value>
+   </binding>
+   <mod-up>
+     <binding>
+       <command>property-assign</command>
+       <property>/controls/switches/starter</property>
+       <value>0</value>
+     </binding>
+   </mod-up>
+  </key>
+
+  <key n="66">
+  <name>B</name>
+  <desc>Toggle parking brake on or off</desc>
+  <binding>
+   <command>nasal</command>
+   <script>controls.applyParkingBrake(1)</script>
+   
+  </binding>
+  <mod-up>
+   <binding>
+    <command>nasal</command>
+    <script>controls.applyParkingBrake(0)</script>
+   </binding>
+  </mod-up>
+ </key>
+
+</keyboard>
+
+</PropertyList>
+
+
+
+
+
+
+
+
+
+
+

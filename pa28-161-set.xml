@@ -1,0 +1,464 @@
+<?xml version="1.0"?>
+<!--
+************************************************************************
+Aircraft configuration file: Piper Cherokee Warrior II (1979 model)
+
+This file configures the airplane with full fuel, a 140 lb pilot, and
+a 0 lb copilot.  The plane starts with the mags on and the engine
+spinning.
+************************************************************************
+-->
+
+<PropertyList>
+
+ <sim include="Systems/views.xml">
+
+   <description>Piper Cherokee Warrior II (1979 model)</description>
+   <author>gkick, Joshua Davidson (it0uchpods), Other</author>
+
+  <startup>
+      <splash-texture>Aircraft/pa28-161/Temp003.jpg</splash-texture>
+  </startup>
+  
+   <help include="Systems/help.xml"/>
+
+<!-- Temporarily Disabled for AP tuning -->
+<!--hud>
+			<path n="1">Aircraft/pa28-161/Models/Pa161HUD.xml</path>
+			<visibility n="1">false</visibility>
+
+   <font>
+        <name type="string">Helvetica.txf</name>
+        <size type="float">8</size>
+      </font>
+      <current-color type="int">0</current-color>
+
+        <color n="0">
+          <transparent type="bool">false</transparent>
+          <antialiased type="bool">false</antialiased>
+          <brightness type="float">1.55</brightness>
+          <alpha type="float">0.35</alpha>
+          <red type="float">0.38</red>
+          <green type="float">1.0</green>
+          <blue type="float">0.22</blue>
+        </color>
+
+       
+        <color n="1">
+          <transparent type="bool">false</transparent>
+          <antialiased type="bool">false</antialiased>
+          <brightness type="float">1.25</brightness>
+          <alpha type="float">0.67</alpha>
+          <red type="float">0.9</red>
+          <green type="float">0.1</green>
+          <blue type="float">0.1</blue>
+        </color>
+
+
+	</hud-->
+
+<!-- Include model configuration file -->
+  <!-- Note: The name of the XML file is the name your copy
+             of FlightGear will report to the multiplayer servers -->
+  <model>
+   <path type="string">Aircraft/pa28-161/Models/pa28-161.xml</path>
+  </model>
+
+
+  
+  <!-- Use the YASim physics engine for the flight model -->
+
+  <flight-model archive="y">yasim</flight-model>
+  <aero archive="y">pa28-161</aero>
+
+  <!-- Use a 3D model with its own 3D cockpit (no 2D panel) -->
+
+  <model>
+   <path archive="y">Aircraft/pa28-161/Models/pa28-161.xml</path>
+  </model>
+  <panel>
+   <visibility archive="y">false</visibility>
+  </panel>
+
+  <systems>
+  
+   <autopilot>
+     <name>autopilot helpers</name>
+     <path>Aircraft/Generic/generic-autopilot-helper.xml</path>
+   </autopilot>
+   <autopilot>
+     <path>Aircraft/pa28-161/Systems/KAP140.xml</path>
+   </autopilot>
+   <autopilot>
+     <name>FiltersOnly</name>
+     <path>Aircraft/pa28-161/Systems/NAVandGSfilters.xml</path>
+   </autopilot>
+   
+   <electrical>
+     <path/>
+   </electrical>
+
+  </systems>
+  
+   <menubar include="pa28-NavMen.xml"/>
+
+    <!-- For now, use the Cessna 172 sound configuration (same engine) -->
+
+  <sound>
+   <path archive="y">Aircraft/pa28-161/pa28-161-sound.xml</path>
+  </sound>
+
+  <!-- Set the pilot's view position -->
+
+
+   <weight n="0">
+    <name>Pilot</name>
+    <weight-lb>130</weight-lb>
+    <max-lb>300</max-lb>
+  </weight>
+  <weight n="1">
+    <name>Copilot</name>
+    <weight-lb>0</weight-lb>
+    <max-lb>0</max-lb>
+  </weight>
+  <weight n="2">
+    <name>Left Passenger</name>
+    <weight-lb>0</weight-lb>
+    <max-lb>300</max-lb>
+  </weight>
+  <weight n="3">
+    <name>Right Passenger</name>
+    <weight-lb>0</weight-lb>
+    <max-lb>300</max-lb>
+  </weight>
+  <weight n="4">
+    <name>Baggage</name>
+    <weight-lb>0</weight-lb>
+    <max-lb>200</max-lb>
+  </weight>
+
+    <sound>
+       <volume>0.8</volume>
+    </sound>
+ </sim>
+
+ <!-- Allow the attitude indicator to tumble -->
+
+ <instrumentation>
+ 
+ 	<kcs55 include="Systems/kcs55.xml"/>
+
+    <kcs55 n="0">
+      <ka51>
+        <slaved>true</slaved>
+      </ka51>
+    </kcs55>
+    
+  <attitude-indicator>
+   <config>
+    <tumble-flag>true</tumble-flag>
+   </config>
+  </attitude-indicator>
+  <encoder>
+   <serviceable type="bool">true</serviceable>
+  </encoder>
+    <adf>
+       <volume-norm type="double">1</volume-norm>
+  </adf>
+   <oat>
+  <mode type="int">0</mode>
+  </oat>
+  
+   <elt>
+            <armed type="bool">false</armed>
+            <on type="bool">true</on>
+            <on-pos type="double">1</on-pos>
+            <test type="bool">false</test>
+   </elt>
+   
+  <ki227>
+   <vor-bearing-source type="bool">false</vor-bearing-source>
+  </ki227>
+  
+  <dme>
+      <switch-position type="int">1</switch-position>
+  </dme>
+  
+ </instrumentation>
+
+    <airport>
+        <runways>
+            <start-offset-m>20</start-offset-m>
+        </runways>
+    </airport>
+    
+
+
+ <!-- Start with the magnetos off -->
+ <!-- Add a bit of fixed aileron trim to help fly level -->
+ <!-- Parking Brake set -->
+
+ <gear>
+  <gear n="0">
+   <position-norm type="double">1</position-norm>
+   <tyre-smoke type="int">0</tyre-smoke>
+   <sprayspeed-ms type="double">0</sprayspeed-ms>
+   <spray-density type="double">0</spray-density>
+   <caster-angle-deg-damped type="double">0</caster-angle-deg-damped>
+  </gear>
+  <gear n="1">
+   <position-norm type="double">1</position-norm>
+   <tyre-smoke type="int">0</tyre-smoke>
+   <sprayspeed-ms type="double">0</sprayspeed-ms>
+   <spray-density type="double">0</spray-density>
+  </gear>
+  <gear n="2">
+   <position-norm type="double">1</position-norm>
+   <tyre-smoke type="int">0</tyre-smoke>
+   <sprayspeed-ms type="double">0</sprayspeed-ms>
+   <spray-density type="double">0</spray-density>
+  </gear>
+ </gear>
+
+ <controls>
+
+
+  <electric>
+   <battery-switch type="bool">true</battery-switch>
+   <alternator-switch type="bool">true</alternator-switch>
+  </electric>
+  <engines>
+   <engine n="0">
+    <magnetos type="int">3</magnetos>
+   </engine>
+  </engines>
+  <flight>
+   <aileron-trim type="double">0.015</aileron-trim>
+   <elevator-trim type="double">0</elevator-trim>
+   <rudder-trim type="double">0</rudder-trim>
+  </flight>
+  <fuel>
+   <switch-position type="int">0</switch-position>
+  </fuel>
+  <gear>
+   <brake-parking type="double">1.0</brake-parking>
+  </gear>
+  
+  <switches>
+  <flashing-beacon>0</flashing-beacon>
+  <nav-lights>0</nav-lights>
+  <strobe-lights>0</strobe-lights>
+ </switches>
+ </controls>
+
+ <!-- Start with the engine on -->
+
+ <engines>
+  <engine>
+   <rpm type="double">750.0</rpm>
+  </engine>
+ </engines>
+
+ <!-- Start with both tanks completely full   -->
+ <consumables>
+  <fuel>
+   <tank n="0">
+    <name>Left</name>
+    <level-gal_us type="double">24</level-gal_us>
+    <selected type="bool">true</selected>
+
+   </tank>
+   <tank n="1">
+    <name>Right</name>
+    <level-gal_us type="double">24</level-gal_us>
+    <selected type="bool">false</selected>
+   </tank>
+  </fuel>
+
+ </consumables>
+ 
+
+
+ <input>
+    <keyboard include="Systems/pa28-keyboard.xml"/>
+</input>
+
+<nasal>
+
+  <pa28>
+    <file>Aircraft/pa28-161/Nasal/pa28.nas</file>
+    <file>Aircraft/pa28-161/Nasal/pa28-electrical.nas</file>
+    <file>Aircraft/pa28-161/Nasal/action-sim.nas</file>
+    <file>Aircraft/pa28-161/Nasal/doors.nas</file>
+    <file>Aircraft/pa28-161/Nasal/kr87.nas</file>
+    <file>Aircraft/pa28-161/Nasal/synchdg.nas</file>
+    <file>Aircraft/pa28-161/Nasal/ki266.nas</file>
+    <file>Aircraft/pa28-161/Nasal/flashlight.nas</file>
+    <file>Aircraft/pa28-161/Nasal/kma20.nas</file>
+    <file>Aircraft/pa28-161/Systems/kcs55.nas</file>
+    
+    <script><![CDATA[ki266.new(0);
+                  KCS55.new();
+       ]]></script>
+
+  </pa28>
+
+  <elt>
+    <file>Aircraft/pa28-161/Models/Instruments/elt/ELTmessage.nas</file>
+  </elt>
+
+  <kap140>
+    <file>Aircraft/pa28-161/Nasal/kap140.nas</file>
+  </kap140>
+  
+  <systems>
+    <file>Aircraft/pa28-161/systems/kln90b.nas</file>
+  </systems>
+  
+  <logger>
+    <file>Aircraft/pa28-161/nasal/logger.nas</file>
+  </logger>
+  
+  <tyresmoke>
+    <file>Aircraft/pa28-161/Nasal/tyresmoke.nas</file>
+  </tyresmoke>
+  <HobbsMeter>
+        <file>Aircraft/pa28-161/Models/instruments/Hobbs/hobbs.nas</file>
+		<script><![CDATA[
+            HobbsMeter.new(index: 0, switchPath: 'gear/gear/wow', inverted: 1);
+        ]]></script>
+    </HobbsMeter>
+ <!--
+        <OSD>
+   <script>
+# On-screen displays
+var left  = screen.display.new(10, -20);
+var right = screen.display.new(-300, 10);
+
+# Add some properties to display
+
+ right.add("/engines/engine/rpm");
+
+
+   </script>
+
+    </OSD>
+             -->
+  
+  <sprops>
+   <script><![CDATA[
+    aircraft.data.add(
+    "/instrumentation/nav[0]/audio-btn",
+    "/instrumentation/nav[0]/power-btn",
+    "/instrumentation/nav[0]/frequencies/selected-mhz",
+    "/instrumentation/nav[0]/frequencies/standby-mhz",
+    "/instrumentation/nav[0]/radials/selected-deg",
+    "/instrumentation/comm[1]/volume",
+    "/instrumentation/comm[1]/frequencies/selected-mhz",
+    "/instrumentation/comm[1]/frequencies/standby-mhz",
+    "/instrumentation/comm[1]/test-btn",
+    "/instrumentation/nav[1]/audio-btn",
+    "/instrumentation/nav[1]/power-btn",
+    "/instrumentation/nav[1]/frequencies/selected-mhz",
+    "/instrumentation/nav[1]/frequencies/standby-mhz",
+    "/instrumentation/nav[1]/radials/selected-deg",
+    "/instrumentation/dme/frequencies/selected-mhz",
+    "/instrumentation/dme/switch-position",
+    "/instrumentation/adf/model",
+    "/instrumentation/adf/frequencies/selected-khz",
+    "/instrumentation/adf/frequencies/standby-khz",
+    "/instrumentation/hobbs-meter/seconds",
+    "/controls/switches/nav-lights",
+    "/controls/switches/strobe-lights",
+    "/controls/switches/flashing-beacon",
+    );
+   ]]></script>
+  </sprops>
+
+
+</nasal>
+
+
+</PropertyList>
+
+<!-- end of pa28-161-set.xml -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE PropertyList SYSTEM "panel.dtd">
+
+<PropertyList>
+
+ <name>Power-Quadrant-Panel</name>
+ <background>Aircraft/pa28-161/Panel/transparent-bg.rgb</background>
+ <w>64</w>
+ <h>128</h>
+
+<instruments>
+
+<instrument>
+  <name>panel hotspots</name>
+  <x>32</x>
+  <y>64</y>
+  <w>64</w>
+  <h>128</h>
+  <w-base>64</w-base>
+  <h-base>128</h-base>
+
+ <actions> 
+
+   <action>
+    <name>Increase Mixture</name>
+    <button>0</button>
+     <x>8</x>
+     <y>0</y>
+     <w>20</w>
+     <h>60</h>
+    <repeatable type="bool">true</repeatable>
+    <binding> 
+     <command>nasal</command>
+     <script>controls.adjMixture(1)</script>
+    </binding>
+   </action>
+
+   <action>
+    <name>Decrease Mixture</name>
+    <button>0</button>
+     <x>8</x>
+     <y>-60</y>
+     <w>20</w>
+     <h>60</h>
+    <repeatable type="bool">true</repeatable>
+    <binding> 
+     <command>nasal</command>
+     <script>controls.adjMixture(-1)</script>
+    </binding>
+   </action>
+
+   <action>
+    <name>Increase Throttle</name>
+    <button>0</button>
+     <x>-24</x>
+     <y>0</y>
+     <w>20</w>
+     <h>60</h>
+    <repeatable type="bool">true</repeatable>
+    <binding> 
+     <command>nasal</command>
+     <script>controls.adjThrottle(1)</script>
+    </binding>
+   </action>
+
+   <action>
+    <name>Decrease Throttle</name>
+    <button>0</button>
+     <x>-24</x>
+     <y>-60</y>
+     <w>20</w>
+     <h>60</h>
+    <repeatable type="bool">true</repeatable>
+    <binding> 
+     <command>nasal</command>
+     <script>controls.adjThrottle(-1)</script>
+    </binding>
+   </action>
+     
+  </actions>
+
+ </instrument>
+
+</instruments>
+
+</PropertyList>

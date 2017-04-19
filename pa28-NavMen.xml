@@ -1,0 +1,102 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+    <default>
+
+        <menu n="10">
+            <label>Navigation</label>
+            <enabled type="bool">true</enabled>
+            <item>
+                <label>Instruments</label>
+                <binding>
+                    <command>open-file</command>
+                   file:///C:/FlightGear%202017.1.1/data/Docs/getstart.pdf
+                </binding>
+            </item>
+
+            <item>
+                <label>ADF_NDB</label>
+                <binding>
+                    <command>dialog-show</command>
+                    <dialog-name>ground-equipment</dialog-name>
+                </binding>
+            </item>
+
+            <item>
+                <label>VOR_DME</label>
+                <binding>
+                    <command>nasal</command>
+                    <script>aircraft.livery.dialog.toggle()</script>
+                </binding>
+            </item>
+
+            <item>
+                <label>ILS</label>
+                <binding>
+                    <command>dialog-show</command>
+                    <dialog-name>registration-dialog</dialog-name>
+                </binding>
+            </item>
+
+            <item>
+                <label>SID_STARSt</label>
+                <binding>
+                    <command>nasal</command>
+                    <script>c172p.toggle_flashlight()</script>
+                </binding>
+            </item>
+
+            <item>
+                <label>General Settings</label>
+                <binding>
+                    <command>property-toggle</command>
+                    <property>/sim/model/hide-yoke</property>
+                </binding>
+            </item>
+
+            <item>
+                <label>Practise_Flights</label>
+                <binding>
+                    <command>nasal</command>
+                    <script>c172p.autostart()</script>
+                </binding>
+            </item>
+            
+            <item>
+              <label>Panel in a Browser</label>
+              <binding>
+                <command>nasal</command>
+                <script>
+                    if (getprop("/sim/http/running")) {
+                        var port = getprop("/sim/http/options/listening-port");
+                        var url = sprintf("http://localhost:%d/aircraft-dir/WebPanel/c172p-webpanel.html", port);
+                        fgcommand("open-browser", props.Node.new({ "url": url }));
+                    }
+                    else {
+                        gui.popupTip("Internal webserver not running. Restart FlightGear with --httpd=8080", 5.0);
+                    }
+                </script>
+              </binding>
+            </item>
+            
+            <item>
+                <label>------------------</label>
+                <enabled>false</enabled>
+            </item>
+            
+            <item>
+                <label>About This Aircraft</label>
+                <binding>
+                    <command>dialog-show</command>
+                    <dialog-name>c172p-about-dialog</dialog-name>
+                </binding>
+            </item>
+            
+        </menu>
+
+    </default>
+
+</PropertyList>
+
+

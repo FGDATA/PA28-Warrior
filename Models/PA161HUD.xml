@@ -1,0 +1,186 @@
+<?xml version="1.0"?>
+ 
+
+
+<PropertyList>
+	<name>Cherokee</name>
+	<enable3d>false</enable3d>
+
+
+ <label>
+		<name>Wind</name>
+		<x>-435</x>
+		<y>210</y>
+		<halign>left</halign>
+		<format>Wind Speed: %1.2f knots</format>
+		<input>
+			<property>/environment/wind-speed-kt</property>
+		</input>
+</label>
+
+ <label>
+		<name>From</name>
+		<x>-435</x>
+		<y>200</y>
+		<halign>left</halign>
+		<format>Wind Hdg:    %d deg</format>
+		<input>
+			<property>/environment/wind-from-heading-deg</property>
+		</input>
+</label>
+
+<label>
+		<name>gs</name>
+		<x>-435</x>
+		<y>190</y>
+		<halign>left</halign>
+		<format>Grd-Speed:     %d kts</format>
+		<input>
+			<property>/velocities/groundspeed-kt</property>
+		</input>
+	</label>
+
+  <label>
+		<name>ADF/NDB</name>
+		<x>-435</x>
+		<y>170</y>
+		<halign>left</halign>
+		<format>Adf/Ndb:   %s</format>
+		<input>
+			<property>/instrumentation/adf/ident</property>
+		</input>
+</label>
+
+ <label>
+		<name>NavId</name>
+		<x>-435</x>
+		<y>160</y>
+		<halign>left</halign>
+		<format>Nav_ID:   %s</format>
+		<input>
+			<property>/instrumentation/nav/nav-id</property>
+		</input>
+</label>
+
+ <label>
+		<name>maghead</name>
+		<x>-435</x>
+		<y>150</y>
+		<halign>left</halign>
+		<format>Mag Hdg:  %d deg</format>
+		<input>
+   	<property>/orientation/heading-magnetic-deg</property>
+		</input>
+</label>
+
+ <label>
+		<name>magvar</name>
+		<x>-435</x>
+		<y>130</y>
+		<halign>left</halign>
+		<format>Mag Var:  %d deg</format>
+		<input>
+   	<property>/environment/magnetic-variation-deg</property>
+		</input>
+</label>
+
+<label>
+		<name>Fuell</name>
+		<width>2</width>
+		<height>2</height>
+		<x>-435</x>
+		<y>110</y>
+		<halign>left</halign>
+		<format>Fuel-I:  %d lbs</format>
+		<input>
+			<property>/consumables/fuel/tank/level-lbs</property>
+		</input>
+	</label>
+
+  <label>
+		<name>FuelR</name>
+		<width>2</width>
+		<height>2</height>
+		<x>-435</x>
+		<y>100</y>
+		<halign>left</halign>
+		<format>Fuel-II: %d lbs</format>
+		<input>
+			<property>/consumables/fuel/tank[1]/level-lbs</property>
+		</input>
+	</label>
+
+
+        <tape>
+		<name>Gyrocompass</name>
+		<x>-100</x>
+		<y>190</y>
+		<width>200</width>
+		<height>28</height>
+
+		<input>
+			<property>/orientation/heading-magnetic-deg</property>
+		</input>
+		<display-span>25.0</display-span>
+		<modulo>360</modulo>
+
+		<option>top</option>
+
+		<major-divisions>5</major-divisions>
+		<minor-divisions>1</minor-divisions>
+		<tick-bottom>false</tick-bottom>
+		<tick-top>false</tick-top>
+		<tick-right>false</tick-right>
+		<tick-left>false</tick-left>
+		<cap-bottom>true</cap-bottom>
+		<cap-top>false</cap-top>
+		<cap-right>false</cap-right>
+		<cap-left>false</cap-left>
+		<marker-offset>0.0</marker-offset>
+		<enable-pointer>true</enable-pointer>
+		<pointer-type>fixed</pointer-type>
+		<tick-type>line</tick-type>
+		<tick-length>variable</tick-length>
+	</tape>
+
+ <label>
+        <name>GSR</name>
+		<width>4</width>
+		<height>4</height>
+
+      <condition>
+         <not-equals>
+            <property>/instrumentation/nav/gs-in-range</property>
+            <value>0</value>
+         </not-equals>
+      </condition>
+      <input>
+         <property>/instrumentation/nav/gs-in-range</property>
+               </input>
+        <x>186</x>
+        <y>195</y>
+        <format>GS ACTIVE!!!</format>
+        <halign>left</halign>
+    </label>
+
+</PropertyList>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

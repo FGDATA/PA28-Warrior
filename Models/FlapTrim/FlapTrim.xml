@@ -1,0 +1,89 @@
+<?xml version="1.0" ?>
+<PropertyList>
+    <path>FlapTrim.ac</path>
+    <animation>
+        <type>noshadow</type>
+        <object-name>Flap-Trim</object-name>
+    </animation>
+    
+    <animation>
+     <type>material</type>
+     <object-name>TrimScale</object-name>
+     <object-name>ElevatorTrimControl</object-name>  -->
+     <emission>
+       <red>0.45</red>
+       <green>0.09</green>
+       <blue>0.00001</blue>
+       <factor-prop>/sim/model/material/instruments/factor</factor-prop>
+     </emission>
+    </animation>
+
+    <animation>
+      <type>material</type>
+      <object-name>FlapControl</object-name>
+      <object-name>ElevatorTrimIndicator</object-name>
+      <object-name>TrimwheelElevatorChassis</object-name>
+      <emission>
+        <red>0.1</red>
+        <green>0.02</green>
+        <blue>0.00001</blue>
+        <factor-prop>/sim/model/material/instruments/factor</factor-prop>
+      </emission>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>ElevatorTrimControl</object-name>
+        <property>controls/flight/elevator-trim</property>
+        <factor>500</factor>
+        <center>
+            <x-m>0.05924</x-m>
+            <y-m>0.0</y-m>
+            <z-m>0.05231</z-m>
+        </center>
+        <axis>
+            <x>0.0</x>
+            <y>-1.0</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
+    
+    <animation>
+        <type>rotate</type>
+        <object-name>ElevatorTrimIndicator</object-name>
+        <property>controls/flight/elevator-trim</property>
+        <factor>20.0</factor>
+        <center>
+            <x-m>0.05924</x-m>
+            <y-m>0.0</y-m>
+            <z-m>0.05231</z-m>
+        </center>
+        <axis>
+            <x>0.0</x>
+            <y>-1.0</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>FlapControl</object-name>
+        <property>surface-positions/flap-pos-norm</property>
+        <factor>70</factor>
+        <center>
+            <x-m>-0.0</x-m>
+            <y-m>0</y-m>
+            <z-m>0.002336</z-m>
+        </center>
+        <axis>
+            <x>0.0</x>
+            <y>1.0</y>
+            <z>0.0</z>
+        </axis>
+        <center>
+            <x-m>0.0</x-m>
+            <y-m>0</y-m>
+            <z-m>-0.06035</z-m>
+        </center>
+    </animation>
+</PropertyList>

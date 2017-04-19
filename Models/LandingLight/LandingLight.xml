@@ -1,0 +1,156 @@
+<?xml version="1.0"?>
+<!--
+    Copyright License:  GPL
+-->
+<PropertyList>
+
+ <path>LandingLight.ac</path>
+<nopreview/>
+
+<!--   Landing Light  -->
+    <animation>
+	<type>select</type>
+	<object-name>landing_light_spot</object-name>
+	<object-name>phare</object-name>
+	<condition>
+		<property>controls/switches/landing-light</property>
+	</condition>
+   </animation>
+
+   <animation>
+	<name>LightVisibility</name>
+	<type>material</type>
+	<object-name>phare</object-name>
+	<transparency>
+	   <alpha>0.35</alpha>
+	   <factor-prop>sim/model/material/LandingLight/factor</factor-prop>  
+	</transparency>
+   </animation>
+
+   <animation>
+	<type>noshadow</type>
+	<object-name>phare</object-name>
+	<object-name>landing_light_spot</object-name>
+   </animation>
+
+   <animation>
+	<type>flash</type>
+	<object-name>phare</object-name>
+	<center>
+	   <x-m>0.0</x-m>
+	   <y-m>0.0</y-m>
+	   <z-m>0.0</z-m>
+	</center>
+	<axis>
+	   <x>-1</x>
+	   <y>0.0</y>
+	   <z>-0.1</z>
+	</axis>
+	<power>5</power>
+	<factor>1</factor>
+	<offset>0</offset>
+	<two-sides type="bool">false</two-sides>
+	<min>0.01</min>
+	<max>1</max>
+   </animation>
+
+   <animation>
+	<type>material</type>
+	<object-name>phare</object-name>
+	<emission>
+	   <red>0.98</red>
+	   <green>0.84</green>
+	   <blue>0.84</blue>
+	   <factor-prop>sim/model/material/LandingLight/factor</factor-prop>
+	</emission>
+   </animation>
+
+   <animation>
+	<type>material</type>
+	<object-name>landing_light_spot</object-name>
+	<emission>
+	   <red>0.98</red>
+	   <green>0.84</green>
+	   <blue>0.84</blue>
+	   <factor-prop>sim/model/material/LandingLight/factorAGL</factor-prop>
+	</emission>
+   </animation>
+
+   <animation>
+	<type>rotate</type>
+	<object-name>landing_light_spot</object-name>
+	<property>orientation/pitch-deg</property>
+	<factor>-1</factor>
+	<center>
+	   <x-m>-10.391</x-m>
+	   <y-m>0.0</y-m>
+	   <z-m>-0.750</z-m>
+	</center>
+	<axis>
+	   <x>0.0</x>
+	   <y>1.0</y>
+	   <z>0.0</z>
+	</axis>
+   </animation>
+
+   <animation>
+	<type>rotate</type>
+	<object-name>landing_light_spot</object-name>
+	<property>orientation/roll-deg</property>
+	<factor>1</factor>
+	<center>
+	   <x-m>0.0</x-m>
+	   <y-m>0.0</y-m>
+	   <z-m>-0.750</z-m>
+	</center>
+	<axis>
+	   <x>1.0</x>
+	   <y>0.0</y>
+	   <z>0.0</z>
+	</axis>
+   </animation>
+
+   <animation>
+	<type>translate</type>
+	<object-name>landing_light_spot</object-name>
+	<property>position/gear-agl-ft</property>
+	<factor>1.0</factor>
+	<axis>
+	  <x>-1.0</x>
+	  <y>0.0</y>
+	  <z>-0.088</z>
+	</axis>
+   </animation>
+
+   <animation>
+	<type>translate</type>
+	<object-name>landing_light_spot</object-name>
+	<property>orientation/pitch-deg</property>
+	<factor>1.0</factor>
+	<axis>
+	   <x>-1.0</x>
+	   <y>0.0</y>
+	   <z>-0.088</z>
+	</axis>
+   </animation>
+
+    <animation>
+        <type>dist-scale</type>
+	<object-name>landing_light_spot</object-name>
+        <interpolation>
+            <entry>
+                <ind>0</ind>
+                <dep>0.5</dep>
+            </entry>
+            <entry>
+                <ind>20</ind>
+                <dep>1</dep>
+            </entry>
+            <entry>
+                <ind>1500</ind>
+                <dep>10</dep>
+            </entry>
+        </interpolation>
+    </animation>
+             
+</PropertyList>
