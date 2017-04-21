@@ -14,7 +14,7 @@ spinning.
  <sim include="Systems/views.xml">
 
    <description>Piper Cherokee Warrior II (1979 model)</description>
-   <author>gkick, Joshua Davidson (it0uchpods), Other</author>
+   <author>Gerhard Kick, Joshua Davidson (it0uchpods), Other</author>
 
   <startup>
       <splash-texture>Aircraft/pa28-161/Temp003.jpg</splash-texture>
@@ -22,8 +22,8 @@ spinning.
   
    <help include="Systems/help.xml"/>
 
-<!-- Temporarily Disabled for AP tuning -->
-<!--hud>
+
+<hud>
 			<path n="1">Aircraft/pa28-161/Models/Pa161HUD.xml</path>
 			<visibility n="1">false</visibility>
 
@@ -55,7 +55,7 @@ spinning.
         </color>
 
 
-	</hud-->
+	</hud>
 
 <!-- Include model configuration file -->
   <!-- Note: The name of the XML file is the name your copy
@@ -310,9 +310,7 @@ spinning.
  
 
 
- <input>
-    <keyboard include="Systems/pa28-keyboard.xml"/>
-</input>
+  <input    include="Systems/pa28-keyboard.xml"/>
 
 <nasal>
 
@@ -413,6 +411,11 @@ var right = screen.display.new(-300, 10);
 </PropertyList>
 
 <!-- end of pa28-161-set.xml -->
+
+
+
+
+
 
 
 

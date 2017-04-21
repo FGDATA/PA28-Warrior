@@ -67,7 +67,7 @@
 		<x>-435</x>
 		<y>150</y>
 		<halign>left</halign>
-		<format>Mag Hdg:  %d deg</format>
+		<format>Mag Hdg:  %1.1f deg</format>
 		<input>
    	<property>/orientation/heading-magnetic-deg</property>
 		</input>
@@ -109,6 +109,20 @@
 			<property>/consumables/fuel/tank[1]/level-lbs</property>
 		</input>
 	</label>
+
+   <label>
+		<name>odom</name>
+		<width>2</width>
+		<height>2</height>
+		<x>-435</x>
+		<y>90</y>
+		<halign>left</halign>
+		<format>Flown: %1.1f nm</format>
+		<input>
+			<property>/instrumentation/gps/trip-odometer</property>
+		</input>
+	</label>
+	
 
 
         <tape>
@@ -164,6 +178,11 @@
     </label>
 
 </PropertyList>
+
+
+
+
+
 
 
 
