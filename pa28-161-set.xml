@@ -83,11 +83,7 @@ spinning.
   <systems>
   
    <autopilot>
-     <name>autopilot helpers</name>
-     <path>Aircraft/Generic/generic-autopilot-helper.xml</path>
-   </autopilot>
-   <autopilot>
-     <path>Aircraft/pa28-161/Systems/KAP140.xml</path>
+     <path>Aircraft/pa28-161/Systems/it-autoflight.xml</path>
    </autopilot>
    <autopilot>
      <name>FiltersOnly</name>
@@ -277,6 +273,41 @@ spinning.
 
  </consumables>
  
+ 
+<it-autoflight>
+	<config>
+		<roll>
+			<umin>-0.50</umin>
+			<umax>0.50</umax>
+			<kp>0.05</kp>
+			<kp-vloc>0.09</kp-vloc>
+			<ti>10.0</ti>
+			<td>0.00001</td>
+			<pfactor-offset>0.0</pfactor-offset>
+		</roll>
+		<pitch>
+			<umin>-0.50</umin>
+			<umax>0.50</umax>
+			<kp>-0.08</kp>
+			<ti>10.0</ti>
+			<td>0.0001</td>
+		</pitch>
+		<cmd>
+			<roll-kp>-1.9</roll-kp>
+			<roll-scale>1.5</roll-scale>
+			<vorloc>-5.0</vorloc>
+			<alt>0.03</alt>
+			<vs>0.15</vs>
+			<gs>0.11</gs>
+		</cmd>
+	</config>
+	<settings>
+		<enable-stby>0</enable-stby> <!-- If disabled, LVL and V/S become active when AP on. -->
+		<pitch-mode>2</pitch-mode> <!-- 0 = Elevator trim only, 1 = Elevator only, 2 = Elevator and Autotrim -->
+		<auto-arm-alt>0</auto-arm-alt> <!-- Enable automatic altitude arm -->
+	</settings>
+</it-autoflight>
+ 
 
 
  <input>
@@ -307,9 +338,9 @@ spinning.
     <file>Aircraft/pa28-161/Models/Instruments/elt/ELTmessage.nas</file>
   </elt>
 
-  <kap140>
-    <file>Aircraft/pa28-161/Nasal/kap140.nas</file>
-  </kap140>
+  <itaf>
+    <file>Aircraft/pa28-161/Nasal/it-autoflight.nas</file>
+  </itaf>
   
   <systems>
     <file>Aircraft/pa28-161/systems/kln90b.nas</file>

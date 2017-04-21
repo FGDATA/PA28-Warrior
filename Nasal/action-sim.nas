@@ -28,6 +28,8 @@ var oil_pres_lowpass = aircraft.lowpass.new(0.5);
 var egt_lowpass = aircraft.lowpass.new(0.95);
 
 var init_actions = func {
+    itaf.ap_init();
+    var autopilot = gui.Dialog.new("sim/gui/dialogs/autopilot/dialog", "Aircraft/pa28-161/Systems/autopilot-dlg.xml");
     setprop("engines/engine[0]/fuel-flow-gph", 0.0);
     setprop("/surface-positions/flap-pos-norm", 0.0);
     setprop("/instrumentation/airspeed-indicator/indicated-speed-kt", 0.0);
