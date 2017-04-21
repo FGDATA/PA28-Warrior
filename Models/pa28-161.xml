@@ -19,7 +19,10 @@
   <object-name>LeftTankPlacard</object-name>
   <object-name>RightTankPlacard</object-name>
   <object-name>RudderTrimPlacard</object-name>
+  <object-name>glareshield</object-name>
   <object-name>CarbHeatPlacard</object-name>
+  <object-name>CarbHeatKnob</object-name>
+  <object-name>CH-Lever</object-name>
   <emission>
    <red>0.45</red>
    <green>0.09</green>
@@ -357,15 +360,26 @@
   </offsets>
  </model>
 
- <model>
-  <name>aoa</name>
-  <path>Aircraft/pa28-161/Models/instruments/AOA/aoa.xml</path>
+  <model>
+  <name>AOA</name>
+  <path>Aircraft/pa28-161/Models/instruments/aoa/aoa.xml</path>
   <offsets>
-   <x-m>1.925</x-m>
-   <y-m>0.245</y-m>
-   <z-m>0.178</z-m>
+   <x-m>1.928</x-m>
+   <y-m>0.269</y-m>
+   <z-m>0.32</z-m>
   </offsets>
  </model>
+
+ <model>
+  <name>mflap</name>
+  <path>Aircraft/pa28-161/Models/instruments/Flaps/flaps.xml</path>
+  <offsets>
+   <x-m>1.929</x-m>
+   <y-m>0.245</y-m>
+   <z-m>0.174</z-m>
+  </offsets>
+ </model>
+
 
 
  <model>
@@ -650,16 +664,17 @@
 			<z-m>0.021</z-m>
 		</offsets>
 	</model>
-
-     <model>
+	
+	<model>
   <name>FlightCom</name>
-  <path>Aircraft/pa28-161/Models/fti/flaptrimindicator.xml</path>
+  <path>Aircraft/pa28-161/Models/FlightCom/flightcom.xml</path>
   <offsets>
    <x-m>1.925</x-m>
-   <y-m>-0.155</y-m>
+   <y-m>-0.158</y-m>
    <z-m>0.013</z-m>
   </offsets>
  </model>
+
 	
  <model>
   <name>Transponder</name>
@@ -1285,6 +1300,10 @@
  </animation>
 
 </PropertyList>
+
+
+
+
 
 
 

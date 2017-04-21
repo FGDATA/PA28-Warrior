@@ -12,9 +12,18 @@
 	<type>select</type>
 	<object-name>landing_light_spot</object-name>
 	<object-name>phare</object-name>
-	<condition>
-		<property>controls/switches/landing-light</property>
-	</condition>
+ <condition>
+      <and>
+        <less-then>
+          <property>position/altitude-agl-ft</property>
+          <value> 900 </value>
+        </less-then>
+        <equals>
+          <property>gear/gear/wow</property>
+          <value> false </value>
+        </equals>
+      </and>
+    </condition>
    </animation>
 
    <animation>
@@ -154,3 +163,8 @@
     </animation>
              
 </PropertyList>
+
+
+
+
+
