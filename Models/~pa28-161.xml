@@ -519,8 +519,8 @@
   <path>Aircraft/pa28-161/Models/instruments/kns80/kns80.xml</path>
   <offsets>
    <x-m>1.925</x-m>
-   <y-m>0.303</y-m>
-   <z-m>0.176</z-m>
+   <y-m>0.302</y-m>
+   <z-m>0.175</z-m>
   </offsets>
  </model>
  
@@ -1305,7 +1305,6 @@
  </animation>
 
 </PropertyList>
-
 
 
 

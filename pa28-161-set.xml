@@ -95,7 +95,11 @@ spinning.
    </autopilot>
    
    <electrical>
-     <path/>
+     <outputs>
+        <KNS80 type="string">28</KNS80>
+        <comm type="string">28</comm>
+        <comm n="1" type="string">28</comm>
+      </outputs>
    </electrical>
 
   </systems>
@@ -300,10 +304,14 @@ spinning.
        ]]></script>
 
   </pa28>
+   <kns80>
+      <file>Aircraft/pa28-161/Models/instruments/kns80/kns80.nas</file>
+    </kns80>
 
   <elt>
     <file>Aircraft/pa28-161/Models/Instruments/elt/ELTmessage.nas</file>
   </elt>
+  
 
   <kap140>
     <file>Aircraft/pa28-161/Nasal/kap140.nas</file>
@@ -380,6 +388,10 @@ var right = screen.display.new(-300, 10);
 </PropertyList>
 
 <!-- end of pa28-161-set.xml -->
+
+
+
+
 
 
 
