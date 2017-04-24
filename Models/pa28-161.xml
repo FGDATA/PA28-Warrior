@@ -503,17 +503,17 @@
    <z-m>0.32</z-m>
   </offsets>
  </model>
-<!--
+
  <model>
   <name>clock</name>
   <path>Aircraft/pa28-161/Models/Clock/Clock.xml</path>
   <offsets>
    <x-m>1.925</x-m>
-   <y-m>0.330</y-m>
-   <z-m>0.174</z-m>
+   <y-m>0.320</y-m>
+   <z-m>0.100</z-m>
   </offsets>
  </model>
-    -->
+
  <model>
   <name>Rnav</name>
   <path>Aircraft/pa28-161/Models/instruments/kns80/kns80.xml</path>
@@ -1305,6 +1305,7 @@
  </animation>
 
 </PropertyList>
+
 
 
 

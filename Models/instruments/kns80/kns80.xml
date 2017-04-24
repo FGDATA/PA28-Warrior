@@ -56,12 +56,7 @@
     <object-name>KNS80.vitre</object-name>
   </animation>
   
-  <!-- working for Rembrandt -->
-  <effect>
-    <inherits-from>Aircraft/Lancair-235/Models/Effects/Glass/glass</inherits-from>
-    <object-name>KNS80.vitre</object-name>
-  </effect>
-  
+
   <animation>
     <type>material</type>
     <object-name>nm.101</object-name>
@@ -909,3 +904,4 @@
   </animation>
   
 </PropertyList>
+

@@ -304,10 +304,13 @@ spinning.
        ]]></script>
 
   </pa28>
+  
+  <!--
+      temporarely suspended, seems to interfere with ap and memory of setings
    <kns80>
       <file>Aircraft/pa28-161/Models/instruments/kns80/kns80.nas</file>
     </kns80>
-
+  -->
   <elt>
     <file>Aircraft/pa28-161/Models/Instruments/elt/ELTmessage.nas</file>
   </elt>
@@ -388,6 +391,7 @@ var right = screen.display.new(-300, 10);
 </PropertyList>
 
 <!-- end of pa28-161-set.xml -->
+
 
 
 
