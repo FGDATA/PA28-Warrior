@@ -15,19 +15,10 @@
   </emission>
   </animation>
    
-  <animation>
-  <type>pick</type>
-  <object-name>HobbsFace</object-name>
-  <hovered>
-            <binding>
-                <command>set-tooltip</command>
-                <tooltip-id>hobbs</tooltip-id>
-                <label>Hours Flown</label>
-            </binding>
-        </hovered>
-  </animation>
+
 
 </PropertyList>
+
 
 
 

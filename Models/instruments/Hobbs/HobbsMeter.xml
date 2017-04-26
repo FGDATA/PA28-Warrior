@@ -151,4 +151,18 @@
 	</condition>
 </animation>
 
+                  <animation>
+  <type>pick</type>
+  <object-name>Base_02</object-name>
+  <object-name>LabelText</object-name>
+  <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <tooltip-id>hobbs</tooltip-id>
+                <label>Hours Flown</label>
+            </binding>
+        </hovered>
+  </animation>
+
 </PropertyList>
+
