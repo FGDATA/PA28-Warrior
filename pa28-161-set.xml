@@ -101,7 +101,10 @@ spinning.
         <comm n="1" type="string">28</comm>
       </outputs>
    </electrical>
-
+  <SwitchTanks>
+      <path>Aircraft/pa28-161/Systems/SwitchTanks.xml</path>
+  </SwitchTanks>
+  
   </systems>
   
    <menubar include="pa28-NavMen.xml"/>
@@ -391,6 +394,10 @@ var right = screen.display.new(-300, 10);
 </PropertyList>
 
 <!-- end of pa28-161-set.xml -->
+
+
+
+
 
 
 
