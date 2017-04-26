@@ -14,6 +14,7 @@ var ap_init = func {
 	setprop("/it-autoflight/input/lat", 5);
 	setprop("/it-autoflight/input/vert", 5);
 	setprop("/it-autoflight/input/trk", 0);
+	setprop("/it-autoflight/input/alt-arm", 0);
 	setprop("/it-autoflight/output/ap", 0);
 	setprop("/it-autoflight/output/lat-active", 0);
 	setprop("/it-autoflight/output/vert-active", 0);
@@ -29,7 +30,6 @@ var ap_init = func {
 	setprop("/it-autoflight/internal/min-pitch", -8);
 	setprop("/it-autoflight/internal/max-pitch", 8);
 	setprop("/it-autoflight/internal/alt", 10000);
-	setprop("/it-autoflight/internal/skip-cap-pitch", 0);
 	setprop("/it-autoflight/mode/status", "STANDBY");
 	setprop("/it-autoflight/mode/arm", " ");
 	setprop("/it-autoflight/mode/lat", " ");
@@ -278,7 +278,13 @@ var altcapt = func {
 	var alt = getprop("/it-autoflight/internal/alt");
 	var dif = calt - alt;
 	if (dif < getprop("/it-autoflight/internal/captvs") and dif > getprop("/it-autoflight/internal/captvsneg")) {
-		setprop("/it-autoflight/input/vert", 3);
+		if (vsnow > 0 and dif < 0) {
+			setprop("/it-autoflight/input/vert", 3);
+			setprop("/it-autoflight/output/thr-mode", 0);
+		} else if (vsnow < 0 and dif > 0) {
+			setprop("/it-autoflight/input/vert", 3);
+			setprop("/it-autoflight/output/thr-mode", 0);
+		}
 	}
 	var altinput = getprop("/it-autoflight/input/alt");
 	setprop("/it-autoflight/internal/alt", altinput);
