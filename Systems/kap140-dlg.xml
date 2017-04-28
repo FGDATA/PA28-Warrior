@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- IT-AUTOFLIGHT Autopilot Control Dialog -->
+
+
+<PropertyList>
+
+	<name>autopilot</name>
+	<layout>vbox</layout>
+    <pref-width>520</pref-width>
+
+    <group>
+        <layout>hbox</layout>
+        <text>
+            <halign>left</halign>
+            <label>IT-AUTOFLIGHT System (KAP140)</label>
+        </text>
+        <button>
+            <halign>right</halign>
+            <pref-width>20</pref-width>
+            <pref-height>20</pref-height>
+            <legend>X</legend>
+            <key>Esc</key>
+            <binding>
+                <command>dialog-close</command>
+            </binding>
+        </button>
+    </group>
+	
+    <hrule/>
+	
+	<group>
+		<layout>hbox</layout>
+	
+		<group>
+			<layout>vbox</layout>
+			
+			<group>
+				<layout>hbox</layout>
+				<text>
+					<label>HDG</label>
+					<visible>
+						<and>
+							<equals>
+								<property>/it-autoflight/output/ap</property>
+								<value>1</value>
+							</equals>
+							<equals>
+								<property>/it-autoflight/output/lat</property>
+								<value>0</value>
+							</equals>
+						</and>
+					</visible>
+				</text>
+				<text>
+					<label>ROL</label>
+					<visible>
+						<and>
+							<equals>
+								<property>/it-autoflight/output/ap</property>
+								<value>1</value>
+							</equals>
+							<equals>
+								<property>/it-autoflight/output/lat</property>
+								<value>1</value>
+							</equals>
+						</and>
+					</visible>
+				</text>
+				<text>
+					<label>NAV</label>
+					<visible>
+						<and>
+							<equals>
+								<property>/it-autoflight/output/ap</property>
+								<value>1</value>
+							</equals>
+							<or>
+								<equals>
+									<property>/it-autoflight/output/lat</property>
+									<value>2</value>
+								</equals>
+								<equals>
+									<property>/it-autoflight/output/loc-armed</property>
+									<value>1</value>
+								</equals>
+							</or>
+							<not-equals>
+								<property>/it-autoflight/output/vert</property>
+								<value>2</value>
+							</not-equals>
+							<equals>
+								<property>/it-autoflight/output/appr-armed</property>
+								<value>0</value>
+							</equals>
+						</and>
+					</visible>
+				</text>
+				<text>
+					<label>APR</label>
+					<visible>
+						<and>
+							<equals>
+								<property>/it-autoflight/output/ap</property>
+								<value>1</value>
+							</equals>
+							<or>
+								<equals>
+									<property>/it-autoflight/output/lat</property>
+									<value>2</value>
+								</equals>
+								<equals>
+									<property>/it-autoflight/output/loc-armed</property>
+									<value>1</value>
+								</equals>
+							</or>
+							<or>
+								<equals>
+									<property>/it-autoflight/output/vert</property>
+									<value>2</value>
+								</equals>
+								<equals>
+									<property>/it-autoflight/output/appr-armed</property>
+									<value>1</value>
+								</equals>
+							</or>
+						</and>
+					</visible>
+				</text>
+				<text>
+					<label>REV</label>
+					<visible>
+						<equals>
+							<property>/it-autoflight/KAP140/unused</property>
+							<value>999</value>
+						</equals>
+					</visible>
+				</text>
+				<text>
+					<label>ARM</label>
+					<visible>
+						<equals>
+							<property>/it-autoflight/output/loc-armed</property>
+							<value>1</value>
+						</equals>
+					</visible>
+				</text>
+			</group>
+			
+			<group>
+				<layout>hbox</layout>
+				<text>
+					<label>RLT</label>
+					<visible>
+						<and>
+							<equals>
+								<property>/it-autoflight/output/ap</property>
+								<value>1</value>
+							</equals>
+							<or>
+								<equals>
+									<property>/it-autoflight/output/vert</property>
+									<value>0</value>
+								</equals>
+								<equals>
+									<property>/it-autoflight/output/alt-arm</property>
+									<value>1</value>
+								</equals>
+							</or>
+						</and>
+					</visible>
+				</text>
+				<text>
+					<label>VS</label>
+					<visible>
+						<and>
+							<equals>
+								<property>/it-autoflight/output/ap</property>
+								<value>1</value>
+							</equals>
+							<equals>
+								<property>/it-autoflight/output/vert</property>
+								<value>1</value>
+							</equals>
+						</and>
+					</visible>
+				</text>
+				<text>
+					<label>   </label>
+				</text>
+				<text>
+					<label>AP</label>
+					<visible>
+						<or>
+							<equals>
+								<property>/it-autoflight/kap140/ap</property>
+								<value>1</value>
+							</equals>
+							<equals>
+								<property>/it-autoflight/kap140/ap</property>
+								<value>3</value>
+							</equals>
+							<equals>
+								<property>/it-autoflight/kap140/ap</property>
+								<value>5</value>
+							</equals>
+						</or>
+					</visible>
+				</text>
+				<text>
+					<label>   </label>
+				</text>
+				<text>
+					<label>GS</label>
+					<visible>
+						<and>
+							<equals>
+								<property>/it-autoflight/output/ap</property>
+								<value>1</value>
+							</equals>
+							<equals>
+								<property>/it-autoflight/output/lat</property>
+								<value>2</value>
+							</equals>
+							<or>
+								<equals>
+									<property>/it-autoflight/output/vert</property>
+									<value>2</value>
+								</equals>
+								<equals>
+									<property>/it-autoflight/output/appr-armed</property>
+									<value>1</value>
+								</equals>
+							</or>
+						</and>
+					</visible>
+				</text>
+				<text>
+					<label>ARM</label>
+					<visible>
+						<or>
+							<equals>
+								<property>/it-autoflight/output/appr-armed</property>
+								<value>1</value>
+							</equals>
+							<equals>
+								<property>/it-autoflight/output/alt-arm</property>
+								<value>1</value>
+							</equals>
+						</or>
+					</visible>
+				</text>
+			</group>
+		</group>
+		
+		<vrule/>
+		
+		<group>
+			<layout>vbox</layout>
+			
+			<group>
+				<layout>hbox</layout>
+				
+				<text>
+					<label>BARO:</label>
+				</text>
+				
+				<text>
+					<label>99999</label>
+					<property>/instrumentation/altimeter/setting-inhg</property>
+					<live>1</live>
+				</text>
+				
+				<text>
+					<label>ALT:</label>
+				</text>
+				
+				<input>
+					<row>0</row>
+					<col>3</col>
+					<pref-width>55</pref-width>
+					<property>/it-autoflight/input/alt</property>
+					<live type="bool">true</live>
+					<binding>
+						<command>dialog-apply</command>
+					</binding>
+				</input>
+				
+				
+				<text>
+					<label>VS:</label>
+				</text>
+				
+				<text>
+					<label>99999</label>
+					<property>/it-autoflight/input/vs</property>
+					<live>1</live>
+				</text>
+			</group>
+		</group>
+	</group>
+	
+    <hrule/>
+	
+	<group>
+		<layout>hbox</layout>
+		<button>
+			<legend>AP</legend>
+            <pref-width>40</pref-width>
+			<binding>
+			<command>nasal</command>
+			<script>kap140.btnAP();</script>
+			</binding>
+		</button>
+		
+		<vrule/>
+		
+		<button>
+			<legend>HDG</legend>
+            <pref-width>35</pref-width>
+			<binding>
+			<command>nasal</command>
+			<script>kap140.btnHDG</script>
+			</binding>
+		</button>
+		
+		<button>
+			<legend>NAV</legend>
+            <pref-width>35</pref-width>
+			<binding>
+			<command>nasal</command>
+			<script>kap140.btnNAV</script>
+			</binding>
+		</button>
+		
+		<button>
+			<legend>APR</legend>
+            <pref-width>35</pref-width>
+			<binding>
+			<command>nasal</command>
+			<script>kap140.btnAPR</script>
+			</binding>
+		</button>
+		
+		<button>
+			<legend>REV</legend>
+            <pref-width>35</pref-width>
+			<binding>
+			<command>nasal</command>
+			<script>kap140.btnREV</script>
+			</binding>
+		</button>
+		
+		<vrule/>
+		
+		<button>
+			<legend>ALT</legend>
+            <pref-width>35</pref-width>
+			<binding>
+			<command>nasal</command>
+			<script>kap140.btnALT</script>
+			</binding>
+		</button>
+		
+		<button>
+			<legend>ARM</legend>
+            <pref-width>35</pref-width>
+			<binding>
+			<command>nasal</command>
+			<script>kap140.btnARM</script>
+			</binding>
+		</button>
+		
+		<vrule/>
+		
+		<button>
+			<legend>UP</legend>
+            <pref-width>35</pref-width>
+			<binding>
+			<command>nasal</command>
+			<script>kap140.btnUp</script>
+			</binding>
+		</button>
+		
+		<button>
+			<legend>DN</legend>
+            <pref-width>35</pref-width>
+			<binding>
+			<command>nasal</command>
+			<script>kap140.btnDown</script>
+			</binding>
+		</button>
+		
+	</group>
+
+</PropertyList>

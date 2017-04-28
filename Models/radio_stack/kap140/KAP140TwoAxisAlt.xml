@@ -14,6 +14,8 @@ Actions are hotspots on the instrument that will respond to a mouse
 click.  Actions always modify the values of properties, either by
 adjusting them, toggling them, or swaping them with other
 properties' values.
+
+Modified for IT-AUTOFLIGHT by Joshua Davidson
 -->
 <PropertyList>
   <name>KAP140TwoAxisAlt</name>
@@ -42,10 +44,20 @@ properties' values.
     <object-name>ap-ann</object-name>
     <name>AP Anunciator</name>
     <condition>
+      <or>
       <equals>
-        <property>/autopilot/KAP140/annunciators/ap/state</property>
-        <value type="bool">true</value>
+        <property>/it-autoflight/kap140/ap</property>
+        <value>1</value>
       </equals>
+      <equals>
+        <property>/it-autoflight/kap140/ap</property>
+        <value>3</value>
+      </equals>
+      <equals>
+        <property>/it-autoflight/kap140/ap</property>
+        <value>5</value>
+      </equals>
+      </or>
     </condition>
   </animation>
   <animation>
@@ -53,10 +65,16 @@ properties' values.
     <object-name>rol-ann</object-name>
     <name>ROL Anunciator</name>
     <condition>
+      <and>
       <equals>
-        <property>/autopilot/KAP140/annunciators/rol</property>
-        <value type="bool">true</value>
+        <property>/it-autoflight/output/ap</property>
+        <value>1</value>
       </equals>
+      <equals>
+        <property>/it-autoflight/output/lat</property>
+        <value>1</value>
+      </equals>
+      </and>
     </condition>
   </animation>
   <animation>
@@ -64,10 +82,16 @@ properties' values.
     <object-name>hdg-ann</object-name>
     <name>HDG Anunciator</name>
     <condition>
+      <and>
       <equals>
-        <property>/autopilot/KAP140/annunciators/hdg/state</property>
-        <value type="bool">true</value>
+        <property>/it-autoflight/output/ap</property>
+        <value>1</value>
       </equals>
+      <equals>
+        <property>/it-autoflight/output/lat</property>
+        <value>0</value>
+      </equals>
+      </and>
     </condition>
   </animation>
   <animation>
@@ -75,10 +99,24 @@ properties' values.
     <object-name>nav-ann</object-name>
     <name>NAV Anunciator</name>
     <condition>
+      <and>
       <equals>
-        <property>/autopilot/KAP140/annunciators/nav</property>
-        <value type="bool">true</value>
+        <property>/it-autoflight/output/ap</property>
+        <value>1</value>
       </equals>
+      <equals>
+        <property>/it-autoflight/output/lat</property>
+        <value>2</value>
+      </equals>
+      <not-equals>
+        <property>/it-autoflight/output/vert</property>
+        <value>2</value>
+      </not-equals>
+      <equals>
+        <property>/it-autoflight/output/appr-armed</property>
+        <value>0</value>
+      </equals>
+      </and>
     </condition>
   </animation>
   <animation>
@@ -86,10 +124,16 @@ properties' values.
     <object-name>nav-arm-ann</object-name>
     <name>NAV ARM Anunciator</name>
     <condition>
+      <and>
       <equals>
-        <property>/autopilot/KAP140/annunciators/nav-arm</property>
-        <value type="bool">true</value>
+        <property>/it-autoflight/output/loc-armed</property>
+        <value>1</value>
       </equals>
+      <equals>
+        <property>/it-autoflight/output/appr-armed</property>
+        <value>0</value>
+      </equals>
+      </and>
     </condition>
   </animation>
   <animation>
@@ -97,10 +141,26 @@ properties' values.
     <object-name>apr-ann</object-name>
     <name>APR Anunciator</name>
     <condition>
+      <and>
       <equals>
-        <property>/autopilot/KAP140/annunciators/apr</property>
-        <value type="bool">true</value>
+        <property>/it-autoflight/output/ap</property>
+        <value>1</value>
       </equals>
+      <equals>
+        <property>/it-autoflight/output/lat</property>
+        <value>2</value>
+      </equals>
+      <or>
+      <equals>
+        <property>/it-autoflight/output/vert</property>
+        <value>2</value>
+      </equals>
+      <equals>
+        <property>/it-autoflight/output/appr-armed</property>
+        <value>1</value>
+      </equals>
+      </or>
+      </and>
     </condition>
   </animation>
   <animation>
@@ -108,10 +168,16 @@ properties' values.
     <object-name>apr-arm-ann</object-name>
     <name>APR-ARM Anunciator</name>
     <condition>
+      <and>
       <equals>
-        <property>/autopilot/KAP140/annunciators/apr-arm</property>
-        <value type="bool">true</value>
+        <property>/it-autoflight/output/loc-armed</property>
+        <value>1</value>
       </equals>
+      <equals>
+        <property>/it-autoflight/output/appr-armed</property>
+        <value>1</value>
+      </equals>
+      </and>
     </condition>
   </animation>
   <animation>
@@ -120,8 +186,8 @@ properties' values.
     <name>REV Anunciator</name>
     <condition>
       <equals>
-        <property>/autopilot/KAP140/annunciators/rev</property>
-        <value type="bool">true</value>
+        <property>/it-autoflight/KAP140/unused</property>
+        <value>999</value>
       </equals>
     </condition>
   </animation>
@@ -141,10 +207,16 @@ properties' values.
     <object-name>vs-ann</object-name>
     <name>VS Anunciator</name>
     <condition>
+      <and>
       <equals>
-        <property>/autopilot/KAP140/annunciators/vs</property>
-        <value type="bool">true</value>
+        <property>/it-autoflight/output/ap</property>
+        <value>1</value>
       </equals>
+      <equals>
+        <property>/it-autoflight/output/vert</property>
+        <value>1</value>
+      </equals>
+      </and>
     </condition>
   </animation>
   <animation>
@@ -152,10 +224,16 @@ properties' values.
     <object-name>alt-ann</object-name>
     <name>ALT Anunciator</name>
     <condition>
+      <and>
       <equals>
-        <property>/autopilot/KAP140/annunciators/alt</property>
-        <value type="bool">true</value>
+        <property>/it-autoflight/output/ap</property>
+        <value>1</value>
       </equals>
+      <equals>
+        <property>/it-autoflight/output/vert</property>
+        <value>0</value>
+      </equals>
+      </and>
     </condition>
   </animation>
   <animation>
@@ -163,10 +241,20 @@ properties' values.
     <object-name>alt-arm-ann</object-name>
     <name>ALT-ARM Anunciator</name>
     <condition>
+      <and>
       <equals>
-        <property>/autopilot/KAP140/annunciators/alt-arm</property>
-        <value type="bool">true</value>
+        <property>/it-autoflight/output/ap</property>
+        <value>1</value>
       </equals>
+      <equals>
+        <property>/it-autoflight/output/alt-arm</property>
+        <value>1</value>
+      </equals>
+      <equals>
+        <property>/it-autoflight/output/appr-armed</property>
+        <value>0</value>
+      </equals>
+      </and>
     </condition>
   </animation>
   <animation>
@@ -185,10 +273,20 @@ properties' values.
     <object-name>gs-ann</object-name>
     <name>GS Anunciator</name>
     <condition>
+      <and>
       <equals>
-        <property>/autopilot/KAP140/annunciators/gs</property>
-        <value type="bool">true</value>
+        <property>/it-autoflight/output/ap</property>
+        <value>1</value>
       </equals>
+      <equals>
+        <property>/it-autoflight/output/lat</property>
+        <value>2</value>
+      </equals>
+      <equals>
+        <property>/it-autoflight/output/vert</property>
+        <value>2</value>
+      </equals>
+      </and>
     </condition>
   </animation>
   <animation>
@@ -196,10 +294,16 @@ properties' values.
     <object-name>gs-arm-ann</object-name>
     <name>GS-ARM Anunciator</name>
     <condition>
+      <and>
       <equals>
-        <property>/autopilot/KAP140/annunciators/gs-arm</property>
-        <value type="bool">true</value>
+        <property>/it-autoflight/output/loc-armed</property>
+        <value>0</value>
       </equals>
+      <equals>
+        <property>/it-autoflight/output/appr-armed</property>
+        <value>1</value>
+      </equals>
+      </and>
     </condition>
   </animation>
   <animation>
@@ -207,20 +311,16 @@ properties' values.
     <object-name>pt-ann</object-name>
     <name>Pitch trim annunciator</name>
     <condition>
-      <or>
-        <and>
-          <equals>
-            <property>/autopilot/KAP140/annunciators/pt-up</property>
-            <value type="bool">true</value>
-          </equals>
-        </and>
-        <and>
-          <equals>
-            <property>/autopilot/KAP140/annunciators/pt-dn</property>
-            <value type="bool">true</value>
-          </equals>
-        </and>
-      </or>
+      <and>
+      <equals>
+        <property>/it-autoflight/output/ap</property>
+        <value>1</value>
+      </equals>
+      <equals>
+        <property>/it-autoflight/kap140/pt</property>
+        <value>1</value>
+      </equals>
+      </and>
     </condition>
   </animation>
   <animation>
@@ -229,10 +329,18 @@ properties' values.
     <name>Pitch trim up annunciator</name>
     <condition>
       <and>
-        <equals>
-          <property>/autopilot/KAP140/annunciators/pt-up</property>
-          <value type="bool">true</value>
-        </equals>
+      <equals>
+        <property>/it-autoflight/output/ap</property>
+        <value>1</value>
+      </equals>
+      <equals>
+        <property>/it-autoflight/kap140/pt</property>
+        <value>1</value>
+      </equals>
+      <less-than>
+        <property>/it-autoflight/internal/elevator-cmd</property>
+        <value>0</value>
+      </less-than>
       </and>
     </condition>
   </animation>
@@ -242,10 +350,18 @@ properties' values.
     <name>Pitch trim down annunciator</name>
     <condition>
       <and>
-        <equals>
-          <property>/autopilot/KAP140/annunciators/pt-dn</property>
-          <value type="bool">true</value>
-        </equals>
+      <equals>
+        <property>/it-autoflight/output/ap</property>
+        <value>1</value>
+      </equals>
+      <equals>
+        <property>/it-autoflight/kap140/pt</property>
+        <value>1</value>
+      </equals>
+      <greater-than>
+        <property>/it-autoflight/internal/elevator-cmd</property>
+        <value>0</value>
+      </greater-than>
       </and>
     </condition>
   </animation>
@@ -255,10 +371,16 @@ properties' values.
     <object-name>fpm-ann</object-name>
     <name>FPM Anunciator</name>
     <condition>
+	  <and>
       <equals>
-        <property>/autopilot/KAP140/annunciators/vs-number</property>
-        <value type="bool">true</value>
+        <property>/it-autoflight/output/ap</property>
+        <value>1</value>
       </equals>
+      <equals>
+        <property>/it-autoflight/kap140/display-mode</property>
+        <value>VS</value>
+      </equals>
+      </and>
     </condition>
   </animation>
   
@@ -272,12 +394,16 @@ properties' values.
     <condition>
       <and>
         <equals>
-          <property>/autopilot/KAP140/annunciators/vs-number</property>
-          <value type="bool">true</value>
+          <property>/it-autoflight/output/ap</property>
+          <value>1</value>
+        </equals>
+        <equals>
+          <property>/it-autoflight/kap140/display-mode</property>
+          <value>VS</value>
         </equals>
         <less-than>
-          <property>/autopilot/KAP140/settings/target-pressure-rate-fpm</property>
-          <value>-1.0</value>
+          <property>/it-autoflight/input/vs</property>
+          <value>0</value>
         </less-than>
       </and>
     </condition>
@@ -291,12 +417,16 @@ properties' values.
     <condition>
       <and>
         <equals>
-          <property>/autopilot/KAP140/annunciators/vs-number</property>
-          <value type="bool">true</value>
+          <property>/it-autoflight/output/ap</property>
+          <value>1</value>
+        </equals>
+        <equals>
+          <property>/it-autoflight/kap140/display-mode</property>
+          <value>VS</value>
         </equals>
         <greater-than-equals>
-          <property>/autopilot/KAP140/settings/target-pressure-rate-fpm</property>
-          <value>-1.0</value>
+          <property>/it-autoflight/input/vs</property>
+          <value>0</value>
         </greater-than-equals>
       </and>
     </condition>
@@ -304,7 +434,7 @@ properties' values.
   <animation>
     <type>textranslate</type>
     <object-name>vs-digit5</object-name>
-    <property>/autopilot/KAP140/settings/target-pressure-rate-fpm</property>
+    <property>/it-autoflight/input/vs</property>
     <factor>0.1</factor>
     <step>1</step>
     <bias>0.5</bias>
@@ -317,7 +447,7 @@ properties' values.
   <animation>
     <type>textranslate</type>
     <object-name>vs-digit4</object-name>
-    <property>/autopilot/KAP140/settings/target-pressure-rate-fpm</property>
+    <property>/it-autoflight/input/vs</property>
     <factor>0.01</factor>
     <step>10</step>
     <bias>0.5</bias>
@@ -330,7 +460,7 @@ properties' values.
   <animation>
     <type>textranslate</type>
     <object-name>vs-digit3</object-name>
-    <property>/autopilot/KAP140/settings/target-pressure-rate-fpm</property>
+    <property>/it-autoflight/input/vs</property>
     <factor>0.001</factor>
     <step>100</step>
     <bias>0.5</bias>
@@ -343,7 +473,7 @@ properties' values.
   <animation>
     <type>textranslate</type>
     <object-name>vs-digit2</object-name>
-    <property>/autopilot/KAP140/settings/target-pressure-rate-fpm</property>
+    <property>/it-autoflight/input/vs</property>
     <factor>0.0001</factor>
     <step>1000</step>
     <bias>0.5</bias>
@@ -356,7 +486,7 @@ properties' values.
   <animation>
     <type>textranslate</type>
     <object-name>vs-digit5-minus</object-name>
-    <property>/autopilot/KAP140/settings/target-pressure-rate-fpm</property>
+    <property>/it-autoflight/input/vs</property>
     <factor>-0.1</factor>
     <step>1</step>
     <bias>0.5</bias>    
@@ -369,7 +499,7 @@ properties' values.
   <animation>
     <type>textranslate</type>
     <object-name>vs-digit4-minus</object-name>
-    <property>/autopilot/KAP140/settings/target-pressure-rate-fpm</property>
+    <property>/it-autoflight/input/vs</property>
     <factor>-0.01</factor>
     <step>10</step>
     <bias>9.5</bias>    
@@ -382,7 +512,7 @@ properties' values.
   <animation>
     <type>textranslate</type>
     <object-name>vs-digit3-minus</object-name>
-    <property>/autopilot/KAP140/settings/target-pressure-rate-fpm</property>
+    <property>/it-autoflight/input/vs</property>
     <factor>-0.001</factor>
     <step>100</step>
     <bias>99.5</bias>
@@ -395,7 +525,7 @@ properties' values.
   <animation>
     <type>textranslate</type>
     <object-name>vs-digit2-minus</object-name>
-    <property>/autopilot/KAP140/settings/target-pressure-rate-fpm</property>
+    <property>/it-autoflight/input/vs</property>
     <factor>-0.0001</factor>
     <step>1000</step>
     <bias>999.5</bias>
@@ -413,16 +543,22 @@ properties' values.
     <object-name>ft-ann</object-name>
     <name>FT Anunciator</name>
     <condition>
+	  <and>
       <equals>
-        <property>/autopilot/KAP140/annunciators/alt-number</property>
-        <value type="bool">true</value>
+        <property>/it-autoflight/output/ap</property>
+        <value>1</value>
       </equals>
+      <equals>
+        <property>/it-autoflight/kap140/display-mode</property>
+        <value>ALT</value>
+      </equals>
+      </and>
     </condition>
   </animation>
   <animation>
     <type>textranslate</type>
     <object-name>alt-digit1</object-name>
-    <property>/autopilot/KAP140/settings/target-alt-ft</property>
+    <property>/it-autoflight/input/alt</property>
     <factor>0.00001</factor>
     <step>10000</step>
     <axis>
@@ -434,7 +570,7 @@ properties' values.
   <animation>
     <type>textranslate</type>
     <object-name>alt-digit2</object-name>
-    <property>/autopilot/KAP140/settings/target-alt-ft</property>
+    <property>/it-autoflight/input/alt</property>
     <factor>0.0001</factor>
     <step>1000</step>
     <axis>
@@ -446,7 +582,7 @@ properties' values.
   <animation>
     <type>textranslate</type>
     <object-name>alt-digit3</object-name>
-    <property>/autopilot/KAP140/settings/target-alt-ft</property>
+    <property>/it-autoflight/input/alt</property>
     <factor>0.001</factor>
     <step>100</step>
     <axis>
@@ -458,7 +594,7 @@ properties' values.
   <animation>
     <type>textranslate</type>
     <object-name>alt-digit4</object-name>
-    <property>/autopilot/KAP140/settings/target-alt-ft</property>
+    <property>/it-autoflight/input/alt</property>
     <factor>0.01</factor>
     <step>10</step>
     <axis>
@@ -470,7 +606,7 @@ properties' values.
   <animation>
     <type>textranslate</type>
     <object-name>alt-digit5</object-name>
-    <property>/autopilot/KAP140/settings/target-alt-ft</property>
+    <property>/it-autoflight/input/alt</property>
     <factor>0.1</factor>
     <step>1</step>
     <axis>
@@ -486,16 +622,22 @@ properties' values.
     <object-name>hpa-ann</object-name>
     <name>hPa Anunciator</name>
     <condition>
+	  <and>
       <equals>
-        <property>/autopilot/KAP140/annunciators/bs-hpa-number</property>
-        <value type="bool">true</value>
+        <property>/it-autoflight/output/ap</property>
+        <value>1</value>
       </equals>
+      <equals>
+        <property>/it-autoflight/kap140/display-mode</property>
+        <value>BAROH</value>
+      </equals>
+      </and>
     </condition>
   </animation>
   <animation>
     <type>textranslate</type>
     <object-name>hpa-digit2</object-name>
-    <property>/autopilot/KAP140/settings/baro-setting-hpa</property>
+    <property>/instrumentation/altimeter/setting-inhg</property>
     <factor>0.1</factor>
     <step>1</step>
     <bias>0.0005</bias>
@@ -508,7 +650,7 @@ properties' values.
   <animation>
     <type>textranslate</type>
     <object-name>hpa-digit3</object-name>
-    <property>/autopilot/KAP140/settings/baro-setting-hpa</property>
+    <property>/instrumentation/altimeter/setting-inhg</property>
     <factor>1</factor>
     <step>0.1</step>
     <bias>0.0005</bias>
@@ -521,7 +663,7 @@ properties' values.
   <animation>
     <type>textranslate</type>
     <object-name>hpa-digit3</object-name>
-    <property>/autopilot/KAP140/settings/baro-setting-hpa</property>
+    <property>/instrumentation/altimeter/setting-inhg</property>
     <factor>10</factor>
     <step>0.01</step>
     <bias>0.0005</bias>
@@ -534,7 +676,7 @@ properties' values.
   <animation>
     <type>textranslate</type>
     <object-name>hpa-digit4</object-name>
-    <property>/autopilot/KAP140/settings/baro-setting-hpa</property>
+    <property>/instrumentation/altimeter/setting-inhg</property>
     <factor>100</factor>
     <step>0.001</step>
     <bias>0.0005</bias>
@@ -567,16 +709,22 @@ properties' values.
     <object-name>in-ann</object-name>
     <name>IN HG Anunciator</name>
     <condition>
+	  <and>
       <equals>
-        <property>/autopilot/KAP140/annunciators/bs-inhg-number</property>
-        <value type="bool">true</value>
+        <property>/it-autoflight/output/ap</property>
+        <value>1</value>
       </equals>
+      <equals>
+        <property>/it-autoflight/kap140/display-mode</property>
+        <value>BARO</value>
+      </equals>
+      </and>
     </condition>
   </animation>
   <animation>
     <type>textranslate</type>
     <object-name>inhg-digit2</object-name>
-    <property>/autopilot/KAP140/settings/baro-setting-inhg</property>
+    <property>/instrumentation/altimeter/setting-inhg</property>
     <factor>0.01</factor>
     <step>10</step>
     <bias>0.005</bias>
@@ -589,7 +737,7 @@ properties' values.
   <animation>
     <type>textranslate</type>
     <object-name>inhg-digit3</object-name>
-    <property>/autopilot/KAP140/settings/baro-setting-inhg</property>
+    <property>/instrumentation/altimeter/setting-inhg</property>
     <factor>0.1</factor>
     <step>1</step>
     <bias>0.005</bias>
@@ -602,7 +750,7 @@ properties' values.
   <animation>
     <type>textranslate</type>
     <object-name>inhg-digit4</object-name>
-    <property>/autopilot/KAP140/settings/baro-setting-inhg</property>
+    <property>/instrumentation/altimeter/setting-inhg</property>
     <factor>1</factor>
     <step>0.1</step>
     <bias>0.005</bias>
@@ -615,7 +763,7 @@ properties' values.
   <animation>
     <type>textranslate</type>
     <object-name>inhg-digit5</object-name>
-    <property>/autopilot/KAP140/settings/baro-setting-inhg</property>
+    <property>/instrumentation/altimeter/setting-inhg</property>
     <factor>10</factor>
     <step>0.01</step>
     <bias>0.005</bias>
@@ -635,7 +783,7 @@ properties' values.
       <binding>
         <command>nasal</command>
         <script>
-      kap140.apButton();
+      kap140.btnAP();
      </script>
       </binding>
     </action>
@@ -649,7 +797,7 @@ properties' values.
       <binding>
         <command>nasal</command>
         <script>
-      kap140.hdgButton();
+      kap140.btnHDG();
      </script>
       </binding>
     </action>
@@ -663,7 +811,7 @@ properties' values.
       <binding>
         <command>nasal</command>
         <script>
-      kap140.navButton();
+      kap140.btnNAV();
      </script>
       </binding>
     </action>
@@ -677,7 +825,7 @@ properties' values.
       <binding>
         <command>nasal</command>
         <script>
-      kap140.aprButton();
+      kap140.btnAPR();
      </script>
       </binding>
     </action>
@@ -691,12 +839,12 @@ properties' values.
       <binding>
         <command>nasal</command>
         <script>
-      kap140.altButton();
+      kap140.btnALT();
      </script>
       </binding>
     </action>
   </animation>
-  <!--animation>
+  <animation>
     <type>pick</type>
     <object-name>rev-btn</object-name>
     <action>
@@ -705,11 +853,11 @@ properties' values.
       <binding>
         <command>nasal</command>
         <script>
-      kap140.revButton();
+      kap140.btnREV();
      </script>
       </binding>
     </action>
-  </animation-->
+  </animation>
   <animation>
     <type>pick</type>
     <object-name>dn-btn</object-name>
@@ -719,7 +867,7 @@ properties' values.
       <binding>
         <command>nasal</command>
         <script>
-      kap140.downButton();
+      kap140.btnDown();
      </script>
       </binding>
     </action>
@@ -733,7 +881,7 @@ properties' values.
       <binding>
         <command>nasal</command>
         <script>
-      kap140.upButton();
+      kap140.btnUp();
      </script>
       </binding>
     </action>
@@ -747,7 +895,7 @@ properties' values.
       <binding>
         <command>nasal</command>
         <script>
-      kap140.armButton();
+      kap140.btnARM();
      </script>
       </binding>
     </action>
@@ -762,14 +910,14 @@ properties' values.
       <binding>
         <command>nasal</command>
         <script>
-      kap140.baroButtonPress();
+      kap140.btnBAROPush();
      </script>
       </binding>
       <mod-up>
         <binding>
           <command>nasal</command>
           <script>
-       kap140.baroButtonRelease();
+       kap140.btnBARORelease();
       </script>
         </binding>
       </mod-up>
@@ -783,7 +931,7 @@ properties' values.
       <button>4</button>
       <binding>
         <command>nasal</command>
-        <script>kap140.knobSmallDown();</script>
+        <script>kap140.knbSmallDown();</script>
       </binding>
     </action>
     <action>
@@ -791,7 +939,7 @@ properties' values.
       <button>3</button>
       <binding>
         <command>nasal</command>
-        <script>kap140.knobSmallUp();</script>
+        <script>kap140.knbSmallUp();</script>
       </binding>
     </action>
   </animation>
@@ -803,7 +951,7 @@ properties' values.
       <button>4</button>
       <binding>
         <command>nasal</command>
-        <script>kap140.knobLargeDown();</script>
+        <script>kap140.knbLargeDown();</script>
       </binding>
     </action>
     <action>
@@ -811,7 +959,7 @@ properties' values.
       <button>3</button>
       <binding>
         <command>nasal</command>
-        <script>kap140.knobLargeUp();</script>
+        <script>kap140.knbLargeUp();</script>
       </binding>
     </action>
   </animation>
@@ -824,7 +972,7 @@ properties' values.
       <button>0</button>
       <binding>
         <command>nasal</command>
-        <script>kap140.knobSmallDown();</script>
+        <script>kap140.knbSmallDown();</script>
       </binding>
     </action>
     <action>
@@ -832,7 +980,7 @@ properties' values.
       <button>1</button>
       <binding>
         <command>nasal</command>
-        <script>kap140.knobLargeDown();</script>
+        <script>kap140.knbLargeDown();</script>
       </binding>
     </action>
   </animation>
@@ -844,7 +992,7 @@ properties' values.
       <button>0</button>
       <binding>
         <command>nasal</command>
-        <script>kap140.knobSmallUp();</script>
+        <script>kap140.knbSmallUp();</script>
       </binding>
     </action>
     <action>
@@ -852,7 +1000,7 @@ properties' values.
       <button>1</button>
       <binding>
         <command>nasal</command>
-        <script>kap140.knobLargeUp();</script>
+        <script>kap140.knbLargeUp();</script>
       </binding>
     </action>
   </animation>

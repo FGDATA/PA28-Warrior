@@ -313,6 +313,11 @@ spinning.
 		<pitch-mode>2</pitch-mode> <!-- 0 = Elevator trim only, 1 = Elevator only, 2 = Elevator and Autotrim -->
 		<auto-arm-alt>0</auto-arm-alt> <!-- Enable automatic altitude arm -->
 	</settings>
+	<kap140>
+		<ap type="int">0</ap>
+		<pt type="int">0</pt>
+		<display-mode type="string">ALT</display-mode>
+	</kap140>
 </it-autoflight>
  
 
@@ -348,11 +353,14 @@ spinning.
   <elt>
     <file>Aircraft/pa28-161/Models/Instruments/elt/ELTmessage.nas</file>
   </elt>
-  
 
   <itaf>
     <file>Aircraft/pa28-161/Nasal/it-autoflight.nas</file>
   </itaf>
+  
+  <kap140>
+	<file>Aircraft/pa28-161/Nasal/kap140.nas</file>
+  </kap140>
   
   <systems>
     <file>Aircraft/pa28-161/systems/kln90b.nas</file>
@@ -423,99 +431,3 @@ var right = screen.display.new(-300, 10);
 
 
 </PropertyList>
-
-<!-- end of pa28-161-set.xml -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

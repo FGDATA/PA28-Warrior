@@ -136,7 +136,7 @@
         
   <action>
     <name>small decrease (scrollwheel)</name>
-    <button>3</button>
+    <button>4</button>
     <repeatable>true</repeatable>
     <binding>
       <command>property-adjust</command>
@@ -160,7 +160,7 @@
         
   <action>
     <name>small increase (scrollwheel)</name>
-    <button>4</button>
+    <button>3</button>
     <repeatable>true</repeatable>
     <binding>
       <command>property-adjust</command>
@@ -210,7 +210,7 @@
         </hovered>
   <action>
     <name>small decrease (scrollwheel)</name>
-    <button>3</button>
+    <button>4</button>
     <repeatable>true</repeatable>
     <binding>
       <command>property-adjust</command>
@@ -232,7 +232,7 @@
         </hovered>
   <action>
     <name>small increase (scrollwheel)</name>
-    <button>4</button>
+    <button>3</button>
     <repeatable>true</repeatable>
     <binding>
       <command>property-adjust</command>
