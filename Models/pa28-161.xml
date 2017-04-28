@@ -641,7 +641,7 @@
 
   <model>
   <name>kma20</name>
-  <path>Aircraft/Instruments-3d/kma20/kma20.xml</path>
+   <path>Aircraft/pa28-161/Models/instruments/kma20/kma20.xml</path>
   <offsets>
     <x-m>1.925</x-m>
    <y-m>0.292</y-m>
@@ -1306,6 +1306,7 @@
  </animation>
 
 </PropertyList>
+
 
 
 
