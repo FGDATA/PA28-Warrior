@@ -97,7 +97,7 @@
  <animation>
   <type>rotate</type>
   <object-name>HdgBug</object-name>
-   <property>/autopilot/settings/heading-bug-deg</property>
+   <property>/it-autoflight/input/hdg</property>
   <axis>
    <x>-1</x>
    <y>0</y>
@@ -116,7 +116,7 @@
     <repeatable>true</repeatable>
     <binding>
       <command>property-adjust</command>
-      <property>/autopilot/settings/heading-bug-deg</property>
+      <property>/it-autoflight/input/hdg</property>
       <step>-1</step>
       <min>0</min>
       <max>360</max>
@@ -133,30 +133,6 @@
                 <property>autopilot/settings/heading-bug-deg</property>
             </binding>
         </hovered>
-
-  <action>
-    <name>large decrease</name>
-    <button>3</button>
-    <repeatable>true</repeatable>
-    <binding>
-      <command>property-adjust</command>
-      <property>/autopilot/settings/heading-bug-deg</property>
-      <step>-10</step>
-      <min>0</min>
-      <max>360</max>
-      <wrap>1</wrap>
-    </binding>
-  </action>
-  
-   <hovered>
-            <binding>
-                <command>set-tooltip</command>
-                <tooltip-id>heading-bug</tooltip-id>
-                <mapping>heading</mapping>
-                <label>Heading Bug: %3d</label>
-                <property>autopilot/settings/heading-bug-deg</property>
-            </binding>
-        </hovered>
         
   <action>
     <name>small decrease (scrollwheel)</name>
@@ -164,7 +140,7 @@
     <repeatable>true</repeatable>
     <binding>
       <command>property-adjust</command>
-      <property>/autopilot/settings/heading-bug-deg</property>
+      <property>/it-autoflight/input/hdg</property>
       <step>-1</step>
       <min>0</min>
       <max>360</max>
@@ -178,7 +154,7 @@
                 <tooltip-id>heading-bug</tooltip-id>
                 <mapping>heading</mapping>
                 <label>Heading Bug: %3d</label>
-                <property>autopilot/settings/heading-bug-deg</property>
+                <property>/it-autoflight/input/hdg</property>
             </binding>
         </hovered>
         
@@ -188,7 +164,7 @@
     <repeatable>true</repeatable>
     <binding>
       <command>property-adjust</command>
-      <property>/autopilot/settings/heading-bug-deg</property>
+      <property>/it-autoflight/input/hdg</property>
       <step>1</step>
       <min>0</min>
       <max>360</max>
@@ -201,7 +177,7 @@
                 <tooltip-id>heading-bug</tooltip-id>
                 <mapping>heading</mapping>
                 <label>Heading Bug: %3d</label>
-                <property>autopilot/settings/heading-bug-deg</property>
+                <property>/it-autoflight/input/hdg</property>
             </binding>
         </hovered>
  </animation>   
@@ -216,7 +192,7 @@
     <repeatable>true</repeatable>
     <binding>
       <command>property-adjust</command>
-      <property>/autopilot/settings/heading-bug-deg</property>
+      <property>/it-autoflight/input/hdg</property>
       <step>1</step>
       <min>0</min>
       <max>360</max>
@@ -229,29 +205,7 @@
                 <tooltip-id>heading-bug</tooltip-id>
                 <mapping>heading</mapping>
                 <label>Heading Bug: %3d</label>
-                <property>autopilot/settings/heading-bug-deg</property>
-            </binding>
-        </hovered>
-  <action>
-    <name>large increase</name>
-    <button>3</button>
-    <repeatable>true</repeatable>
-    <binding>
-      <command>property-adjust</command>
-      <property>/autopilot/settings/heading-bug-deg</property>
-      <step/>
-      <min>0</min>
-      <max>360</max>
-      <wrap>1</wrap>
-    </binding>
-  </action>
-   <hovered>
-            <binding>
-                <command>set-tooltip</command>
-                <tooltip-id>heading-bug</tooltip-id>
-                <mapping>heading</mapping>
-                <label>Heading Bug: %3d</label>
-                <property>autopilot/settings/heading-bug-deg</property>
+                <property>/it-autoflight/input/hdg</property>
             </binding>
         </hovered>
   <action>
@@ -260,7 +214,7 @@
     <repeatable>true</repeatable>
     <binding>
       <command>property-adjust</command>
-      <property>/autopilot/settings/heading-bug-deg</property>
+      <property>/it-autoflight/input/hdg</property>
       <step>-1</step>
       <min>0</min>
       <max>360</max>
@@ -273,7 +227,7 @@
                 <tooltip-id>heading-bug</tooltip-id>
                 <mapping>heading</mapping>
                 <label>Heading Bug: %3d</label>
-                <property>autopilot/settings/heading-bug-deg</property>
+                <property>/it-autoflight/input/hdg</property>
             </binding>
         </hovered>
   <action>
@@ -282,7 +236,7 @@
     <repeatable>true</repeatable>
     <binding>
       <command>property-adjust</command>
-      <property>/autopilot/settings/heading-bug-deg</property>
+      <property>/it-autoflight/input/hdg</property>
       <step>1</step>
       <min>0</min>
       <max>360</max>
@@ -295,7 +249,7 @@
                 <tooltip-id>heading-bug</tooltip-id>
                 <mapping>heading</mapping>
                 <label>Heading Bug: %3d</label>
-                <property>autopilot/settings/heading-bug-deg</property>
+                <property>/it-autoflight/input/hdg</property>
             </binding>
         </hovered>
  </animation>   
