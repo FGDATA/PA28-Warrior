@@ -70,7 +70,8 @@
    <max-dist>2000.0</max-dist>
   </engine>
 
-  <propeller>
+  <!-- Does stupid things -->
+  <!--propeller>
    <name>propeller</name>
    <mode>looped</mode>
    <path>Sounds/turboprop1.wav</path>
@@ -94,7 +95,7 @@
    </pitch>
    <reference-dist>60.0</reference-dist>
    <max-dist>2000.0</max-dist>
-  </propeller>
+  </propeller-->
 
   <rumble>
    <name>rumble</name>

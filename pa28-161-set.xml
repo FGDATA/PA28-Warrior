@@ -83,11 +83,7 @@ spinning.
   <systems>
   
    <autopilot>
-     <name>autopilot helpers</name>
-     <path>Aircraft/Generic/generic-autopilot-helper.xml</path>
-   </autopilot>
-   <autopilot>
-     <path>Aircraft/pa28-161/Systems/KAP140.xml</path>
+     <path>Aircraft/pa28-161/Systems/it-autoflight.xml</path>
    </autopilot>
    <autopilot>
      <name>FiltersOnly</name>
@@ -101,7 +97,10 @@ spinning.
         <comm n="1" type="string">28</comm>
       </outputs>
    </electrical>
-
+  <SwitchTanks>
+      <path>Aircraft/pa28-161/Systems/SwitchTanks.xml</path>
+  </SwitchTanks>
+  
   </systems>
   
    <menubar include="pa28-NavMen.xml"/>
@@ -281,6 +280,46 @@ spinning.
 
  </consumables>
  
+ 
+<it-autoflight>
+	<config>
+		<roll>
+			<umin>-0.50</umin>
+			<umax>0.50</umax>
+			<kp>0.05</kp>
+			<kp-vloc>0.09</kp-vloc>
+			<ti>10.0</ti>
+			<td>0.00001</td>
+			<pfactor-offset>0.0</pfactor-offset>
+		</roll>
+		<pitch>
+			<umin>-0.50</umin>
+			<umax>0.50</umax>
+			<kp>-0.08</kp>
+			<ti>10.0</ti>
+			<td>0.0001</td>
+		</pitch>
+		<cmd>
+			<roll-kp>-1.9</roll-kp>
+			<roll-scale>1.5</roll-scale>
+			<vorloc>-5.0</vorloc>
+			<alt>0.03</alt>
+			<vs>0.035</vs>
+			<gs>0.11</gs>
+		</cmd>
+	</config>
+	<settings>
+		<enable-stby>0</enable-stby> <!-- If disabled, LVL and V/S become active when AP on. -->
+		<pitch-mode>2</pitch-mode> <!-- 0 = Elevator trim only, 1 = Elevator only, 2 = Elevator and Autotrim -->
+		<auto-arm-alt>0</auto-arm-alt> <!-- Enable automatic altitude arm -->
+	</settings>
+	<kap140>
+		<ap type="int">0</ap>
+		<pt type="int">0</pt>
+		<display-mode type="string">ALT</display-mode>
+	</kap140>
+</it-autoflight>
+ 
 
 
   <input    include="Systems/pa28-keyboard.xml"/>
@@ -314,10 +353,13 @@ spinning.
   <elt>
     <file>Aircraft/pa28-161/Models/Instruments/elt/ELTmessage.nas</file>
   </elt>
-  
 
+  <itaf>
+    <file>Aircraft/pa28-161/Nasal/it-autoflight.nas</file>
+  </itaf>
+  
   <kap140>
-    <file>Aircraft/pa28-161/Nasal/kap140.nas</file>
+	<file>Aircraft/pa28-161/Nasal/kap140.nas</file>
   </kap140>
   
   <systems>
@@ -389,95 +431,3 @@ var right = screen.display.new(-300, 10);
 
 
 </PropertyList>
-
-<!-- end of pa28-161-set.xml -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
