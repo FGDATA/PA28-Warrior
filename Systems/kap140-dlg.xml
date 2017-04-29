@@ -286,7 +286,6 @@
 					</binding>
 				</input>
 				
-				
 				<text>
 					<label>VS:</label>
 				</text>
@@ -308,8 +307,10 @@
 			<legend>AP</legend>
             <pref-width>40</pref-width>
 			<binding>
-			<command>nasal</command>
-			<script>kap140.btnAP();</script>
+				<command>nasal</command>
+				<script>
+				kap140.btnAP();
+				</script>
 			</binding>
 		</button>
 		
@@ -319,8 +320,10 @@
 			<legend>HDG</legend>
             <pref-width>35</pref-width>
 			<binding>
-			<command>nasal</command>
-			<script>kap140.btnHDG</script>
+				<command>nasal</command>
+				<script>
+				kap140.btnHDG();
+				</script>
 			</binding>
 		</button>
 		
@@ -328,8 +331,10 @@
 			<legend>NAV</legend>
             <pref-width>35</pref-width>
 			<binding>
-			<command>nasal</command>
-			<script>kap140.btnNAV</script>
+				<command>nasal</command>
+				<script>
+				kap140.btnNAV();
+				</script>
 			</binding>
 		</button>
 		
@@ -337,8 +342,10 @@
 			<legend>APR</legend>
             <pref-width>35</pref-width>
 			<binding>
-			<command>nasal</command>
-			<script>kap140.btnAPR</script>
+				<command>nasal</command>
+				<script>
+				kap140.btnAPR();
+				</script>
 			</binding>
 		</button>
 		
@@ -346,8 +353,10 @@
 			<legend>REV</legend>
             <pref-width>35</pref-width>
 			<binding>
-			<command>nasal</command>
-			<script>kap140.btnREV</script>
+				<command>nasal</command>
+				<script>
+				kap140.btnREV();
+				</script>
 			</binding>
 		</button>
 		
@@ -357,8 +366,10 @@
 			<legend>ALT</legend>
             <pref-width>35</pref-width>
 			<binding>
-			<command>nasal</command>
-			<script>kap140.btnALT</script>
+				<command>nasal</command>
+				<script>
+				kap140.btnALT();
+				</script>
 			</binding>
 		</button>
 		
@@ -366,8 +377,10 @@
 			<legend>ARM</legend>
             <pref-width>35</pref-width>
 			<binding>
-			<command>nasal</command>
-			<script>kap140.btnARM</script>
+				<command>nasal</command>
+				<script>
+				kap140.btnARM();
+				</script>
 			</binding>
 		</button>
 		
@@ -377,8 +390,10 @@
 			<legend>UP</legend>
             <pref-width>35</pref-width>
 			<binding>
-			<command>nasal</command>
-			<script>kap140.btnUp</script>
+				<command>nasal</command>
+				<script>
+				kap140.btnUp();
+				</script>
 			</binding>
 		</button>
 		
@@ -386,8 +401,10 @@
 			<legend>DN</legend>
             <pref-width>35</pref-width>
 			<binding>
-			<command>nasal</command>
-			<script>kap140.btnDown</script>
+				<command>nasal</command>
+				<script>
+				kap140.btnDown();
+				</script>
 			</binding>
 		</button>
 		

@@ -271,7 +271,7 @@
 
  <model>
   <name>AI</name>
-  <path>Aircraft/pa28-161/Models/instruments/ain/ai-gauge.xml</path>
+  <path>Aircraft/pa28-161/Models/instruments/AIN/ai-gauge.xml</path>
   <offsets>
    <x-m>1.933</x-m>
    <y-m>-0.230</y-m>
@@ -347,7 +347,7 @@
  <model>
   <name>VOR2</name>
 
-  <path>Aircraft/pa28-161/models/instruments/cvor2/vor2.xml</path>
+  <path>Aircraft/pa28-161/models/instruments/CVOR2/vor2.xml</path>
 
   <offsets>
    <x-m>1.923</x-m>
@@ -466,7 +466,7 @@
 
  <model>
   <name>VSI</name>
-  <path>Aircraft/Instruments-3d/vsi/vsi.xml</path>
+  <path>Aircraft/pa28-161/Models/instruments/vsi/vsi.xml</path>
   <offsets>
    <x-m>1.925</x-m>
    <y-m>-0.336</y-m>

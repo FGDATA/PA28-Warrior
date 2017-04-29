@@ -137,6 +137,8 @@ var btnAP = func {
 		apLightTimer.start();
 	} else {
 		setprop("/it-autoflight/input/ap", 1);
+		apLightTimer.stop();
+		setprop("/it-autoflight/kap140/ap", 0);
 	}
 }
 

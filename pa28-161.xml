@@ -64,11 +64,11 @@
 </vstab>
 
 <propeller radius="1.0"
-	   cruise-speed="127" cruise-rpm="2700"
+	   cruise-speed="127" cruise-rpm="2600"
            cruise-alt="8000" cruise-power="120"
-           takeoff-power="144" takeoff-rpm="2500"
+           takeoff-power="146" takeoff-rpm="2700"
            x="-1" y="0" z="0" mass="400" moment="4">
-  <piston-engine eng-rpm="2800" alt="0" eng-power="161"
+  <piston-engine eng-rpm="2800" alt="0" eng-power="168"
      displacement="360" compression="8.5"/>
   <actionpt x="0" y="0" z="0"/>
   <control-input axis="/controls/engines/engine[0]/throttle" control="THROTTLE"/>
