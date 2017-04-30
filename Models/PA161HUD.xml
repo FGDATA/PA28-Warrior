@@ -62,10 +62,12 @@
 		</input>
 </label>
 
+
+
  <label>
 		<name>maghead</name>
 		<x>-435</x>
-		<y>150</y>
+		<y>140</y>
 		<halign>left</halign>
 		<format>Mag Hdg:  %1.1f deg</format>
 		<input>
@@ -178,6 +180,8 @@
     </label>
 
 </PropertyList>
+
+
 
 
 

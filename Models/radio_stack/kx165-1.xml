@@ -95,6 +95,15 @@
 
           </binding>
      </action>
+
+   <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <tooltip-id>nav1</tooltip-id>
+                <label>Click to change frequency</label>
+            </binding>
+        </hovered>
+
   </animation>
 
   <animation>
@@ -1042,4 +1051,5 @@
   </animation>
 
 </PropertyList>
+
 

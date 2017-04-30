@@ -1,1 +1,1 @@
-setprop("/it-autoflight/input/hdg", getprop("/orientation/heading-magnetic-deg"));
+setprop("/autopilot/settings/heading-bug-deg", getprop("/orientation/heading-magnetic-deg"));

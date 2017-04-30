@@ -1,4 +1,4 @@
-<?xml version="1.0" ?>
+<?xml version="1.0"?>
 <PropertyList>
 
   <!--
@@ -78,6 +78,32 @@
       <factor-prop>sim/model/material/instruments/factor</factor-prop>
     </emission>
   </animation>
+  
+   <animation>
+    <type>pick</type>
+    <object-name>Chassis</object-name>
+    <object-name>CommKHz</object-name>
+    <object-name>CommMHz</object-name>
+    <action>
+    <button>0</button>
+    <repeatable>false</repeatable>
+          <binding>
+             <command>dialog-show</command>
+            <dialog-name>radios</dialog-name>
+
+          </binding>
+     </action>
+
+   <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <tooltip-id>nav2</tooltip-id>
+                <label>Click to change frequency</label>
+            </binding>
+        </hovered>
+
+  </animation>
+
 
   <animation>
     <type>material</type>
@@ -1024,3 +1050,4 @@
   </animation>
 
 </PropertyList>
+

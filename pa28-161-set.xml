@@ -178,11 +178,11 @@ spinning.
             <on-pos type="double">1</on-pos>
             <test type="bool">false</test>
    </elt>
-   
+   <!--
   <ki227>
    <vor-bearing-source type="bool">false</vor-bearing-source>
   </ki227>
-  
+   -->
   <dme>
       <switch-position type="int">1</switch-position>
   </dme>
@@ -431,3 +431,4 @@ var right = screen.display.new(-300, 10);
 
 
 </PropertyList>
+

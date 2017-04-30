@@ -41,7 +41,7 @@
 
     <gs-needle-deflection>instrumentation/nav[0]/gs-needle-deflection-filtered</gs-needle-deflection>
     <cdi-needle-deflection>instrumentation/kcs55/ki525/cdi-deflection</cdi-needle-deflection>
-    <selected-heading>autopilot/settings/heading-bug-deg</selected-heading>
+    <selected-heading>it-autoflight/input/hdg</selected-heading>
     <selected-course>instrumentation/kcs55/ki525/selected-course-deg</selected-course>
     <to-flag>instrumentation/kcs55/ki525/to-flag</to-flag>
     <from-flag>instrumentation/kcs55/ki525/from-flag</from-flag>
@@ -181,7 +181,7 @@
       <y-m>0</y-m>
       <z-m>0</z-m>
     </center>
-  </animation>
+       </animation>
 
   <animation>
     <type>rotate</type>
@@ -198,7 +198,7 @@
       <y-m>0</y-m>
       <z-m>0</z-m>
     </center>
-  </animation>
+       </animation>
 
   <animation>
     <type>rotate</type>
@@ -215,7 +215,7 @@
       <y-m>0.0309671</y-m>
       <z-m>-0.0274502</z-m>
     </center>
-  </animation>
+      </animation>
 
   <animation>
     <type>rotate</type>
@@ -232,7 +232,8 @@
       <y-m>0.0309671</y-m>
       <z-m>-0.0274502</z-m>
     </center>
-  </animation>
+
+      </animation>
 
   <animation>
     <type>rotate</type>
@@ -340,6 +341,15 @@
         <wrap>1</wrap>
       </binding>
     </action>
+    <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <tooltip-id>heading-bug</tooltip-id>
+                <mapping>heading</mapping>
+                <label>Heading Bug: %3d</label>
+               <property>autopilot/settings/heading-bug-deg</property>
+            </binding>
+        </hovered>
   </animation>
 
   <animation>
@@ -370,6 +380,15 @@
         <wrap>1</wrap>
       </binding>
     </action>
+    <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <tooltip-id>heading-bug</tooltip-id>
+                <mapping>heading</mapping>
+                <label>Heading Bug: %3d</label>
+                <property>autopilot/settings/heading-bug-deg</property>
+            </binding>
+        </hovered>
   </animation>
 
   <animation>
@@ -628,6 +647,17 @@
   </animation>
 
 </PropertyList>
+
+
+
+
+
+
+
+
+
+
+
 
 
 

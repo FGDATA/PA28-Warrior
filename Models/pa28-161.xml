@@ -262,20 +262,20 @@
   <path>Aircraft/pa28-161/Models/asi/asi.xml</path>
   <offsets>
    <x-m>1.925</x-m>
-   <y-m>-0.334</y-m>
-   <z-m>0.268</z-m>
+   <y-m>-0.336</y-m>
+   <z-m>0.270</z-m>
   </offsets>
  </model>
 
 
 
  <model>
-  <name>AI</name>
+  <name>AIG</name>
   <path>Aircraft/pa28-161/Models/instruments/AIN/ai-gauge.xml</path>
   <offsets>
    <x-m>1.933</x-m>
-   <y-m>-0.230</y-m>
-   <z-m>0.271</z-m>
+   <y-m>-0.126</y-m>
+   <z-m>0.187</z-m>
    <pitch-deg>-1</pitch-deg>
   </offsets>
  </model>
@@ -382,9 +382,9 @@
   <name>ADF</name>
    <path>Aircraft/pa28-161/Models/adfki228/ki227_228.xml</path>
   <offsets>
-   <x-m>1.920</x-m>
-   <y-m>-0.126</y-m>
-   <z-m>0.267</z-m>
+   <x-m>1.921</x-m>
+   <y-m>-0.233</y-m>
+   <z-m>0.269</z-m>
   </offsets>
  </model>
  
@@ -405,7 +405,7 @@
   <offsets>
     <x-m>1.927</x-m>
    <y-m>-0.179</y-m>
-   <z-m>0.185</z-m>
+   <z-m>0.271</z-m>
     <roll-deg>90</roll-deg>
   </offsets>
  </model>
@@ -415,8 +415,8 @@
    <path>Aircraft/pa28-161/Models/Svn/Svn.xml</path>
   <offsets>
     <x-m>1.927</x-m>
-   <y-m>-0.179</y-m>
-   <z-m>0.271</z-m>
+   <y-m>-0.285</y-m>
+   <z-m>0.270</z-m>
    <roll-deg>90</roll-deg>
   </offsets>
  </model>
@@ -448,8 +448,9 @@
   <offsets>
    <x-m>1.9256</x-m>
    <y-m>-0.126</y-m>
-   <z-m>0.183</z-m>
-   <roll-deg>-0.5</roll-deg>
+   <z-m>0.267</z-m>
+   <roll-deg>-0.12</roll-deg>
+   <pitch-deg>-0.1</pitch-deg>
   </offsets>
  </model>
 
@@ -459,7 +460,7 @@
   <offsets>
   <x-m>1.9260</x-m>
    <y-m>-0.126</y-m>
-   <z-m>0.183</z-m>
+   <z-m>0.267</z-m>
    <roll-deg>-0.5</roll-deg>
   </offsets>
  </model>
@@ -1306,6 +1307,16 @@
  </animation>
 
 </PropertyList>
+
+
+
+
+
+
+
+
+
+
 
 
 

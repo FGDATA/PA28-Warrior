@@ -48,8 +48,8 @@
     <y-offset>0.85</y-offset>
     <z-offset>0.85</z-offset>
     <roll-deg>-1</roll-deg>
+   </animation>
 
-    </animation>
 
   <animation>
     <type>noshadow</type>
@@ -302,6 +302,9 @@
   </animation>
 
 </PropertyList>
+
+
+
 
 
 
