@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <path>FE_Bottle.ac</path>
+  
+  <animation>
+  <type>scale</type>
+  <x-offset>0.4</x-offset>
+  <y-offset>0.4</y-offset>
+  <z-offset>0.4</z-offset>
+ </animation>
+
+  <animation>
+    <object-name>FE_Bottle</object-name>
+  </animation>
+
+
+</PropertyList>
+
+
+
+
+
+
+
+
+
+
+
+
+
