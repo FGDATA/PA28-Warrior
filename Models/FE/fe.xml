@@ -11,10 +11,6 @@
   <z-offset>0.4</z-offset>
  </animation>
 
-  <animation>
-    <object-name>FE_Bottle</object-name>
-  </animation>
-
 
 </PropertyList>
 
