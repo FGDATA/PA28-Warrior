@@ -9,13 +9,26 @@
    <name>Cockpit_View </name>
 
    <config>
-     <x-offset-m archive="y">-0.05</x-offset-m>
+     <x-offset-m archive="y">-0.23</x-offset-m>
      <y-offset-m archive="y">0.5</y-offset-m>
      <z-offset-m archive="y">2.6</z-offset-m>
      <pitch-offset-deg>-14</pitch-offset-deg>
      <roll-offset-deg>0.3</roll-offset-deg>
      
-     <default-field-of-view-deg type="double">73.4</default-field-of-view-deg>
+     <default-field-of-view-deg type="double">72.0</default-field-of-view-deg>
+   </config>
+  </view>
+  
+  <view n="1">
+  <internal archive="y">true</internal>
+   <name>Helicopter_View </name>
+   <config>
+    <target-z-offset-m archive="y" type="double">3.0</target-z-offset-m>
+     <x-offset-m archive="y">0</x-offset-m>
+     <y-offset-m archive="y">0</y-offset-m>
+     <z-offset-m archive="y">0</z-offset-m>
+     <default-field-of-view-deg type="double">66</default-field-of-view-deg>
+     <heading-offset-deg>-35</heading-offset-deg>
    </config>
   </view>
   
