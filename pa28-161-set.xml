@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0"?>
 <!--
 ************************************************************************
 Aircraft configuration file: Piper Cherokee Warrior II (1979 model)
@@ -332,7 +332,6 @@ spinning.
     <file>Aircraft/pa28-161/Nasal/action-sim.nas</file>
     <file>Aircraft/pa28-161/Nasal/doors.nas</file>
     <file>Aircraft/pa28-161/Nasal/kr87.nas</file>
-    <file>Aircraft/pa28-161/Nasal/synchdg.nas</file>
     <file>Aircraft/pa28-161/Nasal/ki266.nas</file>
     <file>Aircraft/pa28-161/Nasal/flashlight.nas</file>
     <file>Aircraft/pa28-161/Nasal/kma20.nas</file>

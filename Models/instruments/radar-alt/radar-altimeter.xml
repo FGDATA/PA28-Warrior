@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0"?>
 
 <!--Radar Altimeter A6-E -->
 
@@ -7,10 +7,10 @@
 
   <animation>
     <type>scale</type>
-    <x-offset>0.85</x-offset>
-    <y-offset>0.85</y-offset>
-    <z-offset>0.85</z-offset>
-    <roll-deg>-1</roll-deg>
+    <x-offset>0.95</x-offset>
+    <y-offset>0.95</y-offset>
+    <z-offset>0.95</z-offset>
+    <roll-deg>0</roll-deg>
   </animation>
 
     <animation>

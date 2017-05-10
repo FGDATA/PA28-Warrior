@@ -16,19 +16,28 @@
  General Public License for more details.
 -->
 <PropertyList>
+  <type>pick</type>
+  <object-name>Chassis</object-name>
+  <object-name>Light</object-name>
+  <object-name>Glass</object-name>
+  <visible>true</visible>
 
-  <params>
-    <value>instrumentation/nav/gs-in-range</value>
-    <test>controls/lighting/gs-light-test</test>
-  </params>
 
-  <path>ControlLight-Green.ac</path>
-
-  <animation include="ControlLightLightSelectAnimation.xml"/>
-  <animation include="ControlLightPickAnimation.xml"/>
-  <animation include="ControlLightTranslateAnimation.xml"/>
+  <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <tooltip-id>swt</tooltip-id>
+                <label>Switch Tank when lit </label>
+            </binding>
+        </hovered>
 
 </PropertyList>
+
+
+
+
+
+
 
 
 

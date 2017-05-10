@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version = '1.0' encoding = 'UTF-8' ?>
 <!--
  This file is part of FlightGear, the free flight simulator
  http://www.flightgear.org/
@@ -16,19 +16,12 @@
  General Public License for more details.
 -->
 <PropertyList>
-
-  <params>
-    <value>instrumentation/nav/gs-in-range</value>
-    <test>controls/lighting/gs-light-test</test>
-  </params>
-
-  <path>ControlLight-Green.ac</path>
-
-  <animation include="ControlLightLightSelectAnimation.xml"/>
-  <animation include="ControlLightPickAnimation.xml"/>
-  <animation include="ControlLightTranslateAnimation.xml"/>
-
+  <type>translate</type>
+  <factor>-0.002</factor>
+  <property alias="../../params/test"/>
+  <axis>
+    <x>1</x>
+    <y>0</y>
+    <z>0</z>
+  </axis>
 </PropertyList>
-
-
-

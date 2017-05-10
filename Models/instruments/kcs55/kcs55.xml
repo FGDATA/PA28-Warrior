@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+  
+  <ki525>
+    <!-- The property where the position of the course arrow is written to -->
+    <selected-course-property>instrumentation/nav[0]/radials/selected-deg</selected-course-property>
+
+    <!-- The property from where the deflection the cdi bar is read -->
+    <cdi-deflection-property type="string">instrumentation/nav[0]/heading-needle-deflection</cdi-deflection-property>
+
+  
+    <!-- The property from where the deflection the gs arrows is read -->
+    <gs-deflection-property type="string">instrumentation/nav[0]/gs-needle-deflection</gs-deflection-property>
+
+    <!-- The property from where the the state of the TO flag is read -->
+    <to-flag-property type="string">instrumentation/nav[0]/to-flag</to-flag-property>
+
+    <!-- The property from where the the state of the FROM flag is read -->
+    <from-flag-property type="string">instrumentation/nav[0]/from-flag</from-flag-property>
+
+    <!-- The property from where the the state of the NAV flag is read -->
+    <nav-flag-property type="string">instrumentation/nav[0]/signal-quality-norm</nav-flag-property>
+
+    <!-- The property from where the the deviation between the course arrow head and the lubber line is written to -->
+    <course-error-property type="string">autopilot/internal/course-error-deg</course-error-property>
+
+    <!-- The property from where the the deviation between the heading bug and the lubber line is written to -->
+    <heading-error-property type="string">autopilot/internal/heading-error-deg</heading-error-property>
+  </ki525>
+
+  <kg102>
+    <!-- the source of power for the gyro, this is the master power supply.
+         The gyro contains the power supply for the other components of the kcs55 system.
+     -->
+    <input-power-node>systems/electrical/outputs[0]/hsi</input-power-node>
+
+    <!-- The minimum operating voltage -->
+    <input-power-min type="double">11.0</input-power-min>
+
+    <!-- The maximum operating voltage -->
+    <input-power-max type="double">15.8</input-power-max>
+  </kg102>
+  
+</PropertyList>

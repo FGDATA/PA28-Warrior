@@ -18,17 +18,19 @@
 <PropertyList>
 
   <params>
-    <value>instrumentation/nav/gs-in-range</value>
-    <test>controls/lighting/gs-light-test</test>
-  </params>
+    <value>/consumables/fuel/tank/level-gal_us</value>
+     </params>
 
-  <path>ControlLight-Green.ac</path>
+  <path>ControlLight-amber.ac</path>
 
   <animation include="ControlLightLightSelectAnimation.xml"/>
   <animation include="ControlLightPickAnimation.xml"/>
   <animation include="ControlLightTranslateAnimation.xml"/>
 
 </PropertyList>
+
+
+
 
 
 
