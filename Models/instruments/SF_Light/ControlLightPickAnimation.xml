@@ -16,20 +16,10 @@
  General Public License for more details.
 -->
 <PropertyList>
-  <type>pick</type>
-  <object-name>Chassis</object-name>
-  <object-name>Light</object-name>
-  <object-name>Glass</object-name>
-  <visible>true</visible>
+  
 
-
-  <hovered>
-            <binding>
-                <command>set-tooltip</command>
-                <tooltip-id>swt</tooltip-id>
-                <label>Switch Tank when lit </label>
-            </binding>
-        </hovered>
+    
+  
 
 </PropertyList>
 

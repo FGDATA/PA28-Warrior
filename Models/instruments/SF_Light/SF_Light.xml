@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<PropertyList>
+
+  <path>ControlLight-Amber.ac</path>
+
+   <type>pick</type>
+  <object-name>Chassis</object-name>
+  <object-name>Light</object-name>
+  <object-name>Glass</object-name>
+  <visible>false</visible>
+
+ 
+
+  
+
+  <animation>
+    <type>pick</type>
+    <visible>true</visible>
+    <object-name>glass</object-name>
+    
+      <button>0</button>
+      <repeatable>false</repeatable>
+      
+      <binding>
+    <command>nasal</command>
+     <script>pa28.fuel_switch()</script>
+   </binding>
+    
+      </animation>
+     
+         
+    <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <tooltip-id>FLight</tooltip-id>
+                <label>Switch Tank when lit</label>l
+             </binding>
+        </hovered>
+   
+</PropertyList>

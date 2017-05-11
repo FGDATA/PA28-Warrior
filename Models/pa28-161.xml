@@ -257,6 +257,16 @@
   </offsets>
  </model>
  
+ <model>
+  <name>cod</name>
+  <path>Aircraft/pa28-161/Models/CODetector/CODetector.xml</path>
+  <offsets>
+    <x-m>1.925</x-m>
+   <y-m>0.310</y-m>
+   <z-m>0.100</z-m>
+  </offsets>
+ </model>
+ 
   <model>
   <name>ASI</name>
   <path>Aircraft/pa28-161/Models/asi/asi.xml</path>
@@ -300,6 +310,8 @@
             <z-m>0.331</z-m>
         </offsets>
     </model>
+    
+   
     
  <model>
         <path>Aircraft/pa28-161/Models/iaL/iaL.xml</path>
@@ -512,7 +524,7 @@
  <path>Aircraft/pa28-161/Models/Clock/Clock.xml</path>
   <offsets>
    <x-m>1.925</x-m>
-   <y-m>0.320</y-m>
+   <y-m>0.370</y-m>
    <z-m>0.100</z-m>
   </offsets>
  </model>
@@ -603,7 +615,7 @@
   <name>radalt</name>
   <path>Aircraft/pa28-161/Models/instruments/RadarAltimeter/BendixKing_KI250.xml</path>
   <offsets>
-   <x-m>1.922</x-m>
+   <x-m>1.925</x-m>
    <y-m>-0.429</y-m>
    <z-m>0.183</z-m>
    <yaw-deg>-9</yaw-deg>

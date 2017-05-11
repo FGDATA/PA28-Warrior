@@ -1,4 +1,4 @@
-<?xml version = '1.0' encoding = 'UTF-8' ?>
+﻿<?xml version = '1.0' encoding = 'UTF-8' ?>
 <!--
  This file is part of FlightGear, the free flight simulator
  http://www.flightgear.org/
@@ -24,4 +24,9 @@
     <y>0</y>
     <z>0</z>
   </axis>
+  
+  <binding>
+    <command>nasal</command>
+     <script>pa28.fuel_switch()</script>
+   </binding>
 </PropertyList>
