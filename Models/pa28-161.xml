@@ -460,8 +460,8 @@
   <name>TC</name>
   <path>Aircraft/Instruments-3d/tc/tc.xml</path>
   <offsets>
-  <x-m>1.926</x-m>
-   <y-m>-0.233</y-m>
+   <x-m>1.925</x-m>
+   <y-m>-0.336</y-m>
    <z-m>0.183</z-m>
   </offsets>
  </model>
@@ -469,10 +469,9 @@
 <model>
  <name>HSI</name>
   <path>Aircraft/pa28-161/Models/instruments/kcs55/ki525a.xml</path>
-   
   <offsets>
-   <x-m>1.9257</x-m>
-   <y-m>-0.126</y-m>
+  <x-m>1.926</x-m>
+   <y-m>-0.233</y-m>
    <z-m>0.183</z-m>
    <roll-deg>-0.5</roll-deg>
    <pitch-deg>-0.1</pitch-deg>
@@ -483,8 +482,8 @@
  <name>HI</name>
    <path>Aircraft/pa28-161/Models/instruments/hi/hi.xml</path>
   <offsets>
-   <x-m>1.9260</x-m>
-   <y-m>-0.126</y-m>
+  <x-m>1.926</x-m>
+   <y-m>-0.233</y-m>
    <z-m>0.183</z-m>
    <roll-deg>-0.5</roll-deg>
   </offsets>
@@ -494,8 +493,8 @@
   <name>VSI</name>
   <path>Aircraft/pa28-161/Models/instruments/vsi/vsi.xml</path>
   <offsets>
-   <x-m>1.925</x-m>
-   <y-m>-0.336</y-m>
+   <x-m>1.9257</x-m>
+   <y-m>-0.126</y-m>
    <z-m>0.183</z-m>
   </offsets>
  </model>

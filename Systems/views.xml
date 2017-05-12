@@ -2,11 +2,11 @@
 
 <PropertyList>
 
-  <chase-distance-m type="double" archive="y"> -10 </chase-distance-m>
+  <chase-distance-m type="double" archive="y"> -20 </chase-distance-m>
 
    <view n="0">
    <internal archive="y">true</internal>
-   <name>Cockpit_View </name>
+   <name>Cockpit View</name>
 
    <config>
      <x-offset-m archive="y">-0.23</x-offset-m>
@@ -21,7 +21,7 @@
   
   <view n="1">
   <internal archive="y">true</internal>
-   <name>Helicopter_View </name>
+   <name>Helicopter View</name>
    <config>
     <target-z-offset-m archive="y" type="double">3.0</target-z-offset-m>
      <x-offset-m archive="y">0</x-offset-m>
@@ -34,7 +34,7 @@
   
   <view n="2">
   <internal archive="y">true</internal>
-   <name>Chase_View </name>
+   <name>Chase View</name>
    <config>
     <target-z-offset-m archive="y" type="double">3.0</target-z-offset-m>
      <x-offset-m archive="y">0</x-offset-m>
@@ -48,7 +48,7 @@
   <view n="7">
   <config>
   <internal archive="y">true</internal>
-   <name>Model_View </name>
+   <name>Model View</name>
     <target-z-offset-m archive="y" type="double">3.0</target-z-offset-m>
      <x-offset-m archive="y">0</x-offset-m>
      <y-offset-m archive="y">0</y-offset-m>
@@ -61,7 +61,7 @@
   
   <view n="5">
   <internal archive="y">true</internal>
-   <name>Chase_without Yaw </name>
+   <name>Chase without Yaw</name>
    <config>
      <x-offset-m archive="y">25</x-offset-m>
      <y-offset-m archive="y">2</y-offset-m>
@@ -122,54 +122,3 @@
 		</config>
 	</view>
 </PropertyList>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
