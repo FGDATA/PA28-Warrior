@@ -235,6 +235,18 @@
  </model>
  
  <model>
+  <name>ccard</name>
+  <path>Aircraft/pa28-161/Models/dt/dev.xml</path>
+  <offsets>
+   <x-m>1.962</x-m>
+   <y-m>-0.014</y-m>
+   <z-m>0.390</z-m>
+   <pitch-deg>-15</pitch-deg>
+    <roll-deg>-3</roll-deg>
+  </offsets>
+ </model>
+ 
+ <model>
   <name>Earph</name>
   <path>Aircraft/pa28-161/Models/casque/casque.xml</path>
   <offsets>
@@ -531,7 +543,7 @@
  
   <model>
   <name>FEX</name>
-  <path>Aircraft/pa28-161/Models/FE/FE.xml</path>
+  <path>Aircraft/pa28-161/Models/FE/fe.xml</path>
   <offsets>
    <x-m>1.935</x-m>
    <y-m>-0.345</y-m>
@@ -539,6 +551,8 @@
    <roll-deg>90</roll-deg>
   </offsets>
  </model>
+ 
+ 
 
  <model>
   <name>Rnav</name>

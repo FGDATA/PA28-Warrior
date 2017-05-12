@@ -1,0 +1,43 @@
+AC3Db
+MATERIAL "ac3dmat1" rgb 1 1 1  amb 1 1 1  emis 0 0 0  spec 0.2 0.2 0.2  shi 128  trans 0
+MATERIAL "ac3dmat1" rgb 0 0 0  amb 0 0 0  emis 0 0 0  spec 0 0 0  shi 10  trans 0
+MATERIAL "ac3dmat1" rgb 1 1 1  amb 1 1 1  emis 0 0 0  spec 0 0 0  shi 10  trans 0
+MATERIAL "ac3dmat3" rgb 1 0 0  amb 1 0 0  emis 0 0 0  spec 0 0 0  shi 10  trans 0
+MATERIAL "ac3dmat8" rgb 0.627451 0.752941 0.878431  amb 0.627451 0.752941 0.878431  emis 0 0 0  spec 0 0 0  shi 10  trans 0
+MATERIAL "ac3dmat9" rgb 0 0 1  amb 0 0 1  emis 0 0 0  spec 0 0 0  shi 10  trans 0
+MATERIAL "ac3dmat12" rgb 0.266667 0.266667 0.266667  amb 0.266667 0.266667 0.266667  emis 0 0 0  spec 0 0 0  shi 10  trans 0
+MATERIAL "ac3dmat13" rgb 0.533333 0.533333 0.533333  amb 0.533333 0.533333 0.533333  emis 0 0 0  spec 0 0 0  shi 10  trans 0
+MATERIAL "phong1" rgb 0.5 0.5 0.5  amb 0.5 0.5 0.5  emis 0 0 0  spec 0.5 0.5 0.5  shi 2  trans 0
+MATERIAL "lambert4" rgb 0.5 0.5 0.5  amb 0.5 0.5 0.5  emis 0 0 0  spec 0.1 0.1 0.1  shi 2  trans 0
+MATERIAL "lambert10" rgb 0.102 0.102 0.102  amb 0.102 0.102 0.102  emis 0 0 0  spec 0.102 0.102 0.102  shi 2  trans 0
+MATERIAL "ac3dmat0" rgb 0.102 0.102 0.102  amb 0.102 0.102 0.102  emis 0 0 0  spec 0.231 0.231 0.231  shi 10  trans 0
+MATERIAL "ac3dmat14" rgb 0.8 0.8 0.8  amb 0.8 0.8 0.8  emis 0 0 0  spec 1 1 1  shi 128  trans 0
+MATERIAL "ac3dmat1" rgb 1 1 1  amb 1 1 1  emis 0 0 0  spec 0.059 0.059 0.059  shi 10  trans 0
+MATERIAL "ac3dmat0" rgb 0 0 0  amb 0 0 0  emis 0 0 0  spec 0.012 0.012 0.012  shi 10  trans 0
+MATERIAL "ac3dmat2" rgb 0.388 0.498 0  amb 0.388 0.498 0  emis 0 0 0  spec 0 0 0  shi 10  trans 0
+MATERIAL "ac3dmat13" rgb 0.533 0.533 0.533  amb 0.533 0.533 0.533  emis 0 0 0  spec 0.608 0.608 0.608  shi 10  trans 0
+MATERIAL "ac3dmat2" rgb 0.482 0.318 0.063  amb 0.482 0.318 0.063  emis 0 0 0  spec 0 0 0  shi 10  trans 0
+MATERIAL "ac3dmat6" rgb 0 1 0  amb 0 1 0  emis 0 1 0  spec 0 0 0  shi 10  trans 0
+MATERIAL "ac3dmat7" rgb 0.071 0.102 0.549  amb 0.071 0.102 0.549  emis 0 0 0.11  spec 0 0.541 0.671  shi 128  trans 0.922
+MATERIAL "ac3dmat14" rgb 0.8 0.8 0.522  amb 0.8 0.8 0.522  emis 0 0 0  spec 0 0 0  shi 10  trans 0.612
+MATERIAL "ac3dmat3" rgb 0.788 0 0  amb 0.788 0 0  emis 0 0 0  spec 0 0 0  shi 10  trans 0
+MATERIAL "ac3dmat0" rgb 0.054902 0.054902 0.054902  amb 0.054902 0.054902 0.054902  emis 0 0 0  spec 0.054902 0.054902 0.054902  shi 10  trans 0
+MATERIAL "ac3dmat3" rgb 0.804 0.078 0.075  amb 0.804 0.078 0.075  emis 0 0 0  spec 0 0 0  shi 10  trans 0
+OBJECT poly
+name "DeviationTable"
+texture "Deviation.png"
+crease 45.000000
+numvert 4
+0.0342888 -0.00517535 0.0185
+0.0342888 -0.00517535 -0.0185
+0.0342885 -0.0155156 0.0185
+0.0342885 -0.0155156 -0.0185
+numsurf 1
+SURF 0x10
+mat 0
+refs 4
+0 0 1
+2 0 1.49012e-08
+3 1 1.49012e-08
+1 1 1
+kids 0

@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <PropertyList>
 
-  <path>Fe_Bottle.ac</path>
+  <path>deviation.ac</path>
   
   <animation>
   <type>scale</type>
-  <x-offset>0.4</x-offset>
-  <y-offset>0.4</y-offset>
-  <z-offset>0.4</z-offset>
+  <x-offset>1.8</x-offset>
+  <y-offset>1.8</y-offset>
+  <z-offset>1.8</z-offset>
  </animation>
 
   <animation>
-    <object-name>Fe_Bottle</object-name>
+    <object-name>DeviationTable</object-name>
   </animation>
 
 
