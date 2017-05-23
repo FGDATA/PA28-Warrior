@@ -304,7 +304,6 @@ spinning.
 			<roll-scale>1.5</roll-scale>
 			<vorloc>-5.0</vorloc>
 			<vs>0.01</vs>
-			<gs>0.11</gs>
 		</cmd>
 	</config>
 	<settings>
