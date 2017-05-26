@@ -26,9 +26,9 @@ var btnHDG = func {
 var btnNAV = func {
 	var lat = getprop("/it-autoflight/output/lat");
 	if (getprop("/it-autoflight/output/appr-armed") == 0) {
-		if ((lat == 0 or lat == 1) and (getprop("/it-autoflight/output/loc-armed")) == 0) {
+		if ((lat == 0 or lat == 1) and (getprop("/it-autoflight/output/nav-armed")) == 0) {
 			setprop("/it-autoflight/input/lat", 2);
-		} else if ((lat == 0 or lat == 1) and (getprop("/it-autoflight/output/loc-armed")) == 1) {
+		} else if ((lat == 0 or lat == 1) and (getprop("/it-autoflight/output/nav-armed")) == 1) {
 			setprop("/it-autoflight/input/lat", lat);
 		} else if (lat == 2) {
 			setprop("/it-autoflight/input/lat", 1);

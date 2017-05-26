@@ -81,7 +81,7 @@
 									<value>2</value>
 								</equals>
 								<equals>
-									<property>/it-autoflight/output/loc-armed</property>
+									<property>/it-autoflight/output/nav-armed</property>
 									<value>1</value>
 								</equals>
 							</or>
