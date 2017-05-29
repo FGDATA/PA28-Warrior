@@ -114,15 +114,25 @@ spinning.
   <!-- Set the pilot's view position -->
 
 
+  <view n="0">
+   <internal archive="y">true</internal>
+   <config>
+     <x-offset-m archive="y">-0.18</x-offset-m>
+     <y-offset-m archive="y">0.5</y-offset-m>
+     <z-offset-m archive="y">2.6</z-offset-m>
+     <pitch-offset-deg>-15</pitch-offset-deg>
+   </config>
+  </view>
+
    <weight n="0">
     <name>Pilot</name>
-    <weight-lb>130</weight-lb>
+    <weight-lb>200</weight-lb>
     <max-lb>300</max-lb>
   </weight>
   <weight n="1">
     <name>Copilot</name>
-    <weight-lb>0</weight-lb>
-    <max-lb>0</max-lb>
+    <weight-lb>150</weight-lb>
+    <max-lb>300</max-lb>
   </weight>
   <weight n="2">
     <name>Left Passenger</name>
@@ -425,7 +435,6 @@ var right = screen.display.new(-300, 10);
 
 
 </nasal>
-
 
 </PropertyList>
 
