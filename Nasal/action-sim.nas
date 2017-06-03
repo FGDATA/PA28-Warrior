@@ -29,7 +29,7 @@ var egt_lowpass = aircraft.lowpass.new(0.95);
 
 var init_actions = func {
     itaf.ap_init();
-    var autopilot = gui.Dialog.new("sim/gui/dialogs/autopilot/dialog", "Aircraft/pa28-161/Systems/kap140-dlg.xml");
+    var autopilot = gui.Dialog.new("sim/gui/dialogs/autopilot/dialog", "Aircraft/FGNavigator1/Systems/kap140-dlg.xml");
 	setprop("/it-autoflight/input/hdg", getprop("/orientation/heading-magnetic-deg"));
     setprop("engines/engine[0]/fuel-flow-gph", 0.0);
     setprop("/surface-positions/flap-pos-norm", 0.0);

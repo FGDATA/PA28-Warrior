@@ -13,18 +13,18 @@ spinning.
 
  <sim include="Systems/views.xml">
 
-   <description>Piper Cherokee Warrior II (1979 model)</description>
+   <description>FGNavigator1 (PA28-161)</description>
    <author>Gerhard Kick, Joshua Davidson (it0uchpods), Other</author>
 
   <startup>
-      <splash-texture>Aircraft/pa28-161/Temp003.jpg</splash-texture>
+      <splash-texture>Aircraft/FGNavigator1/Temp003.jpg</splash-texture>
   </startup>
   
    <help include="Systems/help.xml"/>
 
 
 <hud>
-			<path n="1">Aircraft/pa28-161/Models/Pa161HUD.xml</path>
+			<path n="1">Aircraft/FGNavigator1/Models/Pa161HUD.xml</path>
 			<visibility n="1">false</visibility>
 
    <font>
@@ -61,7 +61,7 @@ spinning.
   <!-- Note: The name of the XML file is the name your copy
              of FlightGear will report to the multiplayer servers -->
   <model>
-   <path type="string">Aircraft/pa28-161/Models/pa28-161.xml</path>
+   <path type="string">Aircraft/FGNavigator1/Models/pa28-161.xml</path>
   </model>
 
 
@@ -74,7 +74,7 @@ spinning.
   <!-- Use a 3D model with its own 3D cockpit (no 2D panel) -->
 
   <model>
-   <path archive="y">Aircraft/pa28-161/Models/pa28-161.xml</path>
+   <path archive="y">Aircraft/FGNavigator1/Models/pa28-161.xml</path>
   </model>
   <panel>
    <visibility archive="y">false</visibility>
@@ -83,11 +83,11 @@ spinning.
   <systems>
   
    <autopilot>
-     <path>Aircraft/pa28-161/Systems/it-autoflight.xml</path>
+     <path>Aircraft/FGNavigator1/Systems/it-autoflight.xml</path>
    </autopilot>
    <autopilot>
      <name>FiltersOnly</name>
-     <path>Aircraft/pa28-161/Systems/NAVandGSfilters.xml</path>
+     <path>Aircraft/FGNavigator1/Systems/NAVandGSfilters.xml</path>
    </autopilot>
    
    <electrical>
@@ -98,7 +98,7 @@ spinning.
       </outputs>
    </electrical>
   <SwitchTanks>
-      <path>Aircraft/pa28-161/Systems/SwitchTanks.xml</path>
+      <path>Aircraft/FGNavigator1/Systems/SwitchTanks.xml</path>
   </SwitchTanks>
   
   </systems>
@@ -108,7 +108,7 @@ spinning.
     <!-- For now, use the Cessna 172 sound configuration (same engine) -->
 
   <sound>
-   <path archive="y">Aircraft/pa28-161/pa28-161-sound.xml</path>
+   <path archive="y">Aircraft/FGNavigator1/pa28-161-sound.xml</path>
   </sound>
 
   <!-- Set the pilot's view position -->
@@ -117,7 +117,7 @@ spinning.
   <view n="0">
    <internal archive="y">true</internal>
    <config>
-     <x-offset-m archive="y">-0.18</x-offset-m>
+     <x-offset-m archive="y">-0.23</x-offset-m>
      <y-offset-m archive="y">0.5</y-offset-m>
      <z-offset-m archive="y">2.6</z-offset-m>
      <pitch-offset-deg>-15</pitch-offset-deg>
@@ -335,15 +335,15 @@ spinning.
 <nasal>
 
   <pa28>
-    <file>Aircraft/pa28-161/Nasal/pa28.nas</file>
-    <file>Aircraft/pa28-161/Nasal/pa28-electrical.nas</file>
-    <file>Aircraft/pa28-161/Nasal/action-sim.nas</file>
-    <file>Aircraft/pa28-161/Nasal/doors.nas</file>
-    <file>Aircraft/pa28-161/Nasal/kr87.nas</file>
-    <file>Aircraft/pa28-161/Nasal/ki266.nas</file>
-    <file>Aircraft/pa28-161/Nasal/flashlight.nas</file>
-    <file>Aircraft/pa28-161/Nasal/kma20.nas</file>
-    <file>Aircraft/pa28-161/Systems/kcs55.nas</file>
+    <file>Aircraft/FGNavigator1/Nasal/pa28.nas</file>
+    <file>Aircraft/FGNavigator1/Nasal/pa28-electrical.nas</file>
+    <file>Aircraft/FGNavigator1/Nasal/action-sim.nas</file>
+    <file>Aircraft/FGNavigator1/Nasal/doors.nas</file>
+    <file>Aircraft/FGNavigator1/Nasal/kr87.nas</file>
+    <file>Aircraft/FGNavigator1/Nasal/ki266.nas</file>
+    <file>Aircraft/FGNavigator1/Nasal/flashlight.nas</file>
+    <file>Aircraft/FGNavigator1/Nasal/kma20.nas</file>
+    <file>Aircraft/FGNavigator1/Systems/kcs55.nas</file>
     
     <script><![CDATA[ki266.new(0);
                   KCS55.new();
@@ -354,34 +354,34 @@ spinning.
   <!--
       temporarely suspended, seems to interfere with ap and memory of setings
    <kns80>
-      <file>Aircraft/pa28-161/Models/instruments/kns80/kns80.nas</file>
+      <file>Aircraft/FGNavigator1/Models/instruments/kns80/kns80.nas</file>
     </kns80>
   -->
   <elt>
-    <file>Aircraft/pa28-161/Models/Instruments/elt/ELTmessage.nas</file>
+    <file>Aircraft/FGNavigator1/Models/Instruments/elt/ELTmessage.nas</file>
   </elt>
 
   <itaf>
-    <file>Aircraft/pa28-161/Nasal/it-autoflight.nas</file>
+    <file>Aircraft/FGNavigator1/Nasal/it-autoflight.nas</file>
   </itaf>
   
   <kap140>
-	<file>Aircraft/pa28-161/Nasal/kap140.nas</file>
+	<file>Aircraft/FGNavigator1/Nasal/kap140.nas</file>
   </kap140>
   
   <systems>
-    <file>Aircraft/pa28-161/systems/kln90b.nas</file>
+    <file>Aircraft/FGNavigator1/systems/kln90b.nas</file>
   </systems>
   
   <logger>
-    <file>Aircraft/pa28-161/nasal/logger.nas</file>
+    <file>Aircraft/FGNavigator1/nasal/logger.nas</file>
   </logger>
   
   <tyresmoke>
-    <file>Aircraft/pa28-161/Nasal/tyresmoke.nas</file>
+    <file>Aircraft/FGNavigator1/Nasal/tyresmoke.nas</file>
   </tyresmoke>
   <HobbsMeter>
-        <file>Aircraft/pa28-161/Models/instruments/Hobbs/hobbs.nas</file>
+        <file>Aircraft/FGNavigator1/Models/instruments/Hobbs/hobbs.nas</file>
 		<script><![CDATA[
             HobbsMeter.new(index: 0, switchPath: 'gear/gear/wow', inverted: 1);
         ]]></script>

@@ -21,7 +21,7 @@ Honeywell Bendix/King KLN-90B GPS
         <w>284</w>
         <h>142</h>
         <texture>
-            <path>Aircraft/pa28-161/Models/Instruments/KLN90B/gps.png</path>
+            <path>Aircraft/FGNavigator1/Models/Instruments/KLN90B/gps.png</path>
             <x1>0.498</x1>
             <y1>0.016</y1>
             <x2>0.700</x2>
@@ -40,7 +40,7 @@ Honeywell Bendix/King KLN-90B GPS
         <w>284</w>
         <h>142</h>
         <texture>
-            <path>Aircraft/pa28-161/Models/Instruments/KLN90B/gps.png</path>
+            <path>Aircraft/FGNavigator1/Models/Instruments/KLN90B/gps.png</path>
             <x1>0.532</x1>
             <y1>0.016</y1>
             <x2>0.898</x2>

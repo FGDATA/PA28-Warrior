@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <PropertyList>
-  <path>Aircraft/pa28-161/Models/instruments/THS/ths.ac</path>
+  <path>Aircraft/FGNavigator1/Models/instruments/THS/ths.ac</path>
   <params>
     <value>instrumentation/ths</value>
   </params>

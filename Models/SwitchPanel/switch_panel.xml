@@ -5,7 +5,7 @@
  <path>SwitchPanel.ac</path>
 
     <panel>
-        <path>Aircraft/pa28-161/Panel/Switch-Panel_Panel.xml</path>
+        <path>Aircraft/FGNavigator1/Panel/Switch-Panel_Panel.xml</path>
         <bottom-left>
             <x-m>0.001</x-m>
             <y-m>-0.08742</y-m>

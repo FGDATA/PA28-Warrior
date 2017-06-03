@@ -5,7 +5,7 @@
 <PropertyList>
 
  <name>Switch-Panel Panel</name>
- <background>Aircraft/pa28-161/Panel/transparent-bg.rgb</background>
+ <background>Aircraft/FGNavigator1/Panel/transparent-bg.rgb</background>
  <w>174</w>
  <h>40</h>
 
