@@ -312,7 +312,7 @@ spinning.
 		<cmd>
 			<roll-kp>-1.9</roll-kp>
 			<roll-scale>1.5</roll-scale>
-			<vorloc>-5.0</vorloc>
+			<vorloc>-3.0</vorloc>
 			<vs>0.01</vs>
 		</cmd>
 	</config>
