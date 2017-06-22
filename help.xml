@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
   <PropertyList> 
-  
   <help>
-   <title>Piper Cherokee Warrior II (1979 model)</title>
+   <title>Piper Cherokee FGNavigator1</title>
    <key>
     <name>f</name>
     <desc>fuel tank select</desc>
@@ -40,15 +39,15 @@
     <desc>toggle carburetor heat</desc>
    </key>
    <key>
-    <name>(</name>
-    <desc>turn on and/or decrease panel lights</desc>
-   </key>
-   <key>
-    <name>9</name>
+    <name>&gt;</name>
     <desc>increase and/or turn off panel lights</desc>
    </key>
    <key>
-    <name>*</name>
+    <name>&lt;</name>
+    <desc>turn on and/or decrease panel lights</desc>
+   </key>
+   <key>
+    <name>H</name>
     <desc>toggle carburator heat</desc>
    </key>
    <key>
@@ -62,23 +61,6 @@
    <key>
     <name>s</name>
     <desc>starter</desc>
-   </key>
-   
-
-   <key>
-    <name>h</name>
-    <desc>Display HUD</desc>
-   </key>
-   
-   
-    <key>
-    <name>k</name>
-    <desc>Karte/Map</desc>
-   </key>
-
-    <key>
-    <name>w</name>
-    <desc>Show Stopwatch</desc>
    </key>
 
       <line>All switches and controls (except yoke and pedals) can be operated via "hot-spots"</line>
@@ -97,14 +79,11 @@
       <line>10. beacon ("%"), nav lights ("~"), strobe lights ("^") ON as required</line>
       <line>11. landing light if night ("$" toggles landing light switch)</line>
       <line>12. release parking brake ("B" releases brake)</line>
-
+      <line/>
+      <line>Take-Off Check List on Panel</line>
+      <line/>
+      <line>Landing Check List on Panel</line>
   </help>
 
   </PropertyList>
-
-
-
-
-
-
 

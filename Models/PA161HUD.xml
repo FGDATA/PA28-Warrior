@@ -9,8 +9,8 @@
 
  <label>
 		<name>Wind</name>
-		<x>-435</x>
-		<y>210</y>
+		<x>-420</x>
+		<y>-200</y>
 		<halign>left</halign>
 		<format>Wind Speed: %1.2f knots</format>
 		<input>
@@ -20,8 +20,8 @@
 
  <label>
 		<name>From</name>
-		<x>-435</x>
-		<y>200</y>
+		<x>-420</x>
+		<y>-190</y>
 		<halign>left</halign>
 		<format>Wind Hdg:    %d deg</format>
 		<input>
@@ -31,8 +31,8 @@
 
 <label>
 		<name>gs</name>
-		<x>-435</x>
-		<y>190</y>
+		<x>-420</x>
+		<y>-110</y>
 		<halign>left</halign>
 		<format>Grd-Speed:     %d kts</format>
 		<input>
@@ -42,8 +42,8 @@
 
   <label>
 		<name>ADF/NDB</name>
-		<x>-435</x>
-		<y>170</y>
+		<x>-420</x>
+		<y>-130</y>
 		<halign>left</halign>
 		<format>Adf/Ndb:   %s</format>
 		<input>
@@ -52,13 +52,24 @@
 </label>
 
  <label>
-		<name>NavId</name>
-		<x>-435</x>
-		<y>160</y>
+		<name>Nav1-Id</name>
+		<x>-420</x>
+		<y>-140</y>
 		<halign>left</halign>
-		<format>Nav_ID:   %s</format>
+		<format>Nav1-ID:   %s</format>
 		<input>
 			<property>/instrumentation/nav/nav-id</property>
+		</input>
+</label>
+
+ <label>
+		<name>Nav2-Id</name>
+		<x>-420</x>
+		<y>-150</y>
+		<halign>left</halign>
+		<format>Nav2-ID:   %s</format>
+		<input>
+			<property>/instrumentation/nav[1]/nav-id</property>
 		</input>
 </label>
 
@@ -66,8 +77,8 @@
 
  <label>
 		<name>maghead</name>
-		<x>-435</x>
-		<y>140</y>
+		<x>-420</x>
+		<y>-170</y>
 		<halign>left</halign>
 		<format>Mag Hdg:  %1.1f deg</format>
 		<input>
@@ -77,10 +88,10 @@
 
  <label>
 		<name>magvar</name>
-		<x>-435</x>
-		<y>130</y>
+		<x>-420</x>
+		<y>-160</y>
 		<halign>left</halign>
-		<format>Mag Var:  %d deg</format>
+		<format>Mag Var:  %1.1f deg</format>
 		<input>
    	<property>/environment/magnetic-variation-deg</property>
 		</input>
@@ -90,10 +101,10 @@
 		<name>Fuell</name>
 		<width>2</width>
 		<height>2</height>
-		<x>-435</x>
-		<y>110</y>
+		<x>-420</x>
+		<y>-220</y>
 		<halign>left</halign>
-		<format>Fuel-I:  %d lbs</format>
+		<format>Fuel-L:  %d lbs</format>
 		<input>
 			<property>/consumables/fuel/tank/level-lbs</property>
 		</input>
@@ -103,10 +114,10 @@
 		<name>FuelR</name>
 		<width>2</width>
 		<height>2</height>
-		<x>-435</x>
-		<y>100</y>
+		<x>-340</x>
+		<y>-220</y>
 		<halign>left</halign>
-		<format>Fuel-II: %d lbs</format>
+		<format>Fuel-R: %d lbs</format>
 		<input>
 			<property>/consumables/fuel/tank[1]/level-lbs</property>
 		</input>
@@ -116,8 +127,8 @@
 		<name>odom</name>
 		<width>2</width>
 		<height>2</height>
-		<x>-435</x>
-		<y>90</y>
+		<x>-420</x>
+		<y>-210</y>
 		<halign>left</halign>
 		<format>Flown: %1.1f nm</format>
 		<input>
@@ -180,6 +191,27 @@
     </label>
 
 </PropertyList>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

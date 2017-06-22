@@ -8,7 +8,7 @@ setprop("/it-autoflight/internal/vert-speed-fpm", 0);
 var ap_init = func {
 	setprop("/it-autoflight/input/ap", 0);
 	setprop("/it-autoflight/input/hdg", 360);
-	setprop("/it-autoflight/input/alt", 1000);
+	setprop("/it-autoflight/input/alt", 2000);
 	setprop("/it-autoflight/input/vs", 0);
 	setprop("/it-autoflight/input/fpa", 0);
 	setprop("/it-autoflight/input/lat", 5);
@@ -26,7 +26,7 @@ var ap_init = func {
 	setprop("/it-autoflight/output/vert", 5);
 	setprop("/it-autoflight/settings/use-nav2-radio", 0);
 	setprop("/it-autoflight/settings/use-backcourse", 0);
-	setprop("/it-autoflight/settings/slave-gps-nav", 0);
+	setprop("/it-autoflight/settings/slave-gps-nav", 1);
 	setprop("/it-autoflight/internal/min-vs", -200);
 	setprop("/it-autoflight/internal/max-vs", 200);
 	setprop("/it-autoflight/internal/alt", 1000);

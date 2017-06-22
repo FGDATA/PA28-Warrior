@@ -85,14 +85,6 @@
   </binding>
   </key>
 
-  <key n="42">
-  <name>*</name>
-  <desc>Toggle Pitot Heat</desc>
-  <binding>
-   <command>nasal</command>
-   <script>pa28.pitot_heat_switch()</script>
-  </binding>
-  </key>
 
   <key n="40">
   <name>(</name>
@@ -114,8 +106,8 @@
   </binding>
   </key>
 
-  <key n="116">
-  <name>t</name>
+  <key n="42">
+  <name>*</name>
   <desc>Toggle Carb Heat</desc>
   <binding>
    <command>nasal</command>
@@ -168,6 +160,7 @@
 </keyboard>
 
 </PropertyList>
+
 
 
 

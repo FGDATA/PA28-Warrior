@@ -204,7 +204,7 @@
   </offsets>
  </model>
 
-<!--   <model>
+  <model>
   <name>YokeLeft</name>
   <path>Aircraft/FGNavigator1/Models/yoke/yoke-pa28.xml</path>
   <offsets>
@@ -222,7 +222,7 @@
    <y-m>0.245</y-m>
    <z-m>0.102</z-m>
   </offsets>
- </model>        -->
+ </model>
 
  <model>
   <name>COMP</name>
@@ -251,7 +251,7 @@
   <path>Aircraft/FGNavigator1/Models/casque/casque.xml</path>
   <offsets>
    <x-m>1.925</x-m>
-   <y-m>0.295</y-m>
+   <y-m>0.245</y-m>
    <z-m>0.395</z-m>
    <roll-deg>-3</roll-deg>
    <pitch-deg>1</pitch-deg>
@@ -384,9 +384,9 @@
   <name>AOA</name>
   <path>Aircraft/FGNavigator1/Models/instruments/aoa/aoa.xml</path>
   <offsets>
-   <x-m>1.928</x-m>
-   <y-m>0.269</y-m>
-   <z-m>0.32</z-m>
+   <x-m>1.925</x-m>
+   <y-m>0.370</y-m>
+   <z-m>0.100</z-m>
   </offsets>
  </model>
 
@@ -534,9 +534,9 @@
   <name>clock</name>
  <path>Aircraft/FGNavigator1/Models/Clock/Clock.xml</path>
   <offsets>
-   <x-m>1.925</x-m>
-   <y-m>0.370</y-m>
-   <z-m>0.100</z-m>
+   <x-m>1.928</x-m>
+   <y-m>0.269</y-m>
+   <z-m>0.32</z-m>
   </offsets>
  </model>
  
@@ -1344,6 +1344,11 @@
  </animation>
 
 </PropertyList>
+
+
+
+
+
 
 
 
