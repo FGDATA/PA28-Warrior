@@ -11,7 +11,7 @@ spinning.
 
 <PropertyList>
 
- <sim include="Systems/views.xml">
+<sim include="Systems/views.xml">
 
    <description>FGNavigator1 (PA28-161)</description>
    <author>Gerhard Kick, Joshua Davidson (it0uchpods), Other</author>
@@ -20,7 +20,7 @@ spinning.
       <splash-texture>Aircraft/FGNavigator1/FGN_Splash.jpg</splash-texture>
   </startup>
   
-   <sim include="help.xml"/>
+
 
 
 <hud>
@@ -33,21 +33,18 @@ spinning.
       </font>
       <current-color type="int">0</current-color>
 
-        <color n="0">
-          <transparent type="bool">false</transparent>
-          <antialiased type="bool">false</antialiased>
-          <brightness type="float">1.55</brightness>
-          <alpha type="float">1.0</alpha>
-          <red type="float">0.6</red>
-          <green type="float">1.0</green>
-          <blue type="float">0.2</blue>
-        </color>
+       	<color n="0">
+					<!-- day -->
+					<red type="float">1.0</red>
+					<green type="float">0.4</green>
+					<blue type="float">0.0</blue>
+				</color>
        
         <color n="1">
           <transparent type="bool">false</transparent>
-          <antialiased type="bool">false</antialiased>
-          <brightness type="float">1.25</brightness>
-          <alpha type="float">0.67</alpha>
+          <antialiased type="bool">true</antialiased>
+          <brightness type="float">1.5</brightness>
+          <alpha type="float">1</alpha>
           <red type="float">0.9</red>
           <green type="float">0.1</green>
           <blue type="float">0.1</blue>
@@ -101,6 +98,8 @@ spinning.
   </SwitchTanks>
   
   </systems>
+  
+  <help include="Systems/help.xml"/>
   
    <menubar include="pa28-NavMen.xml"/>
 
@@ -437,6 +436,14 @@ var right = screen.display.new(-300, 10);
 </nasal>
 
 </PropertyList>
+
+
+
+
+
+
+
+
 
 
 

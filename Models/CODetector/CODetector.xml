@@ -13,9 +13,10 @@
     <repeatable>false</repeatable>
             <binding>
 				<command>dialog-show</command>
-				<dialog-name>map</dialog-name>
+				<dialog-name>route-manager</dialog-name>
 			</binding>
      </action>
   </animation>
 
 </PropertyList>
+

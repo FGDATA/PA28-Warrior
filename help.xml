@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
   <PropertyList> 
   <help>
-   <title>Piper Cherokee FGNavigator1</title>
+   <title>Piper Cherokee Warrior II (FGNavigator1)</title>
    <key>
     <name>f</name>
     <desc>fuel tank select</desc>
@@ -36,19 +36,19 @@
    </key>
    <key>
     <name>*</name>
-    <desc>toggle carburetor heat</desc>
+    <desc>toggle carburator heat</desc>
    </key>
    <key>
-    <name>&gt;</name>
+    <name>(</name>
     <desc>increase and/or turn off panel lights</desc>
    </key>
    <key>
-    <name>&lt;</name>
-    <desc>turn on and/or decrease panel lights</desc>
+    <name>k</name>
+    <desc>display map (karte)</desc>
    </key>
    <key>
-    <name>H</name>
-    <desc>toggle carburator heat</desc>
+    <name>h</name>
+    <desc>toggle hud</desc>
    </key>
    <key>
     <name>ctrl-P</name>
@@ -75,14 +75,13 @@
       <line> 6. operate primer pump three times then locked (ctrl-P cycles primer)</line>
       <line> 7. "CLEAR PROP"</line>
       <line> 8. key to start ("s" engages starter)</line>
-      <line> 9. pitot heat ON if IFR ("*" toggles pitot heat switch)</line>
+      <line> 9. pitot heat switch ON if IFR ("*" toggles pitot heat switch)</line>
       <line>10. beacon ("%"), nav lights ("~"), strobe lights ("^") ON as required</line>
       <line>11. landing light if night ("$" toggles landing light switch)</line>
       <line>12. release parking brake ("B" releases brake)</line>
       <line/>
-      <line>Take-Off Check List on Panel</line>
-      <line/>
-      <line>Landing Check List on Panel</line>
+      <line>By default the craft starts up with engine running and full tanks</line>
+
   </help>
 
   </PropertyList>
