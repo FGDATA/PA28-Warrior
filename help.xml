@@ -58,6 +58,10 @@
     <name>B</name>
     <desc>toggle parking brake</desc>
    </key>
+    <key>
+    <name>r</name>
+    <desc>Show Route Manager</desc>
+   </key>
    <key>
     <name>s</name>
     <desc>starter</desc>
@@ -85,4 +89,5 @@
   </help>
 
   </PropertyList>
+
 
