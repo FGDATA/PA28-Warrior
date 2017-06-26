@@ -25,6 +25,23 @@
    <factor-prop>/systems/electrical/outputs/instrument-lights-norm</factor-prop>
   </emission>
  </animation>
+ 
+ <animation>
+    <type>pick</type>
+ <object-name>Aircraft</object-name>
+  <object-name>CagedIndicator</object-name>
+  <object-name>Pitch</object-name>
+  <object-name>Roll</object-name>
+  <object-name>RollReference</object-name>
+
+            <binding>
+            <command>property-assign</command>
+            <property>sim/current-view/goal-pitch-offset-deg</property>
+            <value>-7</value>
+
+            </binding>
+
+  </animation>
 
  <animation>
   <name>Pitch</name>
@@ -98,7 +115,13 @@
    <command>property-adjust</command>
    <property>instrumentation/attitude-indicator/horizon-offset-deg</property>
    <factor type="double">0.5</factor>
-  </binding>          
+  </binding>
+  <binding>
+            <command>property-assign</command>
+            <property>sim/current-view/goal-pitch-offset-deg</property>
+            <value>-7</value>
+
+            </binding>
  </action>
  
  <value>0.0</value>
@@ -172,6 +195,8 @@
  </animation>
 
 </PropertyList>
+
+
 
 
 

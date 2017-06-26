@@ -32,11 +32,33 @@
 <label>
 		<name>gs</name>
 		<x>-420</x>
-		<y>-110</y>
+		<y>-90</y>
 		<halign>left</halign>
 		<format>Grd-Speed:     %d kts</format>
 		<input>
 			<property>/velocities/groundspeed-kt</property>
+		</input>
+	</label>
+	
+		<label>
+		<name>rpm</name>
+		<x>-420</x>
+		<y>-100</y>
+		<halign>left</halign>
+		<format>Eng Revs:    %d rpm</format>
+		<input>
+			<property>/engines/engine/rpm</property>
+		</input>
+	</label>
+	
+	<label>
+		<name>vs</name>
+		<x>-420</x>
+		<y>-110</y>
+		<halign>left</halign>
+		<format>V - Speed:     %d fpm</format>
+		<input>
+			<property>/instrumentation/vertical-speed-indicator/indicated-speed-kts</property>
 		</input>
 	</label>
 
@@ -186,11 +208,16 @@
                </input>
         <x>186</x>
         <y>195</y>
-        <format>GS ACTIVE!!!</format>
+        <format>GS In Range</format>
         <halign>left</halign>
     </label>
 
 </PropertyList>
+
+
+
+
+
 
 
 

@@ -52,7 +52,7 @@
                 <label>Practise Flights</label>
                  <binding>
 				<command>open-browser</command>
-				<path>aircraft/fgnavigator1/Docs/FGN_Cockpit.pdf</path>
+				<path>aircraft/fgnavigator1/Docs/Practise_Flights.pdf</path>
 			</binding>
             </item>
             
@@ -67,7 +67,7 @@
                 <label>About This Aircraft</label>
                  <binding>
 				<command>open-browser</command>
-				<path>aircraft/fgnavigator1/Docs/About FGN.pdf</path>
+				<path>aircraft/fgnavigator1/Docs/AboutFGN.pdf</path>
 			</binding>
             </item>
             
@@ -76,6 +76,9 @@
     </default>
 
 </PropertyList>
+
+
+
 
 
 
