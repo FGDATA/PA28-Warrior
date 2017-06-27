@@ -58,7 +58,7 @@
 		<halign>left</halign>
 		<format>V - Speed:     %d fpm</format>
 		<input>
-			<property>/instrumentation/vertical-speed-indicator/indicated-speed-kts</property>
+			<property>/instrumentation/vertical-speed-indicator/indicated-speed-fpm</property>
 		</input>
 	</label>
 
@@ -213,6 +213,8 @@
     </label>
 
 </PropertyList>
+
+
 
 
 
