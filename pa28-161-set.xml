@@ -36,8 +36,8 @@ spinning.
        	<color n="0">
 					<!-- day -->
 					<red type="float">1.0</red>
-					<green type="float">0.4</green>
-					<blue type="float">0.0</blue>
+					<green type="float">1</green>
+					<blue type="float">1</blue>
 				</color>
        
         <color n="1">
@@ -385,8 +385,8 @@ spinning.
             HobbsMeter.new(index: 0, switchPath: 'gear/gear/wow', inverted: 1);
         ]]></script>
     </HobbsMeter>
- <!--
-        <OSD>
+      <!--
+         <OSD>
    <script>
 # On-screen displays
 var left  = screen.display.new(10, -20);
@@ -394,13 +394,10 @@ var right = screen.display.new(-300, 10);
 
 # Add some properties to display
 
- right.add("/engines/engine/rpm");
-
-
+      right.add("/engines/engine/rpm");
    </script>
-
-    </OSD>
-             -->
+ </OSD>
+          -->
   
   <sprops>
    <script><![CDATA[
@@ -435,7 +432,13 @@ var right = screen.display.new(-300, 10);
 
 </nasal>
 
+
 </PropertyList>
+
+
+
+
+
 
 
 

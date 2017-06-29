@@ -32,7 +32,16 @@
              <dialog-name>stopwatch-dialog</dialog-name>
           </binding>
      </action>
+
+   <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <tooltip-id>timer</tooltip-id>
+                <label>Display Stopwatch</label>
+            </binding>
+        </hovered>
   </animation>
+
   
   <animation>
     <type>material</type>
@@ -85,6 +94,7 @@
   </animation>
 
 </PropertyList>
+
 
 
 

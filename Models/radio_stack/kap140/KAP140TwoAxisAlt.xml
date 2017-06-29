@@ -1005,7 +1005,26 @@ Modified for IT-AUTOFLIGHT by Joshua Davidson
     </action>
   </animation>
 
+ <animation>
+    <type>pick</type>
+    <object-name>base</object-name>
+    <action>
+    <button>0</button>
+    <repeatable>false</repeatable>
+          <binding>
+             <command>dialog-show</command>
+            <dialog-name>autopilot</dialog-name>
+          </binding>
+     </action>
 
+   <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <tooltip-id>ap</tooltip-id>
+                <label>Display ITAF</label>
+            </binding>
+        </hovered>
+  </animation>
   
   <animation>
     <type>material</type>
@@ -1021,4 +1040,5 @@ Modified for IT-AUTOFLIGHT by Joshua Davidson
     </emission>
   </animation>
 </PropertyList>
+
 

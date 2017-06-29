@@ -92,7 +92,6 @@
           <binding>
              <command>dialog-show</command>
             <dialog-name>radios</dialog-name>
-
           </binding>
      </action>
 
@@ -103,7 +102,6 @@
                 <label>Click to change frequency</label>
             </binding>
         </hovered>
-
   </animation>
 
   <animation>
@@ -1051,5 +1049,6 @@
   </animation>
 
 </PropertyList>
+
 
 
