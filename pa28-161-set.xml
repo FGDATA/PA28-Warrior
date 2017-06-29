@@ -24,33 +24,22 @@ spinning.
 
 
 <hud>
-			<path n="1">Aircraft/FGNavigator1/Models/Pa161HUD.xml</path>
+   <path n="1">Aircraft/FGNavigator1/Models/Pa161HUD.xml</path>
+   <path n="2">Aircraft/FGNavigator1/Models/Huds/Default.xml</path>
 			<visibility n="1">true</visibility>
+			<font>
+            <name type="string">Helvetica.txf</name>
+            <size type="float">8</size>
 
-   <font>
-        <name type="string">Helvetica.txf</name>
-        <size type="float">8</size>
-      </font>
-      <current-color type="int">0</current-color>
-
-       	<color n="0">
+			</font>
+			<palette>
+				<color n="0">
 					<!-- day -->
 					<red type="float">1.0</red>
-					<green type="float">1</green>
-					<blue type="float">1</blue>
+					<green type="float">0.4</green>
+					<blue type="float">0.0</blue>
 				</color>
-       
-        <color n="1">
-          <transparent type="bool">false</transparent>
-          <antialiased type="bool">true</antialiased>
-          <brightness type="float">1.5</brightness>
-          <alpha type="float">1</alpha>
-          <red type="float">0.9</red>
-          <green type="float">0.1</green>
-          <blue type="float">0.1</blue>
-        </color>
-
-
+			</palette>
 	</hud>
 
 <!-- Include model configuration file -->
@@ -434,6 +423,13 @@ var right = screen.display.new(-300, 10);
 
 
 </PropertyList>
+
+
+
+
+
+
+
 
 
 
