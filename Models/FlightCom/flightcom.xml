@@ -14,7 +14,22 @@
    <factor-prop>/sim/model//material/instruments/factor</factor-prop>
   </emission>
  </animation>
+ 
+ <animation>
+    <type>pick</type>
+    <object-name>Face</object-name>
+    <action>
+    <button>0</button>
+    <repeatable>false</repeatable>
+          <binding>
+             <command>property-assign</command>
+             <property>controls/engines/engine/throttle</property>
+             <value>1</value>
+          </binding>
+     </action>
+  </animation>
 
 </PropertyList>
+
 
 

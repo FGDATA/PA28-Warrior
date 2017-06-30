@@ -6,6 +6,13 @@
 	<name>Cherokee</name>
 	<enable3d>false</enable3d>
 
+ <label>
+		<name>FG_Nav</name>
+		<x>186</x>
+		<y>230</y>
+		<halign>left</halign>
+		<format>FG_Nav</format>
+  </label>
 
  <label>
 		<name>Wind</name>
@@ -213,6 +220,7 @@
     </label>
 
 </PropertyList>
+
 
 
 

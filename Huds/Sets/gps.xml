@@ -181,15 +181,6 @@
     	</condition>
 	</label>
 	
-    <label>
-		<width>2</width>
-		<height>2</height>
-		<y>-30</y>
-		<format>GS:%3dkts</format>
-		<halign>left</halign>
-		<input>
-			<property>/instrumentation/gps/indicated-ground-speed-kt</property>
-		</input>
-	</label>
+
 </PropertyList>
 	
