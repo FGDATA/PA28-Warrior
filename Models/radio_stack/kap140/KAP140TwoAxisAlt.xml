@@ -126,8 +126,12 @@ Modified for IT-AUTOFLIGHT by Joshua Davidson
     <condition>
       <and>
       <equals>
-        <property>/it-autoflight/output/loc-armed</property>
+        <property>/it-autoflight/output/nav-armed</property>
         <value>1</value>
+      </equals>
+      <equals>
+        <property>/it-autoflight/output/loc-armed</property>
+        <value>0</value>
       </equals>
       <equals>
         <property>/it-autoflight/output/appr-armed</property>
@@ -241,6 +245,25 @@ Modified for IT-AUTOFLIGHT by Joshua Davidson
     <object-name>alt-arm-ann</object-name>
     <name>ALT-ARM Anunciator</name>
     <condition>
+	  <or>
+      <and>
+      <equals>
+        <property>/it-autoflight/output/ap</property>
+        <value>1</value>
+      </equals>
+      <equals>
+        <property>/it-autoflight/output/alt-arm</property>
+        <value>1</value>
+      </equals>
+	  <equals>
+        <property>/it-autoflight/output/loc-armed</property>
+        <value>0</value>
+      </equals>
+      <equals>
+        <property>/it-autoflight/output/appr-armed</property>
+        <value>0</value>
+      </equals>
+      </and>
       <and>
       <equals>
         <property>/it-autoflight/output/ap</property>
@@ -251,10 +274,15 @@ Modified for IT-AUTOFLIGHT by Joshua Davidson
         <value>1</value>
       </equals>
       <equals>
-        <property>/it-autoflight/output/appr-armed</property>
-        <value>0</value>
+        <property>/it-autoflight/output/lat</property>
+        <value>2</value>
       </equals>
+      <not-equals>
+        <property>/it-autoflight/output/appr-armed</property>
+        <value>1</value>
+      </not-equals>
       </and>
+	  </or>
     </condition>
   </animation>
   <animation>
