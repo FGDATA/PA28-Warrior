@@ -11,7 +11,7 @@ spinning.
 
 <PropertyList>
 
-<sim include="Systems/views.xml">
+<sim include="help.xml">
 
    <description>FGNavigator1 (PA28-161)</description>
    <author>Gerhard Kick, Joshua Davidson (it0uchpods), Other</author>
@@ -97,7 +97,7 @@ spinning.
   
   </systems>
   
-  <help include="Systems/help.xml"/>
+  
   
    <menubar include="pa28-NavMen.xml"/>
 
@@ -110,15 +110,75 @@ spinning.
   <!-- Set the pilot's view position -->
 
 
-  <view n="0">
+  <chase-distance-m type="double" archive="y"> -20 </chase-distance-m>
+
+   <view n="0">
    <internal archive="y">true</internal>
+   <name>Cockpit View</name>
+
    <config>
-     <x-offset-m archive="y">-0.18</x-offset-m>
+     <x-offset-m archive="y">-0.23</x-offset-m>
      <y-offset-m archive="y">0.5</y-offset-m>
      <z-offset-m archive="y">2.6</z-offset-m>
-     <pitch-offset-deg>-15</pitch-offset-deg>
+     <pitch-offset-deg>-14</pitch-offset-deg>
+     <roll-offset-deg>0.3</roll-offset-deg>
+     
+     <default-field-of-view-deg type="double">72.0</default-field-of-view-deg>
    </config>
   </view>
+  
+  <view n="1">
+  <internal archive="y">true</internal>
+   <name>Helicopter View</name>
+   <config>
+    <target-z-offset-m archive="y" type="double">3.0</target-z-offset-m>
+     <x-offset-m archive="y">0</x-offset-m>
+     <y-offset-m archive="y">0</y-offset-m>
+     <z-offset-m archive="y">0</z-offset-m>
+     <default-field-of-view-deg type="double">66</default-field-of-view-deg>
+     <heading-offset-deg>-35</heading-offset-deg>
+   </config>
+  </view>
+  
+  <view n="2">
+  <internal archive="y">true</internal>
+   <name>Chase View</name>
+   <config>
+    <target-z-offset-m archive="y" type="double">3.0</target-z-offset-m>
+     <x-offset-m archive="y">0</x-offset-m>
+     <y-offset-m archive="y">0</y-offset-m>
+     <z-offset-m archive="y">0</z-offset-m>
+     <default-field-of-view-deg type="double">66</default-field-of-view-deg>
+     <heading-offset-deg>-35</heading-offset-deg>
+   </config>
+  </view>
+
+  <view n="7">
+  <config>
+  <internal archive="y">true</internal>
+   <name>Model View</name>
+    <target-z-offset-m archive="y" type="double">3.0</target-z-offset-m>
+     <x-offset-m archive="y">0</x-offset-m>
+     <y-offset-m archive="y">0</y-offset-m>
+     <z-offset-m archive="y">0</z-offset-m>
+     <default-field-of-view-deg type="double">66</default-field-of-view-deg>
+     <heading-offset-deg>35</heading-offset-deg>
+   </config>
+  </view>
+
+  
+  <view n="5">
+  <internal archive="y">true</internal>
+   <name>Chase without Yaw</name>
+   <config>
+     <x-offset-m archive="y">25</x-offset-m>
+     <y-offset-m archive="y">2</y-offset-m>
+     <z-offset-m archive="y">-10</z-offset-m>
+     <default-field-of-view-deg type="double">47</default-field-of-view-deg>
+     <heading-offset-deg>110</heading-offset-deg>
+   </config>
+  </view>
+
 
 
    <weight n="0">

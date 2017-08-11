@@ -22,9 +22,9 @@
     <button>0</button>
     <repeatable>false</repeatable>
           <binding>
-             <command>property-assign</command>
+             <command>property-adjust</command>
              <property>controls/engines/engine/throttle</property>
-             <value>1</value>
+             <step>.25</step>
           </binding>
      </action>
   </animation>
