@@ -7,7 +7,6 @@ OBJECT world
 kids 4
 OBJECT poly
 name "FFlow.bezel"
-loc -0.0108138 0 0
 crease 30.000000
 numvert 164
 0.001099 -0.030505 0.031702

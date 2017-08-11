@@ -1,37 +1,26 @@
 ﻿<?xml version="1.0"?>
-<!--
-************************************************************************
-Aircraft configuration file: Piper Cherokee Warrior II (1979 model)
-
-This file configures the airplane with full fuel, a 140 lb pilot, and
-a 0 lb copilot.  The plane starts with the mags on and the engine
-spinning.
-************************************************************************
--->
 
 <PropertyList>
 
-<sim include="Systems/views.xml">
+	<sim include="Systems/views.xml">
 
-   <description>FGNavigator1 (PA28-161)</description>
-   <author>Gerhard Kick, Joshua Davidson (it0uchpods), Other</author>
+		<description>FGNavigator1 (PA28-161)</description>
+		<author>Gerhard Kick, Joshua Davidson (it0uchpods), Other</author>
+		<flight-model>jsb</flight-model>
+		<aero>pa28-161-jsbsim</aero>
 
-  <startup>
-      <splash-texture>Aircraft/FGNavigator1/FGN_Splash.jpg</splash-texture>
-  </startup>
-  
+		<startup>
+			<splash-texture>Aircraft/FGNavigator1/FGN_Splash.jpg</splash-texture>
+		</startup>
 
-
-
-<hud>
-   <path n="1">Aircraft/FGNavigator1/Huds/Pa161HUD.xml</path>
-   <path n="2">Aircraft/FGNavigator1/Huds/FGN.xml</path>
-   <path n="3">Aircraft/FGNavigator1/Huds/default.xml</path>
-    <visibility n="1" type="bool">true</visibility>
-   			<font>
-            <name type="string">helvetica_medium.txf</name>
-            <size type="float">8</size>
-
+		<hud>
+			<path n="1">Aircraft/FGNavigator1/Huds/Pa161HUD.xml</path>
+			<path n="2">Aircraft/FGNavigator1/Huds/FGN.xml</path>
+			<path n="3">Aircraft/FGNavigator1/Huds/default.xml</path>
+			<visibility n="1" type="bool">true</visibility>
+			<font>
+				<name type="string">helvetica_medium.txf</name>
+				<size type="float">8</size>
 			</font>
 			<palette>
 				<color n="0">
@@ -40,450 +29,267 @@ spinning.
 					<green type="float">248</green>
 					<blue type="float">255</blue>
 				</color>
-
 				<color n="2">
 					<!-- gold -->
 					<red type="float">1.0</red>
 					<green type="float">0.4</green>
 					<blue type="float">0.0</blue>
 				</color>
-
 			</palette>
-	</hud>
+		</hud>
 
-<!-- Include model configuration file -->
-  <!-- Note: The name of the XML file is the name your copy
-             of FlightGear will report to the multiplayer servers -->
-  <model>
-   <path type="string">Aircraft/FGNavigator1/Models/pa28-161.xml</path>
-  </model>
+		<model>
+			<path type="string">Aircraft/FGNavigator1/Models/pa28-161.xml</path>
+		</model>
 
+		<panel>
+			<visibility archive="y">false</visibility>
+		</panel>
 
-  
-  <!-- Use the YASim physics engine for the flight model -->
+		<systems>
+			<autopilot>
+				<path>Aircraft/FGNavigator1/Systems/it-autoflight.xml</path>
+			</autopilot>
+			<autopilot>
+				<name>FiltersOnly</name>
+				<path>Aircraft/FGNavigator1/Systems/NAVandGSfilters.xml</path>
+			</autopilot>
+			<electrical>
+				<outputs>
+					<KNS80 type="string">28</KNS80>
+					<comm type="string">28</comm>
+					<comm n="1" type="string">28</comm>
+				</outputs>
+			</electrical>
+			<SwitchTanks>
+				<path>Aircraft/FGNavigator1/Systems/SwitchTanks.xml</path>
+			</SwitchTanks>
+		</systems>
 
-  <flight-model archive="y">yasim</flight-model>
-  <aero archive="y">pa28-161</aero>
+		<help include="Systems/help.xml"/>
 
-  <!-- Use a 3D model with its own 3D cockpit (no 2D panel) -->
+		<menubar include="pa28-NavMen.xml"/>
 
-  <model>
-   <path archive="y">Aircraft/FGNavigator1/Models/pa28-161.xml</path>
-  </model>
-  <panel>
-   <visibility archive="y">false</visibility>
-  </panel>
+		<sound>
+			<path archive="y">Aircraft/FGNavigator1/pa28-161-sound.xml</path>
+		</sound>
 
-  <systems>
-  
-   <autopilot>
-     <path>Aircraft/FGNavigator1/Systems/it-autoflight.xml</path>
-   </autopilot>
-   <autopilot>
-     <name>FiltersOnly</name>
-     <path>Aircraft/FGNavigator1/Systems/NAVandGSfilters.xml</path>
-   </autopilot>
-   
-   <electrical>
-     <outputs>
-        <KNS80 type="string">28</KNS80>
-        <comm type="string">28</comm>
-        <comm n="1" type="string">28</comm>
-      </outputs>
-   </electrical>
-  <SwitchTanks>
-      <path>Aircraft/FGNavigator1/Systems/SwitchTanks.xml</path>
-  </SwitchTanks>
-  
-  </systems>
-  
-  <help include="Systems/help.xml"/>
-  
-   <menubar include="pa28-NavMen.xml"/>
+		<view n="0">
+			<internal archive="y">true</internal>
+			<config>
+				<x-offset-m archive="y">-0.24</x-offset-m>
+				<y-offset-m archive="y">0.5</y-offset-m>
+				<z-offset-m archive="y">2.6</z-offset-m>
+				<pitch-offset-deg>-15</pitch-offset-deg>
+			</config>
+		</view>
 
-    <!-- For now, use the Cessna 172 sound configuration (same engine) -->
+		<weight n="0">
+			<name>Pilot</name>
+			<weight-lb>190</weight-lb>
+			<max-lb>200</max-lb>
+		</weight>
+		<weight n="1">
+			<name>Copilot</name>
+			<weight-lb>190</weight-lb>
+			<max-lb>200</max-lb>
+		</weight>
 
-  <sound>
-   <path archive="y">Aircraft/FGNavigator1/pa28-161-sound.xml</path>
-  </sound>
+		<sound>
+			<volume>0.8</volume>
+		</sound>
+	</sim>
 
-  <!-- Set the pilot's view position -->
+	<instrumentation>
+		<kcs55 include="Systems/kcs55.xml"/>
+		<kcs55 n="0">
+			<ka51>
+				<slaved>true</slaved>
+			</ka51>
+		</kcs55>
+		<attitude-indicator>
+			<config>
+				<tumble-flag>true</tumble-flag>
+			</config>
+		</attitude-indicator>
+		<encoder>
+			<serviceable type="bool">true</serviceable>
+		</encoder>
+		<adf>
+			<volume-norm type="double">1</volume-norm>
+		</adf>
+		<oat>
+			<mode type="int">0</mode>
+		</oat>
+		<elt>
+			<armed type="bool">false</armed>
+			<on type="bool">true</on>
+			<on-pos type="double">1</on-pos>
+			<test type="bool">false</test>
+		</elt>
+		<dme>
+			<switch-position type="int">1</switch-position>
+		</dme>
+	</instrumentation>
 
+	<airport>
+		<runways>
+			<start-offset-m>20</start-offset-m>
+		</runways>
+	</airport>
 
-  <view n="0">
-   <internal archive="y">true</internal>
-   <config>
-     <x-offset-m archive="y">-0.18</x-offset-m>
-     <y-offset-m archive="y">0.5</y-offset-m>
-     <z-offset-m archive="y">2.6</z-offset-m>
-     <pitch-offset-deg>-15</pitch-offset-deg>
-   </config>
-  </view>
+	<gear>
+		<gear n="0">
+			<position-norm type="double">1</position-norm>
+			<tyre-smoke type="int">0</tyre-smoke>
+			<sprayspeed-ms type="double">0</sprayspeed-ms>
+			<spray-density type="double">0</spray-density>
+			<caster-angle-deg-damped type="double">0</caster-angle-deg-damped>
+		</gear>
+		<gear n="1">
+			<position-norm type="double">1</position-norm>
+			<tyre-smoke type="int">0</tyre-smoke>
+			<sprayspeed-ms type="double">0</sprayspeed-ms>
+			<spray-density type="double">0</spray-density>
+		</gear>
+		<gear n="2">
+			<position-norm type="double">1</position-norm>
+			<tyre-smoke type="int">0</tyre-smoke>
+			<sprayspeed-ms type="double">0</sprayspeed-ms>
+			<spray-density type="double">0</spray-density>
+		</gear>
+	</gear>
 
-
-   <weight n="0">
-    <name>Pilot</name>
-    <weight-lb>200</weight-lb>
-    <max-lb>300</max-lb>
-  </weight>
-  <weight n="1">
-    <name>Copilot</name>
-    <weight-lb>150</weight-lb>
-    <max-lb>300</max-lb>
-  </weight>
-  <weight n="2">
-    <name>Left Passenger</name>
-    <weight-lb>0</weight-lb>
-    <max-lb>300</max-lb>
-  </weight>
-  <weight n="3">
-    <name>Right Passenger</name>
-    <weight-lb>0</weight-lb>
-    <max-lb>300</max-lb>
-  </weight>
-  <weight n="4">
-    <name>Baggage</name>
-    <weight-lb>0</weight-lb>
-    <max-lb>200</max-lb>
-  </weight>
-
-    <sound>
-       <volume>0.8</volume>
-    </sound>
- </sim>
-
- <!-- Allow the attitude indicator to tumble -->
-
- <instrumentation>
+	<controls>
+		<electric>
+			<battery-switch type="bool">true</battery-switch>
+			<alternator-switch type="bool">true</alternator-switch>
+		</electric>
+		<engines>
+			<engine n="0">
+				<magnetos type="int">3</magnetos>
+			</engine>
+		</engines>
+		<flight>
+			<aileron-trim type="double">0</aileron-trim>
+			<elevator-trim type="double">0</elevator-trim>
+			<rudder-trim type="double">0</rudder-trim>
+		</flight>
+		<fuel>
+			<switch-position type="int">0</switch-position>
+		</fuel>
+		<gear>
+			<brake-parking type="double">1.0</brake-parking>
+		</gear>
+		<switches>
+			<flashing-beacon>0</flashing-beacon>
+			<nav-lights>0</nav-lights>
+			<strobe-lights>0</strobe-lights>
+		</switches>
+	</controls>
  
- 	<kcs55 include="Systems/kcs55.xml"/>
+	<it-autoflight>
+		<config>
+			<roll>
+				<umin>-0.50</umin>
+				<umax>0.50</umax>
+				<kp>0.05</kp>
+				<kp-vloc>0.09</kp-vloc>
+				<ti>10.0</ti>
+				<td>0.00001</td>
+				<pfactor-offset>0.0</pfactor-offset>
+			</roll>
+			<pitch>
+				<umin>-0.50</umin>
+				<umax>0.50</umax>
+				<kp>-0.08</kp>
+				<ti>10.0</ti>
+				<td>0.0001</td>
+			</pitch>
+			<cmd>
+				<roll-kp>-1.9</roll-kp>
+				<roll-scale>1.5</roll-scale>
+				<vorloc>-3.0</vorloc>
+				<vs>0.01</vs>
+			</cmd>
+		</config>
+		<settings>
+			<enable-stby>0</enable-stby> <!-- If disabled, LVL and V/S become active when AP on. -->
+			<pitch-mode>2</pitch-mode> <!-- 0 = Elevator trim only, 1 = Elevator only, 2 = Elevator and Autotrim -->
+			<auto-arm-alt>0</auto-arm-alt> <!-- Enable automatic altitude arm -->
+		</settings>
+		<kap140>
+			<ap type="int">0</ap>
+			<pt type="int">0</pt>
+			<display-mode type="string">ALT</display-mode>
+		</kap140>
+	</it-autoflight>
 
-    <kcs55 n="0">
-      <ka51>
-        <slaved>true</slaved>
-      </ka51>
-    </kcs55>
-    
-  <attitude-indicator>
-   <config>
-    <tumble-flag>true</tumble-flag>
-   </config>
-  </attitude-indicator>
-  <encoder>
-   <serviceable type="bool">true</serviceable>
-  </encoder>
-    <adf>
-       <volume-norm type="double">1</volume-norm>
-  </adf>
-   <oat>
-  <mode type="int">0</mode>
-  </oat>
-  
-   <elt>
-            <armed type="bool">false</armed>
-            <on type="bool">true</on>
-            <on-pos type="double">1</on-pos>
-            <test type="bool">false</test>
-   </elt>
-   <!--
-  <ki227>
-   <vor-bearing-source type="bool">false</vor-bearing-source>
-  </ki227>
-   -->
-  <dme>
-      <switch-position type="int">1</switch-position>
-  </dme>
-  
- </instrumentation>
+	<consumables>
+		<fuel>
+			<tank n="0">
+				<name type="string">Left Wing</name>
+				<density-ppg type="double">7.00</density-ppg>
+				<unusable-gal_us type="double">0.2</unusable-gal_us>
+				<selected type="bool">true</selected>
+			</tank>
 
-    <airport>
-        <runways>
-            <start-offset-m>20</start-offset-m>
-        </runways>
-    </airport>
-    
-
-
- <!-- Start with the magnetos off -->
- <!-- Add a bit of fixed aileron trim to help fly level -->
- <!-- Parking Brake set -->
-
- <gear>
-  <gear n="0">
-   <position-norm type="double">1</position-norm>
-   <tyre-smoke type="int">0</tyre-smoke>
-   <sprayspeed-ms type="double">0</sprayspeed-ms>
-   <spray-density type="double">0</spray-density>
-   <caster-angle-deg-damped type="double">0</caster-angle-deg-damped>
-  </gear>
-  <gear n="1">
-   <position-norm type="double">1</position-norm>
-   <tyre-smoke type="int">0</tyre-smoke>
-   <sprayspeed-ms type="double">0</sprayspeed-ms>
-   <spray-density type="double">0</spray-density>
-  </gear>
-  <gear n="2">
-   <position-norm type="double">1</position-norm>
-   <tyre-smoke type="int">0</tyre-smoke>
-   <sprayspeed-ms type="double">0</sprayspeed-ms>
-   <spray-density type="double">0</spray-density>
-  </gear>
- </gear>
-
- <controls>
-
-
-  <electric>
-   <battery-switch type="bool">true</battery-switch>
-   <alternator-switch type="bool">true</alternator-switch>
-  </electric>
-  <engines>
-   <engine n="0">
-    <magnetos type="int">3</magnetos>
-   </engine>
-  </engines>
-  <flight>
-   <aileron-trim type="double">0.015</aileron-trim>
-   <elevator-trim type="double">0</elevator-trim>
-   <rudder-trim type="double">0</rudder-trim>
-  </flight>
-  <fuel>
-   <switch-position type="int">0</switch-position>
-  </fuel>
-  <gear>
-   <brake-parking type="double">1.0</brake-parking>
-  </gear>
-  
-  <switches>
-  <flashing-beacon>0</flashing-beacon>
-  <nav-lights>0</nav-lights>
-  <strobe-lights>0</strobe-lights>
- </switches>
- </controls>
-
- <!-- Start with the engine on -->
-
- <engines>
-  <engine>
-   <rpm type="double">750.0</rpm>
-  </engine>
- </engines>
-
- <!-- Start with both tanks completely full   -->
- <consumables>
-  <fuel>
-   <tank n="0">
-    <name>Left</name>
-    <level-gal_us type="double">24</level-gal_us>
-    <selected type="bool">true</selected>
-
-   </tank>
-   <tank n="1">
-    <name>Right</name>
-    <level-gal_us type="double">24</level-gal_us>
-    <selected type="bool">false</selected>
-   </tank>
-  </fuel>
-
- </consumables>
+			<tank n="1">
+				<name type="string">Right Wing</name>
+				<density-ppg type="double">7.00</density-ppg>
+				<unusable-gal_us type="double">0.2</unusable-gal_us>
+				<selected type="bool">false</selected>
+			</tank>
+		</fuel>
+	</consumables>
  
- 
-<it-autoflight>
-	<config>
-		<roll>
-			<umin>-0.50</umin>
-			<umax>0.50</umax>
-			<kp>0.05</kp>
-			<kp-vloc>0.09</kp-vloc>
-			<ti>10.0</ti>
-			<td>0.00001</td>
-			<pfactor-offset>0.0</pfactor-offset>
-		</roll>
-		<pitch>
-			<umin>-0.50</umin>
-			<umax>0.50</umax>
-			<kp>-0.08</kp>
-			<ti>10.0</ti>
-			<td>0.0001</td>
-		</pitch>
-		<cmd>
-			<roll-kp>-1.9</roll-kp>
-			<roll-scale>1.5</roll-scale>
-			<vorloc>-3.0</vorloc>
-			<vs>0.01</vs>
-		</cmd>
-	</config>
-	<settings>
-		<enable-stby>0</enable-stby> <!-- If disabled, LVL and V/S become active when AP on. -->
-		<pitch-mode>2</pitch-mode> <!-- 0 = Elevator trim only, 1 = Elevator only, 2 = Elevator and Autotrim -->
-		<auto-arm-alt>0</auto-arm-alt> <!-- Enable automatic altitude arm -->
-	</settings>
-	<kap140>
-		<ap type="int">0</ap>
-		<pt type="int">0</pt>
-		<display-mode type="string">ALT</display-mode>
-	</kap140>
-</it-autoflight>
- 
+	<input include="Systems/pa28-keyboard.xml"/>
 
+	<nasal>
+		<!--pa28>
+			<file>Aircraft/FGNavigator1/Nasal/pa28.nas</file>
+			<file>Aircraft/FGNavigator1/Nasal/pa28-electrical.nas</file>
+			<file>Aircraft/FGNavigator1/Nasal/action-sim.nas</file>
+			<file>Aircraft/FGNavigator1/Nasal/doors.nas</file>
+			<file>Aircraft/FGNavigator1/Nasal/kr87.nas</file>
+			<file>Aircraft/FGNavigator1/Nasal/ki266.nas</file>
+			<file>Aircraft/FGNavigator1/Nasal/flashlight.nas</file>
+			<file>Aircraft/FGNavigator1/Nasal/kma20.nas</file>
+			<file>Aircraft/FGNavigator1/Systems/kcs55.nas</file>
+			<script><![CDATA[ki266.new(0);
+			KCS55.new();
+			]]></script>
+		</pa28>
 
-  <input    include="Systems/pa28-keyboard.xml"/>
+		<elt>
+			<file>Aircraft/FGNavigator1/Models/Instruments/elt/ELTmessage.nas</file>
+		</elt>
 
-<nasal>
+		<itaf>
+			<file>Aircraft/FGNavigator1/Nasal/it-autoflight.nas</file>
+		</itaf>
 
-  <pa28>
-    <file>Aircraft/FGNavigator1/Nasal/pa28.nas</file>
-    <file>Aircraft/FGNavigator1/Nasal/pa28-electrical.nas</file>
-    <file>Aircraft/FGNavigator1/Nasal/action-sim.nas</file>
-    <file>Aircraft/FGNavigator1/Nasal/doors.nas</file>
-    <file>Aircraft/FGNavigator1/Nasal/kr87.nas</file>
-    <file>Aircraft/FGNavigator1/Nasal/ki266.nas</file>
-    <file>Aircraft/FGNavigator1/Nasal/flashlight.nas</file>
-    <file>Aircraft/FGNavigator1/Nasal/kma20.nas</file>
-    <file>Aircraft/FGNavigator1/Systems/kcs55.nas</file>
-    
-    <script><![CDATA[ki266.new(0);
-                  KCS55.new();
-       ]]></script>
+		<kap140>
+			<file>Aircraft/FGNavigator1/Nasal/kap140.nas</file>
+		</kap140>
 
-  </pa28>
-  
-  <!--
-      temporarely suspended, seems to interfere with ap and memory of setings
-   <kns80>
-      <file>Aircraft/FGNavigator1/Models/instruments/kns80/kns80.nas</file>
-    </kns80>
-  -->
-  <elt>
-    <file>Aircraft/FGNavigator1/Models/Instruments/elt/ELTmessage.nas</file>
-  </elt>
+		<systems>
+			<file>Aircraft/FGNavigator1/systems/kln90b.nas</file>
+		</systems>
 
-  <itaf>
-    <file>Aircraft/FGNavigator1/Nasal/it-autoflight.nas</file>
-  </itaf>
-  
-  <kap140>
-	<file>Aircraft/FGNavigator1/Nasal/kap140.nas</file>
-  </kap140>
-  
-  <systems>
-    <file>Aircraft/FGNavigator1/systems/kln90b.nas</file>
-  </systems>
-  
-  <logger>
-    <file>Aircraft/FGNavigator1/nasal/logger.nas</file>
-  </logger>
-  
-  <tyresmoke>
-    <file>Aircraft/FGNavigator1/Nasal/tyresmoke.nas</file>
-  </tyresmoke>
-  <HobbsMeter>
-        <file>Aircraft/FGNavigator1/Models/instruments/Hobbs/hobbs.nas</file>
-		<script><![CDATA[
-            HobbsMeter.new(index: 0, switchPath: 'gear/gear/wow', inverted: 1);
-        ]]></script>
-    </HobbsMeter>
-      <!--
-         <OSD>
-   <script>
-# On-screen displays
-var left  = screen.display.new(10, -20);
-var right = screen.display.new(-300, 10);
+		<logger>
+			<file>Aircraft/FGNavigator1/nasal/logger.nas</file>
+		</logger>
 
-# Add some properties to display
-
-      right.add("/engines/engine/rpm");
-   </script>
- </OSD>
-          -->
-  
-  <sprops>
-   <script><![CDATA[
-    aircraft.data.add(
-    "/instrumentation/nav[0]/audio-btn",
-    "/instrumentation/nav[0]/power-btn",
-    "/instrumentation/nav[0]/frequencies/selected-mhz",
-    "/instrumentation/nav[0]/frequencies/standby-mhz",
-    "/instrumentation/nav[0]/radials/selected-deg",
-    "/instrumentation/comm[1]/volume",
-    "/instrumentation/comm[1]/frequencies/selected-mhz",
-    "/instrumentation/comm[1]/frequencies/standby-mhz",
-    "/instrumentation/comm[1]/test-btn",
-    "/instrumentation/nav[1]/audio-btn",
-    "/instrumentation/nav[1]/power-btn",
-    "/instrumentation/nav[1]/frequencies/selected-mhz",
-    "/instrumentation/nav[1]/frequencies/standby-mhz",
-    "/instrumentation/nav[1]/radials/selected-deg",
-    "/instrumentation/dme/frequencies/selected-mhz",
-    "/instrumentation/dme/switch-position",
-    "/instrumentation/adf/model",
-    "/instrumentation/adf/frequencies/selected-khz",
-    "/instrumentation/adf/frequencies/standby-khz",
-    "/instrumentation/hobbs-meter/seconds",
-    "/controls/switches/nav-lights",
-    "/controls/switches/strobe-lights",
-    "/controls/switches/flashing-beacon",
-    );
-   ]]></script>
-  </sprops>
-
-
-</nasal>
-
+		<tyresmoke>
+			<file>Aircraft/FGNavigator1/Nasal/tyresmoke.nas</file>
+		</tyresmoke>
+		<HobbsMeter>
+			<file>Aircraft/FGNavigator1/Models/instruments/Hobbs/hobbs.nas</file>
+			<script><![CDATA[
+			HobbsMeter.new(index: 0, switchPath: 'gear/gear/wow', inverted: 1);
+			]]></script>
+		</HobbsMeter-->
+	</nasal>
 
 </PropertyList>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

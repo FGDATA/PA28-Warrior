@@ -173,6 +173,16 @@
  </model>
  
  <model>
+  <name>rpm</name>
+  <path>Aircraft/FGNavigator1/Models/RPM/RPM.xml</path>
+  <offsets>
+   <x-m>1.938</x-m>
+   <y-m>-0.074</y-m>
+   <z-m>0.011</z-m>
+  </offsets>
+ </model>
+ 
+ <!--model>
   <name>fflow</name>
   <path>Aircraft/FGNavigator1/models/fuelGPH.xml</path>
   <offsets>
@@ -180,7 +190,7 @@
    <y-m>-0.074</y-m>
    <z-m>0.013</z-m>
   </offsets>
- </model>
+ </model-->
 
  <model>
   <path>Aircraft/FGNavigator1/Models/StrobeLight.xml</path>
@@ -248,7 +258,7 @@
  
  <model>
   <name>Earph</name>
-  <path>Aircraft/FGNavigator1/Models/casque/casque.xml</path>
+  <path>Aircraft/FGNavigator1/Models/Casque/casque.xml</path>
   <offsets>
    <x-m>1.925</x-m>
    <y-m>0.245</y-m>
@@ -306,9 +316,9 @@
   <name>ALT</name>
   <path>Aircraft/FGNavigator1/Models/instruments/alt/alt.xml</path>
   <offsets>
-  <x-m>1.932</x-m>
-   <y-m>-0.423</y-m>
-   <z-m>0.267</z-m>
+   <x-m>1.925</x-m>
+   <y-m>-0.126</y-m>
+   <z-m>0.271</z-m>
    <roll-deg>-1.5</roll-deg>
   </offsets>
  </model>
@@ -406,8 +416,8 @@
   <name>ADF</name>
    <path>Aircraft/FGNavigator1/Models/adfki228/ki227_228.xml</path>
   <offsets>
-   <x-m>1.920</x-m>
-   <y-m>-0.126</y-m>
+  <x-m>1.929</x-m>
+   <y-m>-0.423</y-m>
    <z-m>0.267</z-m>
   </offsets>
  </model>
@@ -449,10 +459,9 @@
   <name>ELT</name>
    <path>Aircraft/FGNavigator1/Models/instruments/ELT/ArtexELT.xml</path>
   <offsets>
-    <x-m>1.925</x-m>
-   <y-m>-0.494</y-m>
-   <z-m>0.215</z-m>
-   <roll-deg>357</roll-deg>
+   <x-m>1.925</x-m>
+   <y-m>-0.158</y-m>
+   <z-m>0.013</z-m>
   </offsets>
  </model>
 
@@ -550,8 +559,7 @@
    <roll-deg>90</roll-deg>
   </offsets>
  </model>
- 
- 
+
 
  <model>
   <name>Rnav</name>
@@ -570,16 +578,6 @@
    <x-m>1.925</x-m>
    <y-m>-0.01435</y-m>
    <z-m>0.01567</z-m>
-  </offsets>
- </model>
-
- <model>
-  <name>rpm</name>
-  <path>Aircraft/FGNavigator1/Models/RPM/RPM.xml</path>
-  <offsets>
-   <x-m>1.935</x-m>
-   <y-m>-0.282</y-m>
-   <z-m>0.313</z-m>
   </offsets>
  </model>
 
@@ -666,15 +664,15 @@
   </offsets>
  </model>
 
-  <model>
-  <name>dme</name>
-  <path>Aircraft/FGNavigator1/Models/dme.xml</path>
+ <model>
+  <name>KAP140</name>
+  <path>Aircraft/FGNavigator1/Models/radio_stack/kap140/KAP140TwoAxisAlt.xml</path>
   <offsets>
    <x-m>1.9325</x-m>
    <y-m>0.125</y-m>
    <z-m>0.213</z-m>
   </offsets>
- </model>
+ </model> 
  
 
   <model>
@@ -684,16 +682,6 @@
     <x-m>1.925</x-m>
    <y-m>0.292</y-m>
    <z-m>0.24</z-m>
-  </offsets>
- </model>
-
- <model>
-  <name>KAP140</name>
-  <path>Aircraft/FGNavigator1/Models/radio_stack/kap140/KAP140TwoAxisAlt.xml</path>
-  <offsets>
-   <x-m>1.925</x-m>
-   <y-m>-0.175</y-m>
-   <z-m>0.327</z-m>
   </offsets>
  </model>
 
@@ -709,7 +697,7 @@
 		</offsets>
 	</model>
 	
-	<model>
+	<!--model>
   <name>FlightCom</name>
   <path>Aircraft/FGNavigator1/Models/FlightCom/flightcom.xml</path>
   <offsets>
@@ -717,7 +705,7 @@
    <y-m>-0.158</y-m>
    <z-m>0.013</z-m>
   </offsets>
- </model>
+ </model-->
 
 	
  <model>
