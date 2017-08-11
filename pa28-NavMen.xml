@@ -15,13 +15,7 @@
 			</binding>
             </item>
 
-            <item>
-                <label>Pre-Requisites</label>
-                 <binding>
-				<command>open-browser</command>
-				<path>aircraft/fgnavigator1/Docs/Prerequisites.pdf</path>
-			</binding>
-            </item>
+            
 
             <item>
                 <label>Fundamentals</label>
@@ -31,13 +25,7 @@
 			</binding>
             </item>
 
-            <item>
-                <label>RouteManager-GPS</label>
-                 <binding>
-				<command>open-browser</command>
-				<path>aircraft/fgnavigator1/Docs/RM_GPS.pdf</path>
-			</binding>
-            </item>
+            
 
 
             <item>
@@ -48,13 +36,7 @@
 			</binding>
             </item>
 
-            <item>
-                <label>Practise Flights</label>
-                 <binding>
-				<command>open-browser</command>
-				<path>aircraft/fgnavigator1/Docs/Practise_Flights.pdf</path>
-			</binding>
-            </item>
+            
             
 
             
