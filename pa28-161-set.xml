@@ -166,12 +166,12 @@
 
 	<controls>
 		<electric>
-			<battery-switch type="bool">true</battery-switch>
-			<alternator-switch type="bool">true</alternator-switch>
+			<battery type="bool">0</battery>
+			<alternator type="bool">0</alternator>
 		</electric>
 		<engines>
 			<engine n="0">
-				<magnetos type="int">3</magnetos>
+				<magnetos type="int">0</magnetos>
 			</engine>
 		</engines>
 		<flight>
@@ -179,16 +179,17 @@
 			<elevator-trim type="double">0</elevator-trim>
 			<rudder-trim type="double">0</rudder-trim>
 		</flight>
-		<fuel>
-			<switch-position type="int">0</switch-position>
-		</fuel>
 		<gear>
 			<brake-parking type="double">1.0</brake-parking>
 		</gear>
 		<switches>
-			<flashing-beacon>0</flashing-beacon>
-			<nav-lights>0</nav-lights>
-			<strobe-lights>0</strobe-lights>
+			<beacon type="bool">1</beacon>
+			<fuel-pump type="bool">0</fuel-pump>
+			<landing-light type="bool">0</landing-light>
+			<nav-lights type="double">0</nav-lights>
+			<panel-lights-factor type="double">0</panel-lights-factor>
+			<pitot-heat type="bool">0</pitot-heat>
+			<strobe-lights type="bool">1</strobe-lights>
 		</switches>
 	</controls>
  
@@ -254,18 +255,24 @@
 			<file>Aircraft/FGNavigator1/Nasal/libraries.nas</file>
 			<file>Aircraft/FGNavigator1/Models/Instruments/elt/ELTmessage.nas</file>
 			<file>Aircraft/FGNavigator1/systems/kln90b.nas</file>
-			<file>Aircraft/FGNavigator1/Nasal/doors.nas</file>
 			<file>Aircraft/FGNavigator1/Nasal/kr87.nas</file>
-			<file>Aircraft/FGNavigator1/Nasal/ki266.nas</file>
+			<!--file>Aircraft/FGNavigator1/Nasal/doors.nas</file>
+			<file>Aircraft/FGNavigator1/Nasal/ki266.nas</file-->
 			<file>Aircraft/FGNavigator1/Nasal/kma20.nas</file>
 			<file>Aircraft/FGNavigator1/Systems/kcs55.nas</file>
 			<file>Aircraft/FGNavigator1/Nasal/kma20.nas</file>
 			<file>Aircraft/FGNavigator1/Systems/kcs55.nas</file>
-			<script>
+			<!--script>
 			<![CDATA[ki266.new(0);
 			KCS55.new();]]>
+			</script-->
+			<script>
+			<![CDATA[KCS55.new();]]>
 			</script>
 		</libraries>
+		<!--systems> WIP -JD
+			<file>Aircraft/FGNavigator1/Nasal/electrical.nas</file>
+		</systems-->
 		<itaf>
 			<file>Aircraft/FGNavigator1/Nasal/it-autoflight.nas</file>
 		</itaf>

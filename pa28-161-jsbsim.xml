@@ -34,7 +34,7 @@ xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
 		</location>
 
 		<location name="VRP" unit="IN">
-			<x>109.8</x>
+			<x>0</x>
 			<y>0</y>
 			<z>0</z>
 		</location>
