@@ -31,7 +31,7 @@
     </binding>
     <binding>
    <command>nasal</command>
-   <script>pa28.landing_light_switch()</script>
+   <script>libraries.landing_light_switch()</script>
   </binding>
     <mod-up>
       <binding>

@@ -464,7 +464,7 @@
      <h>59</h>
      <binding>
    <command>nasal</command>
-   <script>pa28.carb_heat()</script>
+   <script>libraries.carb_heat()</script>
      </binding>
    </action>   
 

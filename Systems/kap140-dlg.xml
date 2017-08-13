@@ -409,5 +409,20 @@
 		</button>
 		
 	</group>
+	
+	<hrule/>
+	
+	<checkbox>
+		<label>Slave NAV Mode to GPS/Route Manager</label>
+		<property>/it-autoflight/settings/slave-gps-nav</property>
+		<enable>
+			<property>/autopilot/settings/gps-driving-true-heading</property>
+		</enable>
+		<binding>
+			<command>property-toggle</command>
+			<property>/it-autoflight/settings/slave-gps-nav</property>
+		</binding>
+		<live>true</live>
+	</checkbox>
 
 </PropertyList>

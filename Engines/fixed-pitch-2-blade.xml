@@ -1,14 +1,13 @@
 <?xml version="1.0"?>
 
+<!-- (c) Joshua Davidson (it0uchpods) -->
+
 <propeller name="fixed-pitch-2-blade">
-	<ixx>                  1.8 </ixx>
-	<diameter unit="IN">  39.0 </diameter>
+	<ixx>                 1.67 </ixx>
+	<diameter unit="IN">  74.0 </diameter>
 	<numblades>              2 </numblades>
 	<minpitch>              22 </minpitch>
 	<maxpitch>              22 </maxpitch>
-	<minrpm>               612 </minrpm>
-	<maxrpm>              2685 </maxrpm>
-	<constspeed>             0 </constspeed>
 
 	<table name="C_THRUST" type="internal">
 		<tableData>

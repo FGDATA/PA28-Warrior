@@ -1,5 +1,7 @@
 <?xml version="1.0"?>
 
+<!-- (c) Joshua Davidson (it0uchpods) -->
+
 <?xml-stylesheet href="JSBSim.xsl" type="application/xml"?>
 <fdm_config name="PA28-161" version="2.0" release="BETA"
 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -12,15 +14,15 @@ xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
 	</fileheader>
 
 	<metrics>
-		<wingarea unit="FT2">  208.7000 </wingarea>
-		<wingspan unit="FT">    38.9060 </wingspan>
+		<wingarea unit="FT2">  160.0000 </wingarea>
+		<wingspan unit="FT">    30.0000 </wingspan>
 		<chord unit="FT">        5.1800 </chord>
 		<htailarea unit="FT2">  37.1800 </htailarea>
 		<htailarm unit="FT">       15.1 </htailarm>
 		<vtailarea unit="FT2">  28.5957 </vtailarea>
 		<vtailarm unit="FT">     8.7165 </vtailarm>
 		<location name="AERORP" unit="IN">
-			<x>93.1</x>
+			<x>112.1</x>
 			<y>0</y>
 			<z>0.2795</z>
 		</location>
@@ -45,9 +47,9 @@ xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
 		<ixy unit="SLUG*FT2">    0 </ixy>
 		<ixz unit="SLUG*FT2">    0 </ixz>
 		<iyz unit="SLUG*FT2">    0 </iyz>
-		<emptywt unit="LBS">  1344 </emptywt>
+		<emptywt unit="LBS">  1201 </emptywt>
 		<location name="CG" unit="IN">
-			<x>83.5</x>
+			<x>109.4</x>
 			<y>0</y>
 			<z>0.2795</z>
 		</location>
@@ -55,7 +57,7 @@ xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
 		<pointmass name="Pilot">
 			<weight unit="LBS"> 200.0 </weight>
 			<location name="POINTMASS" unit="IN">
-				<x>83.5</x>
+				<x>109.4</x>
 				<y>0</y>
 				<z>0.2795</z>
 			</location>
@@ -64,7 +66,7 @@ xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
 		<pointmass name="Right Seat">
 			<weight unit="LBS"> 200.0 </weight>
 			<location name="POINTMASS" unit="IN">
-				<x>83.5</x>
+				<x>109.4</x>
 				<y>0</y>
 				<z>0.2795</z>
 			</location>
@@ -146,7 +148,7 @@ xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
 		
 		<contact type="STRUCTURE" name="LEFT_WING">
 			<location unit="IN">
-				<x>96.4161</x>
+				<x>109.4161</x>
 				<y>-201.2543</y>
 				<z>1.5452</z>
 			</location>
@@ -158,7 +160,7 @@ xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
 		
 		<contact type="STRUCTURE" name="RIGHT_WING">
 			<location unit="IN">
-				<x>96.4161</x>
+				<x>109.4161</x>
 				<y>201.2543</y>
 				<z>1.5452</z>
 			</location>
@@ -201,7 +203,7 @@ xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
 		<!-- Left Tank -->
 		<tank type="FUEL">
 			<location unit="IN">
-				<x>96.4161</x>
+				<x>109.4161</x>
 				<y>-77.3346</y>
 				<z>1.5452</z>
 			</location>
@@ -209,12 +211,12 @@ xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
 			<capacity unit="LBS">24</capacity>
 			<contents unit="LBS">17</contents>
 			<type>AVGAS</type>
-			<priority>0</priority>
+			<priority>1</priority>
 		</tank>
 		<!-- Right Tank -->
 		<tank type="FUEL">
 			<location unit="IN">
-				<x>96.4161</x>
+				<x>109.4161</x>
 				<y>77.3346</y>
 				<z>1.5452</z>
 			</location>
@@ -222,7 +224,7 @@ xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
 			<capacity unit="LBS">24</capacity>
 			<contents unit="LBS">17</contents>
 			<type>AVGAS</type>
-			<priority>0</priority>
+			<priority>1</priority>
 		</tank>
 	</propulsion>
 	

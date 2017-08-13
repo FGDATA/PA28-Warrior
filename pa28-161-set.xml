@@ -13,7 +13,7 @@
 			<splash-texture>Aircraft/FGNavigator1/FGN_Splash.jpg</splash-texture>
 		</startup>
 
-		<hud>
+		<!--hud>
 			<path n="1">Aircraft/FGNavigator1/Huds/Pa161HUD.xml</path>
 			<path n="2">Aircraft/FGNavigator1/Huds/FGN.xml</path>
 			<path n="3">Aircraft/FGNavigator1/Huds/default.xml</path>
@@ -24,19 +24,17 @@
 			</font>
 			<palette>
 				<color n="0">
-					<!-- white -->
 					<red type="float">248</red>
 					<green type="float">248</green>
 					<blue type="float">255</blue>
 				</color>
 				<color n="2">
-					<!-- gold -->
 					<red type="float">1.0</red>
 					<green type="float">0.4</green>
 					<blue type="float">0.0</blue>
 				</color>
 			</palette>
-		</hud>
+		</hud-->
 
 		<model>
 			<path type="string">Aircraft/FGNavigator1/Models/pa28-161.xml</path>
@@ -51,8 +49,7 @@
 				<path>Aircraft/FGNavigator1/Systems/it-autoflight.xml</path>
 			</autopilot>
 			<autopilot>
-				<name>FiltersOnly</name>
-				<path>Aircraft/FGNavigator1/Systems/NAVandGSfilters.xml</path>
+				<path>Aircraft/FGNavigator1/Systems/libraries.xml</path>
 			</autopilot>
 			<electrical>
 				<outputs>
@@ -98,6 +95,13 @@
 		<sound>
 			<volume>0.8</volume>
 		</sound>
+		
+		<!-- Multiplayer properties -->
+		<!--multiplay>
+			<generic>
+				<float n="0" alias="replaceme" />
+			</generic>
+		</multiplay-->
 	</sim>
 
 	<instrumentation>
@@ -191,25 +195,25 @@
 	<it-autoflight>
 		<config>
 			<roll>
-				<umin>-0.50</umin>
-				<umax>0.50</umax>
+				<umin>-0.40</umin>
+				<umax>0.40</umax>
 				<kp>0.05</kp>
-				<kp-vloc>0.09</kp-vloc>
+				<kp-vloc>0.06</kp-vloc>
 				<ti>10.0</ti>
 				<td>0.00001</td>
-				<pfactor-offset>0.0</pfactor-offset>
+				<pfactor-offset>0.05</pfactor-offset>
 			</roll>
 			<pitch>
-				<umin>-0.50</umin>
-				<umax>0.50</umax>
-				<kp>-0.08</kp>
+				<umin>-0.30</umin>
+				<umax>0.30</umax>
+				<kp>-0.06</kp>
 				<ti>10.0</ti>
 				<td>0.0001</td>
 			</pitch>
 			<cmd>
-				<roll-kp>-1.9</roll-kp>
-				<roll-scale>1.5</roll-scale>
-				<vorloc>-3.0</vorloc>
+				<roll-kp>-1.4</roll-kp>
+				<roll-scale>0.9</roll-scale>
+				<vorloc>-2.0</vorloc>
 				<vs>0.01</vs>
 			</cmd>
 		</config>
@@ -246,50 +250,46 @@
 	<input include="Systems/pa28-keyboard.xml"/>
 
 	<nasal>
-		<!--pa28>
-			<file>Aircraft/FGNavigator1/Nasal/pa28.nas</file>
-			<file>Aircraft/FGNavigator1/Nasal/pa28-electrical.nas</file>
-			<file>Aircraft/FGNavigator1/Nasal/action-sim.nas</file>
+		<libraries>
+			<file>Aircraft/FGNavigator1/Nasal/libraries.nas</file>
+			<file>Aircraft/FGNavigator1/Models/Instruments/elt/ELTmessage.nas</file>
+			<file>Aircraft/FGNavigator1/systems/kln90b.nas</file>
 			<file>Aircraft/FGNavigator1/Nasal/doors.nas</file>
 			<file>Aircraft/FGNavigator1/Nasal/kr87.nas</file>
 			<file>Aircraft/FGNavigator1/Nasal/ki266.nas</file>
-			<file>Aircraft/FGNavigator1/Nasal/flashlight.nas</file>
 			<file>Aircraft/FGNavigator1/Nasal/kma20.nas</file>
 			<file>Aircraft/FGNavigator1/Systems/kcs55.nas</file>
-			<script><![CDATA[ki266.new(0);
-			KCS55.new();
-			]]></script>
-		</pa28>
-
-		<elt>
-			<file>Aircraft/FGNavigator1/Models/Instruments/elt/ELTmessage.nas</file>
-		</elt>
-
+			<file>Aircraft/FGNavigator1/Nasal/kma20.nas</file>
+			<file>Aircraft/FGNavigator1/Systems/kcs55.nas</file>
+			<script>
+			<![CDATA[ki266.new(0);
+			KCS55.new();]]>
+			</script>
+		</libraries>
 		<itaf>
 			<file>Aircraft/FGNavigator1/Nasal/it-autoflight.nas</file>
 		</itaf>
-
 		<kap140>
 			<file>Aircraft/FGNavigator1/Nasal/kap140.nas</file>
 		</kap140>
-
-		<systems>
-			<file>Aircraft/FGNavigator1/systems/kln90b.nas</file>
-		</systems>
-
-		<logger>
-			<file>Aircraft/FGNavigator1/nasal/logger.nas</file>
-		</logger>
-
 		<tyresmoke>
 			<file>Aircraft/FGNavigator1/Nasal/tyresmoke.nas</file>
 		</tyresmoke>
 		<HobbsMeter>
 			<file>Aircraft/FGNavigator1/Models/instruments/Hobbs/hobbs.nas</file>
-			<script><![CDATA[
-			HobbsMeter.new(index: 0, switchPath: 'gear/gear/wow', inverted: 1);
-			]]></script>
-		</HobbsMeter-->
+			<script>
+			<![CDATA[HobbsMeter.new(index: 0, switchPath: 'gear/gear/wow', inverted: 1);]]>
+			</script>
+		</HobbsMeter>
+		<logger>
+			<file>Aircraft/FGNavigator1/Nasal/logger.nas</file>
+		</logger>
+		
+		<!-- Old nasal: needs rewrite and/or check for JSBsim -JD -->
+		<!--pa28>
+			<file>Aircraft/FGNavigator1/Nasal/pa28.nas</file>
+			<file>Aircraft/FGNavigator1/Nasal/pa28-electrical.nas</file>
+		</pa28-->
 	</nasal>
 
 </PropertyList>

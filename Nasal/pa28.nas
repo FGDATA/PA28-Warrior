@@ -2,8 +2,6 @@ var val = 0;
 var test = 0;
 var toggle = 0;
 
-
-
 var fuel_switch = func {
   node = props.globals.getNode("consumables/fuel/tank[0]/selected",0);
   node.setBoolValue(0);

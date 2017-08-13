@@ -40,22 +40,22 @@
       
       <binding>
          <command>nasal</command>
-         <script>pa28.f_pump_switch()</script>
+         <script>libraries.f_pump_switch()</script>
       </binding>
 
       <binding>
         <command>nasal</command>
-        <script>pa28.fin_strobe_light_switch()</script>
+        <script>libraries.fin_strobe_light_switch()</script>
      </binding>
 
      <binding>
        <command>nasal</command>
-       <script>pa28.wing_strobe_light_switch()</script>
+       <script>libraries.wing_strobe_light_switch()</script>
      </binding>
 
      <binding>
         <command>nasal</command>
-        <script>pa28.pitot_heat_switch()</script>
+        <script>libraries.pitot_heat_switch()</script>
      </binding>
      
       <mod-up>

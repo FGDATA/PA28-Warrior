@@ -39,7 +39,7 @@
       <repeatable>false</repeatable>
       <binding>
         <command>nasal</command>
-        <script>pa28.primer()</script>
+        <script>libraries.primer()</script>
       </binding>
     </action>
   </animation>

@@ -216,7 +216,7 @@
 
   <model>
   <name>YokeLeft</name>
-  <path>Aircraft/FGNavigator1/Models/yoke/yoke-pa28.xml</path>
+  <path>Aircraft/FGNavigator1/Models/yoke/yoke.xml</path>
   <offsets>
    <x-m>1.930</x-m>
    <y-m>-0.235</y-m>
@@ -226,7 +226,7 @@
 
  <model>
   <name>YokeRight</name>
-  <path>Aircraft/FGNavigator1/Models/yoke/yoke-pa28.xml</path>
+  <path>Aircraft/FGNavigator1/Models/yoke/yoke.xml</path>
   <offsets>
    <x-m>1.930</x-m>
    <y-m>0.245</y-m>
@@ -832,7 +832,7 @@
  </animation>
 
 <!-- Make the fuel selector valve move based on the value of switch-position 
-     The actual change in tank selection is done by pa28.nas which allows
+     The actual change in tank selection is done by libraries.nas which allows
      cycling the selected tank by keyboard "f".-->
  <animation>
   <type>rotate</type>
@@ -912,7 +912,7 @@
      <repeatable>false</repeatable>
      <binding>
         <command>nasal</command>
-        <script>pa28.rightDoor.toggle();</script>
+        <script>libraries.rightDoor.toggle();</script>
      </binding>
    </action>
  </animation>
@@ -926,7 +926,7 @@
      <repeatable>false</repeatable>
      <binding>
         <command>nasal</command>
-        <script>pa28.rightDoor.toggle();</script>
+        <script>libraries.rightDoor.toggle();</script>
      </binding>
    </action>
  </animation>

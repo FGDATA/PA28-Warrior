@@ -23,7 +23,7 @@
       
       <binding>
     <command>nasal</command>
-     <script>pa28.fuel_switch()</script>
+     <script>libraries.fuel_switch()</script>
    </binding>
     
       </animation>
