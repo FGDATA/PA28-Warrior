@@ -140,7 +140,7 @@
 
   <model>
   <name>YokeLeft</name>
-  <path>Aircraft/FGNavigator1/Models/yoke/yoke.xml</path>
+  <path>Aircraft/FGNavigator1/Models/yoke/yoke-l.xml</path>
   <offsets>
    <x-m>1.930</x-m>
    <y-m>-0.235</y-m>
@@ -150,7 +150,7 @@
 
  <model>
   <name>YokeRight</name>
-  <path>Aircraft/FGNavigator1/Models/yoke/yoke.xml</path>
+  <path>Aircraft/FGNavigator1/Models/yoke/yoke-r.xml</path>
   <offsets>
    <x-m>1.930</x-m>
    <y-m>0.245</y-m>
@@ -323,18 +323,6 @@
    <z-m>0.100</z-m>
   </offsets>
  </model>
-
- <model>
-  <name>mflap</name>
-  <path>Aircraft/FGNavigator1/Models/instruments/Flaps/flaps.xml</path>
-  <offsets>
-   <x-m>1.929</x-m>
-   <y-m>0.245</y-m>
-   <z-m>0.100</z-m>
-  </offsets>
- </model>
-
-
 
  <model>
   <name>ADF</name>

@@ -1,7 +1,8 @@
 # PA28-161 Libraries
 # Joshua Davidson (it0uchpods)
 
-setlistener("/sim/signals/fdm-initialized", func{
+setlistener("/sim/signals/fdm-initialized", func {
+	systems.elec_init();
     itaf.ap_init();
     var autopilot = gui.Dialog.new("sim/gui/dialogs/autopilot/dialog", "Aircraft/FGNavigator1/Systems/kap140-dlg.xml");
 	setprop("/it-autoflight/input/hdg", getprop("/orientation/heading-magnetic-deg"));

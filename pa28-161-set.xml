@@ -45,19 +45,15 @@
 		</panel>
 
 		<systems>
+			<electrical>
+				<path></path>
+			</electrical>
 			<autopilot>
 				<path>Aircraft/FGNavigator1/Systems/it-autoflight.xml</path>
 			</autopilot>
 			<autopilot>
 				<path>Aircraft/FGNavigator1/Systems/libraries.xml</path>
 			</autopilot>
-			<electrical>
-				<outputs>
-					<KNS80 type="string">28</KNS80>
-					<comm type="string">28</comm>
-					<comm n="1" type="string">28</comm>
-				</outputs>
-			</electrical>
 			<SwitchTanks>
 				<path>Aircraft/FGNavigator1/Systems/SwitchTanks.xml</path>
 			</SwitchTanks>
@@ -104,7 +100,87 @@
 		</multiplay-->
 	</sim>
 
-	<instrumentation>
+	<airport>
+		<runways>
+			<start-offset-m>20</start-offset-m>
+		</runways>
+	</airport>
+	
+	<consumables>
+		<fuel>
+			<tank n="0">
+				<name type="string">Left Wing</name>
+				<density-ppg type="double">7.00</density-ppg>
+				<unusable-gal_us type="double">0.2</unusable-gal_us>
+				<selected type="bool">true</selected>
+			</tank>
+
+			<tank n="1">
+				<name type="string">Right Wing</name>
+				<density-ppg type="double">7.00</density-ppg>
+				<unusable-gal_us type="double">0.2</unusable-gal_us>
+				<selected type="bool">false</selected>
+			</tank>
+		</fuel>
+	</consumables>
+
+	<controls n="0">
+		<electrical>
+			<battery type="bool">0</battery>
+			<alternator type="bool">0</alternator>
+		</electrical>
+		<engines>
+			<engine n="0">
+				<magnetos type="int">0</magnetos>
+			</engine>
+		</engines>
+		<flight>
+			<aileron-trim type="double">0</aileron-trim>
+			<elevator-trim type="double">0</elevator-trim>
+			<rudder-trim type="double">0</rudder-trim>
+		</flight>
+		<gear>
+			<brake-parking type="double">1.0</brake-parking>
+		</gear>
+		<switches>
+			<avionics-master type="bool">0</avionics-master>
+			<beacon type="bool">1</beacon>
+			<fuel-pump type="bool">0</fuel-pump>
+			<landing-light type="bool">0</landing-light>
+			<nav-lights type="double">0</nav-lights>
+			<nav-lights-factor type="double">0</nav-lights-factor>
+			<panel-lights type="double">0</panel-lights>
+			<panel-lights-factor type="double">0</panel-lights-factor>
+			<pitot-heat type="bool">0</pitot-heat>
+			<strobe-lights type="bool">1</strobe-lights>
+		</switches>
+	</controls>
+	
+	<gear n="0">
+		<gear n="0">
+			<position-norm type="double">1</position-norm>
+			<tyre-smoke type="int">0</tyre-smoke>
+			<sprayspeed-ms type="double">0</sprayspeed-ms>
+			<spray-density type="double">0</spray-density>
+			<caster-angle-deg-damped type="double">0</caster-angle-deg-damped>
+		</gear>
+		<gear n="1">
+			<position-norm type="double">1</position-norm>
+			<tyre-smoke type="int">0</tyre-smoke>
+			<sprayspeed-ms type="double">0</sprayspeed-ms>
+			<spray-density type="double">0</spray-density>
+		</gear>
+		<gear n="2">
+			<position-norm type="double">1</position-norm>
+			<tyre-smoke type="int">0</tyre-smoke>
+			<sprayspeed-ms type="double">0</sprayspeed-ms>
+			<spray-density type="double">0</spray-density>
+		</gear>
+	</gear>
+ 
+	<input include="Systems/pa28-keyboard.xml"/>
+	
+	<instrumentation n="0">
 		<kcs55 include="Systems/kcs55.xml"/>
 		<kcs55 n="0">
 			<ka51>
@@ -135,64 +211,7 @@
 			<switch-position type="int">1</switch-position>
 		</dme>
 	</instrumentation>
-
-	<airport>
-		<runways>
-			<start-offset-m>20</start-offset-m>
-		</runways>
-	</airport>
-
-	<gear>
-		<gear n="0">
-			<position-norm type="double">1</position-norm>
-			<tyre-smoke type="int">0</tyre-smoke>
-			<sprayspeed-ms type="double">0</sprayspeed-ms>
-			<spray-density type="double">0</spray-density>
-			<caster-angle-deg-damped type="double">0</caster-angle-deg-damped>
-		</gear>
-		<gear n="1">
-			<position-norm type="double">1</position-norm>
-			<tyre-smoke type="int">0</tyre-smoke>
-			<sprayspeed-ms type="double">0</sprayspeed-ms>
-			<spray-density type="double">0</spray-density>
-		</gear>
-		<gear n="2">
-			<position-norm type="double">1</position-norm>
-			<tyre-smoke type="int">0</tyre-smoke>
-			<sprayspeed-ms type="double">0</sprayspeed-ms>
-			<spray-density type="double">0</spray-density>
-		</gear>
-	</gear>
-
-	<controls>
-		<electric>
-			<battery type="bool">0</battery>
-			<alternator type="bool">0</alternator>
-		</electric>
-		<engines>
-			<engine n="0">
-				<magnetos type="int">0</magnetos>
-			</engine>
-		</engines>
-		<flight>
-			<aileron-trim type="double">0</aileron-trim>
-			<elevator-trim type="double">0</elevator-trim>
-			<rudder-trim type="double">0</rudder-trim>
-		</flight>
-		<gear>
-			<brake-parking type="double">1.0</brake-parking>
-		</gear>
-		<switches>
-			<beacon type="bool">1</beacon>
-			<fuel-pump type="bool">0</fuel-pump>
-			<landing-light type="bool">0</landing-light>
-			<nav-lights type="double">0</nav-lights>
-			<panel-lights-factor type="double">0</panel-lights-factor>
-			<pitot-heat type="bool">0</pitot-heat>
-			<strobe-lights type="bool">1</strobe-lights>
-		</switches>
-	</controls>
- 
+	
 	<it-autoflight>
 		<config>
 			<roll>
@@ -229,50 +248,31 @@
 			<display-mode type="string">ALT</display-mode>
 		</kap140>
 	</it-autoflight>
-
-	<consumables>
-		<fuel>
-			<tank n="0">
-				<name type="string">Left Wing</name>
-				<density-ppg type="double">7.00</density-ppg>
-				<unusable-gal_us type="double">0.2</unusable-gal_us>
-				<selected type="bool">true</selected>
-			</tank>
-
-			<tank n="1">
-				<name type="string">Right Wing</name>
-				<density-ppg type="double">7.00</density-ppg>
-				<unusable-gal_us type="double">0.2</unusable-gal_us>
-				<selected type="bool">false</selected>
-			</tank>
-		</fuel>
-	</consumables>
- 
-	<input include="Systems/pa28-keyboard.xml"/>
+	
+	<options n="0">
+		<show-l-yoke type="bool">1</show-l-yoke>
+		<show-r-yoke type="bool">1</show-r-yoke>
+	</options>
 
 	<nasal>
 		<libraries>
 			<file>Aircraft/FGNavigator1/Nasal/libraries.nas</file>
 			<file>Aircraft/FGNavigator1/Models/Instruments/elt/ELTmessage.nas</file>
-			<file>Aircraft/FGNavigator1/systems/kln90b.nas</file>
+			<file>Aircraft/FGNavigator1/Nasal/kln90b.nas</file>
 			<file>Aircraft/FGNavigator1/Nasal/kr87.nas</file>
-			<!--file>Aircraft/FGNavigator1/Nasal/doors.nas</file>
-			<file>Aircraft/FGNavigator1/Nasal/ki266.nas</file-->
+			<!--file>Aircraft/FGNavigator1/Nasal/doors.nas</file-->
+			<file>Aircraft/FGNavigator1/Nasal/ki266.nas</file>
 			<file>Aircraft/FGNavigator1/Nasal/kma20.nas</file>
-			<file>Aircraft/FGNavigator1/Systems/kcs55.nas</file>
+			<file>Aircraft/FGNavigator1/Nasal/kcs55.nas</file>
 			<file>Aircraft/FGNavigator1/Nasal/kma20.nas</file>
-			<file>Aircraft/FGNavigator1/Systems/kcs55.nas</file>
-			<!--script>
+			<script>
 			<![CDATA[ki266.new(0);
 			KCS55.new();]]>
-			</script-->
-			<script>
-			<![CDATA[KCS55.new();]]>
 			</script>
 		</libraries>
-		<!--systems> WIP -JD
+		<systems>
 			<file>Aircraft/FGNavigator1/Nasal/electrical.nas</file>
-		</systems-->
+		</systems>
 		<itaf>
 			<file>Aircraft/FGNavigator1/Nasal/it-autoflight.nas</file>
 		</itaf>
@@ -291,12 +291,6 @@
 		<logger>
 			<file>Aircraft/FGNavigator1/Nasal/logger.nas</file>
 		</logger>
-		
-		<!-- Old nasal: needs rewrite and/or check for JSBsim -JD -->
-		<!--pa28>
-			<file>Aircraft/FGNavigator1/Nasal/pa28.nas</file>
-			<file>Aircraft/FGNavigator1/Nasal/pa28-electrical.nas</file>
-		</pa28-->
 	</nasal>
 
 </PropertyList>

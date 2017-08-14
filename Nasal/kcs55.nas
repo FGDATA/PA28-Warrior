@@ -212,7 +212,7 @@ var KG102 = {
       }
     }
 
-    aircraft.data.add( obj.gyroHeadingNode );
+#    aircraft.data.add( obj.gyroHeadingNode );
 
     return obj;
   },
@@ -327,7 +327,7 @@ var KA51 = {
     obj.slavedNode    = obj.rootNode.initNode( "slaved", 0, "BOOL" );
     obj.manualSlaveNode = obj.rootNode.initNode( "manual-slave", 0, "INT" );
 
-    aircraft.data.add( obj.slavedNode );
+#    aircraft.data.add( obj.slavedNode );
     return obj;
   },
 
@@ -362,10 +362,10 @@ var KI525 = {
     obj.getReferencedProperty("course-error-property").alias( obj.rootNode.getNode( "course-error-deg" ), 1 );
     obj.getReferencedProperty("heading-error-property").alias( obj.rootNode.getNode( "heading-error-deg" ), 1 );
 
-    aircraft.data.add( 
-      obj.courseNode,
-      obj.headingNode
-    );
+#    aircraft.data.add( 
+#      obj.courseNode,
+#      obj.headingNode
+#    );
     return obj;
   },
 

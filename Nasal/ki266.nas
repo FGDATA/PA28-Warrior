@@ -51,7 +51,7 @@ ki266.new = func(idx) {
   obj.minKtsDisplayNode = obj.rootNode.initNode( "min-kts-display", 0.0 );
   obj.milesDisplayNode = obj.rootNode.initNode( "miles-display", 0.0 );
   obj.leftDotNode = obj.rootNode.initNode( "left-dot", 0, "BOOL" );
-  aircraft.data.add( obj.powerNode, obj.minKtsNode );
+# aircraft.data.add( obj.powerNode, obj.minKtsNode );
 
   obj.update();
 
