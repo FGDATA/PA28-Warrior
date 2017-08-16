@@ -61,7 +61,55 @@
 
 		<help include="Systems/help.xml"/>
 
-		<menubar include="pa28-NavMen.xml"/>
+		<menubar>
+			<default>
+				<menu n="3">
+					<item>
+						<name>autopilot</name>
+						<label>Autopilot</label>
+						<binding>
+							<command>nasal</command>
+							<script>
+							 var autopilot = gui.Dialog.new("sim/gui/dialogs/autopilot/dialog", "Aircraft/FGNavigator1/Systems/kap140-dlg.xml");
+							 autopilot.open();
+							</script>
+						</binding>
+					</item>
+				</menu>
+				<menu n="100">
+					<label>Docs</label>
+					<enabled type="bool">true</enabled>
+					<item>
+						<label>The Cockpit</label>
+						<binding>
+							<command>open-browser</command>
+							<path>aircraft/FGNavigator1/Docs/FGN_Cockpit.pdf</path>
+						</binding>
+					</item>
+					<item>
+						<label>Fundamentals</label>
+						<binding>
+							<command>open-browser</command>
+							<path>aircraft/FGNavigator1/Docs/Fundamentals.pdf</path>
+						</binding>
+					</item>
+					<item>
+						<label>General Settings</label>
+						<binding>
+							<command>open-browser</command>
+							<path>aircraft/FGNavigator1/Docs/General_Settings.pdf</path>
+						</binding>
+					</item>
+					<item>
+						<label>About This Aircraft</label>
+						<binding>
+							<command>open-browser</command>
+							<path>aircraft/FGNavigator1/Docs/AboutFGN.pdf</path>
+						</binding>
+					</item>
+				</menu>
+			</default>
+		</menubar>
 
 		<sound>
 			<path archive="y">Aircraft/FGNavigator1/pa28-161-sound.xml</path>
@@ -114,7 +162,6 @@
 				<unusable-gal_us type="double">0.2</unusable-gal_us>
 				<selected type="bool">true</selected>
 			</tank>
-
 			<tank n="1">
 				<name type="string">Right Wing</name>
 				<density-ppg type="double">7.00</density-ppg>
