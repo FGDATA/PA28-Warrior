@@ -54,9 +54,6 @@
 			<autopilot>
 				<path>Aircraft/FGNavigator1/Systems/libraries.xml</path>
 			</autopilot>
-			<SwitchTanks>
-				<path>Aircraft/FGNavigator1/Systems/SwitchTanks.xml</path>
-			</SwitchTanks>
 		</systems>
 
 		<help include="Systems/help.xml"/>
