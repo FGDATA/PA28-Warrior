@@ -122,6 +122,20 @@
 				<y-offset-m archive="y">0.5</y-offset-m>
 				<z-offset-m archive="y">2.6</z-offset-m>
 				<pitch-offset-deg>-15</pitch-offset-deg>
+				<default-field-of-view-deg type="double">70</default-field-of-view-deg>
+			</config>
+		</view>
+		<view n="100">
+			<name>Copilot View</name>
+			<type>lookfrom</type>
+			<internal archive="y">true</internal>
+			<config>
+				<from-model type="bool">true</from-model>
+				<x-offset-m archive="y">0.24</x-offset-m>
+				<y-offset-m archive="y">0.5</y-offset-m>
+				<z-offset-m archive="y">2.6</z-offset-m>
+				<pitch-offset-deg>-15</pitch-offset-deg>
+				<default-field-of-view-deg type="double">70</default-field-of-view-deg>
 			</config>
 		</view>
 
@@ -179,6 +193,7 @@
 		<engines>
 			<engine n="0">
 				<magnetos type="int">0</magnetos>
+				<magnetos-switch type="int">0</magnetos-switch>
 			</engine>
 		</engines>
 		<flight>
@@ -319,6 +334,7 @@
 		</libraries>
 		<systems>
 			<file>Aircraft/FGNavigator1/Nasal/electrical.nas</file>
+			<file>Aircraft/FGNavigator1/Nasal/engines.nas</file>
 		</systems>
 		<itaf>
 			<file>Aircraft/FGNavigator1/Nasal/it-autoflight.nas</file>

@@ -304,9 +304,7 @@
 
  <model>
   <name>VOR2</name>
-
-  <path>Aircraft/FGNavigator1/models/instruments/CVOR2/vor2.xml</path>
-
+  <path>Aircraft/FGNavigator1/Models/ki209a/ki209a-2.xml</path>
   <offsets>
    <x-m>1.923</x-m>
    <y-m>-0.029</y-m>
@@ -346,24 +344,13 @@
  </model>
  
   <model>
-  <name>Ths</name>
-   <path>Aircraft/FGNavigator1/Models/instruments/THS/ths.xml</path>
+  <name>Avionics</name>
+   <path>Aircraft/FGNavigator1/Models/instruments/avionics-sw/avionics-sw.xml</path>
   <offsets>
     <x-m>1.927</x-m>
-    <y-m>-0.179</y-m>
-    <z-m>0.185</z-m>
+    <y-m>0.4605</y-m>
+    <z-m>0.165</z-m>
     <roll-deg>90</roll-deg>
-  </offsets>
- </model>
- 
- <model>
-  <name>svn</name>
-   <path>Aircraft/FGNavigator1/Models/Svn/Svn.xml</path>
-  <offsets>
-   <x-m>1.927</x-m>
-   <y-m>-0.179</y-m>
-   <z-m>0.271</z-m>
-   <roll-deg>90</roll-deg>
   </offsets>
  </model>
 
@@ -396,17 +383,6 @@
    <z-m>0.183</z-m>
    <roll-deg>-0.5</roll-deg>
    <pitch-deg>-0.1</pitch-deg>
-  </offsets>
- </model>
-
-  <model>
- <name>HI</name>
-   <path>Aircraft/FGNavigator1/Models/instruments/hi/hi.xml</path>
-  <offsets>
-  <x-m>1.926</x-m>
-   <y-m>-0.233</y-m>
-   <z-m>0.183</z-m>
-   <roll-deg>-0.5</roll-deg>
   </offsets>
  </model>
 
@@ -473,7 +449,7 @@
  </model>
 
 
- <model>
+ <!--model>
   <name>Rnav</name>
   <path>Aircraft/FGNavigator1/Models/instruments/kns80/kns80.xml</path>
   <offsets>
@@ -481,7 +457,7 @@
    <y-m>0.303</y-m>
    <z-m>0.176</z-m>
   </offsets>
- </model>
+ </model--> <!-- Broken -->
  
  <model>
   <name>Primer</name>
@@ -516,7 +492,7 @@
 
  <model>
   <name>mags</name>
-  <path>Aircraft/Instruments-3d/magneto-switch/mags.xml</path>
+  <path>Aircraft/FGNavigator1/Models/magneto-switch/mags.xml</path>
   <offsets>
    <x-m>1.925</x-m>
    <y-m>-0.225</y-m>

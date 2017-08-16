@@ -63,7 +63,7 @@
                 <tooltip-id>nav1-obs</tooltip-id>
                 <label>Nav 1 Radial %3d</label>
                 <mapping>heading</mapping>
-                <property>/instrumentation/nav[0]/radials/selected-deg</property>
+                <property>instrumentation/nav[0]/radials/selected-deg</property>
             </binding>
         </hovered>
     </animation>
@@ -186,112 +186,53 @@
     </axis>
   </animation>
 
-  <animation>
-    <type>rotate</type>
-    <object-name>OBSSelector</object-name>
-    <property alias="../../params/selected-radial"/>
-    <factor>8.0</factor>
-    <axis>
-      <x>1.0</x>
-      <y>0.0</y>
-      <z>0.0</z>
-    </axis>
-    <center>
-      <x-m>0</x-m>
-      <y-m>-0.0318071</y-m>
-      <z-m>-0.0327009</z-m>
-    </center>
-  </animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>OBSSelector</object-name>
+		<property alias="../../params/selected-radial"/>
+		<factor>8.0</factor>
+		<axis>
+			<x>1.0</x>
+			<y>0.0</y>
+			<z>0.0</z>
+		</axis>
+		<center>
+			<x-m>0</x-m>
+			<y-m>-0.0318071</y-m>
+			<z-m>-0.0327009</z-m>
+		</center>
+	</animation>
 
-  <animation>
-    <type>pick</type>
-    <object-name>OBSSelectorPick.L</object-name>
-    <visible>false</visible>
-    <action>
-      <button>0</button>
-      <repeatable>true</repeatable>
-      <binding>
-        <command>property-adjust</command>
-        <property alias="../../../../params/selected-radial"/>
-        <step>1</step>
-        <min>0</min>
-        <max>360</max>
-        <wrap>1</wrap>
-      </binding>
-    </action>
-    <action>
-      <button>1</button>
-      <repeatable>true</repeatable>
-      <binding>
-        <command>property-adjust</command>
-        <property alias="../../../../params/selected-radial"/>
-        <step>10</step>
-        <min>0</min>
-        <max>360</max>
-        <wrap>1</wrap>
-      </binding>
-    </action>
-  </animation>
-
-  <animation>
-    <type>pick</type>
-    <object-name>OBSSelectorPick.R</object-name>
-    <visible>false</visible>
-    <action>
-      <button>0</button>
-      <repeatable>true</repeatable>
-      <binding>
-        <command>property-adjust</command>
-        <property alias="../../../../params/selected-radial"/>
-        <step>-1</step>
-        <min>0</min>
-        <max>360</max>
-        <wrap>1</wrap>
-      </binding>
-    </action>
-    <action>
-      <button>1</button>
-      <repeatable>true</repeatable>
-      <binding>
-        <command>property-adjust</command>
-        <property alias="../../../../params/selected-radial"/>
-        <step>-10</step>
-        <min>0</min>
-        <max>360</max>
-        <wrap>1</wrap>
-      </binding>
-    </action>
-  </animation>
-
-  <animation>
-    <type>pick</type>
-    <object-name>OBSSelector</object-name>
-    <visible>true</visible>
-    <action>
-      <button>3</button>
-      <repeatable>true</repeatable>
-      <binding>
-        <command>property-adjust</command>
-        <property alias="../../../../params/selected-radial"/>
-        <step>1</step>
-        <min>0</min>
-        <max>360</max>
-        <wrap>1</wrap>
-      </binding>
-    </action>
-    <action>
-      <button>4</button>
-      <repeatable>true</repeatable>
-      <binding>
-        <command>property-adjust</command>
-        <property alias="../../../../params/selected-radial"/>
-        <step>-1</step>
-        <min>0</min>
-        <max>360</max>
-        <wrap>1</wrap>
-      </binding>
-    </action>
-  </animation>
+	<animation>
+		<type>pick</type>
+		<object-name>OBSSelector</object-name>
+		<action>
+			<button>0</button>
+			<button>3</button>
+			<repeatable>true</repeatable>
+			<binding>
+				<command>property-adjust</command>
+				<property alias="../../../../params/selected-radial"/>
+				<step>1</step>
+				<min>1</min>
+				<max>361</max>
+				<wrap>1</wrap>
+			</binding>
+		</action>
+		<action>
+			<button>1</button>
+			<button>4</button>
+			<repeatable>true</repeatable>
+			<binding>
+				<command>property-adjust</command>
+				<property alias="../../../../params/selected-radial"/>
+				<step>-1</step>
+				<min>1</min>
+				<max>361</max>
+				<wrap>1</wrap>
+			</binding>
+		</action>
+	</animation>
 
 </PropertyList>
 

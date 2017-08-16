@@ -5,6 +5,9 @@
 # Init Vars #
 #############
 
+setprop("/systems/electrical/bus/elec1", 0);
+setprop("/systems/electrical/bus/elec2", 0);
+
 setlistener("/sim/signals/fdm-initialized", func {
 	var batt_sw = getprop("/controls/electrical/battery");
 	var altn_sw = getprop("/controls/electrical/alternator");
@@ -26,7 +29,7 @@ setlistener("/sim/signals/fdm-initialized", func {
 var elec_init = func {
 	setprop("/controls/electrical/battery", 0);
 	setprop("/controls/electrical/alternator", 0);
-	setprop("/controls/switches/avionics-master", 1); # Cockpit doesn't have any avionics switches yet
+	setprop("/controls/switches/avionics-master", 0);
 	src = "XX";
 	setprop("/systems/electrical/batt-volt", 12);
 	setprop("/systems/electrical/batt-amp", 35);
@@ -51,21 +54,38 @@ var master_elec = func {
 	rpm = getprop("/engines/engine[0]/rpm");
 	batt_volt = getprop("/systems/electrical/batt-volt");
 	batt_amp = getprop("/systems/electrical/batt-amp");
+	elec1 = getprop("/systems/electrical/bus/elec1");
+	elec2 = getprop("/systems/electrical/bus/elec2");
+	
+	if (rpm >= 421 and altn_sw) {
+		setprop("/systems/electrical/altn-volt", 14);
+		setprop("/systems/electrical/altn-amp", 35);
+	} else {
+		setprop("/systems/electrical/altn-volt", 0);
+		setprop("/systems/electrical/altn-amp", 0);
+	}
+	
 	altn_volt = getprop("/systems/electrical/altn-volt");
 	altn_amp = getprop("/systems/electrical/altn-amp");
 	
-	if (batt_volt >= 8 and batt_sw) {
-		src = "BATT";
-		setprop("/systems/electrical/bus/elec1", batt_volt);
-		setprop("/systems/electrical/bus/elec2", batt_volt);
-	} else if (altn_volt >= 8 and altn_sw) {
+	if (altn_volt >= 8 and altn_sw) {
 		src = "ALTN";
-		setprop("/systems/electrical/bus/elec1", altn_volt);
-		setprop("/systems/electrical/bus/elec2", altn_volt);
+		if (elec1 != altn_volt) {
+			setprop("/systems/electrical/bus/elec1", altn_volt);
+			setprop("/systems/electrical/bus/elec2", altn_volt);
+		}
+	} else if (batt_volt >= 8 and batt_sw) {
+		src = "BATT";
+		if (elec1 != batt_volt) {
+			setprop("/systems/electrical/bus/elec1", batt_volt);
+			setprop("/systems/electrical/bus/elec2", batt_volt);
+		}
 	} else {
 		src = "XX";
-		setprop("/systems/electrical/bus/elec1", 0);
-		setprop("/systems/electrical/bus/elec2", 0);
+		if (elec1 != 0) {
+			setprop("/systems/electrical/bus/elec1", 0);
+			setprop("/systems/electrical/bus/elec2", 0);
+		}
 	}
 	
 	avionics_master = getprop("/controls/switches/avionics-master");
@@ -135,6 +155,7 @@ var master_elec = func {
 	avionics2 = getprop("/systems/electrical/bus/avionics2");
 
 	setprop("/systems/electrical/outputs/comm[0]", avionics1);
+	setprop("/systems/electrical/outputs/hsi", avionics1);
 	setprop("/systems/electrical/outputs/nav[0]", avionics1);
 	setprop("/systems/electrical/outputs/oat", avionics1);
 	setprop("/systems/electrical/outputs/dme", avionics1);

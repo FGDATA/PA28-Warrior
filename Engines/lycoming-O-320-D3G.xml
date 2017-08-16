@@ -8,9 +8,9 @@
     <displacement unit="IN3"> 320.0 </displacement>
     <maxhp>                   160.0 </maxhp>
     <cycles>                    4.0 </cycles>
-    <idlerpm>                 612.0 </idlerpm>
+    <idlerpm>                 668.0 </idlerpm>
     <maxrpm>                 2712.0 </maxrpm>
-    <maxthrottle>               1.0 </maxthrottle>
-    <minthrottle>               0.1 </minthrottle>
+    <maxthrottle>               0.9 </maxthrottle>
+    <minthrottle>               0.0 </minthrottle>
     <sparkfaildrop>             0.1 </sparkfaildrop>
 </piston_engine>

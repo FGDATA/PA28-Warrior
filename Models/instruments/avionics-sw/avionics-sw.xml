@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+	<path>avionics-sw.ac</path>
+
+	<animation>
+		<object-name>Lever</object-name>
+		<type>pick</type>
+		<visible>true</visible>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>property-toggle</command>
+				<property>controls/switches/avionics-master</property>
+			</binding>
+		</action>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>Avionics</tooltip-id>
+				<label>Avionics Master</label>
+			</binding>
+		</hovered>
+	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>Lever</object-name>
+		<property>controls/switches/avionics-master</property>
+		<factor>32</factor>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>1</z>
+		</axis>
+	</animation>
+</PropertyList>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -21,7 +21,7 @@
 		<type>translate</type>
 		<object-name>Yoke</object-name>
 		<property>fdm/jsbsim/fcs/pitch-trim-sum</property>
-		<factor>-0.15</factor>
+		<factor>-0.12</factor>
 		<axis>
 			<x>1.0</x>
 			<y>0.0</y>

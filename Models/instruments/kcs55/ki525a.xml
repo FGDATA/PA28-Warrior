@@ -58,41 +58,6 @@
     <min-m>0</min-m>
     <max-m>14</max-m>
   </animation>
-  
-   <animation>
-<type>select</type>
-    <object-name>CompassRose</object-name>
-    <object-name>TO</object-name>
-    <object-name>FROM</object-name>
-    <object-name>ArrowHead</object-name>
-    <object-name>ArrowTail</object-name>
-    <object-name>ArrowBody</object-name>
-    <object-name>NAV</object-name>
-    <object-name>HDG</object-name>
-    <object-name>HDGBug</object-name>
-     <object-name>CDIPlate</object-name>
-    <object-name>GS</object-name>
-    <object-name>GSMarker</object-name>
-    <object-name>GSLabel</object-name>
-    <object-name>Marker</object-name>
-    <object-name>LubberLine</object-name>
-    <object-name>OBSSelector</object-name>
-    <object-name>HDGSelector</object-name>
-    <!--
-    <object-name>Chassis</object-name>
-    <object-name>Screw</object-name>
-    -->
-    <object-name>OBSSelectorPick.L</object-name>
-    <object-name>OBSSelectorPick.R</object-name>
-    <object-name>HDGSelectorPick.R</object-name>
-    <object-name>HDGSelectorPick.L</object-name>
-
-<condition>
-
-            <property>/instrumentation/ths</property>
-
-      </condition>
-</animation>
 
   <!--
   <animation>
@@ -313,203 +278,76 @@
     </center>
   </animation>
 
-  <animation>
-    <type>pick</type>
-    <object-name>HDGSelectorPick.L</object-name>
-    <visible>false</visible>
-    <action>
-      <button>0</button>
-      <repeatable>true</repeatable>
-      <binding>
-        <command>property-adjust</command>
-        <property alias="../../../../params/selected-heading"/>
-        <step>-1</step>
-        <min>0</min>
-        <max>360</max>
-        <wrap>1</wrap>
-      </binding>
-    </action>
-    <action>
-      <button>1</button>
-      <repeatable>true</repeatable>
-      <binding>
-        <command>property-adjust</command>
-        <property alias="../../../../params/selected-heading"/>
-        <step>-10</step>
-        <min>0</min>
-        <max>360</max>
-        <wrap>1</wrap>
-      </binding>
-    </action>
-    <hovered>
-            <binding>
-                <command>set-tooltip</command>
-                <tooltip-id>heading-bug</tooltip-id>
-                <mapping>heading</mapping>
-                <label>Heading Bug: %3d</label>
-               <property>autopilot/settings/heading-bug-deg</property>
-            </binding>
-        </hovered>
-  </animation>
-
-  <animation>
-    <type>pick</type>
-    <object-name>HDGSelectorPick.R</object-name>
-    <visible>false</visible>
-    <action>
-      <button>0</button>
-      <repeatable>true</repeatable>
-      <binding>
-        <command>property-adjust</command>
-        <property alias="../../../../params/selected-heading"/>
-        <step>1</step>
-        <min>0</min>
-        <max>360</max>
-        <wrap>1</wrap>
-      </binding>
-    </action>
-    <action>
-      <button>1</button>
-      <repeatable>true</repeatable>
-      <binding>
-        <command>property-adjust</command>
-        <property alias="../../../../params/selected-heading"/>
-        <step>10</step>
-        <min>0</min>
-        <max>360</max>
-        <wrap>1</wrap>
-      </binding>
-    </action>
-    <hovered>
-            <binding>
-                <command>set-tooltip</command>
-                <tooltip-id>heading-bug</tooltip-id>
-                <mapping>heading</mapping>
-                <label>Heading Bug: %3d</label>
-                <property>autopilot/settings/heading-bug-deg</property>
-            </binding>
-        </hovered>
-  </animation>
-
-  <animation>
-    <type>pick</type>
-    <object-name>HDGSelector</object-name>
-    <visible>true</visible>
-    <action>
-      <button>3</button>
-      <repeatable>true</repeatable>
-      <binding>
-        <command>property-adjust</command>
-        <property alias="../../../../params/selected-heading"/>
-        <step>-1</step>
-        <min>0</min>
-        <max>360</max>
-        <wrap>1</wrap>
-      </binding>
-    </action>
-    <action>
-      <button>4</button>
-      <repeatable>true</repeatable>
-      <binding>
-        <command>property-adjust</command>
-        <property alias="../../../../params/selected-heading"/>
-        <step>1</step>
-        <min>0</min>
-        <max>360</max>
-        <wrap>1</wrap>
-      </binding>
-    </action>
-  </animation>
-
-  <animation>
-    <type>pick</type>
-    <object-name>OBSSelectorPick.L</object-name>
-    <visible>false</visible>
-    <action>
-      <button>0</button>
-      <repeatable>true</repeatable>
-      <binding>
-        <command>property-adjust</command>
-        <property alias="../../../../params/selected-course"/>
-        <step>-1</step>
-        <min>0</min>
-        <max>360</max>
-        <wrap>1</wrap>
-      </binding>
-    </action>
-    <action>
-      <button>1</button>
-      <repeatable>true</repeatable>
-      <binding>
-        <command>property-adjust</command>
-        <property alias="../../../../params/selected-course"/>
-        <step>-10</step>
-        <min>0</min>
-        <max>360</max>
-        <wrap>1</wrap>
-      </binding>
-    </action>
-  </animation>
-
-  <animation>
-    <type>pick</type>
-    <object-name>OBSSelectorPick.R</object-name>
-    <visible>false</visible>
-    <action>
-      <button>0</button>
-      <repeatable>true</repeatable>
-      <binding>
-        <command>property-adjust</command>
-        <property alias="../../../../params/selected-course"/>
-        <step>1</step>
-        <min>0</min>
-        <max>360</max>
-        <wrap>1</wrap>
-      </binding>
-    </action>
-    <action>
-      <button>1</button>
-      <repeatable>true</repeatable>
-      <binding>
-        <command>property-adjust</command>
-        <property alias="../../../../params/selected-course"/>
-        <step>10</step>
-        <min>0</min>
-        <max>360</max>
-        <wrap>1</wrap>
-      </binding>
-    </action>
-  </animation>
-
-  <animation>
-    <type>pick</type>
-    <object-name>OBSSelector</object-name>
-    <visible>true</visible>
-    <action>
-      <button>3</button>
-      <repeatable>true</repeatable>
-      <binding>
-        <command>property-adjust</command>
-        <property alias="../../../../params/selected-course"/>
-        <step>-1</step>
-        <min>0</min>
-        <max>360</max>
-        <wrap>1</wrap>
-      </binding>
-    </action>
-    <action>
-      <button>4</button>
-      <repeatable>true</repeatable>
-      <binding>
-        <command>property-adjust</command>
-        <property alias="../../../../params/selected-course"/>
-        <step>1</step>
-        <min>0</min>
-        <max>360</max>
-        <wrap>1</wrap>
-      </binding>
-    </action>
-  </animation>
+	<animation>
+		<type>pick</type>
+		<object-name>HDGSelector</object-name>
+		<action>
+			<button>0</button>
+			<button>3</button>
+			<repeatable>true</repeatable>
+			<binding>
+				<command>property-adjust</command>
+				<property alias="../../../../params/selected-heading"/>
+				<step>1</step>
+				<min>1</min>
+				<max>361</max>
+				<wrap>1</wrap>
+			</binding>
+		</action>
+		<action>
+			<button>1</button>
+			<button>4</button>
+			<repeatable>true</repeatable>
+			<binding>
+				<command>property-adjust</command>
+				<property alias="../../../../params/selected-heading"/>
+				<step>-1</step>
+				<min>1</min>
+				<max>361</max>
+				<wrap>1</wrap>
+			</binding>
+		</action>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>heading-bug</tooltip-id>
+				<mapping>heading</mapping>
+				<label>Heading Bug: %3d</label>
+				<property>it-autoflight/input/hdg</property>
+			</binding>
+		</hovered>
+	</animation>
+	
+	<animation>
+		<type>pick</type>
+		<object-name>OBSSelector</object-name>
+		<action>
+			<button>0</button>
+			<button>3</button>
+			<repeatable>true</repeatable>
+			<binding>
+				<command>property-adjust</command>
+				<property alias="../../../../params/selected-course"/>
+				<step>1</step>
+				<min>1</min>
+				<max>361</max>
+				<wrap>1</wrap>
+			</binding>
+		</action>
+		<action>
+			<button>1</button>
+			<button>4</button>
+			<repeatable>true</repeatable>
+			<binding>
+				<command>property-adjust</command>
+				<property alias="../../../../params/selected-course"/>
+				<step>-1</step>
+				<min>1</min>
+				<max>361</max>
+				<wrap>1</wrap>
+			</binding>
+		</action>
+	</animation>
 
   <animation>
     <type>rotate</type>
@@ -647,40 +485,3 @@
   </animation>
 
 </PropertyList>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
