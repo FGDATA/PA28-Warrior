@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- (c) Joshua Davidson (it0uchpods) -->
+
+<!-- PA28-161 Aircraft Config Dialog -->
+
+<PropertyList>
+
+	<name>aircraft-config-help</name>
+	<layout>vbox</layout>
+
+    <group>
+        <layout>hbox</layout>
+        <text>
+            <halign>left</halign>
+            <label>Help</label>
+        </text>
+        <button>
+            <halign>right</halign>
+            <pref-width>20</pref-width>
+            <pref-height>20</pref-height>
+            <legend>X</legend>
+            <key>Esc</key>
+            <binding>
+                <command>dialog-close</command>
+            </binding>
+        </button>
+    </group>
+	
+    <hrule/>
+	
+		<group>
+			<layout>vbox</layout>
+			
+			<text>
+				<halign>left</halign>
+				<label>Information:</label>
+			</text>
+			
+			<text>
+				<halign>left</halign>
+				<label>The goal of the PA28-161 Warrior II by gkick and it0uchpods is to provide FlightGear with authentic, realistic, Piper Warrior II Aircraft.</label>
+			</text>
+			
+			<hrule/>
+			
+			<text>
+				<halign>left</halign>
+				<label>Key Commands:</label>
+			</text>
+			<text>
+				<halign>left</halign>
+				<label>SHIFT + B - Toggle Parking Brake</label>
+			</text>
+			
+		</group>
+	
+	
+</PropertyList>

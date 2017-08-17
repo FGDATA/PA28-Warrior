@@ -572,18 +572,6 @@
    <z-m>0.24</z-m>
   </offsets>
  </model>
-
-
-
-	<model>
-		<name>GPS</name>
-		<path>Aircraft/PA28-Warrior/Models/Instruments/KLN90B/kln90b.xml</path>
-		<offsets>
-			<x-m>1.925</x-m>
-			<y-m>-0.385</y-m>
-			<z-m>0.021</z-m>
-		</offsets>
-	</model>
 	
 	<!--model>
   <name>FlightCom</name>
@@ -913,39 +901,101 @@
    </axis>
  </animation>
   
- <animation>
-  <type>rotate</type>
-  <object-name>Throttle</object-name>
-  <property>controls/engines/engine[0]/throttle</property>
-  <factor>47</factor>
-  <center>
-   <x-m>1.937</x-m>
-   <y-m>0.0</y-m>
-   <z-m>-0.02758</z-m>
-  </center>
-  <axis>
-   <x>0.0</x>
-   <y>-1.0</y>
-   <z>0.0</z>
-  </axis>
- </animation>
+	<animation>
+	<type>rotate</type>
+	<object-name>Throttle</object-name>
+	<property>controls/engines/engine[0]/throttle</property>
+	<factor>47</factor>
+	<center>
+		<x-m>1.937</x-m>
+		<y-m>0.0</y-m>
+		<z-m>-0.02758</z-m>
+	</center>
+	<axis>
+		<x>0.0</x>
+		<y>-1.0</y>
+		<z>0.0</z>
+	</axis>
+	</animation>
+ 
+ 	<animation>
+		<type>pick</type>
+		<object-name>Throttle</object-name>
+		<action>
+			<button>0</button>
+			<button>3</button>
+			<repeatable type="bool">false</repeatable>
+			<binding>
+				<command>property-adjust</command>
+				<property>controls/engines/engine[0]/throttle</property>
+				<step>0.1</step>
+				<min>0</min>
+				<max>1</max>
+				<wrap>false</wrap>
+			</binding>
+		</action>
+		<action>
+			<button>1</button>
+			<button>4</button>
+			<repeatable type="bool">false</repeatable>
+			<binding>
+				<command>property-adjust</command>
+				<property>controls/engines/engine[0]/throttle</property>
+				<step>-0.1</step>
+				<min>0</min>
+				<max>1</max>
+				<wrap>false</wrap>
+			</binding>
+		</action>
+	</animation>
 
- <animation>
-  <type>rotate</type>
-  <object-name>Mixture</object-name>
-  <property>controls/engines/engine[0]/mixture</property>
-  <factor>47</factor>
-  <center>
-   <x-m>1.937</x-m>
-   <y-m>0.0</y-m>
-   <z-m>-0.02758</z-m>
-  </center>
-  <axis>
-   <x>0.0</x>
-   <y>-1.0</y>
-   <z>0.0</z>
-  </axis>
- </animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>Mixture</object-name>
+		<property>controls/engines/engine[0]/mixture</property>
+		<factor>47</factor>
+		<center>
+			<x-m>1.937</x-m>
+			<y-m>0.0</y-m>
+			<z-m>-0.02758</z-m>
+		</center>
+		<axis>
+			<x>0.0</x>
+			<y>-1.0</y>
+			<z>0.0</z>
+		</axis>
+	</animation>
+ 
+ 	<animation>
+		<type>pick</type>
+		<object-name>Mixture</object-name>
+		<action>
+			<button>0</button>
+			<button>3</button>
+			<repeatable type="bool">false</repeatable>
+			<binding>
+				<command>property-adjust</command>
+				<property>controls/engines/engine[0]/mixture</property>
+				<step>0.1</step>
+				<min>0</min>
+				<max>1</max>
+				<wrap>false</wrap>
+			</binding>
+		</action>
+		<action>
+			<button>1</button>
+			<button>4</button>
+			<repeatable type="bool">false</repeatable>
+			<binding>
+				<command>property-adjust</command>
+				<property>controls/engines/engine[0]/mixture</property>
+				<step>-0.1</step>
+				<min>0</min>
+				<max>1</max>
+				<wrap>false</wrap>
+			</binding>
+		</action>
+	</animation>
 
  <animation>
   <type>rotate</type>

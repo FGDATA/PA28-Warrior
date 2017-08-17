@@ -96,6 +96,40 @@
 			<output>fcs/rudder-pos-rad</output>
 		</aerosurface_scale>
 	</channel>
+	
+	<channel name="Throttle">
+		<fcs_function name="Throttle 1 Scaler">
+			<function>
+				<table>
+					<independentVar lookup="row">/controls/engines/engine[0]/throttle</independentVar>
+					<tableData>
+						0.0 0.0
+						0.2 0.4
+						0.6 0.8
+						1.0 1.0
+					</tableData>
+				</table>
+			</function>
+			<output>fcs/throttle-cmd-norm</output>
+			<output>fcs/throttle-pos-norm</output>
+		</fcs_function>
+	</channel>
+	
+	<channel name="Mixture">
+		<fcs_function name="Mixture 1 Scaler">
+			<function>
+				<table>
+					<independentVar lookup="row">/controls/engines/engine[0]/mixture</independentVar>
+					<tableData>
+						0 0.6
+						1 1.0
+					</tableData>
+				</table>
+			</function>
+			<output>fcs/mixture-cmd-norm</output>
+			<output>fcs/mixture-pos-norm</output>
+		</fcs_function>
+	</channel>
 
 	<channel name="Flaps">
 		<kinematic name="Flaps Control">
