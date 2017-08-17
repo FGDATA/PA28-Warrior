@@ -193,7 +193,7 @@
 	</label>
     <import>
 		<path>Huds/Sets/gps.xml</path>
-		<x-offset>-300</x-offset>
+		<x-offset>-420</x-offset>
 		<y-offset>160</y-offset>
 	</import>
 

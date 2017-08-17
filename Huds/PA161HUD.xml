@@ -3,7 +3,7 @@
 
 
 <PropertyList>
-	<name>Cherokee</name>
+	<name>FGNav</name>
 	<enable3d>false</enable3d>
 
  <label>
@@ -13,6 +13,12 @@
 		<halign>left</halign>
 		<format>FG_Nav</format>
   </label>
+
+   <import>
+		<path>Huds/Sets/gps.xml</path>
+		<x-offset>-420</x-offset>
+		<y-offset>160</y-offset>
+	</import>
 
  <label>
 		<name>Wind</name>
