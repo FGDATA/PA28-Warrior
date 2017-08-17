@@ -4,12 +4,9 @@
 
 <PropertyList>
 
-	<sim include="Systems/views.xml">
+	<sim>
 
-		<description>Piper PA28-161 Warrior II</description>
 		<author>Gerhard Kick, Joshua Davidson (it0uchpods), Other</author>
-		<flight-model>jsb</flight-model>
-		<aero>WarriorII</aero>
 
 		<startup>
 			<splash-texture>Aircraft/PA28-Warrior/FGN_Splash.jpg</splash-texture>
@@ -37,10 +34,6 @@
 				</color>
 			</palette>
 		</hud-->
-
-		<model>
-			<path type="string">Aircraft/PA28-Warrior/Models/pa28-161.xml</path>
-		</model>
 
 		<panel>
 			<visibility archive="y">false</visibility>
@@ -144,6 +137,53 @@
 				<z-offset-m archive="y">2.6</z-offset-m>
 				<pitch-offset-deg>-15</pitch-offset-deg>
 				<default-field-of-view-deg type="double">70</default-field-of-view-deg>
+			</config>
+		</view>
+		<view n="1">
+			<internal archive="y">true</internal>
+			<name>Helicopter View</name>
+			<config>
+				<target-z-offset-m archive="y" type="double">3.0</target-z-offset-m>
+				<x-offset-m archive="y">0</x-offset-m>
+				<y-offset-m archive="y">0</y-offset-m>
+				<z-offset-m archive="y">0</z-offset-m>
+				<default-field-of-view-deg type="double">66</default-field-of-view-deg>
+				<heading-offset-deg>-35</heading-offset-deg>
+			</config>
+		</view>
+		<view n="2">
+			<internal archive="y">true</internal>
+			<name>Chase View</name>
+			<config>
+				<target-z-offset-m archive="y" type="double">3.0</target-z-offset-m>
+				<x-offset-m archive="y">0</x-offset-m>
+				<y-offset-m archive="y">0</y-offset-m>
+				<z-offset-m archive="y">0</z-offset-m>
+				<default-field-of-view-deg type="double">66</default-field-of-view-deg>
+				<heading-offset-deg>-35</heading-offset-deg>
+			</config>
+		</view>
+		<view n="7">
+			<config>
+				<internal archive="y">true</internal>
+				<name>Model View</name>
+				<target-z-offset-m archive="y" type="double">3.0</target-z-offset-m>
+				<x-offset-m archive="y">0</x-offset-m>
+				<y-offset-m archive="y">0</y-offset-m>
+				<z-offset-m archive="y">0</z-offset-m>
+				<default-field-of-view-deg type="double">66</default-field-of-view-deg>
+				<heading-offset-deg>35</heading-offset-deg>
+			</config>
+		</view>
+		<view n="5">
+			<internal archive="y">true</internal>
+			<name>Chase without Yaw</name>
+			<config>
+				<x-offset-m archive="y">25</x-offset-m>
+				<y-offset-m archive="y">2</y-offset-m>
+				<z-offset-m archive="y">-10</z-offset-m>
+				<default-field-of-view-deg type="double">47</default-field-of-view-deg>
+				<heading-offset-deg>110</heading-offset-deg>
 			</config>
 		</view>
 		<view n="100">
