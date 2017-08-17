@@ -26,8 +26,8 @@ var variousReset = func {
 	setprop("/controls/switches/beacon", 0);
 	setprop("/controls/switches/fuel-pump", 0);
 	setprop("/controls/switches/landing-light", 0);
-	setprop("/controls/switches/nav-lights", 0);
-	setprop("/controls/switches/panel-lights", 0);
+	setprop("/controls/switches/nav-lights-factor", 0);
+	setprop("/controls/switches/panel-lights-factor", 0);
 	setprop("/controls/switches/pitot-heat", 0);
 	setprop("/controls/switches/strobe-lights", 0);
 	setprop("/controls/engines/engine[0]/magnetos-switch", 0);
