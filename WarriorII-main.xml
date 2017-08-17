@@ -380,6 +380,7 @@
 	</it-autoflight>
 	
 	<options n="0">
+		<auto-turn-coordination type="bool">0</auto-turn-coordination>
 		<show-l-yoke type="bool">1</show-l-yoke>
 		<show-r-yoke type="bool">1</show-r-yoke>
 	</options>

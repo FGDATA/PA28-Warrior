@@ -116,12 +116,6 @@
    <property>instrumentation/attitude-indicator/horizon-offset-deg</property>
    <factor type="double">0.5</factor>
   </binding>
-  <binding>
-            <command>property-assign</command>
-            <property>sim/current-view/goal-pitch-offset-deg</property>
-            <value>-7</value>
-
-            </binding>
  </action>
  
  <value>0.0</value>
