@@ -4,7 +4,7 @@
 
 	<sim include="Systems/views.xml">
 
-		<description>FGNavigator1 (PA28-161)</description>
+		<description>Piper PA28-161 Warrior II</description>
 		<author>Gerhard Kick, Joshua Davidson (it0uchpods), Other</author>
 		<flight-model>jsb</flight-model>
 		<aero>WarriorII</aero>
