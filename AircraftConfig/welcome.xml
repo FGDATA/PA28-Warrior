@@ -76,7 +76,7 @@
 			</button>
 			<button>
 				<halign>center</halign>
-				<legend>Go Away</legend>
+				<legend>Close</legend>
 				<pref-width>210</pref-width>
 				<binding>
 					<command>dialog-close</command>
