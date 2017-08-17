@@ -161,7 +161,7 @@ var taxi = func {
 var takeoff = func {
 	# The same as taxi, except we set some things afterwards.
 	taxi();
-	var eng_one_chk_c = setlistener("/engines/engine[0]/state", func {
+	var eng_one_chk_c = setlistener("/engines/engine[0]/rpm", func {
 		if (getprop("/engines/engine[0]/rpm") >= 421) {
 			removelistener(eng_one_chk_c);
 			setprop("/controls/switches/fuel-pump", 1);
