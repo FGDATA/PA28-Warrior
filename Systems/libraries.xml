@@ -39,40 +39,6 @@
 		<input>/instrumentation/nav[1]/gs-needle-deflection-norm</input>
 		<output>/instrumentation/nav[1]/filtered-gsNAV1-deflection</output>
 	</filter>
-	
-	<filter>
-		<name>Automatic Turn Coordination</name>
-		<debug>false</debug>
-		<type>gain</type>
-		<gain>-0.1</gain>
-		<enable>
-			<condition>
-				<and>
-					<equals>
-						<property>/gear/gear[1]/wow</property>
-						<value>0</value>
-					</equals>
-					<equals>
-						<property>/gear/gear[2]/wow</property>
-						<value>0</value>
-					</equals>
-					<equals>
-						<property>/options/auto-turn-coordination</property>
-						<value>1</value>
-					</equals>
-				</and>
-			</condition>
-		</enable>
-		<input>
-			<property>/instrumentation/slip-skid-ball/indicated-slip-skid</property>
-		</input>
-		<reference>
-			<value>0</value>
-		</reference>
-		<output>
-			<property>/controls/flight/rudder</property>
-		</output>
-	</filter>
 
 </PropertyList>
 

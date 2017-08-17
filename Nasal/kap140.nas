@@ -78,11 +78,18 @@ var btnDown = func {
 		if (getprop("/it-autoflight/output/vert") != 1) {
 			setprop("/it-autoflight/input/vert", 1);
 		}
-		setprop("/it-autoflight/kap140/display-mode", "VS");
-		settimer(func{
-			setprop("/it-autoflight/kap140/display-mode", "ALT");
-		}, 3);
 		setprop("/it-autoflight/input/vs", getprop("/it-autoflight/input/vs") - 100);
+		setprop("/it-autoflight/kap140/display-mode", "VS");
+		var vsnow = getprop("/it-autoflight/input/vs");
+		settimer(func {
+			var vsnew = getprop("/it-autoflight/input/vs");
+			var dispmode = getprop("/it-autoflight/kap140/display-mode");
+			if (vsnow == vsnew and dispmode == "VS") {
+				settimer(func {
+					setprop("/it-autoflight/kap140/display-mode", "ALT");
+				}, 3);
+			}
+		}, 1);
 	}
 }
 
@@ -91,11 +98,18 @@ var btnUp = func {
 		if (getprop("/it-autoflight/output/vert") != 1) {
 			setprop("/it-autoflight/input/vert", 1);
 		}
-		setprop("/it-autoflight/kap140/display-mode", "VS");
-		settimer(func{
-			setprop("/it-autoflight/kap140/display-mode", "ALT");
-		}, 3);
 		setprop("/it-autoflight/input/vs", getprop("/it-autoflight/input/vs") + 100);
+		setprop("/it-autoflight/kap140/display-mode", "VS");
+		var vsnow = getprop("/it-autoflight/input/vs");
+		settimer(func {
+			var vsnew = getprop("/it-autoflight/input/vs");
+			var dispmode = getprop("/it-autoflight/kap140/display-mode");
+			if (vsnow == vsnew and dispmode == "VS") {
+				settimer(func {
+					setprop("/it-autoflight/kap140/display-mode", "ALT");
+				}, 3);
+			}
+		}, 1);
 	}
 }
 
