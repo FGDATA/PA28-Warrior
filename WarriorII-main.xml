@@ -12,7 +12,7 @@
 			<splash-texture>Aircraft/PA28-Warrior/FGN_Splash.jpg</splash-texture>
 		</startup>
 
-		<!--hud>
+		<hud>
 			<path n="1">Aircraft/PA28-Warrior/Huds/Pa161HUD.xml</path>
 			<path n="2">Aircraft/PA28-Warrior/Huds/FGN.xml</path>
 			<path n="3">Aircraft/PA28-Warrior/Huds/default.xml</path>
@@ -33,7 +33,7 @@
 					<blue type="float">0.0</blue>
 				</color>
 			</palette>
-		</hud-->
+		</hud>
 
 		<panel>
 			<visibility archive="y">false</visibility>
