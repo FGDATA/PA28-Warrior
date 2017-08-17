@@ -6,7 +6,7 @@ setlistener("/sim/signals/fdm-initialized", func {
 	systems.engine_init();
 	systems.fuel_init();
     itaf.ap_init();
-    var autopilot = gui.Dialog.new("sim/gui/dialogs/autopilot/dialog", "Aircraft/FGNavigator1/Systems/kap140-dlg.xml");
+    var autopilot = gui.Dialog.new("sim/gui/dialogs/autopilot/dialog", "Aircraft/PA28-Warrior/Systems/kap140-dlg.xml");
 	setprop("/it-autoflight/input/hdg", getprop("/orientation/heading-magnetic-deg"));
 	setprop("/it-autoflight/input/alt", 2000);
 	setprop("/it-autoflight/settings/slave-gps-nav", 1);

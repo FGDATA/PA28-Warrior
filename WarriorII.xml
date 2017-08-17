@@ -10,7 +10,7 @@ xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
 	<fileheader>
 		<author>Joshua Davidson (it0uchpods)</author>
 		<version>Pre V1.0</version>
-		<description>PA28-161 FDE</description>
+		<description>PA28-161 Warrior II FDE</description>
 	</fileheader>
 
 	<metrics>

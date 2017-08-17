@@ -59,7 +59,7 @@ Syd Adams
 	
     <panel>
         <name>GPS screen</name>
-        <path>Aircraft/FGNavigator1/Models/Instruments/KLN90B/gps.xml</path>
+        <path>Aircraft/PA28-Warrior/Models/Instruments/KLN90B/gps.xml</path>
         <bottom-left>
             <x-m>0.003</x-m>
             <y-m>-0.033</y-m>

@@ -7,7 +7,7 @@ Honeywell Bendix/King KLN-90B GPS
 <PropertyList>
 
     <name>KLN-90B</name>
-    <background>Aircraft/FGNavigator1/Models/Instruments/KLN90B/transparent-bg.png</background>
+    <background>Aircraft/PA28-Warrior/Models/Instruments/KLN90B/transparent-bg.png</background>
     <w>400</w>
     <h>142</h>
 

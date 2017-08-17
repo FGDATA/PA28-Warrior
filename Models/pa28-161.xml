@@ -58,7 +58,7 @@
 
  <model>
   <name>SWITCHES</name>
-  <path>Aircraft/FGNavigator1/Models/SwitchPanel/switch_panel.xml</path>
+  <path>Aircraft/PA28-Warrior/Models/SwitchPanel/switch_panel.xml</path>
   <offsets>
    <x-m>1.9312</x-m>
    <y-m>0.120</y-m>
@@ -68,7 +68,7 @@
 
  <model>
   <name>PEDALS.L</name>
-  <path>Aircraft/FGNavigator1/Models/Pedals/Pedals-L.xml</path>
+  <path>Aircraft/PA28-Warrior/Models/Pedals/Pedals-L.xml</path>
   <offsets>
    <x-m>1.65</x-m>
    <y-m>-0.315</y-m>
@@ -78,7 +78,7 @@
 
  <model>
   <name>PEDALS.R</name>
-  <path>Aircraft/FGNavigator1/Models/Pedals/Pedals-R.xml</path>
+  <path>Aircraft/PA28-Warrior/Models/Pedals/Pedals-R.xml</path>
   <offsets>
    <x-m>1.65</x-m>
    <y-m>0.31</y-m>
@@ -88,7 +88,7 @@
 
  <model>
   <name>FLAP-TRIM</name>
-  <path>Aircraft/FGNavigator1/Models/FlapTrim/FlapTrim.xml</path>
+  <path>Aircraft/PA28-Warrior/Models/FlapTrim/FlapTrim.xml</path>
   <offsets>
    <x-m>2.27</x-m>
    <y-m>0.0</y-m>
@@ -98,7 +98,7 @@
  
  <model>
   <name>rpm</name>
-  <path>Aircraft/FGNavigator1/Models/RPM/RPM.xml</path>
+  <path>Aircraft/PA28-Warrior/Models/RPM/RPM.xml</path>
   <offsets>
    <x-m>1.938</x-m>
    <y-m>-0.074</y-m>
@@ -108,7 +108,7 @@
  
  <!--model>
   <name>fflow</name>
-  <path>Aircraft/FGNavigator1/models/fuelGPH.xml</path>
+  <path>Aircraft/PA28-Warrior/models/fuelGPH.xml</path>
   <offsets>
    <x-m>1.925</x-m>
    <y-m>-0.074</y-m>
@@ -117,7 +117,7 @@
  </model-->
 
  <model>
-  <path>Aircraft/FGNavigator1/Models/StrobeLight.xml</path>
+  <path>Aircraft/PA28-Warrior/Models/StrobeLight.xml</path>
   <name>StrobeLight.L</name>
   <nopreview/>
   <offsets>
@@ -128,7 +128,7 @@
  </model>
 
  <model>
-  <path>Aircraft/FGNavigator1/Models/StrobeLight.xml</path>
+  <path>Aircraft/PA28-Warrior/Models/StrobeLight.xml</path>
   <name>StrobeLight.R</name>
   <nopreview/>
   <offsets>
@@ -140,7 +140,7 @@
 
   <model>
   <name>YokeLeft</name>
-  <path>Aircraft/FGNavigator1/Models/yoke/yoke-l.xml</path>
+  <path>Aircraft/PA28-Warrior/Models/yoke/yoke-l.xml</path>
   <offsets>
    <x-m>1.930</x-m>
    <y-m>-0.235</y-m>
@@ -150,7 +150,7 @@
 
  <model>
   <name>YokeRight</name>
-  <path>Aircraft/FGNavigator1/Models/yoke/yoke-r.xml</path>
+  <path>Aircraft/PA28-Warrior/Models/yoke/yoke-r.xml</path>
   <offsets>
    <x-m>1.930</x-m>
    <y-m>0.245</y-m>
@@ -160,7 +160,7 @@
 
  <model>
   <name>COMP</name>
-  <path>Aircraft/FGNavigator1/Models/comp/comp.xml</path>
+  <path>Aircraft/PA28-Warrior/Models/comp/comp.xml</path>
   <offsets>
    <x-m>1.930</x-m>
    <y-m>0.000</y-m>
@@ -170,7 +170,7 @@
  
  <model>
   <name>ccard</name>
-  <path>Aircraft/FGNavigator1/Models/dt/dev.xml</path>
+  <path>Aircraft/PA28-Warrior/Models/dt/dev.xml</path>
   <offsets>
    <x-m>1.962</x-m>
    <y-m>-0.014</y-m>
@@ -182,7 +182,7 @@
  
  <model>
   <name>Earph</name>
-  <path>Aircraft/FGNavigator1/Models/Casque/casque.xml</path>
+  <path>Aircraft/PA28-Warrior/Models/Casque/casque.xml</path>
   <offsets>
    <x-m>1.925</x-m>
    <y-m>0.245</y-m>
@@ -195,7 +195,7 @@
  
  <model>
   <name>oat</name>
-  <path>Aircraft/FGNavigator1/Models/oat/oat_m303.xml</path>
+  <path>Aircraft/PA28-Warrior/Models/oat/oat_m303.xml</path>
   <offsets>
    <x-m>1.925</x-m>
    <y-m>0.423</y-m>
@@ -205,7 +205,7 @@
  
  <model>
   <name>cod</name>
-  <path>Aircraft/FGNavigator1/Models/CODetector/CODetector.xml</path>
+  <path>Aircraft/PA28-Warrior/Models/CODetector/CODetector.xml</path>
   <offsets>
     <x-m>1.925</x-m>
    <y-m>0.310</y-m>
@@ -215,7 +215,7 @@
  
   <model>
   <name>ASI</name>
-  <path>Aircraft/FGNavigator1/Models/asi/asi.xml</path>
+  <path>Aircraft/PA28-Warrior/Models/asi/asi.xml</path>
   <offsets>
    <x-m>1.925</x-m>
    <y-m>-0.334</y-m>
@@ -227,7 +227,7 @@
 
  <model>
   <name>AIG</name>
-  <path>Aircraft/FGNavigator1/Models/instruments/AIN/ai-gauge.xml</path>
+  <path>Aircraft/PA28-Warrior/Models/instruments/AIN/ai-gauge.xml</path>
   <offsets>
    <x-m>1.933</x-m>
    <y-m>-0.230</y-m>
@@ -238,7 +238,7 @@
 
   <model>
   <name>ALT</name>
-  <path>Aircraft/FGNavigator1/Models/instruments/alt/alt.xml</path>
+  <path>Aircraft/PA28-Warrior/Models/instruments/alt/alt.xml</path>
   <offsets>
    <x-m>1.925</x-m>
    <y-m>-0.126</y-m>
@@ -248,7 +248,7 @@
  </model>
 
  <model>
-        <path>Aircraft/FGNavigator1/Models/instruments/GsLight/ControlLight.xml</path>
+        <path>Aircraft/PA28-Warrior/Models/instruments/GsLight/ControlLight.xml</path>
         <name>APCL</name>
         <offsets>
             <x-m>1.93</x-m>
@@ -260,7 +260,7 @@
    
     
  <model>
-        <path>Aircraft/FGNavigator1/Models/iaL/iaL.xml</path>
+        <path>Aircraft/PA28-Warrior/Models/iaL/iaL.xml</path>
         <name>LMaster</name>
         <offsets>
             <x-m>1.93</x-m>
@@ -270,7 +270,7 @@
     </model>
     
  <model>
-        <path>Aircraft/FGNavigator1/Models/instruments/FL_blue/ControlLight.xml</path>
+        <path>Aircraft/PA28-Warrior/Models/instruments/FL_blue/ControlLight.xml</path>
         <name>APCL</name>
         <offsets>
             <x-m>1.93</x-m>
@@ -282,7 +282,7 @@
     
  <model>
   <name>warn_stall</name>
-  <path>Aircraft/FGNavigator1/Models/stall_warning.xml</path>
+  <path>Aircraft/PA28-Warrior/Models/stall_warning.xml</path>
   <offsets>
     <x-m>1.918</x-m>
     <y-m>0.018</y-m>
@@ -293,7 +293,7 @@
 
  <model>
   <name>VOR1</name>
-  <path>Aircraft/FGNavigator1/Models/ki209a/ki209a-1.xml</path>
+  <path>Aircraft/PA28-Warrior/Models/ki209a/ki209a-1.xml</path>
   <offsets>
    <x-m>1.923</x-m>
    <y-m>-0.029</y-m>
@@ -304,7 +304,7 @@
 
  <model>
   <name>VOR2</name>
-  <path>Aircraft/FGNavigator1/Models/ki209a/ki209a-2.xml</path>
+  <path>Aircraft/PA28-Warrior/Models/ki209a/ki209a-2.xml</path>
   <offsets>
    <x-m>1.923</x-m>
    <y-m>-0.029</y-m>
@@ -314,7 +314,7 @@
 
   <model>
   <name>AOA</name>
-  <path>Aircraft/FGNavigator1/Models/instruments/aoa/aoa.xml</path>
+  <path>Aircraft/PA28-Warrior/Models/instruments/aoa/aoa.xml</path>
   <offsets>
    <x-m>1.925</x-m>
    <y-m>0.370</y-m>
@@ -324,7 +324,7 @@
 
  <model>
   <name>ADF</name>
-   <path>Aircraft/FGNavigator1/Models/adfki228/ki227_228.xml</path>
+   <path>Aircraft/PA28-Warrior/Models/adfki228/ki227_228.xml</path>
   <offsets>
   <x-m>1.929</x-m>
    <y-m>-0.423</y-m>
@@ -334,7 +334,7 @@
  
  <model>
   <name>NSVV</name>
-   <path>Aircraft/FGNavigator1/Models/NavSV/NavSourceSwitch.xml</path>
+   <path>Aircraft/PA28-Warrior/Models/NavSV/NavSourceSwitch.xml</path>
   <offsets>
     <x-m>1.935</x-m>
    <y-m>-0.481</y-m>
@@ -345,7 +345,7 @@
  
   <model>
   <name>Avionics</name>
-   <path>Aircraft/FGNavigator1/Models/instruments/avionics-sw/avionics-sw.xml</path>
+   <path>Aircraft/PA28-Warrior/Models/instruments/avionics-sw/avionics-sw.xml</path>
   <offsets>
     <x-m>1.927</x-m>
     <y-m>0.4605</y-m>
@@ -356,7 +356,7 @@
 
  <model>
   <name>ELT</name>
-   <path>Aircraft/FGNavigator1/Models/instruments/ELT/ArtexELT.xml</path>
+   <path>Aircraft/PA28-Warrior/Models/instruments/ELT/ArtexELT.xml</path>
   <offsets>
    <x-m>1.925</x-m>
    <y-m>-0.158</y-m>
@@ -366,7 +366,7 @@
 
  <model>
   <name>TC</name>
-  <path>Aircraft/FGNavigator1/Models/tc/tc.xml</path>
+  <path>Aircraft/PA28-Warrior/Models/tc/tc.xml</path>
   <offsets>
    <x-m>1.925</x-m>
    <y-m>-0.336</y-m>
@@ -376,7 +376,7 @@
 
 <model>
  <name>HSI</name>
-  <path>Aircraft/FGNavigator1/Models/instruments/kcs55/ki525a.xml</path>
+  <path>Aircraft/PA28-Warrior/Models/instruments/kcs55/ki525a.xml</path>
   <offsets>
   <x-m>1.926</x-m>
    <y-m>-0.233</y-m>
@@ -388,7 +388,7 @@
 
  <model>
   <name>VSI</name>
-  <path>Aircraft/FGNavigator1/Models/instruments/vsi/vsi.xml</path>
+  <path>Aircraft/PA28-Warrior/Models/instruments/vsi/vsi.xml</path>
   <offsets>
    <x-m>1.9257</x-m>
    <y-m>-0.126</y-m>
@@ -409,7 +409,7 @@
 
  <model>
   <name>EGT</name>
-  <path>Aircraft/FGNavigator1/Models/egt/egt.xml</path>
+  <path>Aircraft/PA28-Warrior/Models/egt/egt.xml</path>
   <offsets>
    <x-m>1.925</x-m>
    <y-m>-0.2805</y-m>
@@ -419,7 +419,7 @@
  
  <model>
   <name>SwitchKcs51b</name>
-  <path>Aircraft/FGNavigator1/Models/instruments/kcs55/ka51b.xml</path>
+  <path>Aircraft/PA28-Warrior/Models/instruments/kcs55/ka51b.xml</path>
   <offsets>
    <x-m>1.928</x-m>
    <y-m>0.229</y-m>
@@ -429,7 +429,7 @@
 
  <model>
   <name>clock</name>
- <path>Aircraft/FGNavigator1/Models/Clock/Clock.xml</path>
+ <path>Aircraft/PA28-Warrior/Models/Clock/Clock.xml</path>
   <offsets>
    <x-m>1.928</x-m>
    <y-m>0.269</y-m>
@@ -439,7 +439,7 @@
  
   <model>
   <name>FEX</name>
-  <path>Aircraft/FGNavigator1/Models/FE/fe.xml</path>
+  <path>Aircraft/PA28-Warrior/Models/FE/fe.xml</path>
   <offsets>
    <x-m>1.935</x-m>
    <y-m>-0.345</y-m>
@@ -451,7 +451,7 @@
 
  <!--model>
   <name>Rnav</name>
-  <path>Aircraft/FGNavigator1/Models/instruments/kns80/kns80.xml</path>
+  <path>Aircraft/PA28-Warrior/Models/instruments/kns80/kns80.xml</path>
   <offsets>
    <x-m>1.925</x-m>
    <y-m>0.303</y-m>
@@ -461,7 +461,7 @@
  
  <model>
   <name>Primer</name>
-  <path>Aircraft/FGNavigator1/Models/PrimerPump/primer.xml</path>
+  <path>Aircraft/PA28-Warrior/Models/PrimerPump/primer.xml</path>
   <offsets>
    <x-m>1.925</x-m>
    <y-m>-0.01435</y-m>
@@ -472,7 +472,7 @@
 
  <model>
   <name>AMP</name>
-  <path>Aircraft/FGNavigator1/Models/AMP/amp.xml</path>
+  <path>Aircraft/PA28-Warrior/Models/AMP/amp.xml</path>
   <offsets>
    <x-m>1.925</x-m>
    <y-m>0.1785</y-m>
@@ -492,7 +492,7 @@
 
  <model>
   <name>mags</name>
-  <path>Aircraft/FGNavigator1/Models/magneto-switch/mags.xml</path>
+  <path>Aircraft/PA28-Warrior/Models/magneto-switch/mags.xml</path>
   <offsets>
    <x-m>1.925</x-m>
    <y-m>-0.225</y-m>
@@ -502,7 +502,7 @@
 
    <model>
   <name>HOBBS</name>
-  <path>Aircraft/FGNavigator1/Models/instruments/Hobbs/HobbsMeter.xml</path>
+  <path>Aircraft/PA28-Warrior/Models/instruments/Hobbs/HobbsMeter.xml</path>
   <offsets>
    <x-m>1.930</x-m>
    <y-m>-0.003</y-m>
@@ -512,7 +512,7 @@
 
   <model>
   <name>radalt</name>
-  <path>Aircraft/FGNavigator1/Models/instruments/RadarAltimeter/BendixKing_KI250.xml</path>
+  <path>Aircraft/PA28-Warrior/Models/instruments/RadarAltimeter/BendixKing_KI250.xml</path>
   <offsets>
    <x-m>1.925</x-m>
    <y-m>-0.429</y-m>
@@ -524,7 +524,7 @@
  <!--   Radio Stack  -->
 
  <model>
-  <path>Aircraft/FGNavigator1/Models/MarkerBeacon/MkrBcn.xml</path>
+  <path>Aircraft/PA28-Warrior/Models/MarkerBeacon/MkrBcn.xml</path>
   <offsets>
    <x-m>1.925</x-m>
    <y-m>-0.05223</y-m>
@@ -534,7 +534,7 @@
 
  <model>
   <name>kx165-1</name>
-  <path>Aircraft/FGNavigator1/Models/radio_stack/kx165-1.xml</path>
+  <path>Aircraft/PA28-Warrior/Models/radio_stack/kx165-1.xml</path>
   <offsets>
    <x-m>1.925</x-m>
    <y-m>0.123</y-m>
@@ -544,7 +544,7 @@
 
  <model>
   <name>kx165-2</name>
-  <path>Aircraft/FGNavigator1/Models/radio_stack/kx165-2.xml</path>
+  <path>Aircraft/PA28-Warrior/Models/radio_stack/kx165-2.xml</path>
   <offsets>
    <x-m>1.925</x-m>
    <y-m>0.123</y-m>
@@ -554,7 +554,7 @@
 
  <model>
   <name>KAP140</name>
-  <path>Aircraft/FGNavigator1/Models/radio_stack/kap140/KAP140TwoAxisAlt.xml</path>
+  <path>Aircraft/PA28-Warrior/Models/radio_stack/kap140/KAP140TwoAxisAlt.xml</path>
   <offsets>
    <x-m>1.9325</x-m>
    <y-m>0.125</y-m>
@@ -565,7 +565,7 @@
 
   <model>
   <name>kma20</name>
-   <path>Aircraft/FGNavigator1/Models/instruments/kma20/kma20.xml</path>
+   <path>Aircraft/PA28-Warrior/Models/instruments/kma20/kma20.xml</path>
   <offsets>
     <x-m>1.925</x-m>
    <y-m>0.292</y-m>
@@ -577,7 +577,7 @@
 
 	<model>
 		<name>GPS</name>
-		<path>Aircraft/FGNavigator1/Models/Instruments/KLN90B/kln90b.xml</path>
+		<path>Aircraft/PA28-Warrior/Models/Instruments/KLN90B/kln90b.xml</path>
 		<offsets>
 			<x-m>1.925</x-m>
 			<y-m>-0.385</y-m>
@@ -587,7 +587,7 @@
 	
 	<!--model>
   <name>FlightCom</name>
-  <path>Aircraft/FGNavigator1/Models/FlightCom/flightcom.xml</path>
+  <path>Aircraft/PA28-Warrior/Models/FlightCom/flightcom.xml</path>
   <offsets>
    <x-m>1.925</x-m>
    <y-m>-0.158</y-m>
@@ -608,7 +608,7 @@
 
  <model>
   <name>kr87</name>
-  <path>Aircraft/FGNavigator1/Models/kr87-adf/kr87.xml</path>
+  <path>Aircraft/PA28-Warrior/Models/kr87-adf/kr87.xml</path>
   <offsets>
     <x-m>1.925</x-m>
    <y-m>0.120</y-m>
@@ -650,7 +650,7 @@
 <!-- Landing Light -->
  <model>
   <name>LandingLight</name>
-  <path>Aircraft/FGNavigator1/Models/LandingLight/LandingLight.xml</path>
+  <path>Aircraft/PA28-Warrior/Models/LandingLight/LandingLight.xml</path>
   <offsets>
    <x-m>0.53</x-m>
    <y-m>0.0</y-m>

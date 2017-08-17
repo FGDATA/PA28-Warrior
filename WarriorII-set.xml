@@ -7,16 +7,16 @@
 		<description>FGNavigator1 (PA28-161)</description>
 		<author>Gerhard Kick, Joshua Davidson (it0uchpods), Other</author>
 		<flight-model>jsb</flight-model>
-		<aero>pa28-161-jsbsim</aero>
+		<aero>WarriorII</aero>
 
 		<startup>
-			<splash-texture>Aircraft/FGNavigator1/FGN_Splash.jpg</splash-texture>
+			<splash-texture>Aircraft/PA28-Warrior/FGN_Splash.jpg</splash-texture>
 		</startup>
 
 		<!--hud>
-			<path n="1">Aircraft/FGNavigator1/Huds/Pa161HUD.xml</path>
-			<path n="2">Aircraft/FGNavigator1/Huds/FGN.xml</path>
-			<path n="3">Aircraft/FGNavigator1/Huds/default.xml</path>
+			<path n="1">Aircraft/PA28-Warrior/Huds/Pa161HUD.xml</path>
+			<path n="2">Aircraft/PA28-Warrior/Huds/FGN.xml</path>
+			<path n="3">Aircraft/PA28-Warrior/Huds/default.xml</path>
 			<visibility n="1" type="bool">true</visibility>
 			<font>
 				<name type="string">helvetica_medium.txf</name>
@@ -37,7 +37,7 @@
 		</hud-->
 
 		<model>
-			<path type="string">Aircraft/FGNavigator1/Models/pa28-161.xml</path>
+			<path type="string">Aircraft/PA28-Warrior/Models/pa28-161.xml</path>
 		</model>
 
 		<panel>
@@ -49,10 +49,10 @@
 				<path></path>
 			</electrical>
 			<autopilot>
-				<path>Aircraft/FGNavigator1/Systems/it-autoflight.xml</path>
+				<path>Aircraft/PA28-Warrior/Systems/it-autoflight.xml</path>
 			</autopilot>
 			<autopilot>
-				<path>Aircraft/FGNavigator1/Systems/libraries.xml</path>
+				<path>Aircraft/PA28-Warrior/Systems/libraries.xml</path>
 			</autopilot>
 		</systems>
 
@@ -67,7 +67,7 @@
 						<binding>
 							<command>nasal</command>
 							<script>
-							 var autopilot = gui.Dialog.new("sim/gui/dialogs/autopilot/dialog", "Aircraft/FGNavigator1/Systems/kap140-dlg.xml");
+							 var autopilot = gui.Dialog.new("sim/gui/dialogs/autopilot/dialog", "Aircraft/PA28-Warrior/Systems/kap140-dlg.xml");
 							 autopilot.open();
 							</script>
 						</binding>
@@ -80,28 +80,28 @@
 						<label>The Cockpit</label>
 						<binding>
 							<command>open-browser</command>
-							<path>aircraft/FGNavigator1/Docs/FGN_Cockpit.pdf</path>
+							<path>Aircraft/PA28-Warrior/Docs/FGN_Cockpit.pdf</path>
 						</binding>
 					</item>
 					<item>
 						<label>Fundamentals</label>
 						<binding>
 							<command>open-browser</command>
-							<path>aircraft/FGNavigator1/Docs/Fundamentals.pdf</path>
+							<path>Aircraft/PA28-Warrior/Docs/Fundamentals.pdf</path>
 						</binding>
 					</item>
 					<item>
 						<label>General Settings</label>
 						<binding>
 							<command>open-browser</command>
-							<path>aircraft/FGNavigator1/Docs/General_Settings.pdf</path>
+							<path>Aircraft/PA28-Warrior/Docs/General_Settings.pdf</path>
 						</binding>
 					</item>
 					<item>
 						<label>About This Aircraft</label>
 						<binding>
 							<command>open-browser</command>
-							<path>aircraft/FGNavigator1/Docs/AboutFGN.pdf</path>
+							<path>Aircraft/PA28-Warrior/Docs/AboutFGN.pdf</path>
 						</binding>
 					</item>
 				</menu>
@@ -109,7 +109,7 @@
 		</menubar>
 
 		<sound>
-			<path archive="y">Aircraft/FGNavigator1/pa28-161-sound.xml</path>
+			<path archive="y">Aircraft/PA28-Warrior/sound.xml</path>
 		</sound>
 
 		<view n="0">
@@ -328,42 +328,42 @@
 
 	<nasal>
 		<libraries>
-			<file>Aircraft/FGNavigator1/Nasal/libraries.nas</file>
-			<file>Aircraft/FGNavigator1/Models/Instruments/elt/ELTmessage.nas</file>
-			<file>Aircraft/FGNavigator1/Nasal/kln90b.nas</file>
-			<file>Aircraft/FGNavigator1/Nasal/kr87.nas</file>
-			<!--file>Aircraft/FGNavigator1/Nasal/doors.nas</file-->
-			<file>Aircraft/FGNavigator1/Nasal/ki266.nas</file>
-			<file>Aircraft/FGNavigator1/Nasal/kma20.nas</file>
-			<file>Aircraft/FGNavigator1/Nasal/kcs55.nas</file>
-			<file>Aircraft/FGNavigator1/Nasal/kma20.nas</file>
+			<file>Aircraft/PA28-Warrior/Nasal/libraries.nas</file>
+			<file>Aircraft/PA28-Warrior/Models/Instruments/elt/ELTmessage.nas</file>
+			<file>Aircraft/PA28-Warrior/Nasal/kln90b.nas</file>
+			<file>Aircraft/PA28-Warrior/Nasal/kr87.nas</file>
+			<!--file>Aircraft/PA28-Warrior/Nasal/doors.nas</file-->
+			<file>Aircraft/PA28-Warrior/Nasal/ki266.nas</file>
+			<file>Aircraft/PA28-Warrior/Nasal/kma20.nas</file>
+			<file>Aircraft/PA28-Warrior/Nasal/kcs55.nas</file>
+			<file>Aircraft/PA28-Warrior/Nasal/kma20.nas</file>
 			<script>
 			<![CDATA[ki266.new(0);
 			KCS55.new();]]>
 			</script>
 		</libraries>
 		<systems>
-			<file>Aircraft/FGNavigator1/Nasal/electrical.nas</file>
-			<file>Aircraft/FGNavigator1/Nasal/engines.nas</file>
-			<file>Aircraft/FGNavigator1/Nasal/fuel.nas</file>
+			<file>Aircraft/PA28-Warrior/Nasal/electrical.nas</file>
+			<file>Aircraft/PA28-Warrior/Nasal/engines.nas</file>
+			<file>Aircraft/PA28-Warrior/Nasal/fuel.nas</file>
 		</systems>
 		<itaf>
-			<file>Aircraft/FGNavigator1/Nasal/it-autoflight.nas</file>
+			<file>Aircraft/PA28-Warrior/Nasal/it-autoflight.nas</file>
 		</itaf>
 		<kap140>
-			<file>Aircraft/FGNavigator1/Nasal/kap140.nas</file>
+			<file>Aircraft/PA28-Warrior/Nasal/kap140.nas</file>
 		</kap140>
 		<tyresmoke>
-			<file>Aircraft/FGNavigator1/Nasal/tyresmoke.nas</file>
+			<file>Aircraft/PA28-Warrior/Nasal/tyresmoke.nas</file>
 		</tyresmoke>
 		<HobbsMeter>
-			<file>Aircraft/FGNavigator1/Models/instruments/Hobbs/hobbs.nas</file>
+			<file>Aircraft/PA28-Warrior/Models/instruments/Hobbs/hobbs.nas</file>
 			<script>
 			<![CDATA[HobbsMeter.new(index: 0, switchPath: 'gear/gear/wow', inverted: 1);]]>
 			</script>
 		</HobbsMeter>
 		<logger>
-			<file>Aircraft/FGNavigator1/Nasal/logger.nas</file>
+			<file>Aircraft/PA28-Warrior/Nasal/logger.nas</file>
 		</logger>
 	</nasal>
 

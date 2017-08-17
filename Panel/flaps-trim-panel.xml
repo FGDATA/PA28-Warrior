@@ -5,7 +5,7 @@
 <PropertyList>
 
  <name>Flap-Trim-Panel</name>
- <background>Aircraft/FGNavigator1/Panel/transparent-bg.rgb</background>
+ <background>Aircraft/PA28-Warrior/Panel/transparent-bg.rgb</background>
  <w>1024</w>
  <h>768</h>
 

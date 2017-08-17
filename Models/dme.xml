@@ -24,7 +24,7 @@
         <serviceable>instrumentation/dme[0]/serviceable</serviceable>
     </params>
 
-    <path>Aircraft/FGNavigator1/Models/dme.ac</path>
+    <path>Aircraft/PA28-Warrior/Models/dme.ac</path>
 
     <model>
       <path>Aircraft/Instruments-3d/ki266/ki266.xml</path>
