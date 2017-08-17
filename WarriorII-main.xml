@@ -4,7 +4,7 @@
 
 <PropertyList>
 
-	<sim>
+	<sim include="Systems/help.xml">
 
 		<author>Gerhard Kick, Joshua Davidson (it0uchpods), Other</author>
 
@@ -51,8 +51,7 @@
 			</autopilot>
 		</systems>
 
-		<help include="Systems/help.xml"/>
-
+		
 		<menubar>
 			<default>
 				<menu n="3">
@@ -132,11 +131,11 @@
 		<view n="0">
 			<internal archive="y">true</internal>
 			<config>
-				<x-offset-m archive="y">-0.24</x-offset-m>
+				<x-offset-m archive="y">-0.2</x-offset-m>
 				<y-offset-m archive="y">0.5</y-offset-m>
 				<z-offset-m archive="y">2.6</z-offset-m>
 				<pitch-offset-deg>-15</pitch-offset-deg>
-				<default-field-of-view-deg type="double">70</default-field-of-view-deg>
+				<default-field-of-view-deg type="double">82</default-field-of-view-deg>
 			</config>
 		</view>
 		<view n="1">

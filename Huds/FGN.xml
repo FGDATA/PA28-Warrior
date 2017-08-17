@@ -74,6 +74,17 @@
 		</input>
 	</label>
 
+<label>
+		<name>gs</name>
+		<x>-420</x>
+		<y>-90</y>
+		<halign>left</halign>
+		<format>Grd-Speed:     %d kts</format>
+		<input>
+			<property>/velocities/groundspeed-kt</property>
+		</input>
+	</label>
+
 	<label>
 		<name>vs</name>
 		<x>-420</x>
@@ -182,7 +193,7 @@
 	</label>
     <import>
 		<path>Huds/Sets/gps.xml</path>
-		<x-offset>-300</x-offset>
+		<x-offset>-420</x-offset>
 		<y-offset>160</y-offset>
 	</import>
 
