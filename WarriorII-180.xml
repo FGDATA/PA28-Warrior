@@ -233,8 +233,8 @@ xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
 				<y>0</y>
 				<z>0.3795</z>
 			</location>
-			<capacity unit="LBS">0.1</capacity>
-			<contents unit="LBS">0.0</contents>
+			<capacity unit="LBS">0.01</capacity>
+			<contents unit="LBS">0.00</contents>
 			<type>AVGAS</type>
 			<priority>1</priority>
 		</tank>

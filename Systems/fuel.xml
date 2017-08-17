@@ -12,7 +12,7 @@
 				/systems/fuel/selected-tank EQ 1
 				/systems/fuel/suck-fuel EQ 1
 				propulsion/tank[0]/contents-lbs GT 0
-				/consumables/fuel/tank[2]/level-lbs LT 0.09
+				/consumables/fuel/tank[2]/level-lbs LT 0.008
 			</test>
 		</switch>
 
@@ -23,7 +23,7 @@
 				/systems/fuel/selected-tank EQ 2
 				/systems/fuel/suck-fuel EQ 1
 				propulsion/tank[1]/contents-lbs GT 0
-				/consumables/fuel/tank[2]/level-lbs LT 0.09
+				/consumables/fuel/tank[2]/level-lbs LT 0.008
 			</test>
 		</switch>
 	</channel>
