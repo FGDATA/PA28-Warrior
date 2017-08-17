@@ -366,7 +366,7 @@
 
  <model>
   <name>TC</name>
-  <path>Aircraft/Instruments-3d/tc/tc.xml</path>
+  <path>Aircraft/FGNavigator1/Models/tc/tc.xml</path>
   <offsets>
    <x-m>1.925</x-m>
    <y-m>-0.336</y-m>
@@ -719,15 +719,12 @@
   </axis>
  </animation>
 
-<!-- Make the fuel selector valve move based on the value of switch-position 
-     The actual change in tank selection is done by libraries.nas which allows
-     cycling the selected tank by keyboard "f".-->
  <animation>
   <type>rotate</type>
   <object-name>FuelValvePointer</object-name>
   <offset-deg>-180</offset-deg>
   <factor>-90</factor>
-  <property>controls/fuel/switch-position</property>  
+  <property>systems/fuel/selected-tank</property>  
   <center>
    <x-m>1.94707</x-m>
    <y-m>-0.55448</y-m>
@@ -739,6 +736,37 @@
    <z>0.0018</z>
   </axis>
  </animation>
+ 
+	<animation>
+		<type>pick</type>
+		<object-name>FuelValvePointer</object-name>
+		<action>
+			<button>0</button>
+			<button>3</button>
+			<repeatable type="bool">false</repeatable>
+			<binding>
+				<command>property-adjust</command>
+				<property>systems/fuel/selected-tank</property>
+				<step>1</step>
+				<min>0</min>
+				<max>2</max>
+				<wrap>false</wrap>
+			</binding>
+		</action>
+		<action>
+			<button>1</button>
+			<button>4</button>
+			<repeatable type="bool">false</repeatable>
+			<binding>
+				<command>property-adjust</command>
+				<property>systems/fuel/selected-tank</property>
+				<step>-1</step>
+				<min>0</min>
+				<max>2</max>
+				<wrap>false</wrap>
+			</binding>
+		</action>
+	</animation>
 
  <animation>
   <type>rotate</type>

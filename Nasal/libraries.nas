@@ -3,6 +3,8 @@
 
 setlistener("/sim/signals/fdm-initialized", func {
 	systems.elec_init();
+	systems.engine_init();
+	systems.fuel_init();
     itaf.ap_init();
     var autopilot = gui.Dialog.new("sim/gui/dialogs/autopilot/dialog", "Aircraft/FGNavigator1/Systems/kap140-dlg.xml");
 	setprop("/it-autoflight/input/hdg", getprop("/orientation/heading-magnetic-deg"));

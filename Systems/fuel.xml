@@ -1,0 +1,52 @@
+<!-- PA28-161 Fuel System -->
+
+<!-- (c) Joshua Davidson (it0uchpods) -->
+
+<system name="fuel">
+
+	<channel name="Fuel to Engine Pipes">
+		<!-- From left tank to pipes -->
+		<switch name="fuel/from-tank0-to-tank2">
+			<default value="0"/>
+			<test logic="AND" value="0.1">
+				/systems/fuel/selected-tank EQ 1
+				/systems/fuel/suck-fuel EQ 1
+				propulsion/tank[0]/contents-lbs GT 0
+				/consumables/fuel/tank[2]/level-lbs LT 0.09
+			</test>
+		</switch>
+
+		<!-- From right tank to pipes -->
+		<switch name="fuel/from-tank1-to-tank2">
+			<default value="0"/>
+			<test logic="AND" value="0.1">
+				/systems/fuel/selected-tank EQ 2
+				/systems/fuel/suck-fuel EQ 1
+				propulsion/tank[1]/contents-lbs GT 0
+				/consumables/fuel/tank[2]/level-lbs LT 0.09
+			</test>
+		</switch>
+	</channel>
+
+	<channel name="Engine Pipes PPS">
+		<!-- Total from tanks to pipes -->
+		<summer name="tank0 and 1 to tank2">
+			<input>fuel/from-tank0-to-tank2</input>
+			<input>fuel/from-tank1-to-tank2</input>
+			<output>propulsion/tank[2]/external-flow-rate-pps</output>
+		</summer>
+	</channel>
+
+    <channel name="Total PPS">
+        <summer name="fuel/tank0-flow-rate">
+            <input>-fuel/from-tank0-to-tank2</input>
+            <output>propulsion/tank[0]/external-flow-rate-pps</output>
+        </summer>
+
+        <summer name="fuel/tank1-flow-rate">
+            <input>-fuel/from-tank1-to-tank2</input>
+            <output>propulsion/tank[1]/external-flow-rate-pps</output>
+        </summer>
+    </channel>
+	
+</system>

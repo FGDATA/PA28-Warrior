@@ -183,8 +183,7 @@ xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
 				<pitch>0.00</pitch>
 				<yaw>0.00</yaw>
 			</orient>
-			<feed>0</feed>
-			<feed>1</feed>
+			<feed>2</feed>
 			<thruster file="fixed-pitch-2-blade">
 				<location unit="IN">
 					<x>15.0748</x>
@@ -227,9 +226,22 @@ xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
 			<type>AVGAS</type>
 			<priority>1</priority>
 		</tank>
+		<!-- Engine Pipe -->
+		<tank type="FUEL">
+			<location unit="IN">
+				<x>103.4</x>
+				<y>0</y>
+				<z>0.2795</z>
+			</location>
+			<capacity unit="LBS">0.1</capacity>
+			<contents unit="LBS">0.0</contents>
+			<type>AVGAS</type>
+			<priority>1</priority>
+		</tank>
 	</propulsion>
 	
 	<system file="fcs" />
+	<system file="fuel" />
 
 	<flight_control name="none" />
 	
