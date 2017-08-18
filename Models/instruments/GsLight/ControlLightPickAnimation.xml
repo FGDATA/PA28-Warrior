@@ -29,10 +29,6 @@
       <property alias="../../../../params/test"/>
       <value>1</value>
     </binding>
-    <binding>
-   <command>nasal</command>
-   <script>libraries.landing_light_switch()</script>
-  </binding>
     <mod-up>
       <binding>
         <command>property-assign</command>
@@ -42,13 +38,6 @@
     </mod-up>
 
   </action>
-  <hovered>
-            <binding>
-                <command>set-tooltip</command>
-                <tooltip-id>GSLive</tooltip-id>
-                <label>GS Capture/LandingLight toggle </label>
-            </binding>
-        </hovered>
 
 </PropertyList>
 

@@ -38,8 +38,8 @@
       <button>0</button>
       <repeatable>false</repeatable>
       <binding>
-        <command>nasal</command>
-        <script>libraries.primer()</script>
+        <command>property-toggle</command>
+        <property>controls/engines/engine/primer-pump</property>
       </binding>
     </action>
   </animation>

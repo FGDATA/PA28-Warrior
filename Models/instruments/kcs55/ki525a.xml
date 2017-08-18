@@ -22,6 +22,13 @@
 <PropertyList>
   <path>ki525a.ac</path>
   
+	<animation>
+		<type>scale</type>
+		<x-offset>1.00</x-offset>
+		<y-offset>0.95</y-offset>
+		<z-offset>0.95</z-offset>
+	</animation>
+  
   <animation>
  <w-base>800</w-base>
  <h-base>800</h-base>

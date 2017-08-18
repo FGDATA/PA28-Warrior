@@ -5,7 +5,7 @@ OBJECT world
 kids 2
 OBJECT poly
 name "landing_light_spot"
-loc 3.08053 -0.0677438 -3.00737
+loc 3.08053 0.0595097 -3.00737
 data 9
 Plane.042
 texture "light.png"
@@ -124,7 +124,7 @@ refs 3
 kids 0
 OBJECT poly
 name "phare"
-loc -1.53951 0.00215567 0.00323009
+loc -1.53951 0.129409 0.00323009
 texture "light.png"
 crease 45.000000
 numvert 17
@@ -192,12 +192,12 @@ SURF 0x10
 mat 1
 refs 3
 7 0.0352671 0.698179
-8 -5.48136e-05 0.525414
+8 -5.48136e-005 0.525414
 16 0.463972 0.525414
 SURF 0x10
 mat 1
 refs 3
-8 -5.48136e-05 0.525414
+8 -5.48136e-005 0.525414
 9 0.0352671 0.352648
 16 0.463972 0.525414
 SURF 0x10
