@@ -35,9 +35,7 @@
 			</palette>
 		</hud>
                 
-                <sound>
-                    <volume>0.8</volume>
-                </sound>
+                
 
 		<panel>
 			<visibility archive="y">false</visibility>
