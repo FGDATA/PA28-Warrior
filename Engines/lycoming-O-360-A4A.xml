@@ -9,7 +9,7 @@
     <maxhp>                   180.00 </maxhp>
     <cycles>                    4.00 </cycles>
     <idlerpm>                 668.00 </idlerpm>
-    <maxrpm>                 2516.00 </maxrpm>
+    <maxrpm>                 2477.00 </maxrpm>
     <maxthrottle>               0.90 </maxthrottle>
     <minthrottle>               0.00 </minthrottle>
     <sparkfaildrop>             0.10 </sparkfaildrop>
