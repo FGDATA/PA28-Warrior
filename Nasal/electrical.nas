@@ -101,16 +101,22 @@ var master_elec = func {
 		setprop("/systems/electrical/outputs/fuel-pump", 0);
 	}
 	
-	if (elec1 >= 8 and getprop("/controls/switches/landing-light") == 1) {
-		setprop("/controls/lighting/landing-lights", 1);
+	if (elec1 >= 8 and getprop("/controls/switches/beacon") == 1) {
+		setprop("/controls/lighting/beacon", 1);
 	} else {
-		setprop("/controls/lighting/landing-lights", 0);
+		setprop("/controls/lighting/beacon", 0);
 	}
 	
 	if (elec1 >= 8 and getprop("/controls/switches/strobe-lights") == 1) {
 		setprop("/controls/lighting/strobe", 1);
 	} else {
 		setprop("/controls/lighting/strobe", 0);
+	}
+	
+	if (elec1 >= 8 and getprop("/controls/switches/landing-light") == 1) {
+		setprop("/controls/lighting/landing-lights", 1);
+	} else {
+		setprop("/controls/lighting/landing-lights", 0);
 	}
 	
 	setprop("/systems/electrical/outputs/turn-coordinator", elec2);
