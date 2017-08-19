@@ -7,6 +7,7 @@
 
 var magnetos = getprop("/controls/engines/engine[0]/magnetos");
 var switch = getprop("/controls/engines/engine[0]/magnetos-switch");
+var rpm = getprop("/engines/engine[0]/rpm");
 
 var engine_init = func {
 	setprop("/controls/engines/engine[0]/magnetos-switch", 0);
@@ -32,7 +33,8 @@ setlistener("/systems/electrical/bus/elec2", func {
 
 var magnetoStartSwitch = func {
 	switch = getprop("/controls/engines/engine[0]/magnetos-switch");
-	if (getprop("/systems/electrical/bus/elec1") >= 8 or getprop("/systems/electrical/bus/elec2") >= 8) {
+	rpm = getprop("/engines/engine[0]/rpm");
+	if (getprop("/systems/electrical/bus/elec1") >= 8 or getprop("/systems/electrical/bus/elec2") >= 8 or rpm >= 363) {
 		if (switch == 0) {
 			setprop("/controls/engines/engine[0]/magnetos", 0);
 			setprop("/controls/engines/engine[0]/starter", 0);
