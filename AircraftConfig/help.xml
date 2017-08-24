@@ -46,12 +46,12 @@
 			
 			<text>
 				<halign>left</halign>
-				<label>Fuel Capacity (per tank): 144.24 Pounds</label>
+				<label>Fuel Capacity (per tank): 168.0 Pounds</label>
 			</text>
 			
 			<text>
 				<halign>left</halign>
-				<label>Fuel to Tabls (per tank): 102.17 Pounds</label>
+				<label>Fuel to Tabs (per tank): 119.0 Pounds</label>
 			</text>
 			
 			<hrule/>
