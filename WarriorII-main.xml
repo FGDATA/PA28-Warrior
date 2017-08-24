@@ -284,9 +284,7 @@
 			</engine>
 		</engines>
 		<flight>
-			<aileron-trim type="double">0</aileron-trim>
-			<elevator-trim type="double">0</elevator-trim>
-			<rudder-trim type="double">0</rudder-trim>
+			<rudder-fdm type="double">0</rudder-fdm>
 		</flight>
 		<gear>
 			<brake-parking type="double">1.0</brake-parking>
@@ -401,7 +399,7 @@
 	</it-autoflight>
 	
 	<options n="0">
-		<auto-turn-coordination type="bool">0</auto-turn-coordination>
+		<autocoordinate userarchive="y" type="bool">0</autocoordinate>
 		<nav-source type="int">1</nav-source>
 		<panel userarchive="y" type="string">HSI Panel</panel>
 		<show-l-yoke type="bool">1</show-l-yoke>
