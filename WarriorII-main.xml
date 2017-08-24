@@ -109,8 +109,7 @@
 						<label>Go to SkyVector IFR</label>
 						<binding>
 							<command>open-browser</command>
-							<path>Aircraft/PA28-Warrior/Docs/IFR_Map.pdf</path>
-							<!--<path>https://skyvector.com/?ll=47.458055556,8.548055556&chart=302&zoom=3</path> -->
+							<path>https://skyvector.com/</path>
 						</binding>
 					</item>
 					<item>
