@@ -119,15 +119,25 @@
   </offsets>
  </model>
  
- <model>
-  <name>rpm</name>
-  <path>Aircraft/PA28-Warrior/Models/RPM/RPM.xml</path>
-  <offsets>
-   <x-m>1.938</x-m>
-   <y-m>-0.074</y-m>
-   <z-m>0.011</z-m>
-  </offsets>
- </model>
+	<model>
+		<name>rpm</name>
+		<path>Aircraft/PA28-Warrior/Models/RPM/RPM.xml</path>
+		<offsets>
+			<x-m>1.938</x-m>
+			<y-m>-0.073</y-m>
+			<z-m>0.016</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<name>radalt</name>
+		<path>Aircraft/PA28-Warrior/Models/instruments/RadarAltimeter/BendixKing_KI250.xml</path>
+		<offsets>
+			<x-m>1.938</x-m>
+			<y-m>-0.158</y-m>
+			<z-m>0.020</z-m>
+		</offsets>
+	</model>
  
  <!--model>
   <name>fflow</name>
@@ -270,27 +280,27 @@
   </offsets>
  </model>
 
- <model>
-        <path>Aircraft/PA28-Warrior/Models/instruments/GsLight/ControlLight.xml</path>
-        <name>APCL</name>
-        <offsets>
-            <x-m>1.93</x-m>
-            <y-m>0.025</y-m>
-            <z-m>0.331</z-m>
-        </offsets>
-    </model>
-    
-   
-    
- <model>
-        <path>Aircraft/PA28-Warrior/Models/iaL/iaL.xml</path>
-        <name>LMaster</name>
-        <offsets>
-            <x-m>1.93</x-m>
-            <y-m>0.025</y-m>
-            <z-m>0.181</z-m>
-        </offsets>
-    </model>
+	<model>
+		<path>Aircraft/PA28-Warrior/Models/instruments/GsLight/ControlLight.xml</path>
+		<name>APCL</name>
+		<offsets>
+			<x-m>1.93</x-m>
+			<y-m>0.025</y-m>
+			<z-m>0.331</z-m>
+		</offsets>
+	</model>
+
+
+
+	<model>
+		<path>Aircraft/PA28-Warrior/Models/iaL/iaL.xml</path>
+		<name>LMaster</name>
+		<offsets>
+			<x-m>1.93</x-m>
+			<y-m>0.025</y-m>
+			<z-m>0.181</z-m>
+		</offsets>
+	</model>
     
 	<model>
 		<path>Aircraft/PA28-Warrior/Models/instruments/FL_blue/ControlLight.xml</path>
@@ -371,15 +381,15 @@
   </offsets>
  </model>
 
- <model>
-  <name>ELT</name>
-   <path>Aircraft/PA28-Warrior/Models/instruments/ELT/ArtexELT.xml</path>
-  <offsets>
-   <x-m>1.925</x-m>
-   <y-m>-0.158</y-m>
-   <z-m>0.013</z-m>
-  </offsets>
- </model>
+	<model>
+		<name>ELT</name>
+		<path>Aircraft/PA28-Warrior/Models/instruments/ELT/ArtexELT.xml</path>
+		<offsets>
+			<x-m>1.928</x-m>
+			<y-m>0.228</y-m>
+			<z-m>0.322</z-m>
+		</offsets>
+	</model>
 
  <model>
   <name>TC</name>
@@ -453,25 +463,21 @@
   </offsets>
  </model>
  
- <model>
-  <name>SwitchKcs51b</name>
-  <path>Aircraft/PA28-Warrior/Models/instruments/kcs55/ka51b.xml</path>
-  <offsets>
-   <x-m>1.928</x-m>
-   <y-m>0.229</y-m>
-   <z-m>0.32</z-m>
-  </offsets>
- </model>
-
- <!--model>
-  <name>clock</name>
- <path>Aircraft/PA28-Warrior/Models/Clock/Clock.xml</path>
-  <offsets>
-   <x-m>1.928</x-m>
-   <y-m>0.269</y-m>
-   <z-m>0.32</z-m>
-  </offsets>
- </model-->
+	<model>
+		<name>SwitchKcs51b</name>
+		<path>Aircraft/PA28-Warrior/Models/instruments/kcs55/ka51b.xml</path>
+		<condition>
+			<equals>
+				<property>options/panel</property>
+				<value>HSI Panel</value>
+			</equals>
+		</condition>
+		<offsets>
+			<x-m>1.928</x-m>
+			<y-m>0.257</y-m>
+			<z-m>0.321</z-m>
+		</offsets>
+	</model>
  
   <model>
   <name>FEX</name>
@@ -484,7 +490,6 @@
   </offsets>
  </model>
 
-
  <!--model>
   <name>Rnav</name>
   <path>Aircraft/PA28-Warrior/Models/instruments/kns80/kns80.xml</path>
@@ -495,16 +500,15 @@
   </offsets>
  </model--> <!-- Broken -->
  
- <model>
-  <name>Primer</name>
-  <path>Aircraft/PA28-Warrior/Models/PrimerPump/primer.xml</path>
-  <offsets>
-   <x-m>1.925</x-m>
-   <y-m>-0.01435</y-m>
-   <z-m>0.01567</z-m>
-  </offsets>
- </model>
-
+	<model>
+		<name>Primer</name>
+		<path>Aircraft/PA28-Warrior/Models/PrimerPump/primer.xml</path>
+		<offsets>
+			<x-m>1.925</x-m>
+			<y-m>-0.0125</y-m>
+			<z-m>0.01567</z-m>
+		</offsets>
+	</model>
 
  <model>
   <name>AMP</name>
@@ -543,16 +547,6 @@
    <x-m>1.930</x-m>
    <y-m>-0.003</y-m>
    <z-m>0.331</z-m>
-  </offsets>
- </model>
-
-  <model>
-  <name>radalt</name>
-  <path>Aircraft/PA28-Warrior/Models/instruments/RadarAltimeter/BendixKing_KI250.xml</path>
-  <offsets>
-   <x-m>1.938</x-m>
-   <y-m>-0.359</y-m>
-   <z-m>0.023</z-m>
   </offsets>
  </model>
  
@@ -607,17 +601,6 @@
    <z-m>0.24</z-m>
   </offsets>
  </model>
-	
-	<!--model>
-  <name>FlightCom</name>
-  <path>Aircraft/PA28-Warrior/Models/FlightCom/flightcom.xml</path>
-  <offsets>
-   <x-m>1.925</x-m>
-   <y-m>-0.158</y-m>
-   <z-m>0.013</z-m>
-  </offsets>
- </model-->
-
 	
  <model>
   <name>Transponder</name>

@@ -47,6 +47,12 @@
     </animation>
 
 
+	<animation>
+		<type>scale</type>
+		<x-offset>0.8</x-offset>
+		<y-offset>0.8</y-offset>
+		<z-offset>0.8</z-offset>
+	</animation>
 
 
 
