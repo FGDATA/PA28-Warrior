@@ -15,5 +15,11 @@
 		</model>
 		
 	</sim>
+	
+	<nasal n="0">
+		<specific>
+			<file>Aircraft/PA28-Warrior/Nasal/liveries.nas</file>
+		</specific>
+	</nasal>
 
 </PropertyList>

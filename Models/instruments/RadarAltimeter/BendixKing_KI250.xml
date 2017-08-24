@@ -28,7 +28,7 @@ License: GPL
                 <tooltip-id>ralti</tooltip-id>
                 <mapping>ralti</mapping>
                 <label>AGL: %3d ft</label>
-                <property>position/altitude-agl-ft</property>
+                <property>position/gear-agl-ft</property>
             </binding>
         </hovered>
 </animation>
@@ -39,9 +39,9 @@ License: GPL
 	<object-name>Needle</object-name>
 	<object-name>DH_Marker</object-name>
 	<emission>
-		<red>0.7</red>         
-		<green>0.7</green>     
-		<blue>0.7</blue>         
+   <red>1.0</red>
+   <green>0.2</green>
+   <blue>0.0</blue>       
 	 <factor-prop>/sim/model//material/instruments/factor</factor-prop>
 	</emission>
 </animation>
@@ -76,7 +76,7 @@ License: GPL
 <animation>
 	<type>rotate</type>
 	<object-name>Needle</object-name>
-	<property>/position/altitude-agl-ft</property>
+	<property>/position/gear-agl-ft</property>
 	<interpolation>
 		<entry><ind>-9999</ind><dep>0</dep></entry>
 		<entry><ind>    0</ind><dep>   0</dep></entry>

@@ -51,9 +51,6 @@
 				</button>
 				<button>
 					<halign>center</halign>
-					<enable>
-						<property>/something/unused</property>
-					</enable>
 					<legend>Select Livery</legend>
 					<pref-width>140</pref-width>
 					<binding>
@@ -249,7 +246,7 @@
 				<pref-width>150</pref-width>
 				<property>/options/panel</property>
 				<value>HSI Panel</value>
-				<!--value>DG Panel</value-->
+				<value>DG Panel</value>
 				<binding>
 					<command>dialog-apply</command>
 				</binding>

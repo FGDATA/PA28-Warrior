@@ -42,21 +42,21 @@
   </animation>
               -->
 
-  <params>
-    <has-gs>instrumentation/nav[0]/has-gs</has-gs>
-    <gs-in-range>instrumentation/nav[0]/gs/in-range</gs-in-range>
+	<params>
+		<has-gs>instrumentation/nav[0]/has-gs</has-gs>
+		<gs-in-range>instrumentation/nav[0]/gs/in-range</gs-in-range>
 
-    <gs-needle-deflection>instrumentation/nav[0]/gs-needle-deflection-filtered</gs-needle-deflection>
-    <cdi-needle-deflection>instrumentation/kcs55/ki525/cdi-deflection</cdi-needle-deflection>
-    <selected-heading>it-autoflight/input/hdg</selected-heading>
-    <selected-course>instrumentation/kcs55/ki525/selected-course-deg</selected-course>
-    <to-flag>instrumentation/kcs55/ki525/to-flag</to-flag>
-    <from-flag>instrumentation/kcs55/ki525/from-flag</from-flag>
-    <nav-flag>instrumentation/kcs55/ki525/nav-flag</nav-flag>
+		<gs-needle-deflection>instrumentation/nav[0]/gs-needle-deflection-filtered</gs-needle-deflection>
+		<cdi-needle-deflection>instrumentation/kcs55/ki525/cdi-deflection</cdi-needle-deflection>
+		<selected-heading>it-autoflight/input/hdg</selected-heading>
+		<selected-course>instrumentation/kcs55/ki525/selected-course-deg</selected-course>
+		<to-flag>instrumentation/kcs55/ki525/to-flag</to-flag>
+		<from-flag>instrumentation/kcs55/ki525/from-flag</from-flag>
+		<nav-flag>instrumentation/kcs55/ki525/nav-flag</nav-flag>
 
-    <indicated-heading>instrumentation/kcs55/kg102/indicated-heading-deg</indicated-heading>
-    <hdg-flag>instrumentation/kcs55/kg102/flag-norm</hdg-flag>
-  </params>
+		<indicated-heading>instrumentation/kcs55/kg102/indicated-heading-deg</indicated-heading>
+		<hdg-flag>instrumentation/kcs55/kg102/flag-norm</hdg-flag>
+	</params>
   
 
 

@@ -1,8 +1,9 @@
 AC3Db
 MATERIAL "ac3dmat1" rgb 1 1 1  amb 0.2 0.2 0.2  emis 0 0 0  spec 0 0 0  shi 10  trans 0
+MATERIAL "ac3dmat6" rgb 0 1 0  amb 0.2 0.2 0.2  emis 0 0 0  spec 0 0 0  shi 10  trans 1
 MATERIAL "DefaultWhite" rgb 1 1 1  amb 1 1 1  emis 0.15 0.15 0.15  spec 0.5 0.5 0.5  shi 64  trans 0
 OBJECT world
-kids 5
+kids 9
 OBJECT poly
 name "Face"
 loc 0.000119331 0 0
@@ -17,14 +18,14 @@ numvert 6
 -0.001458 0 -0.04
 numsurf 2
 SURF 0x0
-mat 1
+mat 2
 refs 4
 0 0.935547 0.935547
 3 0.0566406 0.935547
 4 0.0566406 0.496094
 5 0.935547 0.496094
 SURF 0x0
-mat 1
+mat 2
 refs 4
 4 0.0566406 0.496094
 2 0.0566406 0.0566406
@@ -44,14 +45,14 @@ numvert 6
 0 0 -0.04
 numsurf 2
 SURF 0x0
-mat 1
+mat 2
 refs 4
 0 0.994141 0.994141
 3 -0.00195312 0.994141
 4 -0.00195312 0.496094
 5 0.994141 0.496094
 SURF 0x0
-mat 1
+mat 2
 refs 4
 4 -0.00195312 0.496094
 2 -0.00195312 -0.00195312
@@ -470,17 +471,105 @@ numvert 6
 -0.0011 0.04 -0.04
 numsurf 2
 SURF 0x0
-mat 1
+mat 2
 refs 4
 1 0.0520455 0.498392
 3 0.0520455 0.0589381
 4 0.930952 0.0589381
 0 0.930952 0.498392
 SURF 0x0
-mat 1
+mat 2
 refs 4
 5 0.930952 0.937845
 2 0.0520455 0.937845
 1 0.0520455 0.498392
 0 0.930952 0.498392
+kids 0
+OBJECT group
+name "clicks"
+loc 0.00569378 -0.00756817 0.00125835
+kids 1
+OBJECT poly
+name "click-bug-R"
+loc -1.86265e-009 -0.022778 -0.0612388
+crease 180.000000
+numvert 4
+0 -0.00702053 0.0226521
+0 -0.00702053 0.0302027
+0 0.00702053 0.0226521
+0 0.00702053 0.0302027
+numsurf 1
+SURF 0x30
+mat 1
+refs 4
+3 0 1
+1 0 0
+0 0.125 0
+2 0.125 1
+kids 0
+OBJECT group
+name "clicks"
+loc 0.00569378 -0.00756817 0.00125835
+kids 1
+OBJECT poly
+name "click-bug-L"
+loc -1.86265e-009 -0.022778 -0.0533867
+crease 180.000000
+numvert 4
+0 0.00702053 0.0302027
+0 0.00702053 0.0226521
+0 -0.00702053 0.0302027
+0 -0.00702053 0.0226521
+numsurf 1
+SURF 0x30
+mat 1
+refs 4
+0 0 1
+2 0 0
+3 0.125 0
+1 0.125 1
+kids 0
+OBJECT group
+name "clicks"
+loc 0.00569378 -0.00756817 0.00125835
+kids 1
+OBJECT poly
+name "click-offset-L"
+loc -1.86265e-009 -0.0223161 0.00573575
+crease 180.000000
+numvert 4
+0 -0.00702053 0.0226521
+0 -0.00702053 0.0302027
+0 0.00702053 0.0226521
+0 0.00702053 0.0302027
+numsurf 1
+SURF 0x30
+mat 1
+refs 4
+3 0 1
+1 0 0
+0 0.125 0
+2 0.125 1
+kids 0
+OBJECT group
+name "clicks"
+loc 0.00569378 -0.00756817 0.00125835
+kids 1
+OBJECT poly
+name "click-offset-R"
+loc -1.86265e-009 -0.0223161 -0.00211644
+crease 180.000000
+numvert 4
+0 0.00702053 0.0302027
+0 0.00702053 0.0226521
+0 -0.00702053 0.0302027
+0 -0.00702053 0.0226521
+numsurf 1
+SURF 0x30
+mat 1
+refs 4
+0 0 1
+2 0 0
+3 0.125 0
+1 0.125 1
 kids 0

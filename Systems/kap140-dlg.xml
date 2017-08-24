@@ -412,17 +412,54 @@
 	
 	<hrule/>
 	
-	<checkbox>
-		<label>Slave NAV Mode to GPS/Route Manager</label>
-		<property>/it-autoflight/settings/slave-gps-nav</property>
-		<enable>
-			<property>/autopilot/settings/gps-driving-true-heading</property>
-		</enable>
-		<binding>
-			<command>property-toggle</command>
-			<property>/it-autoflight/settings/slave-gps-nav</property>
-		</binding>
-		<live>true</live>
-	</checkbox>
+	<group>
+		<layout>hbox</layout>
+		
+		<text>
+			<label>Nav Source:</label>
+		</text>
+	
+		<button>
+			<halign>left</halign>
+			<legend>Switch</legend>
+            <pref-width>130</pref-width>
+			<binding>
+				<command>property-cycle</command>
+				<property>/options/nav-source</property>
+				<value>1</value>
+				<value>2</value>
+				<value>3</value>
+			</binding>
+		</button>
+		
+		<text>
+			<label>NAV1</label>
+			<visible>
+				<equals>
+					<property>/options/nav-source</property>
+					<value>1</value>
+				</equals>
+			</visible>
+		</text>
+		<text>
+			<label>GPS/Route Manager</label>
+			<visible>
+				<equals>
+					<property>/options/nav-source</property>
+					<value>2</value>
+				</equals>
+			</visible>
+		</text>
+		<text>
+			<label>NAV2</label>
+			<visible>
+				<equals>
+					<property>/options/nav-source</property>
+					<value>3</value>
+				</equals>
+			</visible>
+		</text>
+		
+	</group>
 
 </PropertyList>

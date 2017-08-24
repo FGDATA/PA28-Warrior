@@ -5424,7 +5424,7 @@ refs 3
 kids 0
 OBJECT poly
 name "Rudder"
-texture "pa28-161-01.rgb"
+texture "PA28-WarriorII.png"
 crease 45.000000
 numvert 10
 6.95051 1.69677 -0.003334
@@ -5512,7 +5512,7 @@ refs 4
 kids 0
 OBJECT poly
 name "VTail"
-texture "pa28-161-01.rgb"
+texture "PA28-WarriorII.png"
 crease 98.000000
 numvert 22
 6.60242 1.54939 0.05227
@@ -10520,7 +10520,6 @@ kids 0
 OBJECT poly
 name "NoseWheelFairing"
 loc -0.733082 0.519594 0.165065
-texture "pa28-161-01.rgb"
 crease 110.000000
 numvert 25
 1.49881 -0.907756 -0.000978
@@ -11242,7 +11241,6 @@ kids 0
 OBJECT poly
 name "LeftMainFairing"
 loc 2.17684 -0.330276 -1.26631
-texture "pa28-161-01.rgb"
 crease 110.000000
 numvert 70
 0.102047 0.0564073 2.84134
@@ -11913,7 +11911,6 @@ kids 0
 OBJECT poly
 name "RightMainFairing"
 loc 2.17684 -0.330276 -1.26631
-texture "pa28-161-01.rgb"
 crease 110.000000
 numvert 70
 -0.0877283 0.0688297 0.10953
@@ -16601,7 +16598,7 @@ kids 4
 OBJECT poly
 name "DoorLatchExt"
 loc 1.52767 0.0968627 -0.30931
-texture "pa28-161-01.rgb"
+texture "PA28-WarriorII.png"
 crease 45.000000
 numvert 4
 -0.0189226 -0.015541 -0.000970066
@@ -17300,7 +17297,7 @@ kids 0
 OBJECT poly
 name "Door"
 loc -1.21196 -0.0347117 0.298134
-texture "pa28-161-01.rgb"
+texture "PA28-WarriorII.png"
 crease 69.000000
 numvert 40
 2.09493 0.194035 -0.58179
@@ -18227,7 +18224,7 @@ kids 0
 OBJECT poly
 name "Fuselage"
 loc 3.63905 0.0532815 -0.00345093
-texture "pa28-161-01.rgb"
+texture "PA28-WarriorII.png"
 crease 52.000000
 numvert 358
 -3.02211 -0.446039 0.00344998

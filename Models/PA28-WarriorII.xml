@@ -2,9 +2,32 @@
 
 <PropertyList>
 
- <path>pa28-161.ac</path>
+	<path>PA28-WarriorII.ac</path>
 
-    
+	<!-- LIVERY SELECT -->
+	<!-- Animation -->
+	<animation>
+		<type>material</type>
+		<!-- Fuselage -->
+		<object-name>Fuselage</object-name>
+		<object-name>VTail</object-name>
+		<object-name>Rudder</object-name>
+		<!-- Fuselage -->
+		<property-base>sim/model/livery</property-base>
+		<texture-prop>texture</texture-prop>
+		<texture>PA28-WarriorII.png</texture>
+	</animation>
+
+	<!-- Nasal code -->
+	<nasal>
+		<load>
+		 var livery_update = aircraft.livery_update.new("Aircraft/PA28-Warrior/Models/Liveries");
+		</load>
+		<unload>
+		 livery_update.stop();
+		</unload>
+	</nasal>
+	
  <animation>
   <type>material</type>
   <object-name>AC_Num</object-name>
@@ -269,65 +292,70 @@
         </offsets>
     </model>
     
- <model>
-        <path>Aircraft/PA28-Warrior/Models/instruments/FL_blue/ControlLight.xml</path>
-        <name>APCL</name>
-        <offsets>
-            <x-m>1.93</x-m>
-            <y-m>0.025</y-m>
-            <z-m>0.154</z-m>
-            <pitch-deg>-0.5</pitch-deg>
-        </offsets>
-    </model>
+	<model>
+		<path>Aircraft/PA28-Warrior/Models/instruments/FL_blue/ControlLight.xml</path>
+		<name>APCL</name>
+		<offsets>
+			<x-m>1.93</x-m>
+			<y-m>0.025</y-m>
+			<z-m>0.154</z-m>
+			<pitch-deg>-0.5</pitch-deg>
+		</offsets>
+	</model>
 
- <model>
-  <name>ADF1</name>
-  <path>Aircraft/PA28-Warrior/Models/adfki228/ki227_228.xml</path>
-  <offsets>
-   <x-m>1.923</x-m>
-   <y-m>-0.029</y-m>
-   <z-m>0.271</z-m>
-  </offsets>
- </model>
+	<model>
+		<name>ADF1</name>
+		<path>Aircraft/PA28-Warrior/Models/adfki228/ki227_228.xml</path>
+		<offsets>
+			<x-m>1.925</x-m>
+			<y-m>-0.433</y-m>
+			<z-m>0.183</z-m>
+		</offsets>
+	</model>
 
+	<model>
+		<name>VOR1</name>
+		<path>Aircraft/PA28-Warrior/Models/ki209a/ki209a-1.xml</path>
+		<condition>
+			<equals>
+				<property>options/panel</property>
+				<value>DG Panel</value>
+			</equals>
+		</condition>
+		<offsets>
+			<x-m>1.923</x-m>
+			<y-m>-0.029</y-m>
+			<z-m>0.271</z-m>
+		</offsets>
+	</model>
 
- <model>
-  <name>VOR2</name>
-  <path>Aircraft/PA28-Warrior/Models/ki209a/ki209a-2.xml</path>
-  <offsets>
-   <x-m>1.923</x-m>
-   <y-m>-0.029</y-m>
-   <z-m>0.183</z-m>
-  </offsets>
- </model>
+	<model>
+		<name>VOR2</name>
+		<path>Aircraft/PA28-Warrior/Models/ki209a/ki209a-2.xml</path>
+		<offsets>
+			<x-m>1.923</x-m>
+			<y-m>-0.029</y-m>
+			<z-m>0.183</z-m>
+		</offsets>
+	</model>
 
-  <!--model>
-  <name>AOA</name>
-  <path>Aircraft/PA28-Warrior/Models/instruments/aoa/aoa.xml</path>
-  <offsets>
-   <x-m>1.925</x-m>
-   <y-m>0.370</y-m>
-   <z-m>0.100</z-m>
-  </offsets>
- </model-->
-
- <model>
-  <name>CLOCK</name>
-  <path>Aircraft/PA28-Warrior/Models/Clock/Clock.xml</path>
-  <offsets>
-   <x-m>1.925</x-m>
-   <y-m>-0.4235</y-m>
-   <z-m>0.2585</z-m>
-  </offsets>
- </model>
+	<model>
+		<name>CLOCK</name>
+		<path>Aircraft/PA28-Warrior/Models/Clock/Clock.xml</path>
+		<offsets>
+			<x-m>1.925</x-m>
+			<y-m>-0.4235</y-m>
+			<z-m>0.2585</z-m>
+		</offsets>
+	</model>
  
  <model>
   <name>NSVV</name>
    <path>Aircraft/PA28-Warrior/Models/NavSV/NavSourceSwitch.xml</path>
   <offsets>
     <x-m>1.935</x-m>
-   <y-m>-0.481</y-m>
-   <z-m>0.251</z-m>
+   <y-m>-0.476</y-m>
+   <z-m>0.231</z-m>
    <roll-deg>-1</roll-deg>
   </offsets>
  </model>
@@ -363,17 +391,37 @@
   </offsets>
  </model>
 
-<model>
- <name>HSI</name>
-  <path>Aircraft/PA28-Warrior/Models/instruments/kcs55/ki525a.xml</path>
-  <offsets>
-  <x-m>1.926</x-m>
-   <y-m>-0.233</y-m>
-   <z-m>0.183</z-m>
-   <roll-deg>-0.5</roll-deg>
-   <pitch-deg>-0.1</pitch-deg>
-  </offsets>
- </model>
+	<model>
+		<name>HSI</name>
+		<path>Aircraft/PA28-Warrior/Models/instruments/kcs55/ki525a.xml</path>
+		<condition>
+			<equals>
+				<property>options/panel</property>
+				<value>HSI Panel</value>
+			</equals>
+		</condition>
+		<offsets>
+			<x-m>1.926</x-m>
+			<y-m>-0.233</y-m>
+			<z-m>0.184</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<name>HI</name>
+		<path>Aircraft/PA28-Warrior/Models/instruments/hi/hi.xml</path>
+		<condition>
+			<equals>
+				<property>options/panel</property>
+				<value>DG Panel</value>
+			</equals>
+		</condition>
+		<offsets>
+			<x-m>1.926</x-m>
+			<y-m>-0.233</y-m>
+			<z-m>0.185</z-m>
+		</offsets>
+	</model>
 
  <model>
   <name>VSI</name>
@@ -502,10 +550,9 @@
   <name>radalt</name>
   <path>Aircraft/PA28-Warrior/Models/instruments/RadarAltimeter/BendixKing_KI250.xml</path>
   <offsets>
-   <x-m>1.925</x-m>
-   <y-m>-0.429</y-m>
-   <z-m>0.183</z-m>
-   <yaw-deg>-9</yaw-deg>
+   <x-m>1.938</x-m>
+   <y-m>-0.359</y-m>
+   <z-m>0.023</z-m>
   </offsets>
  </model>
  
@@ -985,24 +1032,38 @@
 		</action>
 	</animation>
 
- <animation>
-  <type>rotate</type>
-  <object-name>CarbHeatKnob</object-name>
-  <object-name>CH-Lever</object-name>
-  <property>controls/anti-ice/engine/carb-heat[0]</property>
-  <factor>80</factor>
-  <offset-deg>-40</offset-deg>
-  <center>
-   <x-m>1.9055</x-m>
-   <y-m>0.0</y-m>
-   <z-m>-0.01017</z-m>
-  </center>
-  <axis>
-   <x>0.0</x>
-   <y>1.0</y>
-   <z>0.0</z>
-  </axis>
- </animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>CarbHeatKnob</object-name>
+		<object-name>CH-Lever</object-name>
+		<property>controls/anti-ice/engine/carb-heat[0]</property>
+		<factor>100</factor>
+		<offset-deg>-50</offset-deg>
+		<center>
+			<x-m>1.92344</x-m>
+			<y-m>0.0</y-m>
+			<z-m>0.01032</z-m>
+		</center>
+		<axis>
+			<x>0.0</x>
+			<y>1.0</y>
+			<z>0.0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>pick</type>
+		<object-name>CarbHeatKnob</object-name>
+		<object-name>CH-Lever</object-name>
+		<action>
+			<button>0</button>
+			<repeatable type="bool">false</repeatable>
+			<binding>
+				<command>property-toggle</command>
+				<property>controls/anti-ice/engine/carb-heat[0]</property>
+			</binding>
+		</action>
+	</animation>
 
  <animation>
   <type>rotate</type>

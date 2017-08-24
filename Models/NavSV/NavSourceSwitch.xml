@@ -1,87 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <PropertyList>
-  <path>Aircraft/PA28-Warrior/Models/NavSV/NavSourceSwitch.ac</path>
-  <params>
-    <value>instrumentation/ki227/vor-bearing-source</value>
 
-  </params>
+	<path>Aircraft/PA28-Warrior/Models/NavSV/NavSourceSwitch.ac</path>
+	
+	<params>
+		<value>instrumentation/ki227/vor-bearing-source</value>
+	</params>
 
-  <offsets>
-    <x-m>0</x-m>
-    <y-m>0</y-m>
-    <z-m>0</z-m>
-  </offsets>
+	<animation>
+		<object-name>Lever</object-name>
+		<type>pick</type>
+		<visible>true</visible>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>property-cycle</command>
+				<property>options/nav-source</property>
+				<value>1</value>
+				<value>2</value>
+				<value>3</value>
+			</binding>
+		</action>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>ToogleNavSource</tooltip-id>
+				<label>Nav Source</label>
+			</binding>
+		</hovered>
+	</animation>
 
-  <animation>
-    <object-name>Lever</object-name>
-    <type>pick</type>
-    <visible>true</visible>
-    <action>
-      <button>0</button>
-      <repeatable>false</repeatable>
-      <binding>
-        <command>property-toggle</command>
-        <property alias="../../../../params/value"/>
-      </binding>
-      
-      <binding>
-        <command>property-cycle</command>
-        <property>instrumentation/dme/switch-position</property>
-        <value>3</value>
-        <value>1</value>
-      </binding>
-          </action>
-           <hovered>
-            <binding>
-                <command>set-tooltip</command>
-                <tooltip-id>ToogleNavSource</tooltip-id>
-                <label>Nav Source(DME)</label>
-            </binding>
-        </hovered>
-  </animation>
-
-  <animation>
-    <type>rotate</type>
-    <object-name>Lever</object-name>
-    <property alias="../../params/value"/>
-        <factor>32</factor>
-    <axis>
-      <x>0</x>
-      <y>0</y>
-      <z>1</z>
-    </axis>
-   <action>
-   <binding>
-        <command>property-assign</command>
-        <property>instrumentation/dme/switch-position</property>
-        <value>1</value>
-      </binding>
-      </action>
-
-  </animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>Lever</object-name>
+		<property>options/nav-source</property>
+		<interpolation>
+			<entry><ind>1</ind><dep> 0</dep></entry>
+			<entry><ind>2</ind><dep>16</dep></entry>
+			<entry><ind>3</ind><dep>32</dep></entry>
+		</interpolation>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>1</z>
+		</axis>
+	</animation>
 
 </PropertyList>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
