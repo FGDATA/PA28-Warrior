@@ -105,8 +105,7 @@
 							<path>Aircraft/PA28-Warrior/Docs/Fundamentals.pdf</path>
 						</binding>
 					</item>
-					
-          <item>
+					<item>
 						<label>Go to SkyVector IFR</label>
 						<binding>
 							<command>open-browser</command>
@@ -114,7 +113,6 @@
 							<!--<path>https://skyvector.com/?ll=47.458055556,8.548055556&chart=302&zoom=3</path> -->
 						</binding>
 					</item>
-					
 					<item>
 						<label>General Settings</label>
 						<binding>
@@ -201,6 +199,19 @@
 			<config>
 				<from-model type="bool">true</from-model>
 				<x-offset-m archive="y">0.24</x-offset-m>
+				<y-offset-m archive="y">0.5</y-offset-m>
+				<z-offset-m archive="y">2.6</z-offset-m>
+				<pitch-offset-deg>-15</pitch-offset-deg>
+				<default-field-of-view-deg type="double">70</default-field-of-view-deg>
+			</config>
+		</view>
+		<view n="101">
+			<name>Cockpit View</name>
+			<type>lookfrom</type>
+			<internal archive="y">true</internal>
+			<config>
+				<from-model type="bool">true</from-model>
+				<x-offset-m archive="y">-0.14</x-offset-m>
 				<y-offset-m archive="y">0.5</y-offset-m>
 				<z-offset-m archive="y">2.6</z-offset-m>
 				<pitch-offset-deg>-15</pitch-offset-deg>
@@ -390,6 +401,7 @@
 	
 	<options n="0">
 		<auto-turn-coordination type="bool">0</auto-turn-coordination>
+		<panel userarchive="y" type="string">HSI Panel</panel>
 		<show-l-yoke type="bool">1</show-l-yoke>
 		<show-r-yoke type="bool">1</show-r-yoke>
 	</options>

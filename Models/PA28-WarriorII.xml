@@ -313,7 +313,7 @@
 
  <model>
   <name>CLOCK</name>
-  <path>Aircraft/Instruments-3d/clock/clock.xml</path>
+  <path>Aircraft/PA28-Warrior/Models/Clock/Clock.xml</path>
   <offsets>
    <x-m>1.925</x-m>
    <y-m>-0.4235</y-m>
@@ -415,7 +415,7 @@
   </offsets>
  </model>
 
- <model>
+ <!--model>
   <name>clock</name>
  <path>Aircraft/PA28-Warrior/Models/Clock/Clock.xml</path>
   <offsets>
@@ -423,7 +423,7 @@
    <y-m>0.269</y-m>
    <z-m>0.32</z-m>
   </offsets>
- </model>
+ </model-->
  
   <model>
   <name>FEX</name>

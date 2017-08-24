@@ -160,7 +160,7 @@
 		<x>-420</x>
 		<y>-220</y>
 		<halign>left</halign>
-		<format>Fuel-L: %2.1 lbs</format>
+		<format>Fuel-L: %2.1f lbs</format>
 		<input>
 			<property>/consumables/fuel/tank/level-lbs</property>
 		</input>
@@ -170,10 +170,10 @@
 		<name>FuelR</name>
 		<width>2</width>
 		<height>2</height>
-		<x>-340</x>
+		<x>-330</x>
 		<y>-220</y>
 		<halign>left</halign>
-		<format>Fuel-R: %2.1 lbs</format>
+		<format>Fuel-R: %2.1f lbs</format>
 		<input>
 			<property>/consumables/fuel/tank[1]/level-lbs</property>
 		</input>
@@ -223,13 +223,13 @@
 		<tick-length>variable</tick-length>
 
 		<input>
-			<property>/position/altitude-agl-ft</property>
+			<property>/position/gear-agl-ft</property>
 			<min>0.0</min>
 		</input>
 
 		<condition>
 			<less-than>
-				<property>/position/altitude-agl-ft</property>
+				<property>/position/gear-agl-ft</property>
 				<value>1000000</value>
 			</less-than>
 		</condition>

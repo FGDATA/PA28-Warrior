@@ -49,8 +49,11 @@
 						</script>
 					</binding>
 				</button>
-				<!--button>
+				<button>
 					<halign>center</halign>
+					<enable>
+						<property>/something/unused</property>
+					</enable>
 					<legend>Select Livery</legend>
 					<pref-width>140</pref-width>
 					<binding>
@@ -59,7 +62,7 @@
 						aircraft.livery.dialog.toggle();
 						</script>
 					</binding>
-				</button-->
+				</button>
 				<button>
 					<halign>center</halign>
 					<legend>Aircraft Help</legend>
@@ -232,6 +235,32 @@
 				</binding>
 				<live>true</live>
 			</checkbox>
+			
+			<hrule/>
+				
+			<text>
+				<halign>left</halign>
+				<label>Select Panel Type:</label>
+			</text>
+		
+			<combo>
+				<halign>left</halign>
+				<name>panel-type</name>
+				<pref-width>150</pref-width>
+				<property>/options/panel</property>
+				<value>HSI Panel</value>
+				<!--value>DG Panel</value-->
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<binding>
+					<command>nasal</command>
+					<script>
+					acconfig.saveSettings();
+					</script>
+				</binding>
+				<live>true</live>
+			</combo>
 			
 		</group>
 		

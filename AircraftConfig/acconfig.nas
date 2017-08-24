@@ -60,6 +60,7 @@ setlistener("/sim/signals/fdm-initialized", func {
 });
 
 var saveSettings = func {
+#	aircraft.data.add("/options/panel"); # Disabled for now, there is a bug causing aircraft.something to not work -JD
 #	aircraft.data.save();
 }
 
