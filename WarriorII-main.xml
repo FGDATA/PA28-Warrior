@@ -92,7 +92,7 @@
 					<label>Resources</label>
 					<enabled type="bool">true</enabled>
 					<item>
-						<label>The Cockpit</label>
+						<label>Getting Started</label>
 						<binding>
 							<command>open-browser</command>
 							<path>Aircraft/PA28-Warrior/Docs/FGN_Cockpit.pdf</path>
