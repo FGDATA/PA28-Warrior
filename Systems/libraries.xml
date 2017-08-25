@@ -40,6 +40,32 @@
 		<output>/instrumentation/nav[1]/filtered-gsNAV1-deflection</output>
 	</filter>
 	
+	<filter>
+		<name>AUTOCOORDINATOR BYPASS</name>
+		<type>gain</type>
+		<gain>1</gain>
+		<enable>
+			<condition>
+				<or>
+					<equals>
+						<property>/gear/gear[1]/wow</property>
+						<value>1</value>
+					</equals>
+					<equals>
+						<property>/gear/gear[2]/wow</property>
+						<value>1</value>
+					</equals>
+					<not-equals>
+						<property>/options/autocoordinate</property>
+						<value>0</value>
+					</not-equals>
+				</or>
+			</condition>
+		</enable>
+		<input>0</input>
+		<output>/controls/flight/rudder-ac</output>
+	</filter>
+	
 	<pid-controller>
 		<name>AUTOCOORDINATOR</name>
 		<debug>false</debug>
@@ -71,7 +97,7 @@
 			<property>/controls/flight/rudder-ac</property>
 		</output>
 		<config>
-			<Kp>0.045</Kp>
+			<Kp>0.075</Kp>
 			<beta>1</beta>
 			<alpha>0.1</alpha>
 			<gamma>0</gamma>
