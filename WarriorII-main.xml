@@ -34,8 +34,6 @@
 				</color>
 			</palette>
 		</hud>
-                
-                
 
 		<panel>
 			<visibility archive="y">false</visibility>
@@ -53,7 +51,6 @@
 			</autopilot>
 		</systems>
 
-		
 		<menubar>
 			<default>
 				<menu n="3">
@@ -92,10 +89,10 @@
 					</item>
 				</menu>
 				<menu n="101">
-					<label>Docs</label>
+					<label>Resources</label>
 					<enabled type="bool">true</enabled>
 					<item>
-						<label>The Cockpit</label>
+						<label>Getting Started</label>
 						<binding>
 							<command>open-browser</command>
 							<path>Aircraft/PA28-Warrior/Docs/FGN_Cockpit.pdf</path>
@@ -106,6 +103,13 @@
 						<binding>
 							<command>open-browser</command>
 							<path>Aircraft/PA28-Warrior/Docs/Fundamentals.pdf</path>
+						</binding>
+					</item>
+					<item>
+						<label>Go to SkyVector IFR</label>
+						<binding>
+							<command>open-browser</command>
+							<path>https://skyvector.com/</path>
 						</binding>
 					</item>
 					<item>
@@ -131,9 +135,10 @@
 		</sound>
 
 		<view n="0">
+			<name>Pilot View</name>
 			<internal archive="y">true</internal>
 			<config>
-				<x-offset-m archive="y">-0.14</x-offset-m>
+				<x-offset-m archive="y">-0.24</x-offset-m>
 				<y-offset-m archive="y">0.5</y-offset-m>
 				<z-offset-m archive="y">2.6</z-offset-m>
 				<pitch-offset-deg>-15</pitch-offset-deg>
@@ -197,7 +202,20 @@
 				<y-offset-m archive="y">0.5</y-offset-m>
 				<z-offset-m archive="y">2.6</z-offset-m>
 				<pitch-offset-deg>-15</pitch-offset-deg>
-				<default-field-of-view-deg type="double">70</default-field-of-view-deg>
+				<default-field-of-view-deg type="double">82</default-field-of-view-deg>
+			</config>
+		</view>
+		<view n="101">
+			<name>Cockpit View</name>
+			<type>lookfrom</type>
+			<internal archive="y">true</internal>
+			<config>
+				<from-model type="bool">true</from-model>
+				<x-offset-m archive="y">-0.10</x-offset-m>
+				<y-offset-m archive="y">0.5</y-offset-m>
+				<z-offset-m archive="y">2.6</z-offset-m>
+				<pitch-offset-deg>-15</pitch-offset-deg>
+				<default-field-of-view-deg type="double">82</default-field-of-view-deg>
 			</config>
 		</view>
 
@@ -266,9 +284,7 @@
 			</engine>
 		</engines>
 		<flight>
-			<aileron-trim type="double">0</aileron-trim>
-			<elevator-trim type="double">0</elevator-trim>
-			<rudder-trim type="double">0</rudder-trim>
+			<rudder-fdm type="double">0</rudder-fdm>
 		</flight>
 		<gear>
 			<brake-parking type="double">1.0</brake-parking>
@@ -340,6 +356,7 @@
 		</elt>
 		<dme>
 			<switch-position type="int">1</switch-position>
+			<volume type="double">0</volume>
 		</dme>
 	</instrumentation>
 	
@@ -372,6 +389,7 @@
 			<enable-stby>0</enable-stby> <!-- If disabled, LVL and V/S become active when AP on. -->
 			<pitch-mode>2</pitch-mode> <!-- 0 = Elevator trim only, 1 = Elevator only, 2 = Elevator and Autotrim -->
 			<auto-arm-alt>0</auto-arm-alt> <!-- Enable automatic altitude arm -->
+			<bank-limit>20</bank-limit> <!-- Set the bank limit -->
 		</settings>
 		<kap140>
 			<ap type="int">0</ap>
@@ -381,9 +399,12 @@
 	</it-autoflight>
 	
 	<options n="0">
-		<auto-turn-coordination type="bool">0</auto-turn-coordination>
+		<autocoordinate userarchive="y" type="bool">0</autocoordinate>
+		<nav-source type="int">1</nav-source>
+		<panel userarchive="y" type="string">HSI Panel</panel>
 		<show-l-yoke type="bool">1</show-l-yoke>
 		<show-r-yoke type="bool">1</show-r-yoke>
+		<slave-rudder userarchive="y" type="bool">0</slave-rudder>
 	</options>
 	
 	<systems n="0">
@@ -393,7 +414,7 @@
 		</fuel>
 	</systems>
 
-	<nasal>
+	<nasal n="0">
 		<libraries>
 			<file>Aircraft/PA28-Warrior/Nasal/libraries.nas</file>
 			<file>Aircraft/PA28-Warrior/Models/Instruments/elt/ELTmessage.nas</file>

@@ -49,7 +49,7 @@
 						</script>
 					</binding>
 				</button>
-				<!--button>
+				<button>
 					<halign>center</halign>
 					<legend>Select Livery</legend>
 					<pref-width>140</pref-width>
@@ -59,7 +59,7 @@
 						aircraft.livery.dialog.toggle();
 						</script>
 					</binding>
-				</button-->
+				</button>
 				<button>
 					<halign>center</halign>
 					<legend>Aircraft Help</legend>
@@ -232,6 +232,64 @@
 				</binding>
 				<live>true</live>
 			</checkbox>
+			
+			<hrule/>
+			
+			<checkbox>
+				<label>Auto Coordination</label>
+				<halign>left</halign>
+				<property>/options/autocoordinate</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<binding>
+					<command>nasal</command>
+					<script>
+					acconfig.saveSettings();
+					</script>
+				</binding>
+				<live>true</live>
+			</checkbox>
+			
+			<checkbox>
+				<label>Slave Rudder (Ground)</label>
+				<halign>left</halign>
+				<property>/options/slave-rudder</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<binding>
+					<command>nasal</command>
+					<script>
+					acconfig.saveSettings();
+					</script>
+				</binding>
+				<live>true</live>
+			</checkbox>
+				
+			<text>
+				<halign>left</halign>
+				<label>Select Panel Type:</label>
+			</text>
+		
+			<combo>
+				<halign>left</halign>
+				<name>panel-type</name>
+				<pref-width>150</pref-width>
+				<property>/options/panel</property>
+				<value>HSI Panel</value>
+				<value>DG Panel</value>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<binding>
+					<command>nasal</command>
+					<script>
+					acconfig.saveSettings();
+					</script>
+				</binding>
+				<live>true</live>
+			</combo>
 			
 		</group>
 		

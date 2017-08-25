@@ -1,0 +1,1 @@
+aircraft.livery.init("Aircraft/PA28-Warrior/Models/Liveries");

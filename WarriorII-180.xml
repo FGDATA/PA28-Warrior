@@ -208,8 +208,8 @@ xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
 				<z>1.5452</z>
 			</location>
 			<radius unit="IN">13.3</radius>
-			<capacity unit="LBS">144.24</capacity>
-			<contents unit="LBS">102.17</contents>
+			<capacity unit="LBS">168.0</capacity>
+			<contents unit="LBS">119.0</contents>
 			<type>AVGAS</type>
 			<priority>1</priority>
 		</tank>
@@ -221,8 +221,8 @@ xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
 				<z>1.5452</z>
 			</location>
 			<radius unit="IN">13.3</radius>
-			<capacity unit="LBS">144.24</capacity>
-			<contents unit="LBS">102.17</contents>
+			<capacity unit="LBS">168.0</capacity>
+			<contents unit="LBS">119.0</contents>
 			<type>AVGAS</type>
 			<priority>1</priority>
 		</tank>
