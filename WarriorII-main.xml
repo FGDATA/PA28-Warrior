@@ -404,6 +404,7 @@
 		<panel userarchive="y" type="string">HSI Panel</panel>
 		<show-l-yoke type="bool">1</show-l-yoke>
 		<show-r-yoke type="bool">1</show-r-yoke>
+		<slave-rudder userarchive="y" type="bool">0</slave-rudder>
 	</options>
 	
 	<systems n="0">

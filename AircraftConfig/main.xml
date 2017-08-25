@@ -250,6 +250,22 @@
 				</binding>
 				<live>true</live>
 			</checkbox>
+			
+			<checkbox>
+				<label>Slave Rudder (Ground)</label>
+				<halign>left</halign>
+				<property>/options/slave-rudder</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<binding>
+					<command>nasal</command>
+					<script>
+					acconfig.saveSettings();
+					</script>
+				</binding>
+				<live>true</live>
+			</checkbox>
 				
 			<text>
 				<halign>left</halign>

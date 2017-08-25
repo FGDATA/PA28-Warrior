@@ -41,6 +41,36 @@
 	</filter>
 	
 	<filter>
+		<name>RUDDER COMMANDER</name>
+		<type>gain</type>
+		<gain>1</gain>
+		<input>
+			<condition>
+				<and>
+					<or>
+						<equals>
+							<property>/gear/gear[1]/wow</property>
+							<value>1</value>
+						</equals>
+						<equals>
+							<property>/gear/gear[2]/wow</property>
+							<value>1</value>
+						</equals>
+					</or>
+					<equals>
+						<property>/options/slave-rudder</property>
+						<value>1</value>
+					</equals>
+				</and>
+			</condition>
+			<property>/controls/flight/aileron</property>
+			<scale>0.5</scale>
+		</input>
+		<input>/controls/flight/rudder</input>
+		<output>/controls/flight/rudder-slave</output>
+	</filter>
+	
+	<filter>
 		<name>AUTOCOORDINATOR BYPASS</name>
 		<type>gain</type>
 		<gain>1</gain>
@@ -57,7 +87,7 @@
 					</equals>
 					<not-equals>
 						<property>/options/autocoordinate</property>
-						<value>0</value>
+						<value>1</value>
 					</not-equals>
 				</or>
 			</condition>
@@ -129,11 +159,11 @@
 						<value>1</value>
 					</equals>
 					<less-than>
-						<property>/controls/flight/rudder</property>
+						<property>/controls/flight/rudder-slave</property>
 						<value>0.1</value>
 					</less-than>
 					<greater-than>
-						<property>/controls/flight/rudder</property>
+						<property>/controls/flight/rudder-slave</property>
 						<value>-0.1</value>
 					</greater-than>
 				</and>
@@ -156,16 +186,16 @@
 						<value>0</value>
 					</not-equals>
 					<greater-than-equals>
-						<property>/controls/flight/rudder</property>
+						<property>/controls/flight/rudder-slave</property>
 						<value>0.1</value>
 					</greater-than-equals>
 					<less-than-equals>
-						<property>/controls/flight/rudder</property>
+						<property>/controls/flight/rudder-slave</property>
 						<value>-0.1</value>
 					</less-than-equals>
 				</or>
 			</condition>
-			<property>/controls/flight/rudder</property>
+			<property>/controls/flight/rudder-slave</property>
 		</input>
 		<output>/controls/flight/rudder-fdm</output>
 	</filter>
