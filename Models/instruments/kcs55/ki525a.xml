@@ -44,9 +44,9 @@
 
 	<params>
 		<has-gs>instrumentation/nav[0]/has-gs</has-gs>
-		<gs-in-range>instrumentation/nav[0]/gs/in-range</gs-in-range>
+		<gs-in-range>instrumentation/nav[0]/in-range</gs-in-range>
 
-		<gs-needle-deflection>instrumentation/nav[0]/gs-needle-deflection-filtered</gs-needle-deflection>
+		<gs-needle-deflection>instrumentation/nav[0]/filtered-gsNAV0-deflection</gs-needle-deflection>
 		<cdi-needle-deflection>instrumentation/kcs55/ki525/cdi-deflection</cdi-needle-deflection>
 		<selected-heading>it-autoflight/input/hdg</selected-heading>
 		<selected-course>instrumentation/kcs55/ki525/selected-course-deg</selected-course>
