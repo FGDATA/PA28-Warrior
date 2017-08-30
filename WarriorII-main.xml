@@ -120,7 +120,7 @@
 						</binding>
 					</item>
 					<item>
-						<label>About FGNavigator</label>
+						<label>About Warrior Nav</label>
 						<binding>
 							<command>open-browser</command>
 							<path>Aircraft/PA28-Warrior/Docs/AboutFGN.pdf</path>
@@ -343,6 +343,7 @@
 			<serviceable type="bool">true</serviceable>
 		</encoder>
 		<adf>
+			<model>ki228</model>
 			<volume-norm type="double">1</volume-norm>
 		</adf>
 		<oat>
