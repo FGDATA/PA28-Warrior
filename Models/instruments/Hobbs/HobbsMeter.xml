@@ -163,6 +163,20 @@
             </binding>
         </hovered>
   </animation>
+ 
+<animation>
+    <type>pick</type>
+    <object-name>Base_02</object-name>
+    <action>
+    <button>0</button>
+    <repeatable>false</repeatable>
+          <binding>
+             <command>property-adjust</command>
+             <property>controls/engines/engine/throttle</property>
+             <step>.99</step>
+          </binding>
+     </action>
+  </animation>
 
 </PropertyList>
 
