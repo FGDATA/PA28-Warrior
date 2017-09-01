@@ -11,7 +11,24 @@
 		<y>230</y>
 		<halign>left</halign>
 		<format>Attitude</format>
-  </label>
+  	</label>
+
+	<label>
+        	<name>GSR</name>
+      		<condition>
+         		<not-equals>
+            			<property>/instrumentation/nav[1]/gs-in-range</property>
+            			<value>0</value>
+         		</not-equals>
+      		</condition>
+      		<input>
+         		<property>/instrumentation/nav[1]/gs-in-range</property>
+      		</input>
+        		<x>240</x>
+        		<y>230</y>
+        		<format>GS In Range (Nav2)</format>
+        		<halign>left</halign>
+   	</label>
 
 	<import>
 		<path>Huds/Sets/coordinates.xml</path>
@@ -291,26 +308,7 @@
  </turn-bank-indicator>
 
  
-<label>
-        	<name>GSR</name>
-			<width>4</width>
-			<height>4</height>
 
-      		<condition>
-         		<not-equals>
-            			<property>/instrumentation/nav[1]/gs-in-range</property>
-            			<value>0</value>
-         		</not-equals>
-      		</condition>
-      		<input>
-         		<property>/instrumentation/nav[1]/gs-in-range</property>
-      		</input>
-        		<x>186</x>
-        		<y>170</y>
-        		<format>GS In Range (Nav2)</format>
-        		<halign>left</halign>
-   	</label>
- 
 </PropertyList>
 
 
