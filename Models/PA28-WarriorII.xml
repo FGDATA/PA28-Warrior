@@ -1,4 +1,4 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 
 <PropertyList>
 
@@ -611,6 +611,19 @@
    <z-m>0.24</z-m>
   </offsets>
  </model>
+
+
+
+  <model>
+  <name>ki266</name>
+   <path>Aircraft/PA28-Warrior/Models/instruments/ki266/ki266.xml</path>
+  <offsets>
+	<x-m>1.928</x-m>
+	<y-m>0.280</y-m>
+	<z-m>0.322</z-m>
+  </offsets>
+ </model>
+
 	
  <model>
   <name>Transponder</name>
