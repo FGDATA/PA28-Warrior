@@ -1,4 +1,4 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 
 <!-- (c) Joshua Davidson (it0uchpods) -->
 
@@ -240,6 +240,36 @@
 				<float n="0" alias="replaceme" />
 			</generic>
 		</multiplay-->
+
+ <aircraft-data>     
+     
+      <path>instrumentation/radar-altimeter/decision-height</path>
+      <path>instrumentation/comm[0]/volume</path>
+      <path>instrumentation/comm[0]/frequencies/selected-mhz</path>
+      <path>instrumentation/comm[0]/frequencies/standby-mhz</path>
+      <path>instrumentation/comm[0]/test-btn</path>
+      <path>instrumentation/nav[0]/audio-btn</path>
+      <path>instrumentation/nav[0]/power-btn</path>
+      <path>instrumentation/nav[0]/frequencies/selected-mhz</path>
+      <path>instrumentation/nav[0]/frequencies/standby-mhz</path>
+      <path>instrumentation/comm[1]/volume</path>
+      <path>instrumentation/comm[1]/frequencies/selected-mhz</path>
+      <path>instrumentation/comm[1]/frequencies/standby-mhz</path>
+      <path>instrumentation/comm[1]/test-btn</path>
+      <path>instrumentation/nav[1]/audio-btn</path>
+      <path>instrumentation/nav[1]/power-btn</path>
+      <path>instrumentation/nav[1]/frequencies/selected-mhz</path>
+      <path>instrumentation/nav[1]/frequencies/standby-mhz</path>
+      <path>instrumentation/nav[1]/radials/selected-deg</path>
+	 <path>instrumentation/nav/radials/selected-deg</path>
+
+      <path>instrumentation/dme/frequencies/selected-mhz</path>
+      <path>instrumentation/adf/model</path>
+      <path>instrumentation/adf/rotation-deg</path>
+	 <path>instrumentation/adf/frequencies</path>
+      <path>options/show-l-yoke</path>
+          
+    </aircraft-data>
 	</sim>
 
 	<airport>
