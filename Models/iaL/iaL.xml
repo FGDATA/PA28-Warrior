@@ -17,61 +17,33 @@
     <z-offset>0.8</z-offset>
   </animation>
 
+  
 
   <animation>
-    <type>translate</type>
-    <object-name>button</object-name>
-    <property>controls/engines/engine[2]/starter</property>
-    <factor> 0.005 </factor>
-    <axis>
-      <x> -1 </x>
-      <y>  0 </y>
-      <z>  0 </z>
-    </axis>
-  </animation>
+  <type>pick</type>
+  <object-name>base</object-name>
+  <object-name>button</object-name>
+  <visible>true</visible>
+  <action>
+    <button>0</button>
+    <repeatable>false</repeatable>
+    
+	<binding>
+        <command>property-cycle</command>
+	<property>/options/panel</property>
+	<value>HSI Panel</value>
+	<value>DG Panel</value>
+      	</binding>
 
-  <animation>
-    <type>pick</type>
-    <visible>true</visible>
-    <object-name>button</object-name>
-    <action>
-      <button>0</button>
-      <repeatable>false</repeatable>
-      
-      <binding>
-         <command>nasal</command>
-         <script>libraries.f_pump_switch()</script>
-      </binding>
+  </action>
 
-      <binding>
-        <command>nasal</command>
-        <script>libraries.fin_strobe_light_switch()</script>
-     </binding>
 
-     <binding>
-       <command>nasal</command>
-       <script>libraries.wing_strobe_light_switch()</script>
-     </binding>
-
-     <binding>
-        <command>nasal</command>
-        <script>libraries.pitot_heat_switch()</script>
-     </binding>
-     
-      <mod-up>
-        <binding>
-          <command>property-assign</command>
-          <property>controls/engines/engine[2]/starter</property>
-          <value>0</value>
-        </binding>
-      </mod-up>
-    </action>
     
     <hovered>
             <binding>
                 <command>set-tooltip</command>
                 <tooltip-id>MLight</tooltip-id>
-                <label>Master Light Toggle </label>
+                <label>Switch Panels</label>
             </binding>
         </hovered>
   </animation>

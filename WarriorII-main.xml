@@ -1,4 +1,4 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 
 <!-- (c) Joshua Davidson (it0uchpods) -->
 
@@ -120,7 +120,7 @@
 						</binding>
 					</item>
 					<item>
-						<label>About FGNavigator</label>
+						<label>About Warrior Nav</label>
 						<binding>
 							<command>open-browser</command>
 							<path>Aircraft/PA28-Warrior/Docs/AboutFGN.pdf</path>
@@ -240,6 +240,36 @@
 				<float n="0" alias="replaceme" />
 			</generic>
 		</multiplay-->
+
+ <aircraft-data>     
+     
+      <path>instrumentation/radar-altimeter/decision-height</path>
+      <path>instrumentation/comm[0]/volume</path>
+      <path>instrumentation/comm[0]/frequencies/selected-mhz</path>
+      <path>instrumentation/comm[0]/frequencies/standby-mhz</path>
+      <path>instrumentation/comm[0]/test-btn</path>
+      <path>instrumentation/nav[0]/audio-btn</path>
+      <path>instrumentation/nav[0]/power-btn</path>
+      <path>instrumentation/nav[0]/frequencies/selected-mhz</path>
+      <path>instrumentation/nav[0]/frequencies/standby-mhz</path>
+      <path>instrumentation/comm[1]/volume</path>
+      <path>instrumentation/comm[1]/frequencies/selected-mhz</path>
+      <path>instrumentation/comm[1]/frequencies/standby-mhz</path>
+      <path>instrumentation/comm[1]/test-btn</path>
+      <path>instrumentation/nav[1]/audio-btn</path>
+      <path>instrumentation/nav[1]/power-btn</path>
+      <path>instrumentation/nav[1]/frequencies/selected-mhz</path>
+      <path>instrumentation/nav[1]/frequencies/standby-mhz</path>
+      <path>instrumentation/nav[1]/radials/selected-deg</path>
+	 <path>instrumentation/nav/radials/selected-deg</path>
+
+      <path>instrumentation/dme/frequencies/selected-mhz</path>
+      <path>instrumentation/adf/model</path>
+      <path>instrumentation/adf/rotation-deg</path>
+	 <path>instrumentation/adf/frequencies</path>
+      <path>options/show-l-yoke</path>
+          
+    </aircraft-data>
 	</sim>
 
 	<airport>
@@ -343,6 +373,7 @@
 			<serviceable type="bool">true</serviceable>
 		</encoder>
 		<adf>
+			<model>ki228</model>
 			<volume-norm type="double">1</volume-norm>
 		</adf>
 		<oat>
@@ -421,7 +452,6 @@
 			<file>Aircraft/PA28-Warrior/Nasal/kr87.nas</file>
 			<!--file>Aircraft/PA28-Warrior/Nasal/doors.nas</file-->
 			<file>Aircraft/PA28-Warrior/Nasal/ki266.nas</file>
-			<file>Aircraft/PA28-Warrior/Nasal/kma20.nas</file>
 			<file>Aircraft/PA28-Warrior/Nasal/kcs55.nas</file>
 			<file>Aircraft/PA28-Warrior/Nasal/kma20.nas</file>
 			<script>
