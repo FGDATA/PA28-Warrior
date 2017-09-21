@@ -1,6 +1,11 @@
 # PA28-161 Libraries
 # Joshua Davidson (it0uchpods)
 
+# doors ============================================================
+rightDoor = aircraft.door.new( "/sim/model/door-positions/rightDoor", 2, 0 );
+#baggageDoor = aircraft.door.new( "/sim/model/door-positions/baggageDoor", 2, 0 );
+
+
 setlistener("/sim/signals/fdm-initialized", func {
 	systems.elec_init();
 	systems.engine_init();
