@@ -264,6 +264,8 @@
 	 <path>instrumentation/nav/radials/selected-deg</path>
 
       <path>instrumentation/dme/frequencies/selected-mhz</path>
+	<path>instrumentation/dme/switch-min-kts</path>
+
       <path>instrumentation/adf/model</path>
       <path>instrumentation/adf/rotation-deg</path>
 	 <path>instrumentation/adf/frequencies</path>

@@ -183,7 +183,7 @@
 			<layout>vbox</layout>
 
 			<checkbox>
-				<label>Enable De-icing Truck</label>
+				<label>Enable T017</label>
 				<halign>left</halign>
 				<property>/services/deicing_truck/enable</property>
 				<binding>
@@ -193,7 +193,7 @@
 			</checkbox>
 
 			<button>
-				<legend>De-ice Aircraft</legend>
+				<legend>T017</legend>
 				<halign>center</halign>
 				<padding>5</padding>
 				<enable>
