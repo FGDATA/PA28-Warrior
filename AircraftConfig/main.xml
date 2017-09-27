@@ -193,7 +193,7 @@
 			</checkbox>
 
 			<button>
-				<legend>T017</legend>
+				<legend>Run T017</legend>
 				<halign>center</halign>
 				<padding>5</padding>
 				<enable>
