@@ -349,15 +349,40 @@
 		</offsets>
 	</model>
 
-	<model>
+<model>
+		<name>cvor</name>
+		<path>Aircraft/Instruments-3d/vor/vor2.xml</path>
+		<condition>
+			<equals>
+				<property>options/panel</property>
+				<value>DG Panel</value>
+			</equals>
+		</condition>
+		<offsets>
+			<x-m>1.925</x-m>
+			<y-m>-0.029</y-m>
+			<z-m>0.183</z-m>
+		</offsets>
+	</model>
+
+	
+
+<model>
 		<name>VOR2</name>
 		<path>Aircraft/PA28-Warrior/Models/ki209a/ki209a-2.xml</path>
+		<condition>
+			<equals>
+				<property>options/panel</property>
+				<value>HSI Panel</value>
+			</equals>
+		</condition>
 		<offsets>
 			<x-m>1.923</x-m>
 			<y-m>-0.029</y-m>
 			<z-m>0.183</z-m>
 		</offsets>
 	</model>
+
 
 	<model>
 		<name>CLOCK</name>
@@ -379,6 +404,18 @@
    <roll-deg>-1</roll-deg>
   </offsets>
  </model>
+
+<model>
+  <name>SVN</name>
+   <path>Aircraft/PA28-Warrior/Models/SVN/svn.xml</path>
+  <offsets>
+    <x-m>1.935</x-m>
+   <y-m>-0.476</y-m>
+   <z-m>0.183</z-m>
+   <roll-deg>-1</roll-deg>
+  </offsets>
+ </model>
+
  
   <model>
   <name>Avionics</name>
@@ -612,19 +649,16 @@
   </offsets>
  </model>
 
-
-
   <model>
-  <name>ki266</name>
-   <path>Aircraft/PA28-Warrior/Models/instruments/ki266/ki266.xml</path>
+  <name>dme</name>
+   <path>Aircraft/PA28-Warrior/Models/dme.xml</path>
   <offsets>
-	<x-m>1.928</x-m>
-	<y-m>0.280</y-m>
-	<z-m>0.322</z-m>
+    <x-m>1.925</x-m>
+   <y-m>0.292</y-m>
+   <z-m>0.18</z-m>
   </offsets>
  </model>
 
-	
  <model>
   <name>Transponder</name>
   <path>Aircraft/Instruments-3d/kt70/kt70.xml</path>

@@ -21,22 +21,6 @@
             <halign>left</halign>
             <label>Out of Date!</label>
         </text>
-        <button>
-			<color>
-				<red>0.7</red>
-				<green>0</green>
-				<blue>0</blue>
-				<alpha>1</alpha>
-			</color>
-            <halign>right</halign>
-            <pref-width>20</pref-width>
-            <pref-height>20</pref-height>
-            <legend>X</legend>
-            <key>Esc</key>
-            <binding>
-                <command>dialog-close</command>
-            </binding>
-        </button>
     </group>
 	
     <hrule/>

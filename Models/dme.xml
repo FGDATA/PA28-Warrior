@@ -24,10 +24,10 @@
         <serviceable>instrumentation/dme[0]/serviceable</serviceable>
     </params>
 
-    <path>Aircraft/SenecaII/Models/dme.ac</path>
+    <path>Aircraft/PA28-Warrior/Models/dme.ac</path>
 
     <model>
-      <path>Aircraft/Instruments-3d/ki266/ki266.xml</path>
+      <path>Aircraft/PA28-Warrior/Models/Instruments/ki266/ki266.xml</path>
       <name>ki266</name>
       <offsets>
         <x-m>0.00140005</x-m>
