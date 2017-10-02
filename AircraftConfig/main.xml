@@ -208,12 +208,13 @@
 			</button>
 			
 			<checkbox>
-				<label>Enable Fuel Truck</label>
+				<label>Zero Wind</label>
 				<halign>left</halign>
-				<enable>
-					<not><property>/services/fuel-truck/connect</property></not>
-				</enable>
-				<property>/services/fuel-truck/enable</property>
+<property>environment/config/presets/wind-override</property>
+		<value>true</value>
+<property>environment/wind-speed-kt</property>
+		<value>0</value>
+				
 				<binding>
 					<command>dialog-apply</command>
 				</binding>
@@ -221,14 +222,15 @@
 			</checkbox>
 			
 			<checkbox>
-				<label>Connect Fuel Truck</label>
+				<label>IFR Scenario</label>
 				<halign>left</halign>
-				<enable>
-					<property>/services/fuel-truck/enable</property>
-				</enable>
-				<property>/services/fuel-truck/connect</property>
+				
+				
 				<binding>
-					<command>dialog-apply</command>
+					<command>property-cycle</command>
+<property>/environment/weather-scenario</property>
+	<value>CAT II minimum</value>
+	<value>Fair weather</value>
 				</binding>
 				<live>true</live>
 			</checkbox>

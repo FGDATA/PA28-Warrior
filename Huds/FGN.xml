@@ -79,6 +79,18 @@
 		</input>
 </label>
 
+ <label>
+		<name>From</name>
+		<x>-420</x>
+		<y>-190</y>
+		<halign>left</halign>
+		<format>Wind Hdg:    %d deg</format>
+		<input>
+			<property>/environment/wind-from-heading-deg</property>
+		</input>
+</label>
+
+
 
 		<label>
 		<name>rpm</name>
@@ -208,6 +220,24 @@
 			<property>/instrumentation/gps/trip-odometer</property>
 		</input>
 	</label>
+
+
+
+   <label>
+		<name>rem</name>
+		<width>2</width>
+		<height>2</height>
+		<x>-330</x>
+		<y>-210</y>
+		<halign>left</halign>
+		<format>Rem: %1.1f nm</format>
+		<input>
+			<property>/autopilot/route-manager/distance-remaining-nm</property>
+		</input>
+	</label>
+
+
+
     <import>
 		<path>Huds/Sets/gps.xml</path>
 		<x-offset>-420</x-offset>
