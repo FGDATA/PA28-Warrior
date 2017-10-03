@@ -395,6 +395,89 @@
     </action>
   </animation>
 
+
+
+  <animation>
+    <type>pick</type>
+    <object-name>OBSSelectorPick.L</object-name>
+    <visible>false</visible>
+    <action>
+      <button>0</button>
+      <repeatable>true</repeatable>
+      <binding>
+        <command>property-adjust</command>
+        <property alias="../../../../params/selected-course"/>
+        <step>-1</step>
+        <min>0</min>
+        <max>360</max>
+        <wrap>1</wrap>
+      </binding>
+    </action>
+    <action>
+      <button>1</button>
+      <repeatable>true</repeatable>
+      <binding>
+        <command>property-adjust</command>
+        <property alias="../../../../params/selected-course"/>
+        <step>-10</step>
+        <min>0</min>
+        <max>360</max>
+        <wrap>1</wrap>
+      </binding>
+    </action>
+<hovered>
+	<binding>
+	<command>set-tooltip</command>
+		<tooltip-id>Course </tooltip-id>
+		<mapping>course</mapping>
+		<label>Course: %3d</label>
+		<property>instrumentation/kcs55/ki525/selected-course-deg</property>
+	</binding>
+</hovered>
+
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>OBSSelectorPick.R</object-name>
+    <visible>false</visible>
+    <action>
+      <button>0</button>
+      <repeatable>true</repeatable>
+      <binding>
+        <command>property-adjust</command>
+        <property alias="../../../../params/selected-course"/>
+        <step>1</step>
+        <min>0</min>
+        <max>360</max>
+        <wrap>1</wrap>
+      </binding>
+    </action>
+    <action>
+      <button>1</button>
+      <repeatable>true</repeatable>
+      <binding>
+        <command>property-adjust</command>
+        <property alias="../../../../params/selected-course"/>
+        <step>10</step>
+        <min>0</min>
+        <max>360</max>
+        <wrap>1</wrap>
+      </binding>
+    </action>
+<hovered>
+	<binding>
+	<command>set-tooltip</command>
+		<tooltip-id>Course </tooltip-id>
+		<mapping>course</mapping>
+		<label>Course: %3d</label>
+		<property>instrumentation/kcs55/ki525/selected-course-deg</property>
+	</binding>
+</hovered>
+
+  </animation>
+
+
 	
 	<animation>
 		<type>pick</type>
