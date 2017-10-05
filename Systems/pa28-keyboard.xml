@@ -23,6 +23,18 @@
   </key>
 
 
+  <key n="119">
+  <name>w</name>
+  <desc>Show AC Config</desc>
+  <binding>
+			<command>nasal</command>
+				<script>											acconfig.main_dlg.open();
+				</script>
+  </binding>
+  </key>
+
+
+
 </keyboard>
 
 </PropertyList>

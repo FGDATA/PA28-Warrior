@@ -64,6 +64,11 @@
 				<halign>left</halign>
 				<label>SHIFT + B - Toggle Parking Brake</label>
 			</text>
+			<text>
+				<halign>left</halign>
+				<label>w - Open AC Config</label>
+			</text>
+
 			
 		</group>
 	
