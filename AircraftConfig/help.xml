@@ -73,7 +73,6 @@
 				<label>F12 - Open Radio Dialog</label>
 			</text>
 
-
 			<text>
 				<halign>left</halign>
 				<label>SHIFT + B - Toggle Parking Brake</label>
@@ -84,21 +83,11 @@
 			</text>
 			<text>
 				<halign>left</halign>
-				<label>SHIFT + [/] - Flaps in/out</label>
-			</text>
-			<text>
-				<halign>left</halign>
 				<label>h - Toggle HUD</label>
 			</text>
-
-
 			<text>
 				<halign>left</halign>
 				<label>k - Show Map</label>
-			</text>
-			<text>
-				<halign>left</halign>
-				<label>p - Toggle Pause</label>
 			</text>
 			<text>
 				<halign>left</halign>
@@ -108,8 +97,6 @@
 				<halign>left</halign>
 				<label>r - Open Route Manager</label>
 			</text>
-
-
 			<text>
 				<halign>left</halign>
 				<label>w - Open AC Config</label>

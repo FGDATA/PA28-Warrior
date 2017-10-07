@@ -183,7 +183,7 @@
 			<layout>vbox</layout>
 
 			<checkbox>
-				<label>Enable T017</label>
+				<label>Enable De-icing Truck</label>
 				<halign>left</halign>
 				<property>/services/deicing_truck/enable</property>
 				<binding>
@@ -193,7 +193,7 @@
 			</checkbox>
 
 			<button>
-				<legend>Run T017</legend>
+				<legend>De-ice Aircraft</legend>
 				<halign>center</halign>
 				<padding>5</padding>
 				<enable>
@@ -207,33 +207,31 @@
 				</binding>
 			</button>
 			
-			<checkbox>
-				<label>Zero Wind</label>
+			<button>
+				<legend>Zero Wind</legend>
 				<halign>left</halign>
-<property>environment/config/presets/wind-override</property>
-		<value>true</value>
-<property>environment/wind-speed-kt</property>
-		<value>0</value>
-				
 				<binding>
-					<command>dialog-apply</command>
+					<command>property-assign</command>
+					<property>environment/wind-speed-kt</property>
+					<value>0</value>
 				</binding>
-				<live>true</live>
-			</checkbox>
+				<binding>
+					<command>property-assign</command>
+					<property>environment/config/presets/wind-override</property>
+					<value>true</value>
+				</binding>
+			</button>
 			
-			<checkbox>
-				<label>IFR Scenario</label>
-				<halign>left</halign>
-				
-				
+			<button>
+				<legend>IFR Scenario</legend>
+				<halign>center</halign>
 				<binding>
 					<command>property-cycle</command>
-<property>/environment/weather-scenario</property>
-	<value>CAT II minimum</value>
-	<value>Fair weather</value>
+					<property>/environment/weather-scenario</property>
+					<value>CAT II minimum</value>
+					<value>Fair weather</value>
 				</binding>
-				<live>true</live>
-			</checkbox>
+			</button>
 			
 			<hrule/>
 			
