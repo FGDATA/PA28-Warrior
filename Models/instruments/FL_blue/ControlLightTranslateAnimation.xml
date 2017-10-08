@@ -27,6 +27,6 @@
   
   <binding>
     <command>nasal</command>
-     <script>libraries.fuel_switch()</script>
+     <script>pa28.fuel_switch()</script>
    </binding>
 </PropertyList>

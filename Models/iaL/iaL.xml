@@ -33,7 +33,8 @@
 	<property>/options/panel</property>
 	<value>HSI Panel</value>
 	<value>DG Panel</value>
-      	</binding>
+</binding>
+	
 
   </action>
 
