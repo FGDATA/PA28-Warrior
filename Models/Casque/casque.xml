@@ -21,6 +21,9 @@
 
     <!-- Objets transparents -->
   </animation>
+
+
+
   <animation>
     <type>pick</type>
     <type>material</type>

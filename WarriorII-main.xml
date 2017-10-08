@@ -246,7 +246,7 @@
 			<path>instrumentation/nav[0]/power-btn</path>
 			<path>instrumentation/nav[0]/frequencies/selected-mhz</path>
 			<path>instrumentation/nav[0]/frequencies/standby-mhz</path>
-			<path>instrumentation/nav[0]/radials/selected-deg</path>
+			<path>instrumentation/nav/radials/selected-deg</path>
 			<path>instrumentation/comm[1]/volume</path>
 			<path>instrumentation/comm[1]/frequencies/selected-mhz</path>
 			<path>instrumentation/comm[1]/frequencies/standby-mhz</path>
@@ -256,7 +256,6 @@
 			<path>instrumentation/nav[1]/frequencies/selected-mhz</path>
 			<path>instrumentation/nav[1]/frequencies/standby-mhz</path>
 			<path>instrumentation/nav[1]/radials/selected-deg</path>
-			<path>instrumentation/nav/radials/selected-deg</path>
 			<path>instrumentation/dme/frequencies/selected-mhz</path>
 			<path>instrumentation/dme/switch-min-kts</path>
 			<path>instrumentation/adf/model</path>
