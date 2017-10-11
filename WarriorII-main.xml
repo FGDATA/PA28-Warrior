@@ -106,13 +106,15 @@
 							<path>Aircraft/PA28-Warrior/Docs/General_Settings.pdf</path>
 						</binding>
 					</item>
+
 					<item>
-						<label>Practise Approach </label>
+						<label>Practise Approaches </label>
 						<binding>
 							<command>open-browser</command>
 							<path>Aircraft/PA28-Warrior/Docs/ApproachP.pdf</path>
 						</binding>
 					</item>
+
 
 					<item>
 						<label>About Warrior Nav</label>

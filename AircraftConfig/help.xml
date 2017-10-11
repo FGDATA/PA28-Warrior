@@ -83,6 +83,10 @@
 			</text>
 			<text>
 				<halign>left</halign>
+				<label>CTRL + L - Panel Light Toggle</label>
+			</text>
+			<text>
+				<halign>left</halign>
 				<label>h - Toggle HUD</label>
 			</text>
 			<text>

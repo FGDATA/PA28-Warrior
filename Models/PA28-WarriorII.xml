@@ -651,10 +651,10 @@
 
   <model>
   <name>dme</name>
-   <path>Aircraft/PA28-Warrior/Models/dme.xml</path>
+   <path>Aircraft/PA28-Warrior/Models/instruments/ki266/dme.xml</path>
   <offsets>
-    <x-m>1.925</x-m>
-   <y-m>0.292</y-m>
+    <x-m>1.927</x-m>
+   <y-m>0.298</y-m>
    <z-m>0.18</z-m>
   </offsets>
  </model>

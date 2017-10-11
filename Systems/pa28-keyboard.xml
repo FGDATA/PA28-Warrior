@@ -33,6 +33,17 @@
   </binding>
   </key>
 
+  <key n="12">
+  <name>Ctrl-L</name>
+  <desc>toggle panel lights</desc>
+                <binding>
+                    <command>property-cycle</command>
+                    <property>controls/switches/panel-lights-factor</property>
+<value>1</value>
+<value>0</value>
+
+                </binding>
+            </key>
 
 
 </keyboard>
