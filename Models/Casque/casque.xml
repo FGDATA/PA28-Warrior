@@ -103,10 +103,13 @@
         <value>EPP</value>
 	</binding>
 
-
-	
-
 	<binding>
+        <command>property-assign</command>
+        <property>controls/switches/panel-lights-factor</property>
+<value>1</value>
+	</binding>
+
+     	<binding>
         <command>property-assign</command>
         <property>instrumentation/nav/frequencies/selected-mhz</property>
         <value>109.3</value>

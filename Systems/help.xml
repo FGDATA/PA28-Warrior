@@ -3,8 +3,8 @@
   <help>
    <title>Piper Cherokee Warrior II (FGNavigator1)</title>
    <key>
-    <name>f</name>
-    <desc>fuel tank select</desc>
+    <name>d</name>
+    <desc>open/close door</desc>
    </key>
    <key>
     <name>~</name>
@@ -36,12 +36,17 @@
    </key>
    <key>
     <name>*</name>
-    <desc>toggle carburator heat</desc>
+    <desc>toggle pitot heat</desc>
    </key>
    <key>
-    <name>(</name>
-    <desc>increase and/or turn off panel lights</desc>
+    <name>ctrl-l </name>
+    <desc>toggle panel lights</desc>
    </key>
+	<key>
+    <name>u</name>
+    <desc>toggle carburator heat</desc>
+   </key>
+
    <key>
     <name>k</name>
     <desc>display map (karte)</desc>

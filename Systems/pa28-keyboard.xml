@@ -46,6 +46,100 @@
             </key>
 
 
+
+  <key n="64">
+  <name>@</name>
+  <desc>toggle alternator</desc>
+                <binding>
+                    <command>property-cycle</command>
+                    <property>controls/electrical/alternator</property>
+<value>1</value>
+<value>0</value>
+
+                </binding>
+            </key>
+
+  <key n="33">
+  <name>!</name>
+  <desc>toggle battery</desc>
+                <binding>
+                    <command>property-cycle</command>
+                    <property>controls/electrical/battery</property>
+<value>1</value>
+<value>0</value>
+
+                </binding>
+            </key>
+
+
+
+  <key n="97">
+  <name>a</name>
+  <desc>toggle avionics</desc>
+                <binding>
+                    <command>property-cycle</command>
+                    <property>controls/switches/avionics-master</property>
+<value>1</value>
+<value>0</value>
+
+                </binding>
+            </key>
+
+<key n="35">
+  <name>#</name>
+  <desc>toggle fuelpump</desc>
+                <binding>
+                    <command>property-cycle</command>
+                    <property>controls/switches/fuel-pump</property>
+<value>1</value>
+<value>0</value>
+
+                </binding>
+            </key>
+
+<key n="42">
+  <name>*</name>
+  <desc>toggle pitot heat</desc>
+                <binding>
+                    <command>property-cycle</command>
+                    <property>controls/switches/pitot-heat</property>
+<value>1</value>
+<value>0</value>
+
+                </binding>
+            </key>
+
+<key n="100">
+  <name>d</name>
+  <desc>toggle door</desc>
+                <binding>
+                    <command>property-cycle</command>
+                    <property>sim/model/door-positions/rightDoor/position-norm</property>
+<value>0</value>
+<value>1</value>
+
+                </binding>
+            </key>
+
+<key n="117">
+  <name>u</name>
+  <desc>toggle carb heat</desc>
+                <binding>
+                    <command>property-cycle</command>
+                    <property>controls/anti-ice/engine/carb-heat</property>
+<value>false</value>
+<value>true</value>
+
+                </binding>
+            </key>
+
+
+
+
+
+
+
+
 </keyboard>
 
 </PropertyList>

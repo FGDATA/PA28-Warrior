@@ -144,6 +144,7 @@ var taxi = func {
 	setprop("/controls/switches/beacon", 1);
 	setprop("/controls/switches/strobe-lights", 1);
 	setprop("/controls/switches/nav-lights-factor", 1);
+	setprop("/controls/switches/panel-lights-factor", 1); 
 	setprop("/controls/switches/avionics-master", 1);
 	setprop("/controls/engines/engine[0]/mixture", 1);
 	setprop("/controls/engines/engine[0]/throttle", 0.4);
