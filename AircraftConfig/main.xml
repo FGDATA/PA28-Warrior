@@ -209,7 +209,8 @@
 			
 			<button>
 				<legend>Zero Wind</legend>
-				<halign>left</halign>
+				<halign>center</halign>
+				<padding>5</padding>
 				<binding>
 					<command>property-assign</command>
 					<property>environment/wind-speed-kt</property>
@@ -225,6 +226,7 @@
 			<button>
 				<legend>IFR Scenario</legend>
 				<halign>center</halign>
+				<padding>5</padding>
 				<binding>
 					<command>property-cycle</command>
 					<property>/environment/weather-scenario</property>

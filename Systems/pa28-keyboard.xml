@@ -70,20 +70,7 @@
 
                 </binding>
             </key>
-
-
-
-  <key n="97">
-  <name>a</name>
-  <desc>toggle avionics</desc>
-                <binding>
-                    <command>property-cycle</command>
-                    <property>controls/switches/avionics-master</property>
-<value>1</value>
-<value>0</value>
-
-                </binding>
-            </key>
+ 
 
 <key n="35">
   <name>#</name>
