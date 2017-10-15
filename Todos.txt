@@ -49,8 +49,6 @@ aircraft data in warriormain.xml nav/selected degree does not stick, but does in
 
 left joke interrupted by gps display
 
-hobbsmeter broken
-
 sometimes engine stops above 10000 and can not be restarted
 
 GPS/RM mode craft turns way before the waypoint, no prob if suffient waypoints to line up with runway

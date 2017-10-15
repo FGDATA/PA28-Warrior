@@ -4,6 +4,23 @@
 
   <keyboard>
 
+
+
+   <key n="102">
+   <name>f</name>
+   <desc>full throttle</desc>
+   <binding>
+                    <command>property-cycle</command>
+                    <property>controls/engines/engine/throttle</property>
+<value>1</value>
+<value>0</value>
+
+                </binding>
+
+   </key>
+
+
+
   <key n="107">
   <name>k</name>
   <desc>Show Map</desc>
