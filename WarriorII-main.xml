@@ -32,6 +32,12 @@
 					<green type="float">0.4</green>
 					<blue type="float">0.0</blue>
 				</color>
+				<color n="3">
+					<red type="float">0.38</red>
+                 		<green type="float">1.0</green>
+           			<blue type="float">0.22</blue>
+				</color>
+
 			</palette>
 		</hud>
 
