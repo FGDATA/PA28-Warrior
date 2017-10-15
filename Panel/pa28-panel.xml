@@ -477,7 +477,7 @@
      <h>50</h>
      <binding>
       <command>nasal</command>
-      <script>controls.applyParkingBrake(1)</script>
+      <script>libraries.applyParkingBrake(1)</script>
      </binding>
    </action>   
 

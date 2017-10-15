@@ -15,6 +15,10 @@ rewrite finalise doco
 To do craft
 ////////////////////////////
 
+move parking brake under primer so its visible from panel
+
+f key to cycle seleted tank
+
 toggle vor1/vor2 needle in adf !!!
 
 limit ap to a max vs of 800fpm at take off
