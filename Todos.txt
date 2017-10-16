@@ -15,6 +15,10 @@ rewrite finalise doco
 To do craft
 ////////////////////////////
 
+move parking brake under primer so its visible from panel
+
+f key to cycle seleted tank
+
 toggle vor1/vor2 needle in adf !!!
 
 limit ap to a max vs of 800fpm at take off
@@ -48,8 +52,6 @@ bugs
 aircraft data in warriormain.xml nav/selected degree does not stick, but does in other xmls
 
 left joke interrupted by gps display
-
-hobbsmeter broken
 
 sometimes engine stops above 10000 and can not be restarted
 
