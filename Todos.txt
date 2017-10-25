@@ -29,6 +29,8 @@ flaptrim indicator instrument to fill the hole in hsi panel
 
 trim on yoke or other trim mechanism
 
+fix egt
+
 convert hsi to canvas, lift out of hsi
 
 rego call sign
