@@ -19,7 +19,7 @@
  <animation>
   <type>rotate</type>
   <object-name>Needle</object-name>
-  <property>/engines/engine[0]/egt-degf-fix</property>
+  <property>/engines/engine[0]/cht-degf</property>
   <factor>0.18</factor>
   <offset-deg>-45</offset-deg>
   <center>

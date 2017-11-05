@@ -559,8 +559,8 @@
 
 	
  <model>
-  <name>AMP</name>
-  <path>Aircraft/PA28-Warrior/Models/AMP/amp.xml</path>
+  <name>AMPVOL</name>
+  <path>Aircraft/PA28-Warrior/Models/Batterygauge/batterygauge.xml</path>
   <offsets>
    <x-m>1.925</x-m>
    <y-m>0.1785</y-m>
