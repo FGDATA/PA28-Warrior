@@ -1039,6 +1039,17 @@ Modified for IT-AUTOFLIGHT by Joshua Davidson
     <action>
     <button>0</button>
     <repeatable>false</repeatable>
+	<binding>
+		<command>property-assign</command>
+		<property>sim/gui/dialogs/autopilot/dialog/x</property>
+		<value>-5</value>
+	</binding>
+	<binding>
+		<command>property-assign</command>
+		<property>sim/gui/dialogs/autopilot/dialog/y</property>
+		<value>5</value>
+	</binding>
+
           <binding>
              <command>dialog-show</command>
             <dialog-name>autopilot</dialog-name>

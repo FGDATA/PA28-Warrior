@@ -8,6 +8,9 @@
 	<name>autopilot</name>
 	<layout>vbox</layout>
     <pref-width>260</pref-width>
+	<modal>false</modal>
+	<x>-5</x>
+	<y>5</y>
 
     <group>
         <layout>hbox</layout>

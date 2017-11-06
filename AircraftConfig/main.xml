@@ -8,7 +8,10 @@
 
 	<name>aircraft-config</name>
 	<layout>vbox</layout>
-	
+	<modal>false</modal>
+	<x>-5</x>
+	<y>5</y>
+
 	<group>
 		<layout>hbox</layout>
 		<text>
@@ -183,7 +186,7 @@
 			<layout>vbox</layout>
 
 			<checkbox>
-				<label>Enable De-icing Truck</label>
+				<label>Fuel Management</label>
 				<halign>left</halign>
 				<property>/services/deicing_truck/enable</property>
 				<binding>
@@ -193,18 +196,19 @@
 			</checkbox>
 
 			<button>
-				<legend>De-ice Aircraft</legend>
+				<legend>Adjust Fuel</legend>
 				<halign>center</halign>
 				<padding>5</padding>
 				<enable>
 					<property>/services/deicing_truck/enable</property>
 				</enable>
-				<binding>
-					<command>nasal</command>
-					<script>
-					gui.popupTip("The Aircraft was De-iced!");
-					</script>
-				</binding>
+				
+			<binding>
+				<command>nasal</command>
+				<script>gui.showWeightDialog()</script>
+			</binding>
+
+				
 			</button>
 			
 			<button>

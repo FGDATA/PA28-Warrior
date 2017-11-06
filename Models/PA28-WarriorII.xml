@@ -349,6 +349,19 @@
 		</offsets>
 	</model>
 
+ <model>
+  <name>trimw</name>
+  <path>Aircraft/PA28-Warrior/models/trimw/trimwheel.xml</path>
+  <offsets>
+   <x-m>1.925</x-m>
+   <y-m>0.023</y-m>
+   <z-m>0.271</z-m>
+   <yaw-deg>30</yaw-deg>
+
+  </offsets>
+ </model>
+
+
 <model>
 		<name>cvor</name>
 		<path>Aircraft/Instruments-3d/vor/vor2.xml</path>
