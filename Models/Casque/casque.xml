@@ -21,12 +21,11 @@
 
     <!-- Objets transparents -->
   </animation>
-  
-  <animation>
+
+<animation>
     <type>pick</type>
     <type>material</type>
-     <object-name>casque</object-name>
-    <object-name>oreilles</object-name>
+     <object-name>micro</object-name>
    <action>
       <button>0</button>
       <repeatable>false</repeatable>
@@ -42,6 +41,94 @@
                 <command>set-tooltip</command>
                 <tooltip-id>Tooglemute</tooltip-id>
                 <label>Toggle Sound</label>
+            </binding>
+        </hovered>
+  </animation>
+
+
+  <animation>
+    <type>pick</type>
+    <type>material</type>
+     <object-name>casque</object-name>
+    <object-name>oreilles</object-name>
+   <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+
+      <binding>
+        <command>property-assign</command>
+        <property>controls/electrical/battery</property>
+        <value>true</value>
+	</binding>
+
+	<binding>
+	<command>property-assign</command>
+        <property>controls/electrical/alternator</property>
+        <value>true</value>
+      </binding>
+
+	<binding>
+        <command>property-assign</command>
+        <property>controls/switches/avionics-master</property>
+        <value>1</value>
+	</binding>
+
+	<binding>
+	<command>property-assign</command>
+        <property>controls/engines/engine[0]/magnetos-switch</property>
+        <value>3</value>
+      </binding>	
+
+	<binding>
+	<command>property-assign</command>
+        <property>controls/switches/fuel-pump</property>
+        <value>1</value>
+      </binding>
+
+	<binding>
+        <command>property-assign</command>
+        <property>controls/engines/engine/throttle</property>
+        <value>0.7</value>
+	</binding>
+
+	<binding>
+	<command>property-assign</command>
+        <property>instrumentation/adf/frequencies/selected-khz</property>
+        <value>377</value>
+      </binding>
+
+	<binding>
+        <command>property-assign</command>
+        <property>instrumentation/adf/ident</property>
+        <value>EPP</value>
+	</binding>
+
+	<binding>
+        <command>property-assign</command>
+        <property>controls/switches/panel-lights-factor</property>
+<value>1</value>
+	</binding>
+
+     	<binding>
+        <command>property-assign</command>
+        <property>instrumentation/nav/frequencies/selected-mhz</property>
+        <value>109.3</value>
+	</binding>
+
+	<binding>
+        <command>property-assign</command>
+        <property>instrumentation/nav/radials/selected-deg</property>
+        <value>263</value>
+	</binding>
+
+
+
+       </action>
+      <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <tooltip-id>Tooglemute</tooltip-id>
+                <label>QS_Config</label>
             </binding>
         </hovered>
   </animation>

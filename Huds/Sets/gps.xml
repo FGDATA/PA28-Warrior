@@ -182,5 +182,16 @@
 	</label>
 	
 
+    <label>
+		<width>2</width>
+		<height>2</height>
+		<y>-40</y>
+		<format>Target Alt @ WP:%5d ft</format>
+		<halign>left</halign>
+		<input>
+			<property>/instrumentation/gps/wp/wp[1]/altitude-ft</property>
+		</input>
+	</label>
+
 </PropertyList>
 	

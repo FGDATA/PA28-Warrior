@@ -62,8 +62,50 @@
 			</text>
 			<text>
 				<halign>left</halign>
+				<label>F10 - Toggle Menu</label>
+			</text>
+			<text>
+				<halign>left</halign>
+				<label>F11 - Open ITAF</label>
+			</text>
+			<text>
+				<halign>left</halign>
+				<label>F12 - Open Radio Dialog</label>
+			</text>
+
+			<text>
+				<halign>left</halign>
 				<label>SHIFT + B - Toggle Parking Brake</label>
 			</text>
+			<text>
+				<halign>left</halign>
+				<label>SHIFT + ESC - Reset</label>
+			</text>
+			<text>
+				<halign>left</halign>
+				<label>CTRL + L - Panel Light Toggle</label>
+			</text>
+			<text>
+				<halign>left</halign>
+				<label>h - Toggle HUD</label>
+			</text>
+			<text>
+				<halign>left</halign>
+				<label>k - Show Map</label>
+			</text>
+			<text>
+				<halign>left</halign>
+				<label>M/m - Mixture -/+</label>
+			</text>
+			<text>
+				<halign>left</halign>
+				<label>r - Open Route Manager</label>
+			</text>
+			<text>
+				<halign>left</halign>
+				<label>w - Open AC Config</label>
+			</text>
+
 			
 		</group>
 	

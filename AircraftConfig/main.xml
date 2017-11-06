@@ -8,7 +8,10 @@
 
 	<name>aircraft-config</name>
 	<layout>vbox</layout>
-	
+	<modal>false</modal>
+	<x>-5</x>
+	<y>5</y>
+
 	<group>
 		<layout>hbox</layout>
 		<text>
@@ -183,7 +186,7 @@
 			<layout>vbox</layout>
 
 			<checkbox>
-				<label>Enable T017</label>
+				<label>Fuel Management</label>
 				<halign>left</halign>
 				<property>/services/deicing_truck/enable</property>
 				<binding>
@@ -193,45 +196,48 @@
 			</checkbox>
 
 			<button>
-				<legend>Run T017</legend>
+				<legend>Adjust Fuel</legend>
 				<halign>center</halign>
 				<padding>5</padding>
 				<enable>
 					<property>/services/deicing_truck/enable</property>
 				</enable>
+				
+			<binding>
+				<command>nasal</command>
+				<script>gui.showWeightDialog()</script>
+			</binding>
+
+				
+			</button>
+			
+			<button>
+				<legend>Zero Wind</legend>
+				<halign>center</halign>
+				<padding>5</padding>
 				<binding>
-					<command>nasal</command>
-					<script>
-					gui.popupTip("The Aircraft was De-iced!");
-					</script>
+					<command>property-assign</command>
+					<property>environment/wind-speed-kt</property>
+					<value>0</value>
+				</binding>
+				<binding>
+					<command>property-assign</command>
+					<property>environment/config/presets/wind-override</property>
+					<value>true</value>
 				</binding>
 			</button>
 			
-			<checkbox>
-				<label>Enable Fuel Truck</label>
-				<halign>left</halign>
-				<enable>
-					<not><property>/services/fuel-truck/connect</property></not>
-				</enable>
-				<property>/services/fuel-truck/enable</property>
+			<button>
+				<legend>IFR Scenario</legend>
+				<halign>center</halign>
+				<padding>5</padding>
 				<binding>
-					<command>dialog-apply</command>
+					<command>property-cycle</command>
+					<property>/environment/weather-scenario</property>
+					<value>CAT II minimum</value>
+					<value>Fair weather</value>
 				</binding>
-				<live>true</live>
-			</checkbox>
-			
-			<checkbox>
-				<label>Connect Fuel Truck</label>
-				<halign>left</halign>
-				<enable>
-					<property>/services/fuel-truck/enable</property>
-				</enable>
-				<property>/services/fuel-truck/connect</property>
-				<binding>
-					<command>dialog-apply</command>
-				</binding>
-				<live>true</live>
-			</checkbox>
+			</button>
 			
 			<hrule/>
 			

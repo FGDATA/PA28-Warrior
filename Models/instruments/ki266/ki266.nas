@@ -4,6 +4,12 @@
 # Maintainer: Torsten Dreyer (Torsten at t3r dot de)
 #
 # $Log$
+# Revision 1.1  2008/12/22 00:25:55  mfranz
+# Dave PERRY:
+#
+# "This patch adds instrument lights to the radio stack and a repaint of
+# the fuselage and tail to look better with osg."
+#
 # Revision 1.2  2008/11/21 09:21:03  torsten
 # make use of new Node.initNode() method
 #
@@ -67,10 +73,10 @@ ki266.update = func {
     v = 0.0;
   }
   if( v < 100.0 ) {
-    me.milesDisplayNode.setIntValue( v * 10.0 + 0.5 );
+    me.milesDisplayNode.setIntValue( v * 10.0 );
     me.leftDotNode.setBoolValue( 1 );
   } else {
-    me.milesDisplayNode.setIntValue( v + 0.5 );
+    me.milesDisplayNode.setIntValue( v );
     me.leftDotNode.setBoolValue( 0 );
   }
 

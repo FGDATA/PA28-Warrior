@@ -1,5 +1,4 @@
 <?xml version="1.0"?>
- 
 
 
 <PropertyList>
@@ -30,6 +29,31 @@
         		<format>GS In Range (Nav2)</format>
         		<halign>left</halign>
    	</label>
+
+
+<label>
+		<name>dmem</name>
+		<x>-420</x>
+		<y>180</y>
+		<halign>left</halign>
+		<format>DME: %1.1f nm</format>
+		<input>
+			<property>/instrumentation/dme/indicated-distance-nm</property>
+		</input>
+</label>
+
+<label>
+		<name>dmet</name>
+		<x>-360</x>
+		<y>180</y>
+		<halign>left</halign>
+		<format>...%1.1f min</format>
+		<input>
+			<property>/instrumentation/dme/indicated-time-min</property>
+		</input>
+</label>
+
+
 
 
    <import>
@@ -228,8 +252,20 @@
 			<property>/instrumentation/gps/trip-odometer</property>
 		</input>
 	</label>
-	
 
+
+   <label>
+		<name>rem</name>
+		<width>2</width>
+		<height>2</height>
+		<x>-330</x>
+		<y>-210</y>
+		<halign>left</halign>
+		<format>Rem: %1.1f nm</format>
+		<input>
+			<property>/autopilot/route-manager/distance-remaining-nm</property>
+		</input>
+	</label>
 
         <tape>
 		<name>Gyrocompass</name>
