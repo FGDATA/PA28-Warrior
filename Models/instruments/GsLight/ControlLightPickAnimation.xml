@@ -38,6 +38,14 @@
     </mod-up>
 
   </action>
+<hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <tooltip-id>GSLive</tooltip-id>
+                <label>Loc Capture</label>
+            </binding>
+        </hovered>
+
 
 </PropertyList>
 

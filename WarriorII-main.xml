@@ -453,6 +453,8 @@
 			<file>Aircraft/PA28-Warrior/Models/Instruments/elt/ELTmessage.nas</file>
 			<file>Aircraft/PA28-Warrior/Nasal/kr87.nas</file>
 			<file>Aircraft/PA28-Warrior/Nasal/ki266.nas</file>
+			<file>Aircraft/PA28-Warrior/Models/instruments/KLN90B/kln90b.nas</file>
+
 			<file>Aircraft/PA28-Warrior/Nasal/kcs55.nas</file>
 			<file>Aircraft/PA28-Warrior/Nasal/kma20.nas</file>
 			<script>

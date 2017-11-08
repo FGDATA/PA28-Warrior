@@ -37,15 +37,15 @@
       </binding>
     </mod-up>
 
+  </action>
 
 <hovered>
             <binding>
                 <command>set-tooltip</command>
-                <tooltip-id>FLI</tooltip-id>
+                <tooltip-id>oof</tooltip-id>
                 <label>Out of Fuel when lit </label>
             </binding>
         </hovered>
-  </action>
 
 
 </PropertyList>

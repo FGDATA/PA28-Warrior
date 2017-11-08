@@ -238,6 +238,17 @@
    <z-m>0.178</z-m>
   </offsets>
  </model>
+
+ <model>
+  <name>warn_stall</name>
+  <path>Aircraft/PA28-Warrior/Models/stall_warning.xml</path>
+  <offsets>
+    <x-m>1.918</x-m>
+    <y-m>0.018</y-m>
+    <z-m>0.219</z-m>
+
+  </offsets>
+</model>
  
  <model>
   <name>cod</name>
