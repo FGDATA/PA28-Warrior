@@ -91,6 +91,10 @@
 			</text>
 			<text>
 				<halign>left</halign>
+				<label>j - Switch Tanks</label>
+			</text>
+			<text>
+				<halign>left</halign>
 				<label>k - Show Map</label>
 			</text>
 			<text>

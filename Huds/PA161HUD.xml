@@ -187,6 +187,20 @@
 		</input>
 	</label>
 
+<label>
+		<name>FFlow</name>
+		<width>2</width>
+		<height>2</height>
+		<x>-420</x>
+		<y>-230</y>
+		<halign>left</halign>
+		<format>FFlow: %2.1f pph</format>
+		<input>
+			<property>/engines/engine/fuel-flow_pph</property>
+		</input>
+	</label>
+
+
 <tape>
 		<name>RadioAltimeter</name>
 		<x>-420</x>

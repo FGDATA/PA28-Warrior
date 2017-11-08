@@ -87,6 +87,20 @@
 
                 </binding>
             </key>
+
+
+
+  <key n="106">
+  <name>j</name>
+  <desc>toggle tanks</desc>
+                <binding>
+                    <command>property-cycle</command>
+                    <property>systems/fuel/selected-tank</property>
+<value>1</value>
+<value>2</value>
+
+                </binding>
+            </key>
  
 
 <key n="35">

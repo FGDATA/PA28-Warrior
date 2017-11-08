@@ -1,31 +1,33 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
 
 <PropertyList>
 
- <path>CODetector.ac</path>
- 
+  <path>charts.ac</path>
+  
+  <animation>
+    <object-name>carte</object-name>
+  </animation>
+
  <animation>
     <type>pick</type>
     <type>material</type>
-    <object-name>Detector</object-name>
+    <object-name>carte</object-name>
     <action>
     <button>0</button>
     <repeatable>false</repeatable>
             <binding>
 				<command>dialog-show</command>
-				<dialog-name>route-manager</dialog-name>
+				<dialog-name>map</dialog-name>
 			</binding>
      </action>
-
 
       <hovered>
             <binding>
                 <command>set-tooltip</command>
-                <tooltip-id>rm</tooltip-id>
-                <label>Open Route Manager</label>
+                <tooltip-id>chart</tooltip-id>
+                <label>Show Map</label>
             </binding>
         </hovered>
+	
   </animation>
-
 </PropertyList>
-

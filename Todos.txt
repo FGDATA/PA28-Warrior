@@ -1,8 +1,6 @@
 To do doco
 ////////////////////
 
-arcs ..
-
 grand tour ..
 
 redo screen captures once panel complete
@@ -15,25 +13,17 @@ rewrite finalise doco
 To do craft
 ////////////////////////////
 
-move parking brake under primer so its visible from panel
+move parking brake under primer so its visible from panel hotspot for mouse
 
-f key to cycle seleted tank
+low fuel warning or autoswitch to balance weight
 
-toggle vor1/vor2 needle in adf !!!
+toggle vor1/vor2 needle in adf/rmi !!!
 
 limit ap to a max vs of 800fpm at take off
 
-navswitch to toggle dme and vor2 needle !!! (DHC6 code or similar?)
-
 flaptrim indicator instrument to fill the hole in hsi panel
 
-trim on yoke or other trim mechanism
-
-convert hsi to canvas, lift out of hsi
-
 rego call sign
-
-low fuel warning
 
 lights
 
@@ -46,6 +36,8 @@ livery
 replace invisible prop with some disc aka pa24-250
 
 crash behaviour detection
+
+final splash screen
 ------------------------
 
 bugs
@@ -53,13 +45,14 @@ bugs
 
 aircraft data in warriormain.xml nav/selected degree does not stick, but does in other xmls
 
-left joke interrupted by gps display
-
-sometimes engine stops above 10000 and can not be restarted
+left joke interrupted by gps display, change to more attractive one
 
 GPS/RM mode craft turns way before the waypoint, no prob if suffient waypoints to line up with runway
 
 primer moves the magnetos/start key
+
+ap - switching from nav to apr mode switches back to rol mode
+
 
 
 
