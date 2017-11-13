@@ -51,15 +51,3 @@ setlistener("/options/nav-source", func {
 		setprop("/it-autoflight/settings/slave-gps-nav", 0);
 	}
 });
-
-var aglgears = func {
-    var agl = getprop("/position/altitude-agl-ft") or 0;
-    var aglft = agl - 3.32;  # is the position from the PA28-Warrior above ground
-    var aglm = aglft * 0.3048;
-    setprop("/position/gear-agl-ft", aglft);
-    setprop("/position/gear-agl-m", aglm);
-
-    settimer(aglgears, 0.01);
-}
-
-aglgears();
