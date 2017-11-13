@@ -61,7 +61,7 @@ var btnALT = func {
 var btnAPR = func {
 	var lat = getprop("/it-autoflight/output/lat");
 	var vert = getprop("/it-autoflight/output/vert");
-	if ((lat == 0 or lat == 1) and (vert == 0 or vert == 1) and (getprop("/it-autoflight/output/appr-armed")) == 0) {
+	if ((vert == 0 or vert == 1) and (getprop("/it-autoflight/output/appr-armed")) == 0) {
 		setprop("/it-autoflight/input/vert", 2);
 	} else if ((lat == 0 or lat == 1) and (vert == 0 or vert == 1) and (getprop("/it-autoflight/output/appr-armed")) == 1) {
 		setprop("/it-autoflight/input/lat", lat);
