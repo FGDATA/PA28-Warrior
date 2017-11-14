@@ -16,19 +16,18 @@
     <command>nasal</command>
     <script>controls.applyParkingBrake(0)</script>
    </binding>
-  </mod-up>
-<binding>
+</mod-up>	
+	<binding>
 	<condition>
+		<not>
 		<property>controls/gear/brake-parking</property>
-			<value>1</value>
-			<delay>3.75</delay>
-	</condition>
+		</not>
+	</condition>	
 			<command>show-message</command>
 			<id>strap</id>
 			<label>Fasten Your Seat Belt</label>
-			
-</binding>
-
+			<delay>3.75</delay>
+	</binding>
  </key>
 
 
@@ -161,13 +160,31 @@
 <value>1</value>
                 </binding>
 <binding>
+	<condition>
+		<property>sim/model/door-positions/rightDoor/position-norm</property>
+	</condition>
 			<command>show-message</command>
 			<id>openclose</id>
-			<label>Door Open Close</label>
+			<label>Door is Open </label>
 			<property>sim/model/door-positions/rightDoor/position-norm</property>
 	<value>1</value>
 			<delay>1.75</delay>
 		</binding>
+
+<binding>
+	<condition>
+		<not>
+		<property>sim/model/door-positions/rightDoor/position-norm</property>
+		</not>
+	</condition>
+			<command>show-message</command>
+			<id>openclose</id>
+			<label>Door is Closed </label>
+			<property>sim/model/door-positions/rightDoor/position-norm</property>
+	<value>0</value>
+			<delay>1.75</delay>
+		</binding>
+
 
             </key>
 

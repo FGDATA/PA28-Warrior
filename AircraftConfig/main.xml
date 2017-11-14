@@ -210,7 +210,7 @@
                     			else {
 
         
-gui.popupTip("No Air to Air refueling support", 5.0);               			
+gui.popupTip("No Air to Air refueling support", 6.0);               			
                     }
                 		</script>
               </binding>				

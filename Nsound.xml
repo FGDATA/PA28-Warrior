@@ -87,19 +87,35 @@ alarmalt>
 <dooropen>
 		<name>door open</name>
 		<mode>once</mode>
-		<path>PNavSounds/door-opening.wav</path>
+		<path>PNavSounds/lidcreak.wav</path>
 		<condition>
-			<less-than>
-				<property>sim/model/door-positions/rightDoor/position-norm</property>
-				<value>1</value>
-			</less-than>
-		</condition>
-		<reference-dist>1</reference-dist>
-		<max-dist>20</max-dist>
-		<volume>
-			<offset> 1.0 </offset>
+		<property>sim/model/door-positions/rightDoor/position-norm</property>
+	</condition>
+	<volume>
+		<reference-dist>100</reference-dist>
+		<max-dist>1000</max-dist>
+		
+			<offset> 1.1 </offset>
 		</volume>
 	</dooropen>
+
+<dooropen>
+		<name>door close</name>
+		<mode>once</mode>
+		<path>PNavSounds/door_close.wav</path>
+		<condition>
+			<not>
+		<property>sim/model/door-positions/rightDoor/position-norm</property>
+			</not>
+	</condition>
+	<volume>
+		<reference-dist>100</reference-dist>
+		<max-dist>1000</max-dist>
+		
+			<offset> 1.1 </offset>
+		</volume>
+	</dooropen>
+
 
  
   <crank>
