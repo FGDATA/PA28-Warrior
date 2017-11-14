@@ -47,7 +47,7 @@ var master_fuel = func {
 
 setlistener("/systems/fuel/low-fuel", func {
 	if (getprop("/systems/fuel/low-fuel") == 1) {
-		gui.popupTip("WARNING: LOW FUEL!!! (Squawk: 7777)");
+		gui.popupTip("WARNING: LOW FUEL!!(Squawk: 7700)");
 	}
 });
 
