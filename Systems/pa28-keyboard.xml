@@ -18,13 +18,16 @@
    </binding>
   </mod-up>
 <binding>
+	<condition>
+		<property>controls/gear/brake-parking</property>
+			<value>1</value>
+			<delay>3.75</delay>
+	</condition>
 			<command>show-message</command>
 			<id>strap</id>
 			<label>Fasten Your Seat Belt</label>
-			<property>controls/gear/brake-parking</property>
-	<value>1</value>
-			<delay>2.75</delay>
-		</binding>
+			
+</binding>
 
  </key>
 
