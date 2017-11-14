@@ -134,7 +134,7 @@
 		</menubar>
 
 		<sound>
-			<path>Aircraft/PA28-Warrior/sound.xml</path>
+			<path>Aircraft/PA28-Warrior/Nsound.xml</path>
 		</sound>
 
 		<view n="0">
