@@ -134,7 +134,7 @@
 		</menubar>
 
 		<sound>
-			<path>Aircraft/PA28-Warrior/Nsound.xml</path>
+			<path>Aircraft/PA28-Warrior/sound.xml</path>
 		</sound>
 
 		<view n="0">
@@ -266,8 +266,7 @@
 			<path>instrumentation/nav[1]/radials/selected-deg</path>
 			<path>instrumentation/dme/frequencies/selected-mhz</path>
 			<path>instrumentation/dme/switch-min-kts</path>
-<path>instrumentation/hobbs-meter/seconds</path>
-
+			<path>instrumentation/hobbs-meter/seconds</path>
 			<path>instrumentation/adf/model</path>
 			<path>instrumentation/adf/rotation-deg</path>
 			<path>instrumentation/adf/frequencies</path>
@@ -393,8 +392,24 @@
 			<switch-position type="int">1</switch-position>
 			<volume type="double">0</volume>
 		</dme>
+		<kma20>
+			<!-- -1: COM1, 0: COM2, 1: EXT -->
+			<knob type="int" archive="y">-1</knob>
 
-<kma20 include="Aircraft/Pa28-Warrior/models/instruments/kma20/kma20init.xml"/>
+			<!-- -1: SPEAKER, 0: OFF, 1: PHONE -->
+			<auto type="int" archive="y">1</auto>
+			<com1 type="int" archive="y">0</com1>
+			<com2 type="int" archive="y">0</com2>
+			<nav1 type="int" archive="y">0</nav1>
+			<nav2 type="int" archive="y">0</nav2>
+			<adf  type="int" archive="y">0</adf>
+			<dme  type="int" archive="y">0</dme>
+			<mkr  type="int" archive="y">-1</mkr>
+			<sens type="int" archive="y">0</sens>
+
+			<!-- flag for marker lights test -->
+			<test type="int" archive="y">0</test>
+		</kma20>
 
 	</instrumentation>
 	
