@@ -375,7 +375,7 @@
       <binding>
         <command>property-adjust</command>
         <property alias="../../../../params/selected-heading"/>
-        <step>-1</step>
+        <step>1</step>
         <min>0</min>
         <max>360</max>
         <wrap>1</wrap>
@@ -387,7 +387,7 @@
       <binding>
         <command>property-adjust</command>
         <property alias="../../../../params/selected-heading"/>
-        <step>1</step>
+        <step>-1</step>
         <min>0</min>
         <max>360</max>
         <wrap>1</wrap>

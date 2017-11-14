@@ -1,12 +1,39 @@
 <?xml version="1.0"?>
 
 <!-- IT-AUTOFLIGHT:GA -->
+<!-- (c) 2017 Joshua Davidson (it0uchpods) -->
 
 <PropertyList>
 
  <!-- =============================================================== -->
  <!-- Predictors                                                      -->
  <!-- =============================================================== -->
+
+	<predict-simple>
+		<name>HEADING 5 SECONDS AHEAD</name>
+		<debug>false</debug>
+		<input>
+			<condition>
+				<equals>
+					<property>/it-autoflight/input/trk</property>
+					<value>0</value>
+				</equals>
+			</condition>
+			<property>/orientation/heading-magnetic-deg</property>
+		</input>
+		<input>
+			<condition>
+				<equals>
+					<property>/it-autoflight/input/trk</property>
+					<value>1</value>
+				</equals>
+			</condition>
+			<property>/orientation/heading-deg</property>
+		</input>
+		<output>/it-autoflight/internal/heading-5-sec-ahead</output>
+		<seconds>5.0</seconds>
+		<filter-gain>0.0</filter-gain>
+	</predict-simple>
 
 	<predict-simple>
 		<name>ALTITUDE 5 SECONDS AHEAD</name>
@@ -417,9 +444,11 @@
 		<max-rate-of-change>6</max-rate-of-change>
 	</filter>
 	
-	<pid-controller>
-		<name>IT-CONTROLLER: ROLL</name>
+	<filter>
+		<name>System Command: Roll Rate</name>
 		<debug>false</debug>
+		<type>gain</type>
+		<gain>-0.1</gain>
 		<enable>
 			<condition>
 				<equals>
@@ -450,42 +479,72 @@
 			<value>0</value>
 		</reference>
 		<output>
+			<property>/it-autoflight/internal/rate-aileron-cmd</property>
+		</output>
+		<min>-0.4</min>
+		<max>0.4</max>
+	</filter>
+	
+	<filter>
+		<name>IT-CONTROLLER: ROLL RATE CMD</name>
+		<type>gain</type>
+		<gain>1</gain>
+		<enable>
+			<condition>
+				<not-equals>
+					<property>/it-autoflight/config/tuning-mode</property>
+					<value>1</value>
+				</not-equals>
+			</condition>
+		</enable>
+		<input>
+			<expression>
+				<table>
+					<property>/it-autoflight/internal/rate-aileron-cmd</property> 
+					<entry><ind>-1</ind><dep>-12.0</dep></entry>
+					<entry><ind> 0</ind><dep>  0.0</dep></entry>
+					<entry><ind> 1</ind><dep> 12.0</dep></entry>
+				</table>
+			</expression>
+		</input>
+		<output>/it-autoflight/internal/roll-rate</output>
+    </filter>
+	
+	<pid-controller>
+		<name>IT-CONTROLLER: ROLL</name>
+		<debug>false</debug>
+		<enable>
+			<condition>
+				<equals>
+					<property>/it-autoflight/output/lat-active</property>
+					<value>1</value>
+				</equals>
+			</condition>
+		</enable>
+		<input>
+			<property>/orientation/roll-rate-degps</property>
+		</input>
+		<reference>
+			<property>/it-autoflight/internal/roll-rate</property>
+		</reference>
+		<output>
 			<property>/it-autoflight/internal/aileron-cmd</property>
 		</output>
 		<config>
 			<Kp>
-				<condition>
-					<not-equals>
-						<property>/it-autoflight/output/lat</property>
-						<value>2</value>
-					</not-equals>
-				</condition>
 				<property>/it-autoflight/config/roll/kp</property>
 			</Kp>
-			<Kp>
-				<condition>
-					<equals>
-						<property>/it-autoflight/output/lat</property>
-						<value>2</value>
-					</equals>
-				</condition>
-				<property>/it-autoflight/config/roll/kp-vloc</property>
-			</Kp>
-			<beta>1.0</beta>	
-			<alpha>0.1</alpha>	
-			<gamma>0.0</gamma>	
+			<beta>1</beta>
+			<alpha>0.1</alpha>
+			<gamma>0</gamma>
 			<Ti>
 				<property>/it-autoflight/config/roll/ti</property>
-			</Ti>    
+			</Ti>
 			<Td>
 				<property>/it-autoflight/config/roll/td</property>
-			</Td>    	
-			<u_min>
-				<property>/it-autoflight/config/roll/umin</property>
-			</u_min>
-			<u_max>
-				<property>/it-autoflight/config/roll/umax</property>
-			</u_max>
+			</Td>
+			<u_min>-1</u_min>
+			<u_max>1</u_max>
 		</config>
 	</pid-controller>
 	
@@ -503,12 +562,7 @@
 			</condition>
 		</enable>
 		<input>
-			<expression>
-				<sum>
-					<property>/it-autoflight/internal/aileron-cmd</property>
-					<property>/it-autoflight/config/roll/pfactor-offset</property>
-				</sum>
-			</expression>
+			<property>/it-autoflight/internal/aileron-cmd</property>
 		</input>
 		<output>/controls/flight/aileron</output>
 		<type>noise-spike</type>
@@ -687,10 +741,12 @@
 		<min>-15</min>
 		<max>15</max>
 	</filter>
-
-	<pid-controller>
-		<name>IT-CONTROLLER: PITCH</name>
+	
+	<filter>
+		<name>System Command: Pitch Rate</name>
 		<debug>false</debug>
+		<type>gain</type>
+		<gain>0.15</gain>
 		<enable>
 			<condition>
 				<equals>
@@ -706,6 +762,55 @@
 			<property>/it-autoflight/internal/target-pitch-deg</property>
 		</reference>
 		<output>
+			<property>/it-autoflight/internal/rate-elevator-cmd</property>
+		</output>
+		<min>-0.3</min>
+		<max>0.3</max>
+	</filter>
+	
+	<filter>
+		<name>IT-CONTROLLER: PITCH RATE CMD</name>
+		<type>gain</type>
+		<gain>1</gain>
+		<enable>
+			<condition>
+				<not-equals>
+					<property>/it-autoflight/config/tuning-mode</property>
+					<value>1</value>
+				</not-equals>
+			</condition>
+		</enable>
+		<input>
+			<expression>
+				<table>
+					<property>/it-autoflight/internal/rate-elevator-cmd</property> 
+					<entry><ind> 1</ind><dep>-5.0</dep></entry>
+					<entry><ind> 0</ind><dep> 0.0</dep></entry>
+					<entry><ind>-1</ind><dep> 5.0</dep></entry>
+				</table>
+			</expression>
+		</input>
+		<output>/it-autoflight/internal/pitch-rate</output>
+    </filter>
+	
+	<pid-controller>
+		<name>IT-CONTROLLER: PITCH</name>
+		<debug>false</debug>
+		<enable>
+			<condition>
+				<equals>
+					<property>/it-autoflight/output/vert-active</property>
+					<value>1</value>
+				</equals>
+			</condition>
+		</enable>
+		<input>
+			<property>/orientation/pitch-rate-degps</property>
+		</input>
+		<reference>
+			<property>/it-autoflight/internal/pitch-rate</property>
+		</reference>
+		<output>
 			<property>/it-autoflight/internal/elevator-cmd</property>
 			<property>/it-autoflight/internal/elevator-trim-cmd</property>
 		</output>
@@ -713,21 +818,17 @@
 			<Kp>
 				<property>/it-autoflight/config/pitch/kp</property>
 			</Kp>
-			<beta>1.0</beta>    
-			<alpha>0.1</alpha>  
-			<gamma>0.0</gamma>  
+			<beta>1</beta>
+			<alpha>0.1</alpha>
+			<gamma>0</gamma>
 			<Ti>
 				<property>/it-autoflight/config/pitch/ti</property>
-			</Ti>      
+			</Ti>
 			<Td>
 				<property>/it-autoflight/config/pitch/td</property>
-			</Td>   
-			<u_min>
-				<property>/it-autoflight/config/pitch/umin</property>
-			</u_min>
-			<u_max>
-				<property>/it-autoflight/config/pitch/umax</property>
-			</u_max>
+			</Td>
+			<u_min>-1</u_min>
+			<u_max>1</u_max>
 		</config>
 	</pid-controller>
 	

@@ -416,20 +416,16 @@
 	<it-autoflight>
 		<config>
 			<roll>
-				<umin>-0.40</umin>
-				<umax>0.40</umax>
-				<kp>0.05</kp>
-				<kp-vloc>0.06</kp-vloc>
-				<ti>10.0</ti>
-				<td>0.00001</td>
-				<pfactor-offset>0.05</pfactor-offset>
+				<kp-low>0.10</kp-low> <!-- Kp at low speed -->
+				<kp-high>0.07</kp-high> <!-- Kp at high speed -->
+				<ti>1.0</ti>
+				<td>0.0001</td>
 			</roll>
 			<pitch>
-				<umin>-0.30</umin>
-				<umax>0.30</umax>
-				<kp>-0.06</kp>
-				<ti>10.0</ti>
-				<td>0.0001</td>
+				<kp-low>-0.15</kp-low> <!-- Kp at low speed -->
+				<kp-high>-0.13</kp-high> <!-- Kp at high speed -->
+				<ti>0.5</ti>
+				<td>0.001</td>
 			</pitch>
 			<cmd>
 				<roll-kp>-1.4</roll-kp>
