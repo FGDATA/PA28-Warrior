@@ -4,6 +4,29 @@
 
   <keyboard>
 
+ <key n="66">
+  <name>B</name>
+  <desc>Toggle parking brake on or off</desc>
+  <binding>
+   <command>nasal</command>
+   <script>controls.applyParkingBrake(1)</script>
+  </binding>
+  <mod-up>
+   <binding>
+    <command>nasal</command>
+    <script>controls.applyParkingBrake(0)</script>
+   </binding>
+  </mod-up>
+<binding>
+			<command>show-message</command>
+			<id>strap</id>
+			<label>Fasten Your Seat Belt</label>
+			<property>controls/gear/brake-parking</property>
+	<value>1</value>
+			<delay>2.75</delay>
+		</binding>
+
+ </key>
 
 
    <key n="102">
@@ -14,9 +37,7 @@
                     <property>controls/engines/engine/throttle</property>
 <value>1</value>
 <value>0</value>
-
                 </binding>
-
    </key>
 
 
@@ -135,8 +156,16 @@
                     <property>sim/model/door-positions/rightDoor/position-norm</property>
 <value>0</value>
 <value>1</value>
-
                 </binding>
+<binding>
+			<command>show-message</command>
+			<id>openclose</id>
+			<label>Door Open Close</label>
+			<property>sim/model/door-positions/rightDoor/position-norm</property>
+	<value>1</value>
+			<delay>1.75</delay>
+		</binding>
+
             </key>
 
 <key n="117">

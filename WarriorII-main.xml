@@ -134,7 +134,7 @@
 		</menubar>
 
 		<sound>
-			<path>Aircraft/PA28-Warrior/PNavSounds/Nsound.xml</path>
+			<path>Aircraft/PA28-Warrior/Nsound.xml</path>
 		</sound>
 
 		<view n="0">
@@ -266,6 +266,8 @@
 			<path>instrumentation/nav[1]/radials/selected-deg</path>
 			<path>instrumentation/dme/frequencies/selected-mhz</path>
 			<path>instrumentation/dme/switch-min-kts</path>
+<path>instrumentation/hobbs-meter/seconds</path>
+
 			<path>instrumentation/adf/model</path>
 			<path>instrumentation/adf/rotation-deg</path>
 			<path>instrumentation/adf/frequencies</path>
@@ -391,6 +393,9 @@
 			<switch-position type="int">1</switch-position>
 			<volume type="double">0</volume>
 		</dme>
+
+<kma20 include="Aircraft/Pa28-Warrior/models/instruments/kma20/kma20init.xml"/>
+
 	</instrumentation>
 	
 	<it-autoflight>
@@ -457,6 +462,7 @@
 
 			<file>Aircraft/PA28-Warrior/Nasal/kcs55.nas</file>
 			<file>Aircraft/PA28-Warrior/Nasal/kma20.nas</file>
+
 			<script>
 			<![CDATA[ki266.new(0);
 			KCS55.new();]]>

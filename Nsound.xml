@@ -4,6 +4,27 @@
 
  <fx>
 
+<!--
+alarmalt>
+		<name>alarmalt</name>
+		<mode>once</mode>
+		<path>PNavSounds/warningCRJ200.wav</path>
+		<condition>
+			<equal>
+			<and>
+				<property>instrumentation/radar-altimeter/decision-height</property>
+					<not><property>gear/gear/wow</property></not>
+			<and>	
+<equal>	
+		</condition>
+		<reference-dist>2</reference-dist>
+		<max-dist>5</max-dist>
+		<volume>
+			<offset>1.1</offset>
+		</volume>
+	</alarmalt>
+-->	
+
         <flap>
             <name>flaps</name>
             <mode>in-transit</mode>

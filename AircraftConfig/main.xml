@@ -199,16 +199,21 @@
 				<legend>Adjust Fuel</legend>
 				<halign>center</halign>
 				<padding>5</padding>
-				<enable>
-					<property>/services/deicing_truck/enable</property>
-				</enable>
 				
-			<binding>
-				<command>nasal</command>
-				<script>gui.showWeightDialog()</script>
-			</binding>
+<binding>
+            <command>nasal</command>
+            <script>
+             		if (getprop("/gear/gear/wow")) {
+                        
+        gui.showWeightDialog();
+ }                  	 
+                    			else {
 
-				
+        
+gui.popupTip("No Air to Air refueling support", 5.0);               			
+                    }
+                		</script>
+              </binding>				
 			</button>
 			
 			<button>
@@ -221,9 +226,10 @@
 					<value>0</value>
 				</binding>
 				<binding>
-					<command>property-assign</command>
+					<command>property-cycle</command>
 					<property>environment/config/presets/wind-override</property>
 					<value>true</value>
+					<value>false</value>
 				</binding>
 			</button>
 			

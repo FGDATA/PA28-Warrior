@@ -5,6 +5,10 @@
 rightDoor = aircraft.door.new( "/sim/model/door-positions/rightDoor", 2, 0 );
 #baggageDoor = aircraft.door.new( "/sim/model/door-positions/baggageDoor", 2, 0 );
 
+    # Use Nasal to make some properties persistent. <aircraft-data> does
+    # not work reliably.
+    aircraft.data.add("/instrumentation/nav[0]/radials/selected-deg");
+    aircraft.data.load();
 
 setlistener("/sim/signals/fdm-initialized", func {
 	systems.elec_init();
