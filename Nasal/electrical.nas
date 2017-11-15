@@ -7,6 +7,7 @@
 
 setprop("/systems/electrical/bus/elec1", 0);
 setprop("/systems/electrical/bus/elec2", 0);
+setprop("/sim/menubar/default/menu[5]/item[4]/enabled", 0);
 
 setlistener("/sim/signals/fdm-initialized", func {
 	var batt_sw = getprop("/controls/electrical/battery");

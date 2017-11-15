@@ -11,6 +11,13 @@
    <command>nasal</command>
    <script>controls.applyParkingBrake(1)</script>
   </binding>
+	<binding>
+		<command>show-message</command>
+			<id>bs</id>
+			<label>ParkingBrake set</label>
+			<delay>3.75</delay>
+	</binding>
+
   <mod-up>
    <binding>
     <command>nasal</command>
@@ -28,6 +35,7 @@
 			<label>Fasten Your Seat Belt</label>
 			<delay>3.75</delay>
 	</binding>
+
  </key>
 
 

@@ -68,11 +68,9 @@
 					<legend>Aircraft Help</legend>
 					<pref-width>140</pref-width>
 					<binding>
-						<command>nasal</command>
-						<script>
-						acconfig.help_dlg.open();
-						</script>
-					</binding>
+				<command>nasal</command>
+				<script>gui.showHelpDialog("/sim/help")</script>
+			</binding>
 				</button>
 			</group>
 			

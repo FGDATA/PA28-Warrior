@@ -36,7 +36,7 @@ alarmalt>
                 <z>0.5</z>
             </position>
             <volume>
-                <factor>0.9</factor>
+                <factor>1.1</factor>
             </volume>
             <reference-dist>1.0</reference-dist>
             <max-dist>200.0</max-dist>
@@ -92,6 +92,8 @@ alarmalt>
 		<property>sim/model/door-positions/rightDoor/position-norm</property>
 	</condition>
 	<volume>
+			<factor>1.1</factor>
+
 		<reference-dist>100</reference-dist>
 		<max-dist>1000</max-dist>
 		
@@ -99,7 +101,7 @@ alarmalt>
 		</volume>
 	</dooropen>
 
-<dooropen>
+<doorclose>
 		<name>door close</name>
 		<mode>once</mode>
 		<path>PNavSounds/door_close.wav</path>
@@ -114,7 +116,7 @@ alarmalt>
 		
 			<offset> 1.1 </offset>
 		</volume>
-	</dooropen>
+	</doorclose>
 
 
  
@@ -161,7 +163,7 @@ alarmalt>
   <engine>
    <name>engine</name>
    <mode>looped</mode>
-   <path>PNavSounds/engine.wav</path>
+   <path>PNavSounds/engine-internal.wav</path>
    <condition>
           <greater-than>
             <property>engines/engine/rpm</property>
@@ -190,7 +192,7 @@ alarmalt>
     <engine-internal>
       <name>engine-internal</name>
       <mode>looped</mode>
-      <path>PNavSounds/engine-internal.wav</path>
+      <path>PNavSounds/engine.wav</path>
       <condition>
         <and>
           <greater-than>
@@ -209,7 +211,7 @@ alarmalt>
         <property>engines/engine/rpm</property>
         <factor>0.0005</factor>
         <min>0.2</min>
-        <max>2.0</max>
+        <max>1.0</max>
         <offset>0.15</offset>
       </pitch>
       <reference-dist>4.0</reference-dist>
@@ -218,7 +220,7 @@ alarmalt>
         <x> -2.672 </x>
         <y>  0 </y>
         <z>  0 </z>
-      </position>
+     </position>	
     </engine-internal>
 
 
@@ -322,33 +324,6 @@ alarmalt>
    </pitch>
   </squeal>
   
-  <fuel-pump>
-   <name>fuel pump</name>
-   <mode>looped</mode>
-   <path>PNavSounds/overspeed.wav</path>
-   <condition>
-    <and>
-     <greater-than>
-      <property>systems/electrical/outputs/fuel-pump</property>
-      <value>8</value>
-     </greater-than>
-     <less-than>
-      <property>/engines/engine/rpm</property>
-      <value>1200</value>
-     </less-than>  
-    </and> 
-   </condition>
-   <volume>
-    <property>/sim/sound/fuel_pump_volume</property>
-   </volume>
-   <pitch>
-    <property>controls/engines/engine[0]/fuel-pump</property>
-    <offset>0.0</offset>
-    <factor>1.75</factor>
-   </pitch>
-   <reference-dist>60.0</reference-dist>
-   <max-dist>2000.0</max-dist>
-  </fuel-pump>
      
   <wind>
    <name>wind</name>
