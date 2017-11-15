@@ -61,6 +61,9 @@ setlistener("/sim/signals/fdm-initialized", func {
 
 var saveSettings = func {
 	aircraft.data.add("/options/panel","/options/autocoordinate","/options/slave-rudder");
+aircraft.data.add("/instrumentation/nav/radials/selected-deg");
+
+
 	aircraft.data.save();
 }
 

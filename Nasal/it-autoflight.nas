@@ -1,10 +1,9 @@
-# IT AUTOFLIGHT:GA System Controller V1.1.0
-# (c) 2017 Joshua Davidson (it0uchpods)
+# IT AUTOFLIGHT:GA System Controller
+# Joshua Davidson (it0uchpods)
+# V1.0.2 Stable
 # This program is 100% GPL!
 
 setprop("/it-autoflight/internal/vert-speed-fpm", 0);
-setprop("/it-autoflight/internal/heading-5-sec-ahead", 0);
-setprop("/it-autoflight/internal/altitude-5-sec-ahead", 0);
 
 setlistener("/sim/signals/fdm-initialized", func {
 	var locdefl = getprop("/instrumentation/nav[0]/heading-needle-deflection-norm");
@@ -112,21 +111,20 @@ var lateral = func {
 		if (getprop("/autopilot/settings/gps-driving-true-heading") == 0) {
 			setprop("/it-autoflight/settings/slave-gps-nav", 0);
 		}
-		if (getprop("/instrumentation/nav[0]/in-range") == 1) {
-			if (getprop("/it-autoflight/output/lat") != 2) {
-				setprop("/it-autoflight/output/nav-armed", 1);
-				setprop("/it-autoflight/mode/arm", "V/L");
-			}
+		if (getprop("/it-autoflight/output/lat") == 2) {
+			# Do nothing because VOR/LOC is active
 		} else {
 			setprop("/instrumentation/nav[0]/signal-quality-norm", 0);
 			setprop("/instrumentation/nav[1]/signal-quality-norm", 0);
+			setprop("/it-autoflight/output/nav-armed", 1);
+			setprop("/it-autoflight/mode/arm", "V/L");
 		}
 	} else if (latset == 3) {
 		setprop("/it-autoflight/output/nav-armed", 0);
 		setprop("/it-autoflight/output/loc-armed", 0);
 		setprop("/it-autoflight/output/appr-armed", 0);
-		var hdg5sec = int(getprop("/it-autoflight/internal/heading-5-sec-ahead")+0.5);
-		setprop("/it-autoflight/input/hdg", hdg5sec);
+		var hdgnow = int(getprop("/orientation/heading-magnetic-deg")+0.5);
+		setprop("/it-autoflight/input/hdg", hdgnow);
 		setprop("/it-autoflight/output/lat", 0);
 		setprop("/it-autoflight/mode/lat", "HDG");
 		setprop("/it-autoflight/mode/arm", " ");
@@ -155,9 +153,9 @@ var vertical = func {
 		} else {
 			setprop("/it-autoflight/mode/arm", " ");
 		}
-		var alt5sec = math.round(getprop("/it-autoflight/internal/altitude-5-sec-ahead"), 500);
-		setprop("/it-autoflight/input/alt", alt5sec);
-		setprop("/it-autoflight/internal/alt", alt5sec);
+		var altnow = int((getprop("/instrumentation/altimeter/indicated-altitude-ft")+50)/100)*100;
+		setprop("/it-autoflight/input/alt", altnow);
+		setprop("/it-autoflight/internal/alt", altnow);
 	} else if (vertset == 1) {
 		var altinput = getprop("/it-autoflight/input/alt");
 		setprop("/it-autoflight/internal/alt", altinput);
@@ -181,20 +179,22 @@ var vertical = func {
 			}
 		}
 	} else if (vertset == 2) {
-		if (getprop("/instrumentation/nav[0]/in-range") == 1) {
-			if (getprop("/it-autoflight/output/lat") != 2) {
-				setprop("/it-autoflight/output/nav-armed", 0);
-				setprop("/it-autoflight/output/loc-armed", 1);
-			}
-			if (getprop("/it-autoflight/output/vert") != 2 and getprop("/it-autoflight/output/appr-armed") != 1) {
-				setprop("/it-autoflight/output/appr-armed", 1);
-				setprop("/it-autoflight/mode/arm", "ILS");
-			}
+		if (getprop("/it-autoflight/output/lat") == 2) {
+			# Do nothing because VOR/LOC is active
 		} else {
+			setprop("/it-autoflight/output/nav-armed", 0);
 			setprop("/instrumentation/nav[0]/signal-quality-norm", 0);
 			setprop("/instrumentation/nav[1]/signal-quality-norm", 0);
+			setprop("/it-autoflight/output/loc-armed", 1);
+		}
+		if (getprop("/it-autoflight/output/vert") == 2 or getprop("/it-autoflight/output/appr-armed") == 1) {
+			# Do nothing because G/S is active
+		} else {
 			setprop("/instrumentation/nav[0]/gs-rate-of-climb", 0);
 			setprop("/instrumentation/nav[1]/gs-rate-of-climb", 0);
+			setprop("/it-autoflight/output/appr-armed", 1);
+			setprop("/it-autoflight/mode/arm", "ILS");
+			setprop("/it-autoflight/autoland/target-vs", "-650");
 		}
 	} else if (vertset == 3) {
 		var calt = getprop("/instrumentation/altimeter/indicated-altitude-ft");
@@ -214,26 +214,8 @@ var vertical = func {
 
 # Helpers
 var ap_various = func {
-	# Calculate Roll and Pitch Kp
-	rollKp = getprop("/it-autoflight/config/roll/kp-low") + (getprop("/velocities/mach") - 0.02) * ((getprop("/it-autoflight/config/roll/kp-high") - getprop("/it-autoflight/config/roll/kp-low")) / (0.40 - 0.02));
-	pitchKp = getprop("/it-autoflight/config/pitch/kp-low") + (getprop("/velocities/mach") - 0.02) * ((getprop("/it-autoflight/config/pitch/kp-high") - getprop("/it-autoflight/config/pitch/kp-low")) / (0.40 - 0.02));
-	
-	if (getprop("/it-autoflight/config/roll/kp-low") > getprop("/it-autoflight/config/roll/kp-high")) {
-		rollKp = math.clamp(rollKp, getprop("/it-autoflight/config/roll/kp-high"), getprop("/it-autoflight/config/roll/kp-low"));
-	} else if (getprop("/it-autoflight/config/roll/kp-low") < getprop("/it-autoflight/config/roll/kp-high")) {
-		rollKp = math.clamp(rollKp, getprop("/it-autoflight/config/roll/kp-low"), getprop("/it-autoflight/config/roll/kp-high"));
-	}
-	if (getprop("/it-autoflight/config/pitch/kp-low") > getprop("/it-autoflight/config/pitch/kp-high")) {
-		pitchKp = math.clamp(pitchKp, getprop("/it-autoflight/config/pitch/kp-high"), getprop("/it-autoflight/config/pitch/kp-low"));
-	} else if (getprop("/it-autoflight/config/pitch/kp-low") < getprop("/it-autoflight/config/pitch/kp-high")) {
-		pitchKp = math.clamp(pitchKp, getprop("/it-autoflight/config/pitch/kp-low"), getprop("/it-autoflight/config/pitch/kp-high"));
-	}
-	
-	setprop("/it-autoflight/config/roll/kp", rollKp);
-	setprop("/it-autoflight/config/pitch/kp", pitchKp);
-	
 	if (getprop("/autopilot/route-manager/route/num") > 0 and getprop("/autopilot/route-manager/active") == 1) {
-		if (getprop("/autopilot/route-manager/wp/dist") <= 0.5) {
+		if (getprop("/autopilot/route-manager/wp/dist") <= 1.0) {
 			if ((getprop("/autopilot/route-manager/current-wp") + 1) < getprop("/autopilot/route-manager/route/num")) {
 				setprop("/autopilot/route-manager/current-wp", getprop("/autopilot/route-manager/current-wp") + 1);
 			}
@@ -371,50 +353,39 @@ var check_arms = func {
 var update_arms = func {
 	if (getprop("/it-autoflight/output/nav-armed")) {
 		if (getprop("/it-autoflight/settings/slave-gps-nav") == 0) {
-			if (getprop("/instrumentation/nav[0]/signal-quality-norm") > 0.99 and getprop("/instrumentation/nav[0]/in-range") == 1 and getprop("/it-autoflight/settings/use-nav2-radio") == 0) {
+			if ((getprop("/instrumentation/nav[0]/signal-quality-norm") > 0.99) and (getprop("/it-autoflight/settings/use-nav2-radio") == 0)) {
 				make_loc_active();
-			} else if (getprop("/instrumentation/nav[1]/signal-quality-norm") > 0.99 and getprop("/instrumentation/nav[1]/in-range") == 1 and getprop("/it-autoflight/settings/use-nav2-radio") == 1) {
+			} else if ((getprop("/instrumentation/nav[1]/signal-quality-norm") > 0.99) and (getprop("/it-autoflight/settings/use-nav2-radio") == 1)) {
 				make_loc_active();
 			} else {
 				return 0;
 			}
 		} else {
-			make_loc_active();
+			if (getprop("/autopilot/route-manager/active") == 1) {
+				make_loc_active();
+			}
 		}
 	}
-	if (getprop("/instrumentation/nav[0]/in-range") == 1 and getprop("/it-autoflight/settings/use-nav2-radio") == 0) {
-		if (getprop("/it-autoflight/output/loc-armed")) {
-			locdefl = abs(getprop("/instrumentation/nav[0]/heading-needle-deflection-norm"));
-			if (locdefl < 0.95 and locdefl != 0 and getprop("/instrumentation/nav[0]/signal-quality-norm") > 0.99) {
-				make_loc_active();
-			} else {
-				return 0;
-			}
+	if (getprop("/it-autoflight/output/loc-armed")) {
+		locdefl = getprop("/instrumentation/nav[0]/heading-needle-deflection-norm");
+		locdefl_b = getprop("/instrumentation/nav[1]/heading-needle-deflection-norm");
+		if ((locdefl < 0.9233) and (getprop("/instrumentation/nav[0]/signal-quality-norm") > 0.99) and (getprop("/it-autoflight/settings/use-nav2-radio") == 0)) {
+			make_loc_active();
+		} else if ((locdefl_b < 0.9233) and (getprop("/instrumentation/nav[1]/signal-quality-norm") > 0.99) and (getprop("/it-autoflight/settings/use-nav2-radio") == 1)) {
+			make_loc_active();
+		} else {
+			return 0;
 		}
-		if (getprop("/it-autoflight/output/appr-armed")) {
-			signal = getprop("/instrumentation/nav[0]/gs-needle-deflection-norm");
-			if (((signal < 0 and signal >= -0.20) or (signal > 0 and signal <= 0.20)) and getprop("/it-autoflight/output/lat") == 2) {
-				make_appr_active();
-			} else {
-				return 0;
-			}
-		}
-	} else if (getprop("/instrumentation/nav[1]/in-range") == 1 and getprop("/it-autoflight/settings/use-nav2-radio") == 1) {
-		if (getprop("/it-autoflight/output/loc-armed")) {
-			locdefl_b = abs(getprop("/instrumentation/nav[1]/heading-needle-deflection-norm"));
-			if (locdefl_b < 0.95 and locdefl_b != 0 and getprop("/instrumentation/nav[1]/signal-quality-norm") > 0.99) {
-				make_loc_active();
-			} else {
-				return 0;
-			}
-		}
-		if (getprop("/it-autoflight/output/appr-armed")) {
-			signal_b = getprop("/instrumentation/nav[1]/gs-needle-deflection-norm");
-			if (((signal_b < 0 and signal_b >= -0.20) or (signal_b > 0 and signal_b <= 0.20)) and getprop("/it-autoflight/output/lat") == 2) {
-				make_appr_active();
-			} else {
-				return 0;
-			}
+	}
+	if (getprop("/it-autoflight/output/appr-armed")) {
+		signal = getprop("/instrumentation/nav[0]/gs-needle-deflection-norm");
+		signal_b = getprop("/instrumentation/nav[1]/gs-needle-deflection-norm");
+		if (((signal < 0 and signal >= -0.30) or (signal > 0 and signal <= 0.30)) and (getprop("/it-autoflight/settings/use-nav2-radio") == 0) and (getprop("/it-autoflight/output/lat") == 2)) {
+			make_appr_active();
+		} else if (((signal_b < 0 and signal_b >= -0.30) or (signal_b > 0 and signal_b <= 0.30)) and (getprop("/it-autoflight/settings/use-nav2-radio") == 1) and (getprop("/it-autoflight/output/lat") == 2)) {
+			make_appr_active();
+		} else {
+			return 0;
 		}
 	}
 }
