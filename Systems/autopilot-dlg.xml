@@ -13,7 +13,7 @@
         <layout>hbox</layout>
         <text>
             <halign>left</halign>
-            <label>IT-AUTOFLIGHT System</label>
+            <label>IT-AUTOFLIGHT System (V1.1.X)</label>
         </text>
         <button>
             <halign>right</halign>
