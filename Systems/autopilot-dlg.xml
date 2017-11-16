@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <!-- IT-AUTOFLIGHT Autopilot Control Dialog -->
-
+<!-- Copyright (c) 2017 Joshua Davidson (it0uchpods) -->
 
 <PropertyList>
 
@@ -362,7 +362,7 @@
 			<layout>hbox</layout>
 
 			<checkbox>
-				<label>True HDG</label>
+				<label>Track</label>
 				<property>/it-autoflight/input/trk</property>
 				<binding>
 					<command>dialog-apply</command>

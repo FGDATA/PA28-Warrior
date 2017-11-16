@@ -1,7 +1,7 @@
 # KAP140 Autopilot System
 # IT-AUTOFLIGHT:GA System
 # Tries to make ITAF:GA behave like Bendex-King KAP140 Two-Axis with Altitude Preselect
-# Joshua Davidson (it0uchpods)
+# Copyright (c) 2017 Joshua Davidson (it0uchpods)
 
 ########
 # Init #
