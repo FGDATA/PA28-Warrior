@@ -48,6 +48,8 @@ var master_fuel = func {
 setlistener("/systems/fuel/low-fuel", func {
 	if (getprop("/systems/fuel/low-fuel") == 1) {
 		gui.popupTip("WARNING: LOW FUEL!!(Squawk: 7700)",4);
+		setprop("/instrumentation/transponder/id-code", 7700);
+
 	}
 });
 
