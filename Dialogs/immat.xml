@@ -1,8 +1,8 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
 
 <PropertyList>
 
-  <name>A/C Registration</name>
+  <name>Immatriculation</name>
   <layout>vbox</layout>
   <modal>false</modal>
   <draggable>true</draggable>
@@ -10,14 +10,14 @@
   <group>
     <layout>hbox</layout>
     <text>
-      <label>Registration</label>
+      <label>Immatriculation</label>
     </text>
   </group>
 
   <group>
     <layout>hbox</layout>
     <input>
-      <property>/sim/multiplay/generic/string[0]</property>
+      <property>/sim/model/immat</property>
       <type>STRING</type>
       <width>100</width>
     </input>

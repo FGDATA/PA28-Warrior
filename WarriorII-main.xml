@@ -72,6 +72,15 @@
 						</binding>
 					</item>
 					<item>
+        <label>Set Call-Sign</label>        
+        <binding>
+          <command>nasal</command>
+          <script>Pa28-Warrior.immat_dialog.toggle()</script>
+        </binding>
+
+      </item>
+
+					<item>
 						<label>About This Aircraft</label>
 						<binding>
 							<command>nasal</command>
@@ -98,6 +107,14 @@
 							<path>Aircraft/PA28-Warrior/Docs/Fuel.pdf</path>
 						</binding>
 					</item>	
+					<item>
+						<label>Wind Simulations</label>
+						<binding>
+				<command>dialog-show</command>
+				<dialog-name>windsim</dialog-name>
+			</binding>
+					</item>	
+	
 					<item>
 						<label>Fundamentals</label>
 						<binding>
@@ -473,6 +490,8 @@
 	<nasal n="0">
 		<libraries>
 			<file>Aircraft/PA28-Warrior/Nasal/libraries.nas</file>
+			<file>Aircraft/PA28-Warrior/Nasal/immat.nas</file>
+
 			<file>Aircraft/PA28-Warrior/Models/Instruments/elt/ELTmessage.nas</file>
 			<file>Aircraft/PA28-Warrior/Nasal/kr87.nas</file>
 			<file>Aircraft/PA28-Warrior/Nasal/ki266.nas</file>

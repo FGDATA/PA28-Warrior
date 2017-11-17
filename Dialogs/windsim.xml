@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+ <!-- Control the weather -->
+
+ <name>winds</name>
+ <width>400</width>
+ <height>210</height>
+ <modal>false</modal>
+
+ <text>
+  <x>10</x>
+  <y>180</y>
+  <label>Environment: Winds</label>
+ </text>
+
+ <input>
+  <x>10</x>
+  <y>140</y>
+  <width>5</width>
+  <height>25</height>
+  <label>Wind direction (deg)</label>
+  <property>/environment/metar/wind-from-heading-deg</property>
+ </input>
+
+ <input>
+  <x>10</x>
+  <y>110</y>
+  <width>3</width>
+  <height>25</height>
+  <label>base wind speed (kt)</label>
+  <property>/environment/metar/wind-speed-kt</property>
+
+ </input>
+
+
+ <button>
+  <x>5</x>
+  <y>10</y>
+  <legend>OK</legend>
+  <default>true</default>
+  <equal>true</equal>
+  <binding>
+   <command>dialog-apply</command>
+  </binding>
+  <binding>
+   <command>dialog-close</command>
+  </binding>
+ </button>
+
+
+
+ <button>
+  <x>105</x>
+  <y>10</y>
+  <legend>Apply</legend>
+  <equal>true</equal>
+  <binding>
+   <command>dialog-apply</command>
+  </binding>
+ </button>
+
+ <button>
+  <x>205</x>
+  <y>10</y>
+  <legend>Reset</legend>
+  <equal>true</equal>
+  <binding>
+   <command>dialog-update</command>
+  </binding>
+ </button>
+
+ <button>
+  <x>305</x>
+  <y>10</y>
+  <legend>Cancel</legend>
+  <equal>true</equal>
+  <key>Esc</key>
+  <binding>
+   <command>dialog-close</command>
+  </binding>
+ </button>
+
+</PropertyList>
