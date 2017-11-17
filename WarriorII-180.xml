@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 
-<!-- (c) Joshua Davidson (it0uchpods) -->
+<!-- (c) 2017 Joshua Davidson (it0uchpods) -->
 
 <?xml-stylesheet href="JSBSim.xsl" type="application/xml"?>
 <fdm_config name="PA28-161" version="2.0" release="BETA"

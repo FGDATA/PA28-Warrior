@@ -1,4 +1,4 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 
 <PropertyList>
 
@@ -16,6 +16,15 @@
 				<dialog-name>route-manager</dialog-name>
 			</binding>
      </action>
+
+
+      <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <tooltip-id>rm</tooltip-id>
+                <label>Open Route Manager</label>
+            </binding>
+        </hovered>
   </animation>
 
 </PropertyList>

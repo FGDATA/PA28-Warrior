@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 
-<!-- (c) Joshua Davidson (it0uchpods) -->
+<!-- (c) 2017 Joshua Davidson (it0uchpods) -->
 
 <PropertyList>
 
@@ -72,6 +72,15 @@
 						</binding>
 					</item>
 					<item>
+        <label>Set Call-Sign</label>        
+        <binding>
+          <command>nasal</command>
+          <script>Pa28-Warrior.immat_dialog.toggle()</script>
+        </binding>
+
+      </item>
+
+					<item>
 						<label>About This Aircraft</label>
 						<binding>
 							<command>nasal</command>
@@ -91,6 +100,21 @@
 							<path>Aircraft/PA28-Warrior/Docs/FGN_Cockpit.pdf</path>
 						</binding>
 					</item>
+					<item>
+						<label>Fuel Mgmt</label>
+						<binding>
+							<command>open-browser</command>
+							<path>Aircraft/PA28-Warrior/Docs/Fuel.pdf</path>
+						</binding>
+					</item>	
+					<item>
+						<label>Wind Simulations</label>
+						<binding>
+				<command>dialog-show</command>
+				<dialog-name>windsim</dialog-name>
+			</binding>
+					</item>	
+	
 					<item>
 						<label>Fundamentals</label>
 						<binding>
@@ -134,7 +158,7 @@
 		</menubar>
 
 		<sound>
-			<path archive="y">Aircraft/PA28-Warrior/sound.xml</path>
+			<path>Aircraft/PA28-Warrior/Nsound.xml</path>
 		</sound>
 
 		<view n="0">
@@ -266,6 +290,7 @@
 			<path>instrumentation/nav[1]/radials/selected-deg</path>
 			<path>instrumentation/dme/frequencies/selected-mhz</path>
 			<path>instrumentation/dme/switch-min-kts</path>
+			<path>instrumentation/hobbs-meter/seconds</path>
 			<path>instrumentation/adf/model</path>
 			<path>instrumentation/adf/rotation-deg</path>
 			<path>instrumentation/adf/frequencies</path>
@@ -391,25 +416,40 @@
 			<switch-position type="int">1</switch-position>
 			<volume type="double">0</volume>
 		</dme>
+		<kma20>
+			<!-- -1: COM1, 0: COM2, 1: EXT -->
+			<knob type="int" archive="y">-1</knob>
+
+			<!-- -1: SPEAKER, 0: OFF, 1: PHONE -->
+			<auto type="int" archive="y">1</auto>
+			<com1 type="int" archive="y">0</com1>
+			<com2 type="int" archive="y">0</com2>
+			<nav1 type="int" archive="y">0</nav1>
+			<nav2 type="int" archive="y">0</nav2>
+			<adf  type="int" archive="y">0</adf>
+			<dme  type="int" archive="y">0</dme>
+			<mkr  type="int" archive="y">-1</mkr>
+			<sens type="int" archive="y">0</sens>
+
+			<!-- flag for marker lights test -->
+			<test type="int" archive="y">0</test>
+		</kma20>
+
 	</instrumentation>
 	
 	<it-autoflight>
 		<config>
 			<roll>
-				<umin>-0.40</umin>
-				<umax>0.40</umax>
-				<kp>0.05</kp>
-				<kp-vloc>0.06</kp-vloc>
-				<ti>10.0</ti>
-				<td>0.00001</td>
-				<pfactor-offset>0.05</pfactor-offset>
+				<kp-low>0.10</kp-low> <!-- Kp at low speed -->
+				<kp-high>0.07</kp-high> <!-- Kp at high speed -->
+				<ti>1.0</ti>
+				<td>0.0001</td>
 			</roll>
 			<pitch>
-				<umin>-0.30</umin>
-				<umax>0.30</umax>
-				<kp>-0.06</kp>
-				<ti>10.0</ti>
-				<td>0.0001</td>
+				<kp-low>-0.15</kp-low> <!-- Kp at low speed -->
+				<kp-high>-0.13</kp-high> <!-- Kp at high speed -->
+				<ti>0.5</ti>
+				<td>0.001</td>
 			</pitch>
 			<cmd>
 				<roll-kp>-1.4</roll-kp>
@@ -450,11 +490,16 @@
 	<nasal n="0">
 		<libraries>
 			<file>Aircraft/PA28-Warrior/Nasal/libraries.nas</file>
+			<file>Aircraft/PA28-Warrior/Nasal/immat.nas</file>
+
 			<file>Aircraft/PA28-Warrior/Models/Instruments/elt/ELTmessage.nas</file>
 			<file>Aircraft/PA28-Warrior/Nasal/kr87.nas</file>
 			<file>Aircraft/PA28-Warrior/Nasal/ki266.nas</file>
+			<file>Aircraft/PA28-Warrior/Models/instruments/KLN90B/kln90b.nas</file>
+
 			<file>Aircraft/PA28-Warrior/Nasal/kcs55.nas</file>
 			<file>Aircraft/PA28-Warrior/Nasal/kma20.nas</file>
+
 			<script>
 			<![CDATA[ki266.new(0);
 			KCS55.new();]]>

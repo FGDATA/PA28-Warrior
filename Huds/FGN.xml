@@ -189,11 +189,25 @@
 		<x>-420</x>
 		<y>-220</y>
 		<halign>left</halign>
-		<format>Fuel-L: %2.1f lbs</format>
+		<format>Fuel-L: %2.1f gls</format>
 		<input>
-			<property>/consumables/fuel/tank/level-lbs</property>
+			<property>/consumables/fuel/tank/level-gal_us</property>
 		</input>
 	</label>
+
+<label>
+		<name>FFlow</name>
+		<width>2</width>
+		<height>2</height>
+		<x>-420</x>
+		<y>-230</y>
+		<halign>left</halign>
+		<format>FFlow: %2.1f gph</format>
+		<input>
+			<property>/engines/engine/fuel-flow-gph</property>
+		</input>
+	</label>
+
 
   <label>
 		<name>FuelR</name>
@@ -202,9 +216,9 @@
 		<x>-330</x>
 		<y>-220</y>
 		<halign>left</halign>
-		<format>Fuel-R: %2.1f lbs</format>
+		<format>Fuel-R: %2.1f gls</format>
 		<input>
-			<property>/consumables/fuel/tank[1]/level-lbs</property>
+			<property>/consumables/fuel/tank[1]/level-gal_us</property>
 		</input>
 	</label>
 

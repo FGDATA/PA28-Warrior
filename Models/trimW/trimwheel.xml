@@ -1,7 +1,7 @@
 <?xml version="1.0" ?> 
   <PropertyList> 
     <path>trimwheel.ac</path> 
-	 <animation>
+		 <animation>
   <type>scale</type>
   <x-offset>0.27</x-offset>
   <y-offset>0.27</y-offset>
@@ -22,7 +22,48 @@
         <x-m>-0.04</x-m>
         <y-m>0.0</y-m>
         <z-m>0.0</z-m>
-      </center>    
-  </animation>
-  
+      </center>
+    </animation>  
+
+ 
+<animation>
+		<type>pick</type>
+		<object-name>TrimWheel</object-name>
+		<action>
+			<button>1</button>
+			<button>3</button>
+			<repeatable type="bool">false</repeatable>
+			<binding>
+				<command>property-adjust</command>
+				<property>controls/flight/elevator-trim</property>
+				<step>0.01</step>
+				<min>-1</min>
+				<max>1</max>
+				<wrap>false</wrap>
+			</binding>
+		</action>
+		<action>
+			<button>0</button>
+			<button>4</button>
+			<repeatable type="bool">false</repeatable>
+			<binding>
+				<command>property-adjust</command>
+				<property>controls/flight/elevator-trim</property>
+				<step>-0.01</step>
+				<min>-1</min>
+				<max>1</max>
+				<wrap>false</wrap>
+			</binding>
+		</action>
+<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>eltrim</tooltip-id>
+				<label>Elevator Trim</label>
+			</binding>
+		</hovered>
+
+	</animation>
+
 </PropertyList>
+

@@ -1,22 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <!-- IT-AUTOFLIGHT Autopilot Control Dialog -->
-
+<!-- Copyright (c) 2017 Joshua Davidson (it0uchpods) -->
 
 <PropertyList>
 
 	<name>autopilot</name>
 	<layout>vbox</layout>
     <pref-width>260</pref-width>
-	<modal>false</modal>
-	<x>-5</x>
-	<y>5</y>
 
     <group>
         <layout>hbox</layout>
         <text>
             <halign>left</halign>
-            <label>IT-AUTOFLIGHT System</label>
+            <label>IT-AUTOFLIGHT System (V1.1.X)</label>
         </text>
         <button>
             <halign>right</halign>
@@ -365,8 +362,16 @@
 			<layout>hbox</layout>
 
 			<checkbox>
-				<label>True HDG</label>
+				<label>Track</label>
 				<property>/it-autoflight/input/trk</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
+			<checkbox>
+				<label>True</label>
+				<property>/it-autoflight/input/true-course</property>
 				<binding>
 					<command>dialog-apply</command>
 				</binding>

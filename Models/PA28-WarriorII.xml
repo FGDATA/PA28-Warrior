@@ -139,15 +139,6 @@
 		</offsets>
 	</model>
  
- <!--model>
-  <name>fflow</name>
-  <path>Aircraft/PA28-Warrior/models/fuelGPH.xml</path>
-  <offsets>
-   <x-m>1.925</x-m>
-   <y-m>-0.074</y-m>
-   <z-m>0.013</z-m>
-  </offsets>
- </model-->
 
  <model>
   <path>Aircraft/PA28-Warrior/Models/StrobeLight.xml</path>
@@ -201,6 +192,7 @@
   </offsets>
  </model>
 
+
 <model>
 	<name>GPS</name>
 	<path>Aircraft/PA28-Warrior/Models/Instruments/KLN90B/kln90b.xml</path>
@@ -210,6 +202,7 @@
 	<z-m>0.021</z-m>
 	</offsets>
 </model>
+
  
  <model>
   <name>ccard</name>
@@ -245,6 +238,17 @@
    <z-m>0.178</z-m>
   </offsets>
  </model>
+
+ <model>
+  <name>warn_stall</name>
+  <path>Aircraft/PA28-Warrior/Models/stall_warning.xml</path>
+  <offsets>
+    <x-m>1.918</x-m>
+    <y-m>0.018</y-m>
+    <z-m>0.219</z-m>
+
+  </offsets>
+</model>
  
  <model>
   <name>cod</name>
@@ -255,7 +259,34 @@
    <z-m>0.100</z-m>
   </offsets>
  </model>
- 
+
+ <model>
+  <name>vac</name>
+  <path>Aircraft/PA28-Warrior/Models/instruments/man/man.xml</path>
+  <offsets>
+   <x-m>1.930</x-m>
+   <y-m>0.437</y-m>
+   <z-m>0.237</z-m>
+<yaw-deg>-3</yaw-deg>
+
+  </offsets>
+ </model>
+
+
+<model>
+  <name>charts</name>
+  <path>Aircraft/PA28-Warrior/Models/charts/charts.xml</path>
+  <offsets>
+    <x-m>1.880</x-m>
+   <y-m>0.310</y-m>
+   <z-m>0.0720</z-m>
+<pitch-deg>45</pitch-deg>	
+<yaw-deg>130</yaw-deg>
+<roll-deg>-3</roll-deg>		
+  </offsets>
+ </model>
+
+
   <model>
   <name>ASI</name>
   <path>Aircraft/PA28-Warrior/Models/asi/asi.xml</path>
@@ -299,6 +330,17 @@
 			<z-m>0.331</z-m>
 		</offsets>
 	</model>
+
+	<model>
+		<path>Aircraft/PA28-Warrior/Models/instruments/OoF/ControlLight.xml</path>
+		<name>ngas</name>
+		<offsets>
+			<x-m>1.93</x-m>
+			<y-m>-0.164</y-m>
+			<z-m>0.331</z-m>
+		</offsets>
+	</model>
+
 
 
 
@@ -349,13 +391,31 @@
 		</offsets>
 	</model>
 
+<model>
+		<name>fti</name>
+		<path>Aircraft/PA28-Warrior/Models/fti/FlapTrimIndicator.xml</path>
+		<condition>
+			<equals>
+				<property>options/panel</property>
+				<value>HSI Panel</value>
+			</equals>
+		</condition>
+		<offsets>
+			<x-m>1.927</x-m>
+			<y-m>-0.029</y-m>
+			<z-m>0.271</z-m>
+		</offsets>
+	</model>
+
+
+
  <model>
   <name>trimw</name>
   <path>Aircraft/PA28-Warrior/models/trimw/trimwheel.xml</path>
   <offsets>
    <x-m>1.925</x-m>
    <y-m>0.023</y-m>
-   <z-m>0.271</z-m>
+   <z-m>0.279</z-m>
    <yaw-deg>30</yaw-deg>
 
   </offsets>
@@ -581,15 +641,6 @@
   </offsets>
  </model>
 
- <model>
-  <name>VAC</name>
-  <path>Aircraft/Instruments-3d/vac/vac.xml</path>
-  <offsets>
-   <x-m>1.925</x-m>
-   <y-m>0.437</y-m>
-   <z-m>0.237</z-m>
-  </offsets>
- </model>
 
  <model>
   <name>mags</name>

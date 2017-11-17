@@ -1,14 +1,16 @@
 # KAP140 Autopilot System
 # IT-AUTOFLIGHT:GA System
 # Tries to make ITAF:GA behave like Bendex-King KAP140 Two-Axis with Altitude Preselect
-# Joshua Davidson (it0uchpods)
+# Copyright (c) 2017 Joshua Davidson (it0uchpods)
 
 ########
 # Init #
 ########
 
+setprop("/it-autoflight/kap140/vs-time", 0);
+
 setlistener("/sim/signals/fdm-initialized", func {
-	trimLightTimer.start();
+	kapVariousTimer.start();
 });
 
 #####################
@@ -61,7 +63,7 @@ var btnALT = func {
 var btnAPR = func {
 	var lat = getprop("/it-autoflight/output/lat");
 	var vert = getprop("/it-autoflight/output/vert");
-	if ((lat == 0 or lat == 1) and (vert == 0 or vert == 1) and (getprop("/it-autoflight/output/appr-armed")) == 0) {
+	if ((vert == 0 or vert == 1) and (getprop("/it-autoflight/output/appr-armed")) == 0) {
 		setprop("/it-autoflight/input/vert", 2);
 	} else if ((lat == 0 or lat == 1) and (vert == 0 or vert == 1) and (getprop("/it-autoflight/output/appr-armed")) == 1) {
 		setprop("/it-autoflight/input/lat", lat);
@@ -78,18 +80,9 @@ var btnDown = func {
 		if (getprop("/it-autoflight/output/vert") != 1) {
 			setprop("/it-autoflight/input/vert", 1);
 		}
+		setprop("/it-autoflight/kap140/vs-time", getprop("/sim/time/elapsed-sec"));
 		setprop("/it-autoflight/input/vs", getprop("/it-autoflight/input/vs") - 100);
 		setprop("/it-autoflight/kap140/display-mode", "VS");
-		var vsnow = getprop("/it-autoflight/input/vs");
-		settimer(func {
-			var vsnew = getprop("/it-autoflight/input/vs");
-			var dispmode = getprop("/it-autoflight/kap140/display-mode");
-			if (vsnow == vsnew and dispmode == "VS") {
-				settimer(func {
-					setprop("/it-autoflight/kap140/display-mode", "ALT");
-				}, 3);
-			}
-		}, 1);
 	}
 }
 
@@ -98,18 +91,9 @@ var btnUp = func {
 		if (getprop("/it-autoflight/output/vert") != 1) {
 			setprop("/it-autoflight/input/vert", 1);
 		}
+		setprop("/it-autoflight/kap140/vs-time", getprop("/sim/time/elapsed-sec"));
 		setprop("/it-autoflight/input/vs", getprop("/it-autoflight/input/vs") + 100);
 		setprop("/it-autoflight/kap140/display-mode", "VS");
-		var vsnow = getprop("/it-autoflight/input/vs");
-		settimer(func {
-			var vsnew = getprop("/it-autoflight/input/vs");
-			var dispmode = getprop("/it-autoflight/kap140/display-mode");
-			if (vsnow == vsnew and dispmode == "VS") {
-				settimer(func {
-					setprop("/it-autoflight/kap140/display-mode", "ALT");
-				}, 3);
-			}
-		}, 1);
 	}
 }
 
@@ -151,6 +135,11 @@ var btnAP = func {
 		apLightTimer.start();
 	} else {
 		setprop("/it-autoflight/input/ap", 1);
+		if (getprop("/it-autoflight/input/vs") >= 1000) {
+			setprop("/it-autoflight/input/vs", 1000);
+		} else if (getprop("/it-autoflight/input/vs") <= -1000) {
+			setprop("/it-autoflight/input/vs", -1000);
+		}
 		apLightTimer.stop();
 		setprop("/it-autoflight/kap140/ap", 0);
 	}
@@ -160,7 +149,7 @@ var btnAP = func {
 # Lights #
 ##########
 
-var trimLight = func {
+var kapVarious = func {
 	var status = getprop("/it-autoflight/kap140/pt");
 	if (status == 0) {
 		if (getprop("/it-autoflight/internal/elevator-cmd") >= 0.01 or getprop("/it-autoflight/internal/elevator-cmd") <= -0.01) {
@@ -168,6 +157,12 @@ var trimLight = func {
 		}
 	} else if (status == 1) {
 		setprop("/it-autoflight/kap140/pt", "0");
+	}
+	var time = getprop("/sim/time/elapsed-sec");
+	if (getprop("/it-autoflight/kap140/vs-time") + 3 >= time) {
+		setprop("/it-autoflight/kap140/display-mode", "VS");
+	} else {
+		setprop("/it-autoflight/kap140/display-mode", "ALT");
 	}
 }
 
@@ -185,5 +180,5 @@ var apLight = func {
 # Timers #
 ##########
 
-var trimLightTimer = maketimer(0.5, trimLight);
+var kapVariousTimer = maketimer(0.5, kapVarious);
 var apLightTimer = maketimer(0.5, apLight);

@@ -22,28 +22,6 @@
     <!-- Objets transparents -->
   </animation>
 
-<animation>
-    <type>pick</type>
-    <type>material</type>
-     <object-name>micro</object-name>
-   <action>
-      <button>0</button>
-      <repeatable>false</repeatable>
-      <binding>
-        <command>property-cycle</command>
-        <property>sim/sound/volume</property>
-        <value>0.8</value>
-        <value>0</value>
-      </binding>
-       </action>
-      <hovered>
-            <binding>
-                <command>set-tooltip</command>
-                <tooltip-id>Tooglemute</tooltip-id>
-                <label>Toggle Sound</label>
-            </binding>
-        </hovered>
-  </animation>
 
 
   <animation>
