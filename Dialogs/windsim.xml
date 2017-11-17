@@ -70,6 +70,8 @@
         <binding><command>property-adjust</command>
           <property>/environment/metar/base-wind-dir-deg</property>
           <step type="double">-1</step>
+		<min>1</min>
+        <max>360</max>
         </binding>
         <binding>
           <command>dialog-update</command>
@@ -122,6 +124,8 @@
           <command>property-adjust</command>
           <property>/environment/metar/base-wind-dir-deg</property>
           <step type="double">1</step>
+		<min>1</min>
+        <max>360</max>
         </binding>
         <binding>
           <command>dialog-update</command>
@@ -151,6 +155,8 @@
           <command>property-adjust</command>
           <property>/environment/metar/base-wind-speed-kt</property>
           <step type="double">-1</step>
+		<min>0</min>
+        	<max>40</max>
         </binding>
         <binding>
           <command>dialog-update</command>
@@ -166,6 +172,8 @@
           <command>property-adjust</command>
           <property>/environment/metar/base-wind-speed-kt</property>
           <step type="double">-10</step>
+		<min>0</min>
+        	<max>40</max>
         </binding>
         <binding>
           <command>dialog-update</command>
@@ -200,6 +208,8 @@
           <command>property-adjust</command>
           <property>/environment/metar/base-wind-speed-kt</property>
           <step type="double">10</step>
+		<min>0</min>
+        	<max>40</max>
         </binding>
         <binding>
           <command>dialog-update</command>
@@ -217,6 +227,8 @@
           <command>property-adjust</command>
           <property>/environment/metar/base-wind-speed-kt</property>
           <step type="double">1</step>
+		<min>0</min>
+        <max>40</max>
         </binding>
         <binding>
           <command>dialog-update</command>
