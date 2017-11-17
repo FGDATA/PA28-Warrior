@@ -1,85 +1,351 @@
 <?xml version="1.0"?>
-
 <PropertyList>
+  <name>windsim</name>
+  <modal>false</modal>
+  <layout>vbox</layout>
 
- <!-- Control the weather -->
+  <nasal>
+    <open><![CDATA[
+      var update = func(){
+        setprop("/environment/metar/base-wind-dir-deg", int(getprop("/environment/metar/base-wind-dir-deg")));
+        setprop("/environment/metar/base-wind-speed-kt", int(getprop("/environment/metar/base-wind-speed-kt")*100.0)/100.0);
+      }
+      var dirListener = setlistener("/environment/metar/base-wind-dir-deg", update);
+      var spdListener = setlistener("/environment/metar/base-wind-speed-kt", update);
+      update();
+    ]]></open>
 
- <name>winds</name>
- <width>400</width>
- <height>210</height>
- <modal>false</modal>
+    <close><![CDATA[
+      removelistener(dirListener);
+      removelistener(spdListener);
+    ]]></close>
+  </nasal>
 
- <text>
-  <x>10</x>
-  <y>180</y>
-  <label>Environment: Winds</label>
- </text>
+  <group>
+    <layout>hbox</layout>
+    <empty><stretch>1</stretch></empty>
 
- <input>
-  <x>10</x>
-  <y>140</y>
-  <width>5</width>
-  <height>25</height>
-  <label>Wind direction (deg)</label>
-  <property>/environment/metar/wind-from-heading-deg</property>
- </input>
+    <text>
+      <label>Wind Settings</label>
+    </text>
 
- <input>
-  <x>10</x>
-  <y>110</y>
-  <width>3</width>
-  <height>25</height>
-  <label>base wind speed (kt)</label>
-  <property>/environment/metar/wind-speed-kt</property>
+    <empty><stretch>1</stretch></empty>
 
- </input>
+    <button>
+      <pref-width>16</pref-width>
+      <pref-height>16</pref-height>
+      <legend></legend>
+      <keynum>27</keynum>
+      <border>2</border>
+      <binding>
+        <command>dialog-close</command>
+      </binding>
+    </button>
+  </group>
 
+  <hrule/>
 
- <button>
-  <x>5</x>
-  <y>10</y>
-  <legend>OK</legend>
-  <default>true</default>
-  <equal>true</equal>
-  <binding>
-   <command>dialog-apply</command>
-  </binding>
-  <binding>
-   <command>dialog-close</command>
-  </binding>
- </button>
+  <group>
+    <layout>table</layout>
+    <default-padding>5</default-padding>
 
+    <text>
+      <row>0</row>
+      <col>0</col>
+      <halign>right</halign>
+      <label>  Direction:</label>
+    </text>
 
+    <group>
+      <row>0</row>
+      <col>1</col>
+      <layout>hbox</layout>
+      <default-padding>0</default-padding>
 
- <button>
-  <x>105</x>
-  <y>10</y>
-  <legend>Apply</legend>
-  <equal>true</equal>
-  <binding>
-   <command>dialog-apply</command>
-  </binding>
- </button>
+      <button>
+        <width>35</width>
+        <height>26</height>
+        <border>1</border>
+        <legend>&lt;</legend>
+        <binding>
+          <command>property-adjust</command>
+          <property>/environment/metar/base-wind-dir-deg</property>
+          <step type="double">-1</step>
+        </binding>
+        <binding>
+          <command>dialog-update</command>
+        </binding>
+      </button>
+    </group>
 
- <button>
-  <x>205</x>
-  <y>10</y>
-  <legend>Reset</legend>
-  <equal>true</equal>
-  <binding>
-   <command>dialog-update</command>
-  </binding>
- </button>
+    <input>
+      <row>0</row>
+      <col>3</col>
+      <width>75</width>
+      <height>25</height>
+      <live>true</live>
+      <property>/environment/metar/base-wind-speed-kt</property>
+      <binding>
+        <command>dialog-apply</command>
+      </binding>
+    </input>
 
- <button>
-  <x>305</x>
-  <y>10</y>
-  <legend>Cancel</legend>
-  <equal>true</equal>
-  <key>Esc</key>
-  <binding>
-   <command>dialog-close</command>
-  </binding>
- </button>
+    <text>
+      <row>0</row>
+      <col>4</col>
+      <padding>0</padding>
+      <halign>left</halign>
+      <label>deg</label>
+    </text>
+
+    <group>
+      <layout>hbox</layout>
+      <row>0</row>
+      <col>5</col>
+      <default-padding>0</default-padding>
+
+      <button>
+        <width>35</width>
+        <height>26</height>
+        <border>1</border>
+        <legend>&gt;</legend>
+        <binding>
+          <command>property-adjust</command>
+          <property>/instrumentation/altimeter/setting-hpa</property>
+          <step type="double">1</step>
+        </binding>
+        <binding>
+          <command>dialog-update</command>
+        </binding>
+      </button>
+    </group>
+
+    <text>
+      <row>1</row>
+      <col>0</col>
+      <halign>right</halign>
+      <label>Speed::</label>
+    </text>
+
+    <group>
+      <row>1</row>
+      <col>1</col>
+      <layout>hbox</layout>
+      <default-padding>0</default-padding>
+
+      <button>
+        <width>35</width>
+        <height>26</height>
+        <border>1</border>
+        <legend>&lt;</legend>
+        <binding>
+          <command>property-adjust</command>
+          <property>/instrumentation/altimeter/setting-inhg</property>
+          <step type="double">-0.01</step>
+        </binding>
+        <binding>
+          <command>dialog-update</command>
+        </binding>
+      </button>
+
+      <button>
+        <width>35</width>
+        <height>26</height>
+        <border>1</border>
+        <legend>&lt;&lt;</legend>
+        <binding>
+          <command>property-adjust</command>
+          <property>/instrumentation/altimeter/setting-inhg</property>
+          <step type="double">-0.10</step>
+        </binding>
+        <binding>
+          <command>dialog-update</command>
+        </binding>
+      </button>
+    </group>
+
+    <input>
+      <row>1</row>
+      <col>3</col>
+      <width>75</width>
+      <height>25</height>
+      <live>true</live>
+      <property>/instrumentation/altimeter/setting-inhg-formatted</property>
+      <binding>
+        <command>dialog-apply</command>
+      </binding>
+    </input>
+
+    <text>
+      <row>1</row>
+      <col>4</col>
+      <padding>0</padding>
+      <halign>left</halign>
+      <label>knots</label>
+    </text>
+
+    <group>
+      <layout>hbox</layout>
+      <row>1</row>
+      <col>5</col>
+      <default-padding>0</default-padding>
+
+      <button>
+        <width>35</width>
+        <height>26</height>
+        <border>1</border>
+        <legend>&gt;&gt;</legend>
+        <binding>
+          <command>property-adjust</command>
+          <property>/instrumentation/altimeter/setting-inhg</property>
+          <step type="double">0.10</step>
+        </binding>
+        <binding>
+          <command>dialog-update</command>
+        </binding>
+      </button>
+
+      <button>
+        <row>1</row>
+        <col>6</col>
+        <width>35</width>
+        <height>26</height>
+        <border>1</border>
+        <legend>&gt;</legend>
+        <binding>
+          <command>property-adjust</command>
+          <property>/instrumentation/altimeter/setting-inhg</property>
+          <step type="double">0.01</step>
+        </binding>
+        <binding>
+          <command>dialog-update</command>
+        </binding>
+      </button>
+
+      <!-- only for a gap -->
+      <text>
+        <label>  </label>
+      </text>
+
+    </group>
+
+    <text>
+      <row>2</row>
+      <col>0</col>
+      <halign>right</halign>
+      <label>remove:</label>
+    </text>
+
+    <group>
+      <layout>hbox</layout>
+      <default-padding>0</default-padding>
+      <row>2</row>
+      <col>1</col>
+
+      <button>
+        <width>35</width>
+        <height>26</height>
+        <border>1</border>
+        <legend>&lt;</legend>
+        <binding>
+          <command>property-adjust</command>
+          <property>/instrumentation/heading-indicator/offset-deg</property>
+          <step type="double">-1.0</step>
+        </binding>
+        <binding>
+          <command>dialog-update</command>
+        </binding>
+      </button>
+
+      <button>
+        <width>35</width>
+        <height>26</height>
+        <border>1</border>
+        <legend>&lt;&lt;</legend>
+        <binding>
+          <command>property-adjust</command>
+          <property>/instrumentation/heading-indicator/offset-deg</property>
+          <step type="double">-10.0</step>
+        </binding>
+        <binding>
+          <command>dialog-update</command>
+        </binding>
+      </button>
+    </group>
+
+    <input>
+      <row>2</row>
+      <col>3</col>
+      <width>75</width>
+      <height>25</height>
+      <live>true</live>
+      <property>/instrumentation/heading-indicator/offset-deg</property>
+      <binding>
+        <command>dialog-apply</command>
+      </binding>
+    </input>
+
+    <text>
+      <row>2</row>
+      <col>4</col>
+      <padding>0</padding>
+      <halign>left</halign>
+      <label>deg</label>
+    </text>
+
+    <group>
+      <layout>hbox</layout>
+      <default-padding>0</default-padding>
+      <row>2</row>
+      <col>5</col>
+
+      <button>
+        <width>35</width>
+        <height>26</height>
+        <border>1</border>
+        <legend>&gt;&gt;</legend>
+        <binding>
+          <command>property-adjust</command>
+          <property>/instrumentation/heading-indicator/offset-deg</property>
+          <step type="double">10.0</step>
+        </binding>
+        <binding>
+          <command>dialog-update</command>
+        </binding>
+      </button>
+
+      <button>
+        <width>35</width>
+        <height>26</height>
+        <border>1</border>
+        <legend>&gt;</legend>
+        <binding>
+          <command>property-adjust</command>
+          <property>/instrumentation/heading-indicator/offset-deg</property>
+          <step type="double">1.0</step>
+        </binding>
+        <binding>
+          <command>dialog-update</command>
+        </binding>
+      </button>
+
+      <!-- only for a gap -->
+      <text>
+        <label>  </label>
+      </text>
+
+    </group>
+  </group>
+
+  <hrule/>
+
+  <button>
+    <legend>Close</legend>
+    <default>true</default>
+    <key>Esc</key>
+    <binding>
+      <command>dialog-close</command>
+    </binding>
+  </button>
 
 </PropertyList>

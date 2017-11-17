@@ -8,7 +8,10 @@ rightDoor = aircraft.door.new( "/sim/model/door-positions/rightDoor", 2, 0 );
     # Use Nasal to make some properties persistent. <aircraft-data> does
     # not work reliably.
     aircraft.data.add("/instrumentation/nav[0]/radials/selected-deg");
-    aircraft.data.load();
+    aircraft.data.save();
+
+gui.Dialog.new("sim/gui/dialogs/windsim/dialog", "Aircraft/PA28-Warrior/dialogs/windsim.xml");
+
 
 setlistener("/sim/signals/fdm-initialized", func {
 	systems.elec_init();
