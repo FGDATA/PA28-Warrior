@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 
-<!-- (c) 2017 Joshua Davidson (it0uchpods) -->
+<!-- Copyright (c) 2017 Joshua Davidson (it0uchpods) -->
 
 <piston_engine name="lycoming-O-320-D3G">
     <minmp unit="INHG">         8.30 </minmp>

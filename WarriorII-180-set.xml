@@ -1,37 +1,17 @@
 <?xml version="1.0"?>
 
-<!-- (c) 2017 Joshua Davidson (it0uchpods) -->
+<!-- Copyright (c) 2017 Joshua Davidson (it0uchpods) -->
 
 <PropertyList include="WarriorII-main.xml">
 
 	<sim>
-
 		<description>Piper PA28-161 Warrior II (180hp)</description>
 		<flight-model>jsb</flight-model>
 		<aero>WarriorII-180</aero>
 		
-                 <startup>
-		<splash-texture>Aircraft/PA28-Warrior/Splash/splash1.png</splash-texture>
-              	</startup>
-                <previews>
-			<preview>
-				<type>exterior</type>
-				<splash type="bool">true</splash>
-				<path>Splash/Splash1.png</path>
-			</preview>
-		</previews>
-                
-                <rating>
-			<FDM type="int">4</FDM>
-			<systems type="int">3</systems>
-			<cockpit type="int">3</cockpit>
-			<model type="int">3</model>
-		</rating>
-         
 		<model>
 			<path type="string">Aircraft/PA28-Warrior/Models/PA28-WarriorII.xml</path>
 		</model>
-		
 	</sim>
 	
 	<nasal n="0">

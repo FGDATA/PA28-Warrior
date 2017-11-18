@@ -8,7 +8,7 @@
     <open><![CDATA[
       var update = func(){
         setprop("/environment/metar/base-wind-dir-deg", int(getprop("/environment/metar/base-wind-dir-deg")));
-        setprop("/environment/metar/base-wind-speed-kt", int(getprop("/environment/metar/base-wind-speed-kt");
+        setprop("/environment/metar/base-wind-speed-kt", int(getprop("/environment/metar/base-wind-speed-kt")));
       }
       var dirListener = setlistener("/environment/metar/base-wind-dir-deg", update);
       var spdListener = setlistener("/environment/metar/base-wind-speed-kt", update);
@@ -31,16 +31,16 @@
 
     <empty><stretch>1</stretch></empty>
 
-    <button>
-      <pref-width>16</pref-width>
-      <pref-height>16</pref-height>
-      <legend></legend>
-      <keynum>27</keynum>
-      <border>2</border>
-      <binding>
-        <command>dialog-close</command>
-      </binding>
-    </button>
+	<button>
+		<halign>right</halign>
+		<pref-width>20</pref-width>
+		<pref-height>20</pref-height>
+		<legend>X</legend>
+		<key>Esc</key>
+		<binding>
+			<command>dialog-close</command>
+		</binding>
+	</button>
   </group>
 
   <hrule/>
@@ -53,7 +53,7 @@
       <row>0</row>
       <col>0</col>
       <halign>right</halign>
-      <label>  Direction:</label>
+      <label>Direction:</label>
     </text>
 
     <group>
@@ -67,11 +67,31 @@
         <height>26</height>
         <border>1</border>
         <legend>&lt;</legend>
-        <binding><command>property-adjust</command>
+        <binding>
+          <command>property-adjust</command>
           <property>/environment/metar/base-wind-dir-deg</property>
-          <step type="double">-1</step>
-		<min>1</min>
-        <max>360</max>
+          <min>1</min>
+          <max>361</max>
+          <step>-1</step>
+          <wrap>true</wrap>
+        </binding>
+        <binding>
+          <command>dialog-update</command>
+        </binding>
+      </button>
+
+      <button>
+        <width>35</width>
+        <height>26</height>
+        <border>1</border>
+        <legend>&lt;&lt;</legend>
+        <binding>
+          <command>property-adjust</command>
+          <property>/environment/metar/base-wind-dir-deg</property>
+          <min>1</min>
+          <max>361</max>
+          <step>-10</step>
+          <wrap>true</wrap>
         </binding>
         <binding>
           <command>dialog-update</command>
@@ -119,13 +139,34 @@
         <width>35</width>
         <height>26</height>
         <border>1</border>
+        <legend>&gt;&gt;</legend>
+        <binding>
+          <command>property-adjust</command>
+          <property>/environment/metar/base-wind-dir-deg</property>
+          <min>1</min>
+          <max>361</max>
+          <step>10</step>
+          <wrap>true</wrap>
+        </binding>
+        <binding>
+          <command>dialog-update</command>
+        </binding>
+      </button>
+
+      <button>
+        <row>1</row>
+        <col>6</col>
+        <width>35</width>
+        <height>26</height>
+        <border>1</border>
         <legend>&gt;</legend>
         <binding>
           <command>property-adjust</command>
           <property>/environment/metar/base-wind-dir-deg</property>
-          <step type="double">1</step>
-		<min>1</min>
-        <max>360</max>
+          <min>1</min>
+          <max>361</max>
+          <step>1</step>
+          <wrap>true</wrap>
         </binding>
         <binding>
           <command>dialog-update</command>
