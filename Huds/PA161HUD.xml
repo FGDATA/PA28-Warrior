@@ -14,6 +14,17 @@
   </label>
 
 <label>
+		<name>talt</name>
+		<x>-420</x>
+        	<y>120</y>
+		<format>Target Alt @ WP:%5d ft</format>
+		<halign>left</halign>
+		<input>
+			<property>/autopilot/route-manager/route/wp[1]/altitude-ft</property>
+		</input>
+	</label>
+
+<label>
         	<name>GSR</name>
       		<condition>
          		<not-equals>

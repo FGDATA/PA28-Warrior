@@ -273,8 +273,9 @@
 				</text>
 				
 				<text>
-					<label>99999</label>
-					<property>/instrumentation/altimeter/setting-inhg</property>
+					<label>9999</label>
+					<property>/instrumentation/altimeter/setting-inhg-formatted</property>
+
 					<live>1</live>
 				</text>
 				
