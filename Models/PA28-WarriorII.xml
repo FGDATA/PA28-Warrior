@@ -139,28 +139,143 @@
 		</offsets>
 	</model>
  
+<!-- New illumination -->
+
+ <animation>
+<type>material</type> 
+<object-name>Panel</object-name>
+<emission>
+    <red>0.5</red>
+    <green>0.5</green>
+    <blue>0.5</blue>
+	    <factor-prop>/controls/lighting/panel-lights</factor-prop>
+ </emission>
+</animation> 
+
+<animation>
+<type>material</type> 
+<object-name>Cabin</object-name>
+<emission>
+    <red>0.1</red>
+    <green>0.1</green>
+    <blue>0.1</blue>
+	    <factor-prop>/controls/lighting/panel-lights</factor-prop>
+ </emission>
+</animation> 
+
+
+
+<!-- Lights -->
+
+  <model>
+    <path>Aircraft/PA28-Warrior/Models/light/RedLight.xml</path>
+    <offsets>
+ 		 <x-m>2.68980</x-m>
+                 <y-m>-5.18177</y-m>
+                 <z-m>0.11596</z-m>
+   </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/PA28-Warrior/Models/light/GreenLight.xml</path>
+         <offsets>
+ 			 <x-m>2.68980</x-m>
+                         <y-m>5.18177</y-m>
+                         <z-m>0.11596</z-m>
+	</offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/PA28-Warrior/Models/light/flash.xml</path>
+        <offsets>
+ 			 <x-m>2.68980</x-m>
+                         <y-m>-5.18177</y-m>
+                         <z-m>0.19596</z-m>
+	</offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/PA28-Warrior/Models/light/flash.xml</path>
+        <offsets>
+ 			 <x-m>2.68980</x-m>
+                         <y-m>5.18177</y-m>
+                         <z-m>0.41596</z-m>
+	</offsets>  
+  </model>
+
+  <model>
+  <name>Tail-Light</name>
+    <path>Aircraft/PA28-Warrior/Models/light/TailLight.xml</path>
+    <offsets>
+      <x-m> 3.9 </x-m>
+      <y-m>  0 </y-m>
+      <z-m> 0.29 </z-m>
+    </offsets>
+  </model>
+
+  <animation>
+    <type>select</type>
+    <object-name>Tail-Light</object-name>
+    <condition>
+          <property>controls/lighting/nav-lights</property>
+    </condition>
+  </animation> 
+
+  <!-- Wing light cone -->
+  <model>
+    <name>Landing-Light-Left</name>
+    <path>Aircraft/PA28-Warrior/Models/light/light-cone.xml</path>
+    <offsets>
+      <x-m> -1.80</x-m>
+      <y-m>  -3.15 </y-m>
+      <z-m>  0.00 </z-m>
+      <pitch-deg> -15.00 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
 
  <model>
-  <path>Aircraft/PA28-Warrior/Models/StrobeLight.xml</path>
-  <name>StrobeLight.L</name>
-  <nopreview/>
-  <offsets>
-   <x-m>2.68980</x-m>
-   <y-m>-5.18177</y-m>
-   <z-m>0.11596</z-m>
-  </offsets>
- </model>
+    <name>LandingLight-Left</name>
+   <path>Aircraft/PA28-Warrior/Models/light/Landinglight.xml</path>
+    <offsets>
+      <x-m> 0.50</x-m>
+      <y-m>  -0.00 </y-m>
+      <z-m>  -0.30 </z-m>
+      <pitch-deg> -15.00 </pitch-deg>
+    </offsets>
+  </model>
 
- <model>
-  <path>Aircraft/PA28-Warrior/Models/StrobeLight.xml</path>
-  <name>StrobeLight.R</name>
-  <nopreview/>
-  <offsets>
-   <x-m>2.68980</x-m>
-   <y-m>5.18177</y-m>
-   <z-m>0.11596</z-m>
-  </offsets>
- </model>
+<!-- Effects -->
+
+  <model>
+    <path>Aircraft/PA28-Warrior/Effects/tyre-smoke-nose.xml</path>
+    <name>tyre-smoke-n</name>
+    <offsets>
+      <x-m>1.062446</x-m>
+      <y-m>0</y-m>
+      <z-m>-1.075437</z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/PA28-Warrior/Effects/tyre-smoke-right.xml</path>
+    <name>tyre-smoke-r</name>
+    <offsets>
+      <x-m>2.851301</x-m>
+      <y-m>-1.443750</y-m>
+      <z-m>-1.075437</z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/PA28-Warrior/Effects/tyre-smoke-left.xml</path>
+    <name>tyre-smoke-l</name>
+    <offsets>
+      <x-m>2.851301</x-m>
+      <y-m>1.443750</y-m>
+      <z-m>-1.075437</z-m>
+    </offsets>
+  </model>
 
   <model>
   <name>YokeLeft</name>
@@ -341,9 +456,6 @@
 		</offsets>
 	</model>
 
-
-
-
 	<model>
 		<path>Aircraft/PA28-Warrior/Models/iaL/iaL.xml</path>
 		<name>LMaster</name>
@@ -406,9 +518,6 @@
 			<z-m>0.271</z-m>
 		</offsets>
 	</model>
-
-
-
  <model>
   <name>trimw</name>
   <path>Aircraft/PA28-Warrior/models/trimw/trimwheel.xml</path>
@@ -417,12 +526,10 @@
    <y-m>0.023</y-m>
    <z-m>0.279</z-m>
    <yaw-deg>30</yaw-deg>
-
   </offsets>
  </model>
 
-
-<model>
+                <model>
 		<name>cvor</name>
 		<path>Aircraft/Instruments-3d/vor/vor2.xml</path>
 		<condition>
@@ -438,9 +545,7 @@
 		</offsets>
 	</model>
 
-	
-
-<model>
+         <model>
 		<name>VOR2</name>
 		<path>Aircraft/PA28-Warrior/Models/ki209a/ki209a-2.xml</path>
 		<condition>
@@ -744,55 +849,6 @@
   </offsets>
  </model>
 
-
-  <model>
-    <path>Aircraft/Generic/Effects/tyre-smoke-nose.xml</path>
-    <name>tyre-smoke-n</name>
-    <offsets>
-      <x-m>1.062446</x-m>
-      <y-m>0</y-m>
-      <z-m>-1.075437</z-m>
-    </offsets>
-  </model>
-
-  <model>
-    <path>Aircraft/Generic/Effects/tyre-smoke-port.xml</path>
-    <name>tyre-smoke-p</name>
-    <offsets>
-      <x-m>2.851301</x-m>
-      <y-m>-1.443750</y-m>
-      <z-m>-1.075437</z-m>
-    </offsets>
-  </model>
-
-  <model>
-    <path>Aircraft/Generic/Effects/tyre-smoke-stbd.xml</path>
-    <name>tyre-smoke-s</name>
-    <offsets>
-      <x-m>2.851301</x-m>
-      <y-m>1.443750</y-m>
-      <z-m>-1.075437</z-m>
-    </offsets>
-  </model>
-
-<!-- Landing Light -->
- <model>
-  <name>LandingLight</name>
-  <path>Aircraft/PA28-Warrior/Models/LandingLight/LandingLight.xml</path>
-  <offsets>
-   <x-m>0.53</x-m>
-   <y-m>0.0</y-m>
-   <z-m>-0.235</z-m>
-  </offsets>
- </model>
-
- <!-- Visible up to 10km (6mi) -->
- <animation>
-  <type>range</type>
-  <min-m>0</min-m>
-  <max-m>10000</max-m>
- </animation>
-
  <animation>
   <name>InstrumentGroup</name>
   <object-name>ASI</object-name>
@@ -911,39 +967,6 @@
    <y>-1.0</y>
    <z>0.0</z>
   </axis>
- </animation>
-
- <animation>
-  <type>material</type>
-  <object-name>Beacon</object-name>
-  <emission>
-   <red>1.0</red>
-   <green>0.0</green>
-   <blue>0.0</blue>
-   <factor-prop>sim/model/lights/beacon/state</factor-prop>
-  </emission>
- </animation>
-
- <animation>
-  <type>material</type>
-  <object-name>LeftNavLight</object-name>
-  <emission>
-   <red>1.0</red>
-   <green>0.0</green>
-   <blue>0.0</blue>
-   <factor-prop>controls/lighting/nav-lights</factor-prop>
-  </emission>
- </animation>
-
- <animation>
-  <type>material</type>
-  <object-name>RightNavLight</object-name>
-  <emission>
-   <red>0.0</red>
-   <green>1.0</green>
-   <blue>0.0</blue>
-   <factor-prop>controls/lighting/nav-lights</factor-prop>
-  </emission>
  </animation>
 
 <!--pick animation for the door--> 
@@ -1440,61 +1463,4 @@
   </axis>
  </animation>
 
- <animation>
-  <type>material</type>
-  <object-name>TailNavLight</object-name>
-  <emission>
-   <red>1.0</red>
-   <green>1.0</green>
-   <blue>1.0</blue>
-   <factor-prop>controls/lighting/nav-lights</factor-prop>
-  </emission>
- </animation>
-
 </PropertyList>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
