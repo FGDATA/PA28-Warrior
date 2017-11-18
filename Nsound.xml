@@ -1,29 +1,10 @@
 <?xml version="1.0"?>
  
+<!-- New Sounds By Gabriel Hernandez(YV3399) -->
+
 <PropertyList>
 
  <fx>
-
-<!--
-alarmalt>
-		<name>alarmalt</name>
-		<mode>once</mode>
-		<path>PNavSounds/warningCRJ200.wav</path>
-		<condition>
-			<equal>
-			<and>
-				<property>instrumentation/radar-altimeter/decision-height</property>
-					<not><property>gear/gear/wow</property></not>
-			<and>	
-<equal>	
-		</condition>
-		<reference-dist>2</reference-dist>
-		<max-dist>5</max-dist>
-		<volume>
-			<offset>1.1</offset>
-		</volume>
-	</alarmalt>
--->	
 
         <flap>
             <name>flaps</name>
@@ -95,7 +76,6 @@ alarmalt>
       <reference-dist>100</reference-dist>
       <max-dist>1000</max-dist>      
     </oof>
-
 
 
 <dooropen>
@@ -201,8 +181,6 @@ alarmalt>
       <max-dist>1000</max-dist>
     </engine>
 
-
-
     <engine-internal>
       <name>engine-internal</name>
       <mode>looped</mode>
@@ -236,8 +214,6 @@ alarmalt>
         <z>  0 </z>
      </position>	
     </engine-internal>
-
-
 
   <propeller>
       <name>propeller</name>
@@ -304,8 +280,6 @@ alarmalt>
       </volume>
       </rumble>
 
-
-
   <squeal>
    <name>squeal</name>
    <path>PNavSounds/squeal.wav</path>
@@ -337,7 +311,6 @@ alarmalt>
     <offset>1.2</offset>
    </pitch>
   </squeal>
-  
      
   <wind>
    <name>wind</name>
@@ -394,7 +367,7 @@ alarmalt>
    <max-dist>2000.0</max-dist>
   </stall>
 
-<crash>
+    <crash>
 		<name>intense ground contact</name>
 		<mode>once</mode>
 		<path>PNavSounds/crash.wav</path>
