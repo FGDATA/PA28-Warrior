@@ -438,14 +438,14 @@
 	<it-autoflight>
 		<config>
 			<roll>
-				<kp-low>0.10</kp-low> <!-- Kp at low speed -->
-				<kp-high>0.07</kp-high> <!-- Kp at high speed -->
+				<kp-low>0.07</kp-low> <!-- Kp at low speed -->
+				<kp-high>0.05</kp-high> <!-- Kp at high speed -->
 				<ti>1.0</ti>
 				<td>0.0001</td>
 			</roll>
 			<pitch>
-				<kp-low>-0.15</kp-low> <!-- Kp at low speed -->
-				<kp-high>-0.13</kp-high> <!-- Kp at high speed -->
+				<kp-low>-0.10</kp-low> <!-- Kp at low speed -->
+				<kp-high>-0.08</kp-high> <!-- Kp at high speed -->
 				<ti>0.5</ti>
 				<td>0.001</td>
 			</pitch>
