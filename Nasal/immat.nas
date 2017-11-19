@@ -19,7 +19,7 @@ var refresh_immat = func {
     }
 }
 
-var immat_dialog = gui.Dialog.new("/sim/gui/dialogs/Pa28-Warrior/status/dialog", "Aircraft/Pa28-Warrior/Dialogs/immat.xml");
+var immat_dialog = gui.Dialog.new("/sim/gui/dialogs/immat/dialog", "Aircraft/PA28-Warrior/Dialogs/immat.xml");
 
 var immatInit = setlistener("/sim/signals/fdm-initialized", func {
   if (props.globals.getNode("/sim/model/immat") == nil) {
