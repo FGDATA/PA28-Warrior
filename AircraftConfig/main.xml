@@ -197,37 +197,33 @@
 				<legend>Adjust Fuel</legend>
 				<halign>center</halign>
 				<padding>5</padding>
-				
-<binding>
-            <command>nasal</command>
-            <script>
-             		if (getprop("/gear/gear/wow")) {
-                        
-        gui.showWeightDialog();
- }                  	 
-                    			else {
-
-        
-gui.popupTip("No Air to Air refueling support", 6.0);               			
-                    }
-                		</script>
-              </binding>				
+				<pref-width>110</pref-width>
+				<binding>
+					<command>nasal</command>
+					<script>
+					if (getprop("/gear/gear/wow")) {
+						gui.showWeightDialog();
+					}                  	 
+					else {
+						gui.popupTip("No Air to Air refueling support", 6.0);               			
+					}
+					</script>
+				</binding>				
 			</button>
-			
+
 			<button>
 				<legend>Zero Wind</legend>
 				<halign>center</halign>
 				<padding>5</padding>
+				<pref-width>110</pref-width>
 				<binding>
 					<command>property-assign</command>
 					<property>environment/wind-speed-kt</property>
 					<value>0</value>
 				</binding>
 				<binding>
-					<command>property-cycle</command>
+					<command>property-toggle</command>
 					<property>environment/config/presets/wind-override</property>
-					<value>true</value>
-					<value>false</value>
 				</binding>
 			</button>
 			
@@ -235,6 +231,7 @@ gui.popupTip("No Air to Air refueling support", 6.0);
 				<legend>IFR Scenario</legend>
 				<halign>center</halign>
 				<padding>5</padding>
+				<pref-width>110</pref-width>
 				<binding>
 					<command>property-cycle</command>
 					<property>/environment/weather-scenario</property>
