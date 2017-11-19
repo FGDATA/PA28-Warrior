@@ -16,7 +16,7 @@
 		</rating>
   
 		<hud>
-			<path n="1">Aircraft/PA28-Warrior/Huds/Pa161HUD.xml</path>
+			<path n="1">Aircraft/PA28-Warrior/Huds/PA161HUD.xml</path>
 			<path n="2">Aircraft/PA28-Warrior/Huds/FGN.xml</path>
 			<path n="3">Aircraft/PA28-Warrior/Huds/default.xml</path>
 			<visibility n="1" type="bool">true</visibility>
@@ -450,8 +450,8 @@
 				<td>0.001</td>
 			</pitch>
 			<cmd>
-				<roll-kp>-1.4</roll-kp>
-				<roll-scale>0.9</roll-scale>
+				<roll-kp>-0.9</roll-kp>
+				<roll-scale>1.1</roll-scale>
 				<vorloc>-2.0</vorloc>
 				<vs>0.01</vs>
 			</cmd>
@@ -490,15 +490,13 @@
 		<libraries>
 			<file>Aircraft/PA28-Warrior/Nasal/libraries.nas</file>
 			<file>Aircraft/PA28-Warrior/Nasal/immat.nas</file>
-                        <file>Aircraft/PA28-Warrior/Nasal/lighting.nas</file>
-			<file>Aircraft/PA28-Warrior/Models/Instruments/elt/ELTmessage.nas</file>
+			<file>Aircraft/PA28-Warrior/Nasal/lighting.nas</file>
+			<file>Aircraft/PA28-Warrior/Models/instruments/elt/ELTmessage.nas</file>
 			<file>Aircraft/PA28-Warrior/Nasal/kr87.nas</file>
 			<file>Aircraft/PA28-Warrior/Nasal/ki266.nas</file>
 			<file>Aircraft/PA28-Warrior/Models/instruments/KLN90B/kln90b.nas</file>
-
 			<file>Aircraft/PA28-Warrior/Nasal/kcs55.nas</file>
 			<file>Aircraft/PA28-Warrior/Nasal/kma20.nas</file>
-
 			<script>
 			<![CDATA[ki266.new(0);
 			KCS55.new();]]>

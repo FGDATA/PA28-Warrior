@@ -21,10 +21,10 @@
         <serviceable>instrumentation/dme[0]/serviceable</serviceable>
     </params>
 
-    <path>Aircraft/pa28-Warrior/Models/instruments/ki266/dme.ac</path>
+    <path>dme.ac</path>
 
     <model>
-      <path>Aircraft/pa28-Warrior/Models/instruments/ki266/ki266.xml</path>
+      <path>ki266.xml</path>
 
       <name>ki266</name>
       <offsets>
