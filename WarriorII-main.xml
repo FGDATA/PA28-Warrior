@@ -293,6 +293,8 @@
 			<path>options/show-l-yoke</path>
 			<path>options/show-r-yoke</path>
 		</aircraft-data>
+		
+		<gui n="0" include="Systems/it-gui.xml"/>
 	</sim>
 
 	<airport>
