@@ -8,12 +8,8 @@
 	<name>autopilot</name>
 	<layout>vbox</layout>
     <pref-width>520</pref-width>
-	
 	<x>-5</x>
 	<y>5</y>
-	<color>
-		<alpha>0.7</alpha>
-	</color>
 
 
     <group>

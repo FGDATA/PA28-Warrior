@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 
-<!-- (c) 2017 Joshua Davidson (it0uchpods) -->
+<!-- Copyright (c) 2017 Joshua Davidson (it0uchpods) -->
 
 <propeller name="fixed-pitch-2-blade">
 	<ixx>                 1.67 </ixx>

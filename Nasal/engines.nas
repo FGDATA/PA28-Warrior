@@ -1,5 +1,5 @@
 # PA28-161 Engine
-# (c) Joshua Davidson (it0uchpods)
+# Copyright (c) 2017 Joshua Davidson (it0uchpods)
 
 #############
 # Init Vars #

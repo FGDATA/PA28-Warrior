@@ -1,12 +1,19 @@
 <?xml version="1.0"?>
 
-<!-- (c) 2017 Joshua Davidson (it0uchpods) -->
+<!-- Copyright (c) 2017 Joshua Davidson (it0uchpods) -->
 
 <PropertyList>
 
 	<sim include="Systems/help.xml">
 
 		<author>Gerhard Kick, Joshua Davidson (it0uchpods), Gabriel Hernandez (YV3399), Others</author>
+		
+		<rating>
+			<FDM type="int">4</FDM>
+			<systems type="int">5</systems>
+			<cockpit type="int">4</cockpit>
+			<model type="int">3</model>
+		</rating>
   
 		<hud>
 			<path n="1">Aircraft/PA28-Warrior/Huds/Pa161HUD.xml</path>
@@ -40,6 +47,18 @@
 		<panel>
 			<visibility archive="y">false</visibility>
 		</panel>
+		
+		<startup>
+			<splash-texture>Aircraft/PA28-Warrior/Splash/splash1.png</splash-texture>
+		</startup>
+		
+		<previews>
+			<preview>
+				<type>exterior</type>
+				<splash type="bool">true</splash>
+				<path>Splash/Splash1.png</path>
+			</preview>
+		</previews>
 
 		<systems>
 			<electrical>
@@ -51,7 +70,7 @@
 			<autopilot>
 				<path>Aircraft/PA28-Warrior/Systems/libraries.xml</path>
 			</autopilot>
-              		</systems>
+		</systems>
 
 		<menubar>
 			<default>
@@ -67,14 +86,13 @@
 							</script>
 						</binding>
 					</item>
-				    <item>
-                                          <label>Set Call-Sign</label>        
-                                      <binding>
-                                          <command>nasal</command>
-                                       <script>Pa28-Warrior.immat_dialog.toggle()</script>
-                                      </binding>
-                                    </item>
-
+					<item>
+						<label>Set Call-Sign</label>        
+						<binding>
+							<command>nasal</command>
+							<script>Pa28-Warrior.immat_dialog.toggle()</script>
+						</binding>
+					</item>
 					<item>
 						<label>About This Aircraft</label>
 						<binding>
@@ -105,11 +123,10 @@
 					<item>
 						<label>Wind Simulations</label>
 						<binding>
-				<command>dialog-show</command>
-				<dialog-name>windsim</dialog-name>
-			</binding>
+							<command>dialog-show</command>
+							<dialog-name>windsim</dialog-name>
+						</binding>
 					</item>	
-	
 					<item>
 						<label>Fundamentals</label>
 						<binding>
@@ -139,8 +156,6 @@
 							<path>Aircraft/PA28-Warrior/Docs/ApproachP.pdf</path>
 						</binding>
 					</item>
-
-
 					<item>
 						<label>About Warrior Nav</label>
 						<binding>
@@ -148,11 +163,9 @@
 							<path>Aircraft/PA28-Warrior/Docs/AboutFGN.pdf</path>
 						</binding>
 					</item>
-                                    
 				</menu>
 			</default>
 		</menubar>
-
 
 		<sound>
 			<path>Aircraft/PA28-Warrior/Nsound.xml</path>
@@ -280,6 +293,8 @@
 			<path>options/show-l-yoke</path>
 			<path>options/show-r-yoke</path>
 		</aircraft-data>
+		
+		<gui n="0" include="Systems/it-gui.xml"/>
 	</sim>
 
 	<airport>
