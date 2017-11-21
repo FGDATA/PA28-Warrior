@@ -21,23 +21,24 @@ Ensemble à revoir
     <object-name>Fond</object-name>
     <object-name>NeedleM</object-name>
     <object-name>NeedleF</object-name>
-    <object-name>MANvitre</object-name>
+    <object-name>MANvitre</object-name>	
+
   </animation>
 
  
-<!-- éclairage de l'instru 
   <animation>
     <type>material</type>
     <object-name>Fond</object-name>
     <object-name>NeedleM</object-name>
-    <object-name>NeedleF</object-name>a
-    <emission>
-      <factor-prop>systems/electrical/outputs/instrument-lights</factor-prop>
-      <red>   0.50 </red>
-      <green> 0.25 </green>
-      <blue>  0.25 </blue>
-    </emission>
-  </animation> -->
+    <object-name>NeedleF</object-name>
+	<emission>
+   <red>1.0</red>
+   <green>0.2</green>
+   <blue>0.0</blue>       
+	 <factor-prop>/sim/model//material/instruments/factor</factor-prop>
+	</emission>
+    
+  </animation> 
 
 
   <animation>
