@@ -3,6 +3,10 @@
   <name>windsim</name>
   <modal>false</modal>
   <layout>vbox</layout>
+	<color>
+		<alpha>0.7</alpha>
+	</color>
+
 
   <nasal>
     <open><![CDATA[

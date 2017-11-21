@@ -14,18 +14,30 @@
   	</label>
 
 	<label>
-		<name>talt</name>
+		<name>dmem</name>
 		<x>-420</x>
-        	<y>120</y>
-		<format>Target Alt @ WP:%5d ft</format>
+		<y>180</y>
 		<halign>left</halign>
+		<format>DME: %1.1f nm</format>
 		<input>
-			<property>/autopilot/route-manager/route/wp[1]/altitude-ft</property>
+			<property>/instrumentation/dme/indicated-distance-nm</property>
 		</input>
-	</label>
+</label>
+
+<label>
+		<name>dmet</name>
+		<x>-360</x>
+		<y>180</y>
+		<halign>left</halign>
+		<format>...%1.1f min</format>
+		<input>
+			<property>/instrumentation/dme/indicated-time-min</property>
+		</input>
+</label>
 
 
 
+	
 	<label>
         	<name>GSR</name>
       		<condition>
