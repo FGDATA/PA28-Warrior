@@ -31,9 +31,21 @@
 				<legend>Close</legend>
 				<pref-width>160</pref-width>
 				<key>Esc</key>
-				<binding>
-					<command>dialog-close</command>
+				
+<binding>
+   <command>property-assign</command>
+   <property>sim/hud/current-path</property>
+		<value>1</value>
 				</binding>
+<binding>
+   <command>property-assign</command>
+   <property>sim/hud/visibility[1]</property>
+		<value>1</value>
+				</binding>
+<binding>
+		<command>dialog-close</command>		
+</binding>
+
 			</button>
 			
 		</group>

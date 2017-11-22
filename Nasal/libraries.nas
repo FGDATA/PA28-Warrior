@@ -11,6 +11,8 @@ aircraft.data.add("/instrumentation/nav[0]/radials/selected-deg");
 aircraft.data.save();
 
 gui.Dialog.new("sim/gui/dialogs/windsim/dialog", "Aircraft/PA28-Warrior/Dialogs/windsim.xml");
+gui.Dialog.new("sim/gui/dialogs/sounddialog/dialog", "Aircraft/PA28-Warrior/Dialogs/sounddialog.xml");
+
 
 setlistener("/sim/signals/fdm-initialized", func {
 	systems.elec_init();
