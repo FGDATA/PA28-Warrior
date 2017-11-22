@@ -19,7 +19,7 @@
 			<path n="1">Aircraft/PA28-Warrior/Huds/PA161HUD.xml</path>
 			<path n="2">Aircraft/PA28-Warrior/Huds/FGN.xml</path>
 			<path n="3">Aircraft/PA28-Warrior/Huds/default.xml</path>
-			<visibility n="1" type="bool">true</visibility>
+			<visibility n="0" type="bool">true</visibility>
 			<font>
 			<gui>
 			<name type="string">HELVETICA_12</name>
@@ -58,10 +58,21 @@
 		
 		<previews>
 			<preview>
-				<type>exterior</type>
+				<type>cockpit</type>
 				<splash type="bool">true</splash>
 				<path>Splash/Splash1.png</path>
 			</preview>
+			<preview>
+				<type>exterior</type>
+				<splash type="bool">true</splash>
+				<path>Splash/Splash2.png</path>
+			</preview>
+			<preview>
+				<type>exterior</type>
+				<splash type="bool">true</splash>
+				<path>Splash/Splash3.png</path>
+			</preview>	
+
 		</previews>
 
 		<systems>
@@ -97,6 +108,13 @@
 							<script>Pa28-Warrior.immat_dialog.toggle()</script>
 						</binding>
 					</item>
+					<item>
+						<label>Radio-Volume(s)</label>        
+						<binding>
+							<command>dialog-show</command>
+							<dialog-name>sounddialog</dialog-name>
+						</binding>
+					</item>	
 					<item>
 						<label>About This Aircraft</label>
 						<binding>
