@@ -18,6 +18,7 @@
 		<hud>
 			<path n="1">Aircraft/PA28-Warrior/Huds/PA161HUD.xml</path>
 			<path n="2">Aircraft/PA28-Warrior/Huds/FGN.xml</path>
+			<path n="4">Aircraft/PA28-Warrior/Huds/ICAO.xml</path>
 			<path n="3">Aircraft/PA28-Warrior/Huds/default.xml</path>
 			<visibility n="0" type="bool">true</visibility>
 			<font>
