@@ -163,8 +163,6 @@
  </emission>
 </animation> 
 
-
-
 <!-- Lights -->
 
   <model>
@@ -308,7 +306,6 @@
   </offsets>
  </model>
 
-
 <model>
 	<name>GPS</name>
 	<path>Aircraft/PA28-Warrior/Models/instruments/KLN90B/kln90b.xml</path>
@@ -319,7 +316,6 @@
 	</offsets>
 </model>
 
- 
  <model>
   <name>ccard</name>
   <path>Aircraft/PA28-Warrior/Models/dt/dev.xml</path>
@@ -388,7 +384,6 @@
   </offsets>
  </model>
 
-
 <model>
   <name>charts</name>
   <path>Aircraft/PA28-Warrior/Models/charts/charts.xml</path>
@@ -402,7 +397,6 @@
   </offsets>
  </model>
 
-
   <model>
   <name>ASI</name>
   <path>Aircraft/PA28-Warrior/Models/asi/asi.xml</path>
@@ -412,8 +406,6 @@
    <z-m>0.268</z-m>
   </offsets>
  </model>
-
-
 
  <model>
   <name>AIG</name>
@@ -736,7 +728,6 @@
 		</offsets>
 	</model>
 
-	
  <model>
   <name>AMPVOL</name>
   <path>Aircraft/PA28-Warrior/Models/BatteryGauge/BatteryGauge.xml</path>
@@ -746,7 +737,6 @@
    <z-m>0.0145</z-m>
   </offsets>
  </model>
-
 
  <model>
   <name>mags</name>
@@ -809,7 +799,6 @@
   </offsets>
  </model> 
  
-
   <model>
   <name>kma20</name>
    <path>Aircraft/PA28-Warrior/Models/instruments/kma20/kma20.xml</path>
@@ -889,7 +878,6 @@
  <animation>
   <type>spin</type>
   <object-name>Propeller</object-name>
-
   <property>engines/engine/rpm[0]</property>
   <factor>-1</factor>
   <center>
@@ -904,54 +892,18 @@
   </axis>
  </animation>
 
- <animation>
-  <type>rotate</type>
-  <object-name>FuelValvePointer</object-name>
-  <offset-deg>-180</offset-deg>
-  <factor>-90</factor>
-  <property>systems/fuel/selected-tank</property>  
-  <center>
-   <x-m>1.94707</x-m>
-   <y-m>-0.55448</y-m>
-   <z-m>-0.21952</z-m>
-  </center>
-  <axis>
-   <x>0.00042</x>
-   <y>0.01261</y>
-   <z>0.0018</z>
-  </axis>
- </animation>
- 
-	<animation>
-		<type>pick</type>
-		<object-name>FuelValvePointer</object-name>
-		<action>
-			<button>0</button>
-			<button>3</button>
-			<repeatable type="bool">false</repeatable>
-			<binding>
-				<command>property-adjust</command>
-				<property>systems/fuel/selected-tank</property>
-				<step>1</step>
-				<min>0</min>
-				<max>2</max>
-				<wrap>false</wrap>
-			</binding>
-		</action>
-		<action>
-			<button>1</button>
-			<button>4</button>
-			<repeatable type="bool">false</repeatable>
-			<binding>
-				<command>property-adjust</command>
-				<property>systems/fuel/selected-tank</property>
-				<step>-1</step>
-				<min>0</min>
-				<max>2</max>
-				<wrap>false</wrap>
-			</binding>
-		</action>
-	</animation>
+  <model>
+    <name>fuel selector</name>
+    <path>Models/instruments/fuel-selector/fuel-selector.xml</path>
+    <offsets>
+      <pitch-deg>90</pitch-deg>
+      <roll-deg>180</roll-deg>
+      <heading-deg>90</heading-deg>
+       <x-m>1.94707</x-m>
+       <y-m>-0.55448</y-m>
+       <z-m>-0.21952</z-m>
+    </offsets>
+  </model>
 
  <animation>
   <type>rotate</type>

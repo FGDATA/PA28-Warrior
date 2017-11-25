@@ -1,7 +1,5 @@
 <?xml version="1.0"?>
  
-
-
 <PropertyList>
 	<name>Cherokee</name>
 	<enable3d>false</enable3d>
@@ -95,8 +93,6 @@
 		</input>
 </label>
 
-
-
  <label>
 		<name>maghead</name>
 		<x>-420</x>
@@ -158,8 +154,6 @@
 		</input>
 	</label>
 	
-
-
         <tape>
 		<name>Gyrocompass</name>
 		<x>-100</x>
@@ -213,58 +207,3 @@
     </label>
 
 </PropertyList>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
