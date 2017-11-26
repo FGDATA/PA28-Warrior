@@ -93,6 +93,8 @@
         <type>rotate</type>
         <object-name>KI227.ADFNeedle</object-name>
         <property alias="../../params/adf-bearing-deg"/>
+
+
         <axis>
             <x>-1</x>
             <y>0</y>
