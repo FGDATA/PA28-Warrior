@@ -203,7 +203,7 @@
 		</menubar>
 
 		<sound>
-			<path>Aircraft/PA28-Warrior/Nsound.xml</path>
+			<path>Aircraft/PA28-Warrior/Pa28-sound.xml</path>
 		</sound>
 
 		<view n="0">
@@ -292,14 +292,40 @@
 			<volume>0.8</volume>
 		</sound>
 		
-		<!-- Multiplayer properties -->
-		<!--multiplay>
-			<generic>
-				<float n="0" alias="replaceme" />
-			</generic>
-		</multiplay-->
+		 <multiplay>
+                   <generic>
+                      <bool n="0" alias="/options/wheel-fairing"/>
+                      <float n="0" alias="/gear/gear[0]/compression-m"/>
+                      <float n="1" alias="/gear/gear[1]/compression-m"/>
+                      <float n="2" alias="/gear/gear[2]/compression-m"/>
+                      <string alias="/sim/multiplay/callsign"/>
+                    </generic>
+                 </multiplay>
 
-		<aircraft-data>     
+ <flight-recorder>
+    <replay-config type="int">0</replay-config>
+    <config n="0" include="/Aircraft/Generic/flightrecorder/generic-piston-propeller-1.xml">
+      <name type="string">Piper 28 Warrior Flight Recorder</name>
+      <signal>
+        <type>float</type>
+        <property type="string">/gear/gear[0]/compression-m</property>
+        <interpolation>linear</interpolation>
+      </signal>
+      <signal>
+        <type>float</type>
+        <property type="string">/gear/gear[1]/compression-m</property>
+        <interpolation>linear</interpolation>
+      </signal>
+      <signal>
+        <type>float</type>
+        <property type="string">/gear/gear[2]/compression-m</property>
+        <interpolation>linear</interpolation>
+      </signal>
+    </config>
+  </flight-recorder>
+
+
+                 <aircraft-data>     
 			<path>instrumentation/radar-altimeter/decision-height</path>
 			<path>instrumentation/comm[0]/volume</path>
 			<path>instrumentation/comm[0]/frequencies/selected-mhz</path>
@@ -393,6 +419,12 @@
 		</switches>
 	</controls>
 	
+   <environment>
+     <aircraft-effects>
+      <overlay-alpha type="double">0.5</overlay-alpha>
+     </aircraft-effects>
+   </environment>
+
 	<gear n="0">
 		<gear n="0">
 			<position-norm type="double">1</position-norm>
