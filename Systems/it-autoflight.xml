@@ -102,6 +102,7 @@
 		<name>HEADING ERROR DEG</name>
 		<debug>false</debug>
 		<type>gain</type>
+		<gain>1.0</gain>
 		<input>
 			<condition>
 				<and>
@@ -154,7 +155,6 @@
 			<min>-180</min>
 			<max>180</max>
 		</period>
-		<gain>1.0</gain>
 	</filter>
 	
 	<filter>
@@ -232,6 +232,7 @@
 		<name>NAV ERROR DEG</name>
 		<debug>false</debug>
 		<type>gain</type>
+		<gain>1.0</gain>
 		<input>
 			<condition>
 				<equals>
@@ -263,44 +264,51 @@
 			<min>-180</min>
 			<max>180</max>
 		</period>
-		<gain>1.0</gain>
 	</filter>
 	
 	<filter>
 		<name>GPS HDG ERROR DEG</name>
 		<debug>false</debug>
 		<type>gain</type>
+		<gain>1.0</gain>
 		<input>
-			<property>/autopilot/settings/true-heading-deg</property>
-			<offset>
-				<property>/orientation/heading-deg</property>
-				<scale>-1.0</scale>
-			</offset>
+			<expression>
+				<sum>
+					<property>/autopilot/route-manager/wp[0]/true-bearing-deg</property>
+					<product>
+						<property>/autopilot/internal/drift-angle-deg</property>
+						<value>-1</value>
+					</product>
+					<product>
+						<property>/orientation/heading-deg</property>
+						<value>-1</value>
+					</product>
+				</sum>
+			</expression>
 		</input>
 		<output>/it-autoflight/internal/gps-hdg-error-deg</output>
 		<period>
 			<min>-180</min>
 			<max>180</max>
 		</period>
-		<gain>1.0</gain>
 	</filter>
 
 	<filter>
 		<name>INTERNAL VERTICAL SPEED COMPUTER</name>
 		<debug>false</debug>
 		<type>gain</type>
+		<gain>55.0</gain>
 		<input>/velocities/vertical-speed-fps</input>
 		<output>/it-autoflight/internal/vert-speed-fpm</output>
-		<gain>55.0</gain>
 	</filter>
 	
 	<filter>
 		<name>NAV1 G/S FPM Calc</name>
 		<debug>false</debug>
 		<type>gain</type>
+		<gain>1.0</gain>
 		<input>/instrumentation/nav[0]/gs-rate-of-climb-fpm</input>
 		<output>/it-autoflight/internal/nav1-rate-of-climb-fpm</output>
-		<gain>1.0</gain>
 		<min>-1500</min>
 		<max>0</max>
 	</filter>
@@ -309,9 +317,9 @@
 		<name>NAV2 G/S FPM Calc</name>
 		<debug>false</debug>
 		<type>gain</type>
+		<gain>1.0</gain>
 		<input>/instrumentation/nav[1]/gs-rate-of-climb-fpm</input>
 		<output>/it-autoflight/internal/nav2-rate-of-climb-fpm</output>
-		<gain>1.0</gain>
 		<min>-1500</min>
 		<max>0</max>
 	</filter>
@@ -461,7 +469,7 @@
 		<name>ROLL DEG SYNC</name>
 		<debug>false</debug>
 		<type>gain</type>
-		<gain>1</gain>
+		<gain>1.0</gain>
 		<enable>
 			<condition>
 				<not-equals>
@@ -538,7 +546,7 @@
 	<filter>
 		<name>IT-CONTROLLER: ROLL RATE CMD</name>
 		<type>gain</type>
-		<gain>1</gain>
+		<gain>1.0</gain>
 		<enable>
 			<condition>
 				<not-equals>
@@ -777,7 +785,7 @@
 		<name>PITCH DEG SYNC</name>
 		<debug>false</debug>
 		<type>gain</type>
-		<gain>1</gain>
+		<gain>1.0</gain>
 		<enable>
 			<condition>
 				<not-equals>
@@ -821,7 +829,7 @@
 	<filter>
 		<name>IT-CONTROLLER: PITCH RATE CMD</name>
 		<type>gain</type>
-		<gain>1</gain>
+		<gain>1.0</gain>
 		<enable>
 			<condition>
 				<not-equals>

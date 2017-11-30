@@ -10,6 +10,16 @@ rightDoor = aircraft.door.new( "/sim/model/door-positions/rightDoor", 2, 0 );
 aircraft.data.add("/instrumentation/nav[0]/radials/selected-deg");
 aircraft.data.save();
 
+# reset compass rose rotation for the ki228
+setlistener( "/instrumentation/adf[0]/model", func(n) {
+  if( n != nil ) {
+    var v = n.getValue();
+    if( v != nil and v == "ki228" )
+      setprop("instrumentation/adf[0]/rotation-deg", 0 );
+  }
+}, 1, 0 );
+
+
 gui.Dialog.new("sim/gui/dialogs/windsim/dialog", "Aircraft/PA28-Warrior/Dialogs/windsim.xml");
 gui.Dialog.new("sim/gui/dialogs/sounddialog/dialog", "Aircraft/PA28-Warrior/Dialogs/sounddialog.xml");
 
