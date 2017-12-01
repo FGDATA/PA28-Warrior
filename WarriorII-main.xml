@@ -127,7 +127,14 @@
 							<command>dialog-show</command>
 							<dialog-name>sounddialog</dialog-name>
 						</binding>
-					</item>	
+					</item>
+					<item>
+						<label>Wind Simulations</label>
+						<binding>
+							<command>dialog-show</command>
+							<dialog-name>windsim</dialog-name>
+						</binding>
+					</item>		
 					<item>
 						<label>About This Aircraft</label>
 						<binding>
@@ -155,13 +162,7 @@
 							<path>Aircraft/PA28-Warrior/Docs/Fuel.pdf</path>
 						</binding>
 					</item>	
-					<item>
-						<label>Wind Simulations</label>
-						<binding>
-							<command>dialog-show</command>
-							<dialog-name>windsim</dialog-name>
-						</binding>
-					</item>	
+					
 					<item>
 						<label>Fundamentals</label>
 						<binding>
