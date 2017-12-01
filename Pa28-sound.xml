@@ -332,6 +332,83 @@
 			</condition>
 		</click>
 
+		<!-- Seatbelt-->
+    <oof>
+      <name>Seatbelt</name>
+      <mode>once</mode>
+      <path>PNavSounds/seatbelt.wav</path>
+      <condition>
+          <equals>
+            <property>controls/gear/brake-parking</property>
+            <value>0</value>
+          </equals>
+      </condition>  
+      <volume>
+        <factor>1.1</factor>
+      </volume>
+      <reference-dist>100</reference-dist>
+      <max-dist>1000</max-dist>      
+    </oof>
+
+		<!-- Door Open-->
+<dooropen>
+		<name>door open</name>
+		<mode>once</mode>
+		<path>PNavSounds/lidcreak.wav</path>
+		<condition>
+		<property>sim/model/door-positions/rightDoor/position-norm</property>
+	</condition>
+	<volume>
+			<factor>1.1</factor>
+
+		<reference-dist>100</reference-dist>
+		<max-dist>1000</max-dist>
+		
+			<offset> 1.1 </offset>
+		</volume>
+	</dooropen>
+
+		<!-- Door Close-->
+<doorclose>
+		<name>door close</name>
+		<mode>once</mode>
+		<path>PNavSounds/door_close.wav</path>
+		<condition>
+			<not>
+		<property>sim/model/door-positions/rightDoor/position-norm</property>
+			</not>
+	</condition>
+	<volume>
+		<reference-dist>100</reference-dist>
+		<max-dist>1000</max-dist>
+		
+			<offset> 1.1 </offset>
+		</volume>
+	</doorclose>
+
+		<!-- RadoAltimeter-->
+<alarmalt>
+		<name>alarmalt</name>
+		<mode>once</mode>
+		<path>PNavSounds/alarme_fuel.wav</path>
+			
+            <condition>
+				<less-than-equals>
+                    		<property>position/altitude-agl-ft</property>
+                    		<property>instrumentation/radar-altimeter/decision-height</property>
+
+                  	</less-than-equals>
+            </condition>
+
+		<reference-dist>2</reference-dist>
+		<max-dist>5</max-dist>
+		<volume>
+			<offset>1.1</offset>
+		</volume>
+	</alarmalt>
+
+
+
       </fx>
  
 </PropertyList>
