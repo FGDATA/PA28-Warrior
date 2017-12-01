@@ -21,6 +21,7 @@
     <model>instrumentation/adf[0]/model</model>
     <rotation-deg>instrumentation/adf[0]/rotation-deg</rotation-deg>
 
+
     <adf-bearing-deg>environment/wind-from-heading-deg</adf-bearing-deg>
 
     <indicated-heading>instrumentation/heading-indicator/indicated-heading-deg</indicated-heading>
@@ -53,8 +54,8 @@
                 <command>set-tooltip</command>
                 <tooltip-id>adfbearing</tooltip-id>
                 <mapping>bearing</mapping>
-                <label>Heading: %3d</label>
-                <property>instrumentation/heading-indicator/indicated-heading-deg</property>
+                <label>Wind From: %3d deg</label>
+                <property>environment/wind-from-heading-deg</property>
             </binding>
         </hovered>
     </animation>
