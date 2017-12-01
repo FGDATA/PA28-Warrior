@@ -497,8 +497,8 @@
 	</model>
 
 <model>
-		<name>fti</name>
-		<path>Aircraft/PA28-Warrior/Models/fti/FlapTrimIndicator.xml</path>
+		<name>awdf</name>
+		<path>Aircraft/PA28-Warrior/Models/instruments/awdf/ki227_228.xml</path>
 		<condition>
 			<equals>
 				<property>options/panel</property>
@@ -511,6 +511,7 @@
 			<z-m>0.271</z-m>
 		</offsets>
 	</model>
+
  <model>
   <name>trimw</name>
   <path>Aircraft/PA28-Warrior/Models/trimw/trimwheel.xml</path>

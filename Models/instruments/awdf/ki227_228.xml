@@ -1,21 +1,5 @@
 <?xml version="1.0"?>
 <!--
- This file is part of FlightGear, the free flight simulator
- http://www.flightgear.org/
-
- Copyright (C) 2009 Torsten Dreyer, Torsten (at) t3r _dot_ de
-
- This program is free software; you can redistribute it and/or
- modify it under the terms of the GNU General Public License as
- published by the Free Software Foundation; either version 2 of the
- License, or (at your option) any later version.
-
- This program is distributed in the hope that it will be useful, but
- WITHOUT ANY WARRANTY; without even the implied warranty of
- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
- General Public License for more details.
--->
-<!--
   Animations for the ki227 adf and ki228 rmi indicator
   Maintainer: Torsten Dreyer
 
@@ -36,9 +20,9 @@
   <params>
     <model>instrumentation/adf[0]/model</model>
     <rotation-deg>instrumentation/adf[0]/rotation-deg</rotation-deg>
-    <adf-bearing-deg>instrumentation/adf[0]/indicated-bearing-deg</adf-bearing-deg>
-    <vor-bearing-deg>instrumentation/nav[0]/radials/reciprocal-radial-deg</vor-bearing-deg>
-    <!--  <vor-bearing-deg>/instrumentation/ki227/nav[vor-bearing-source]/radials/reciprocal-radial-deg</vor-bearing-deg> -->
+
+    <adf-bearing-deg>environment/wind-from-heading-deg</adf-bearing-deg>
+
     <indicated-heading>instrumentation/heading-indicator/indicated-heading-deg</indicated-heading>
   </params>
   
@@ -69,8 +53,8 @@
                 <command>set-tooltip</command>
                 <tooltip-id>adfbearing</tooltip-id>
                 <mapping>bearing</mapping>
-                <label>Bearing: %3d</label>
-                <property>instrumentation/adf/indicated-bearing-deg</property>
+                <label>Heading: %3d</label>
+                <property>instrumentation/heading-indicator/indicated-heading-deg</property>
             </binding>
         </hovered>
     </animation>
