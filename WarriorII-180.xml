@@ -43,14 +43,14 @@ xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
 	</metrics>
 
 	<mass_balance>
-		<ixx unit="SLUG*FT2"> 948</ixx>
-		<iyy unit="SLUG*FT2">1346</iyy>
-		<izz unit="SLUG*FT2">1967</izz>
+		<ixx unit="SLUG*FT2">  648 </ixx>
+		<iyy unit="SLUG*FT2">  946 </iyy>
+		<izz unit="SLUG*FT2"> 1867 </izz>
 		
-		<ixy unit="SLUG*FT2">0</ixy>
-		<ixz unit="SLUG*FT2">0</ixz>
-		<iyz unit="SLUG*FT2">0</iyz>
-		<emptywt unit="LBS">1201</emptywt>
+		<ixy unit="SLUG*FT2">    0 </ixy>
+		<ixz unit="SLUG*FT2">    0 </ixz>
+		<iyz unit="SLUG*FT2">    0 </iyz>
+		<emptywt unit="LBS" > 1201 </emptywt>
 		
 		<location name="CG" unit="M">
 			<x> 2.5003 </x>

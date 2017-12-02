@@ -181,7 +181,7 @@
 				<property>metrics/bw-ft</property>
 				<property>aero/bi2vel</property>
 				<property>velocities/p-aero-rad_sec</property>
-				<value>-0.45</value>
+				<value>-0.48</value>
 			</product>
 		</function>
 
@@ -204,7 +204,7 @@
 				<property>metrics/Sw-sqft</property>
 				<property>metrics/bw-ft</property>
 				<property>fcs/left-aileron-pos-rad</property>
-				<value>0.34</value>
+				<value>0.28</value>
 			</product>
 		</function>
 
@@ -241,7 +241,7 @@
 				<property>metrics/Sw-sqft</property>
 				<property>metrics/cbarw-ft</property>
 				<property>fcs/elevator-pos-rad</property>
-				<value>-1.350</value>
+				<value>-1.250</value>
 			</product>
 		</function>
 
@@ -253,7 +253,7 @@
 				<property>metrics/cbarw-ft</property>
 				<property>aero/ci2vel</property>
 				<property>velocities/q-aero-rad_sec</property>
-				<value>-17.2</value>
+				<value>-16.2</value>
 			</product>
 		</function>
 
