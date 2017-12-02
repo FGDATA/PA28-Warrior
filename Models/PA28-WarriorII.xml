@@ -28,6 +28,16 @@
 		</unload>
 	</nasal>
 	
+  <effect>
+    <condition>
+      <property>/sim/rendering/rembrandt/enabled</property>
+    </condition>
+
+    <inherits-from>Effects/model-transparent</inherits-from>
+    <object-name>prop disc front</object-name>
+    <object-name>prop disc rear</object-name>
+  </effect>
+
  <animation>
   <type>material</type>
   <object-name>AC_Num</object-name>
@@ -892,6 +902,28 @@
    <z>0.0</z>
   </axis>
  </animation>
+
+ <animation>
+  <type>select</type>
+    <object-name>prop disc front</object-name>
+    <object-name>prop disc rear</object-name> 
+ <condition>
+   <less-than>
+    <property>engines/engine/rpm</property>
+    <value>1200</value>
+   </less-than>
+  </condition>
+ </animation>
+
+ <animation>
+    <type>blend</type>
+    <object-name>prop disc front</object-name>
+    <object-name>prop disc rear</object-name>
+    <property>engines/engine/rpm[0]</property>
+    <factor>0.00015</factor>
+    <max>1.0</max>
+    <min>0.8</min>
+  </animation>
 
   <model>
     <name>fuel selector</name>

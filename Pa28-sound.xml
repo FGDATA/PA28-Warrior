@@ -6,6 +6,25 @@
 
  <fx>
 
+     <!-- Flaps -->
+
+        <flap>
+            <name>flaps</name>
+            <mode>in-transit</mode>
+            <path>PNavSounds/flaps.wav</path>
+            <property>surface-positions/flap-pos-norm</property>
+            <position>
+                <x>0.5</x>
+                <y>0.0</y>
+                <z>0.5</z>
+            </position>
+            <volume>
+                <factor>1.1</factor>
+            </volume>
+            <reference-dist>1.0</reference-dist>
+            <max-dist>200.0</max-dist>
+        </flap>
+
     <!-- Out Of Fuel -->
     <oof>
       <name>Alarme-carburant</name>
@@ -332,7 +351,7 @@
     </oof>
 
 		<!-- Door Open-->
-<dooropen>
+          <dooropen>
 		<name>door open</name>
 		<mode>once</mode>
 		<path>PNavSounds/lidcreak.wav</path>
@@ -350,7 +369,7 @@
 	</dooropen>
 
 		<!-- Door Close-->
-<doorclose>
+      <doorclose>
 		<name>door close</name>
 		<mode>once</mode>
 		<path>PNavSounds/door_close.wav</path>
@@ -368,7 +387,7 @@
 	</doorclose>
 
 		<!-- RadoAltimeter-->
-<alarmalt>
+         <alarmalt>
 		<name>alarmalt</name>
 		<mode>once</mode>
 		<path>PNavSounds/alarme_fuel.wav</path>
