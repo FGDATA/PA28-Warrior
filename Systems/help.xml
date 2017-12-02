@@ -75,6 +75,11 @@
     <name>w</name>
     <desc>Open AC Config</desc>
    </key>
+   <key>
+    <name>g</name>
+    <desc>Reset DH = 0</desc>
+   </key>
+	
 	
 
       <line>All switches and controls (except yoke) can be operated via "hot-spots"</line>
