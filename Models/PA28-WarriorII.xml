@@ -118,6 +118,17 @@
    <z-m>-0.36</z-m>
   </offsets>
  </model>
+
+ <model>
+  <name>flapsl</name>
+  <path>Aircraft/PA28-Warrior/Models/flaps/flaps.xml</path>
+  <offsets>
+    <x-m>1.935</x-m>
+   <y-m>0.370</y-m>
+   <z-m>0.104</z-m>
+  </offsets>
+ </model>
+
  
 	<model>
 		<name>rpm</name>
