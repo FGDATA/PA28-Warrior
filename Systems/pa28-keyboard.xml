@@ -144,6 +144,16 @@
 <value>2</value>
 
                 </binding>
+			<binding>
+                    <command>property-cycle</command>
+						<property>systems/fuel/selected-tank</property>
+	
+                    <property>controls/fuel-selector</property>
+<value>1</value>
+<value>2</value>
+
+                </binding>
+
             </key>
 
 
