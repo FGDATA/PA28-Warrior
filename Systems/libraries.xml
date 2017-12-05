@@ -7,9 +7,9 @@
 	<filter>
 		<name>Gear AGL Altitude FT</name>
 		<type>gain</type>
-		<gain>1</gain>
+		<gain>1.0</gain>
 		<update-interval-secs type="double">0.05</update-interval-secs>
-		<input> 
+		<input>
 			<expression>
 				<dif>
 					<property>/position/altitude-agl-ft</property>
@@ -25,9 +25,9 @@
 	<filter>
 		<name>Gear AGL Altitude M</name>
 		<type>gain</type>
-		<gain>1</gain>
+		<gain>1.0</gain>
 		<update-interval-secs type="double">0.05</update-interval-secs>
-		<input> 
+		<input>
 			<expression>
 				<product>
 					<property>/position/gear-agl-ft</property>
@@ -38,6 +38,15 @@
 		<output>/position/gear-agl-m</output>
 		<min>0</min>
 		<max>50000</max>
+	</filter>
+	
+	<filter>
+		<name>Fuel Selector Knob</name>
+		<type>noise-spike</type>
+		<update-interval-secs type="double">0.05</update-interval-secs>
+		<input>/systems/fuel/selected-tank</input>
+		<output>/systems/fuel/selected-tank-knb</output>
+		<max-rate-of-change>2.0</max-rate-of-change>
 	</filter>
 
 	<filter>
@@ -79,7 +88,7 @@
 	<filter>
 		<name>RUDDER COMMANDER</name>
 		<type>gain</type>
-		<gain>1</gain>
+		<gain>1.0</gain>
 		<input>
 			<condition>
 				<and>
@@ -109,7 +118,7 @@
 	<filter>
 		<name>AUTOCOORDINATOR BYPASS</name>
 		<type>gain</type>
-		<gain>1</gain>
+		<gain>1.0</gain>
 		<enable>
 			<condition>
 				<or>
@@ -194,7 +203,7 @@
 		<name>System Command: Rudder Option</name>
 		<debug>false</debug>
 		<type>gain</type>
-		<gain>1</gain>
+		<gain>1.0</gain>
 		<input>
 			<condition>
 				<and>
