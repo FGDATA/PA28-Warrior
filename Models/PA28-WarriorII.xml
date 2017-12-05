@@ -128,6 +128,17 @@
    <z-m>-0.36</z-m>
   </offsets>
  </model>
+
+ <model>
+  <name>flapsl</name>
+  <path>Aircraft/PA28-Warrior/Models/flaps/flaps.xml</path>
+  <offsets>
+    <x-m>1.935</x-m>
+   <y-m>0.370</y-m>
+   <z-m>0.104</z-m>
+  </offsets>
+ </model>
+
  
 	<model>
 		<name>rpm</name>
@@ -506,9 +517,9 @@
 		</offsets>
 	</model>
 
-<model>
-		<name>awdf</name>
-		<path>Aircraft/PA28-Warrior/Models/instruments/awdf/ki227_228.xml</path>
+	<model>
+		<name>stbyai</name>
+		<path>Aircraft/PA28-Warrior/Models/instruments/ai/AttitudeGyro.xml</path>
 		<condition>
 			<equals>
 				<property>options/panel</property>
@@ -516,9 +527,9 @@
 			</equals>
 		</condition>
 		<offsets>
-			<x-m>1.927</x-m>
+			<x-m>1.919</x-m>
 			<y-m>-0.029</y-m>
-			<z-m>0.271</z-m>
+			<z-m>0.273</z-m>
 		</offsets>
 	</model>
 
