@@ -115,7 +115,7 @@ var lateral = func {
 		if (getprop("/autopilot/settings/gps-driving-true-heading") == 0) {
 			setprop("/it-autoflight/settings/slave-gps-nav", 0);
 		}
-		if (getprop("/instrumentation/nav[0]/in-range") == 1) {
+		if (getprop("/instrumentation/nav[0]/in-range") == 1 or getprop("/it-autoflight/settings/slave-gps-nav") == 1) {
 			if (getprop("/it-autoflight/output/lat") != 2) {
 				setprop("/it-autoflight/output/nav-armed", 1);
 				setprop("/it-autoflight/mode/arm", "V/L");
