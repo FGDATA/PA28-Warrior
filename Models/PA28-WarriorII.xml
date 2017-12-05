@@ -419,12 +419,12 @@
  </model>
 
  <model>
-  <name>AIG</name>
-  <path>Aircraft/PA28-Warrior/Models/instruments/AIN/ai-gauge.xml</path>
+  <name>AI</name>
+  <path>Aircraft/PA28-Warrior/Models/instruments/ai/AttitudeGyro.xml</path>
   <offsets>
    <x-m>1.933</x-m>
    <y-m>-0.230</y-m>
-   <z-m>0.271</z-m>
+   <z-m>0.275</z-m>
    <pitch-deg>-1</pitch-deg>
   </offsets>
  </model>
