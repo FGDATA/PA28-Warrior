@@ -80,9 +80,9 @@ xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
 	<ground_reactions>
 		<contact type="BOGEY" name="NOSE">
 			<location unit="M">
-				<x> 1.05849 </x>
+				<x> 0.95194 </x>
 				<y> 0 </y>
-				<z> -1.29 </z>
+				<z> -1.26984 </z>
 			</location>
 			<static_friction> 0.4 </static_friction>
 			<dynamic_friction> 0.6 </dynamic_friction>
@@ -95,9 +95,9 @@ xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
 		</contact>
 		<contact type="BOGEY" name="LEFT_MAIN">
 			<location unit="M">
-				<x> 2.85075 </x>
-				<y> -1.5 </y>
-				<z> -1.29 </z>
+				<x> 2.89843 </x>
+				<y> -1.52593 </y>
+				<z> -1.26621 </z>
 			</location>
 			<static_friction> 0.4 </static_friction>
 			<dynamic_friction> 0.6 </dynamic_friction>
@@ -110,9 +110,9 @@ xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
 		</contact>
 		<contact type="BOGEY" name="RIGHT_MAIN">
 			<location unit="M">
-				<x> 2.85075 </x>
-				<y> 1.5 </y>
-				<z> -1.29 </z>
+				<x> 2.89843 </x>
+				<y> 1.52593 </y>
+				<z> -1.26621 </z>
 			</location>
 			<static_friction> 0.4 </static_friction>
 			<dynamic_friction> 0.6 </dynamic_friction>
