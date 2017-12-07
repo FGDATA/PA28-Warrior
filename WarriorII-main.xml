@@ -146,7 +146,7 @@
 					</item>
 				</menu>
 				<menu n="101">
-					<label>Resources</label>
+					<label>How To..?</label>
 					<enabled type="bool">true</enabled>
 					<item>
 						<label>Getting Started</label>
