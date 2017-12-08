@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 
 <!--
 Radar Altimeter, based on Bendix-King KI-250 model
@@ -155,6 +155,16 @@ License: GPL
 				<wrap>false</wrap>
 		</binding>
 	</action>
+	<hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <tooltip-id>alt-setting</tooltip-id>
+                <label>Decision Height: %5.2f ft</label>
+                <property>/instrumentation/radar-altimeter/decision-height</property>
+
+            </binding>
+        </hovered>
+
 </animation>
 
 <animation>
