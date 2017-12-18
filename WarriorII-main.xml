@@ -307,40 +307,39 @@
 			<volume>0.8</volume>
 		</sound>
 		
-		 <multiplay>
-                   <generic>
-                      <bool n="0" alias="/options/wheel-fairing"/>
-                      <float n="0" alias="/gear/gear[0]/compression-m"/>
-                      <float n="1" alias="/gear/gear[1]/compression-m"/>
-                      <float n="2" alias="/gear/gear[2]/compression-m"/>
-                      <string alias="/sim/multiplay/callsign"/>
-                    </generic>
-                 </multiplay>
+		<multiplay>
+			<generic>
+				<bool n="0" alias="/options/wheel-fairing"/>
+				<float n="0" alias="/gear/gear[0]/compression-m"/>
+				<float n="1" alias="/gear/gear[1]/compression-m"/>
+				<float n="2" alias="/gear/gear[2]/compression-m"/>
+				<string alias="/sim/multiplay/callsign"/>
+			</generic>
+		</multiplay>
 
- <flight-recorder>
-    <replay-config type="int">0</replay-config>
-    <config n="0" include="/Aircraft/Generic/flightrecorder/generic-piston-propeller-1.xml">
-      <name type="string">Piper 28 Warrior Flight Recorder</name>
-      <signal>
-        <type>float</type>
-        <property type="string">/gear/gear[0]/compression-m</property>
-        <interpolation>linear</interpolation>
-      </signal>
-      <signal>
-        <type>float</type>
-        <property type="string">/gear/gear[1]/compression-m</property>
-        <interpolation>linear</interpolation>
-      </signal>
-      <signal>
-        <type>float</type>
-        <property type="string">/gear/gear[2]/compression-m</property>
-        <interpolation>linear</interpolation>
-      </signal>
-    </config>
-  </flight-recorder>
-
-
-                 <aircraft-data>     
+		<flight-recorder>
+			<replay-config type="int">0</replay-config>
+			<config n="0" include="/Aircraft/Generic/flightrecorder/generic-piston-propeller-1.xml">
+				<name type="string">Piper 28 Warrior Flight Recorder</name>
+				<signal>
+					<type>float</type>
+					<property type="string">/gear/gear[0]/compression-m</property>
+					<interpolation>linear</interpolation>
+				</signal>
+				<signal>
+					<type>float</type>
+					<property type="string">/gear/gear[1]/compression-m</property>
+					<interpolation>linear</interpolation>
+				</signal>
+				<signal>
+					<type>float</type>
+					<property type="string">/gear/gear[2]/compression-m</property>
+					<interpolation>linear</interpolation>
+				</signal>
+			</config>
+		</flight-recorder>
+		
+		<aircraft-data>     
 			<path>instrumentation/radar-altimeter/decision-height</path>
 			<path>instrumentation/comm[0]/volume</path>
 			<path>instrumentation/comm[0]/frequencies/selected-mhz</path>
@@ -532,10 +531,9 @@
 				<td>0.001</td>
 			</pitch>
 			<cmd>
-				<roll-kp>-0.9</roll-kp>
-				<roll-scale>1.1</roll-scale>
+				<roll-kp>-1.3</roll-kp>
 				<vorloc>-2.0</vorloc>
-				<vs>0.01</vs>
+				<vs>0.0017</vs>
 			</cmd>
 		</config>
 		<settings>
