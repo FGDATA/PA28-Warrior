@@ -39,7 +39,7 @@
 				</binding>
 <binding>
    <command>property-assign</command>
-   <property>sim/hud/visibility[1]</property>
+   <property>sim/hud/visibility[0]</property>
 		<value>1</value>
 				</binding>
 <binding>
