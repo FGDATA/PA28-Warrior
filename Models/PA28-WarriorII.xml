@@ -18,6 +18,39 @@
 		<texture>PA28-WarriorII.png</texture>
 	</animation>
 
+  <effect>
+    <inherits-from>Models/Effects/fuselage</inherits-from>
+     <object-name>Fuselage</object-name>
+    <object-name>VTail</object-name>
+    <object-name>Rudder</object-name>
+    <object-name>LeftWing</object-name>
+    <object-name>RightAileron</object-name>
+    <object-name>LeftAileron</object-name>
+    <object-name>LeftFlap</object-name>
+    <object-name>RightFlap</object-name>
+  </effect>
+
+<!-- shadow -->
+
+  <model>
+    <path>Aircraft/PA28-Warrior/Models/shadow.xml</path>
+    <offsets>
+      <x-m>  0.0 </x-m>
+      <y-m>  0.0 </y-m>
+      <z-m> -1.2 </z-m>
+    </offsets>
+  </model>
+
+  <effect>
+    <condition>
+      <property>/sim/rendering/rembrandt/enabled</property>
+    </condition>
+
+    <inherits-from>Effects/model-transparent</inherits-from>
+    <object-name>prop disc front</object-name>
+    <object-name>prop disc rear</object-name>
+  </effect>
+
 	<!-- Nasal code -->
 	<nasal>
 		<load>
@@ -27,12 +60,11 @@
 		 livery_update.stop();
 		</unload>
 	</nasal>
-	
+
   <effect>
     <condition>
       <property>/sim/rendering/rembrandt/enabled</property>
     </condition>
-
     <inherits-from>Effects/model-transparent</inherits-from>
     <object-name>prop disc front</object-name>
     <object-name>prop disc rear</object-name>
@@ -159,7 +191,22 @@
 			<z-m>0.020</z-m>
 		</offsets>
 	</model>
- 
+
+ <!-- Logo illumination -->
+
+      <animation>
+		<name>Logo illumination</name>
+		<type>material</type>
+               <object-name>VTail</object-name>
+                  <object-name>Rudder</object-name>
+ 		<emission>
+			<red>0.25</red>
+			<green>0.25</green>
+			<blue>0.25</blue>
+			<factor-prop>controls/lighting/logo-lights</factor-prop>
+		</emission>
+	</animation>
+
 <!-- New illumination -->
 
  <animation>
@@ -190,7 +237,7 @@
     <path>Aircraft/PA28-Warrior/Models/light/RedLight.xml</path>
     <offsets>
  		 <x-m>2.68980</x-m>
-                 <y-m>-5.18177</y-m>
+                 <y-m>-5.28975</y-m>
                  <z-m>0.11596</z-m>
    </offsets>
   </model>
@@ -198,60 +245,10 @@
   <model>
     <path>Aircraft/PA28-Warrior/Models/light/GreenLight.xml</path>
          <offsets>
- 			 <x-m>2.68980</x-m>
-                         <y-m>5.18177</y-m>
-                         <z-m>0.11596</z-m>
+ 		 <x-m>2.68980</x-m>
+                 <y-m>5.28975</y-m>
+                 <z-m>0.11596</z-m>
 	</offsets>
-  </model>
-
-  <!-- File missing -->
-  <!--model>
-    <path>Aircraft/PA28-Warrior/Models/light/flash.xml</path>
-        <offsets>
- 			 <x-m>2.68980</x-m>
-                         <y-m>-5.18177</y-m>
-                         <z-m>0.19596</z-m>
-	</offsets>
-  </model>
-
-  <model>
-    <path>Aircraft/PA28-Warrior/Models/light/flash.xml</path>
-        <offsets>
- 			 <x-m>2.68980</x-m>
-                         <y-m>5.18177</y-m>
-                         <z-m>0.41596</z-m>
-	</offsets>  
-  </model-->
-
-  <model>
-  <name>Tail-Light</name>
-    <path>Aircraft/PA28-Warrior/Models/light/TailLight.xml</path>
-    <offsets>
-      <x-m> 3.9 </x-m>
-      <y-m>  0 </y-m>
-      <z-m> 0.29 </z-m>
-    </offsets>
-  </model>
-
-  <animation>
-    <type>select</type>
-    <object-name>Tail-Light</object-name>
-    <condition>
-          <property>controls/lighting/nav-lights</property>
-    </condition>
-  </animation> 
-
-  <!-- Wing light cone -->
-  <model>
-    <name>Landing-Light-Left</name>
-    <path>Aircraft/PA28-Warrior/Models/light/light-cone.xml</path>
-    <offsets>
-      <x-m> -1.80</x-m>
-      <y-m>  -3.15 </y-m>
-      <z-m>  0.00 </z-m>
-      <pitch-deg> -15.00 </pitch-deg>
-      <heading-deg> 0 </heading-deg>
-    </offsets>
   </model>
 
  <model>
@@ -967,6 +964,7 @@
  </animation>
 
 <!--pick animation for the door--> 
+
  <animation>
    <type>pick</type>
    <object-name>DoorLatch</object-name>
@@ -996,6 +994,7 @@
  </animation>
 
 <!--door animation--> 
+
  <animation> 
    <type>rotate</type>
    <object-name>DoorGroup</object-name>

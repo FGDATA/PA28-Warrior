@@ -332,25 +332,8 @@
 			</condition>
 		</click>
 
-		<!-- Seatbelt-->
-    <oof>
-      <name>Seatbelt</name>
-      <mode>once</mode>
-      <path>PNavSounds/seatbelt.wav</path>
-      <condition>
-          <equals>
-            <property>controls/gear/brake-parking</property>
-            <value>0</value>
-          </equals>
-      </condition>  
-      <volume>
-        <factor>1.1</factor>
-      </volume>
-      <reference-dist>100</reference-dist>
-      <max-dist>1000</max-dist>      
-    </oof>
-
 		<!-- Door Open-->
+
           <dooropen>
 		<name>door open</name>
 		<mode>once</mode>
@@ -369,6 +352,7 @@
 	</dooropen>
 
 		<!-- Door Close-->
+
       <doorclose>
 		<name>door close</name>
 		<mode>once</mode>
@@ -387,6 +371,7 @@
 	</doorclose>
 
 		<!-- RadoAltimeter-->
+
          <alarmalt>
 		<name>alarmalt</name>
 		<mode>once</mode>
@@ -406,8 +391,6 @@
 			<offset>1.1</offset>
 		</volume>
 	</alarmalt>
-
-
 
       </fx>
  

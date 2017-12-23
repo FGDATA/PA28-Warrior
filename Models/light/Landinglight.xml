@@ -35,6 +35,14 @@
    <max>1</max>
  </animation>
 
+ <animation>
+    <type>select</type>
+    <object-name>Light</object-name>
+    <condition>
+	<property>controls/switches/landing-light</property>
+    </condition>
+  </animation>
+
     <animation>
         <type>dist-scale</type>
         <object-name>Light</object-name>
