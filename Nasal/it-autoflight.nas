@@ -1,5 +1,5 @@
 # IT AUTOFLIGHT:GA System Controller V1.1.0
-# Copyright (c) 2017 Joshua Davidson (it0uchpods)
+# Copyright (c) 2017-2018 Joshua Davidson (it0uchpods)
 # This program is 100% GPL!
 
 setprop("/it-autoflight/internal/heading-deg", 0);
@@ -14,6 +14,20 @@ setlistener("/sim/signals/fdm-initialized", func {
 	var signal = getprop("/instrumentation/nav[0]/gs-needle-deflection-norm");
 	var signal_b = getprop("/instrumentation/nav[1]/gs-needle-deflection-norm");
 	var bank_limit_sw = 0;
+	var gnds_mps = 0;
+	var current_course = 0;
+	var wp_fly_from = 0;
+	var wp_fly_to = 0;
+	var next_course = 0;
+	var max_bank_limit = 0;
+	var delta_angle = 0;
+	var max_bank = 0;
+	var radius = 0;
+	var time = 0;
+	var delta_angle_rad = 0;
+	var R = 0;
+	var dist_coeff = 0;
+	var turn_dist = 0;
 });
 
 var ap_init = func {
@@ -216,6 +230,10 @@ var vertical = func {
 }
 
 # Helpers
+setlistener("/autopilot/route-manager/current-wp", func {
+	setprop("/autopilot/internal/wp-change-time", getprop("/sim/time/elapsed-sec"));
+});
+
 var ap_various = func {
 	# Calculate Roll and Pitch Kp
 	rollKp = getprop("/it-autoflight/config/roll/kp-low") + (getprop("/velocities/mach") - 0.02) * ((getprop("/it-autoflight/config/roll/kp-high") - getprop("/it-autoflight/config/roll/kp-low")) / (0.20 - 0.02));
@@ -236,8 +254,42 @@ var ap_various = func {
 	setprop("/it-autoflight/config/pitch/kp", pitchKp);
 	
 	if (getprop("/autopilot/route-manager/route/num") > 0 and getprop("/autopilot/route-manager/active") == 1) {
-		if (getprop("/autopilot/route-manager/wp/dist") <= 0.5) {
-			if ((getprop("/autopilot/route-manager/current-wp") + 1) < getprop("/autopilot/route-manager/route/num")) {
+		if ((getprop("/autopilot/route-manager/current-wp") + 1) < getprop("/autopilot/route-manager/route/num")) {
+			gnds_mps = getprop("/velocities/groundspeed-kt") * 0.5144444444444;
+			wp_fly_from = getprop("/autopilot/route-manager/current-wp");
+			if (wp_fly_from < 0) {
+				wp_fly_from = 0;
+			}
+			current_course = getprop("/autopilot/route-manager/route/wp[" ~ wp_fly_from ~ "]/leg-bearing-true-deg");
+			wp_fly_to = getprop("/autopilot/route-manager/current-wp") + 1;
+			if (wp_fly_to < 0) {
+				wp_fly_to = 0;
+			}
+			next_course = getprop("/autopilot/route-manager/route/wp[" ~ wp_fly_to ~ "]/leg-bearing-true-deg");
+			max_bank_limit = getprop("/it-autoflight/settings/bank-limit");
+			delta_angle = math.abs(geo.normdeg180(current_course - next_course));
+			max_bank = delta_angle * 1.5;
+			if (max_bank > max_bank_limit) {
+				max_bank = max_bank_limit;
+			}
+			radius = (gnds_mps * gnds_mps) / (9.81 * math.tan(max_bank / 57.2957795131));
+			time = 0.64 * gnds_mps * delta_angle * 0.7 / (360 * math.tan(max_bank / 57.2957795131));
+			delta_angle_rad = (180 - delta_angle) / 114.5915590262;
+			R = radius/math.sin(delta_angle_rad);
+			dist_coeff = delta_angle * -0.011111 + 2;
+			if (dist_coeff < 1) {
+				dist_coeff = 1;
+			}
+			turn_dist = math.cos(delta_angle_rad) * R * dist_coeff / 1852;
+			if (getprop("/gear/gear[0]/wow") == 1 and turn_dist < 1) {
+				turn_dist = 1;
+			}
+			setprop("/it-autoflight/internal/lnav-advance-nm", turn_dist);
+			if (getprop("/sim/time/elapsed-sec")-getprop("/autopilot/internal/wp-change-time") > 60) {
+				setprop("/autopilot/internal/wp-change-check-period", time);
+			}
+			
+			if (getprop("/autopilot/route-manager/wp/dist") <= turn_dist) {
 				setprop("/autopilot/route-manager/current-wp", getprop("/autopilot/route-manager/current-wp") + 1);
 			}
 		}
