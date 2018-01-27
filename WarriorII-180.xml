@@ -362,10 +362,10 @@ xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
 		</tank>
 	</propulsion>
 	
-	<system file="fcs" />
+	<system file="pa28-fcs" />
 	<system file="fuel" />
 
 	<flight_control name="none" />
 	
-	<aerodynamics file="Systems/pa28-161-aerodynamics.xml" />
+	<aerodynamics file="Systems/pa28-aerodynamics.xml" />
 </fdm_config>
