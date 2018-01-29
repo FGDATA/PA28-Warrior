@@ -514,7 +514,7 @@
 				<td>0.001</td>
 			</pitch>
 			<cmd>
-				<roll-kp>-1.3</roll-kp>
+				<roll-kp>-1.0</roll-kp>
 				<vorloc>-2.0</vorloc>
 				<vs>0.0017</vs>
 			</cmd>
@@ -553,7 +553,7 @@
 		<libraries>
 			<file>Aircraft/PA28-Warrior/Nasal/libraries.nas</file>
 			<file>Aircraft/PA28-Warrior/Nasal/immat.nas</file>
-			<file>Aircraft/PA28-Warrior/Nasal/lighting.nas</file>
+			<!--file>Aircraft/PA28-Warrior/Nasal/lighting.nas</file-->
 			<file>Aircraft/PA28-Warrior/Models/instruments/elt/ELTmessage.nas</file>
 			<file>Aircraft/PA28-Warrior/Nasal/kr87.nas</file>
 			<file>Aircraft/PA28-Warrior/Nasal/ki266.nas</file>

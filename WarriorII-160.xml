@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <?xml-stylesheet type="text/xsl" href="http://jsbsim.sourceforge.net/JSBSim.xsl"?>
 
-<!-- Copyright (c) 2017 Joshua Davidson (it0uchpods) -->
+<!-- Copyright (c) 2018 Joshua Davidson (it0uchpods) -->
 
 <?xml-stylesheet href="JSBSim.xsl" type="application/xml"?>
 <fdm_config name="PA28-Warrior" version="2.0" release="BETA"
@@ -26,7 +26,7 @@ xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
 		<location name="AERORP" unit="M">
 			<x> 2.5011 </x>
 			<y> 0 </y>
-			<z> 0.0096 </z>
+			<z> 0.2512 </z>
 		</location>
 
 		<location name="EYEPOINT" unit="M">
@@ -43,9 +43,9 @@ xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
 	</metrics>
 
 	<mass_balance>
-		<ixx unit="SLUG*FT2">  648 </ixx>
-		<iyy unit="SLUG*FT2">  946 </iyy>
-		<izz unit="SLUG*FT2"> 1867 </izz>
+		<ixx unit="SLUG*FT2">  448 </ixx>
+		<iyy unit="SLUG*FT2">  646 </iyy>
+		<izz unit="SLUG*FT2"> 1467 </izz>
 		
 		<ixy unit="SLUG*FT2">    0 </ixy>
 		<ixz unit="SLUG*FT2">    0 </ixz>
@@ -55,7 +55,7 @@ xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
 		<location name="CG" unit="M">
 			<x> 2.5003 </x>
 			<y> 0 </y>
-			<z> 0.0096 </z>
+			<z> 0.2512 </z>
 		</location>
 
 		<pointmass name="Pilot">
@@ -63,7 +63,7 @@ xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
 			<location name="POINTMASS" unit="M">
 				<x> 2.5003 </x>
 				<y> 0 </y>
-				<z> 0.0096 </z>
+				<z> 0.2512 </z>
 			</location>
 		</pointmass>
 
@@ -72,7 +72,7 @@ xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
 			<location name="POINTMASS" unit="M">
 				<x> 2.5003 </x>
 				<y> 0 </y>
-				<z> 0.0096 </z>
+				<z> 0.2512 </z>
 			</location>
 		</pointmass>
 	</mass_balance>
@@ -353,7 +353,7 @@ xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
 			<location unit="M">
 				<x> 2.5003 </x>
 				<y> 0 </y>
-				<z> 0.0096 </z>
+				<z> 0.2512 </z>
 			</location>
 			<capacity unit="LBS">0.01</capacity>
 			<contents unit="LBS">0.00</contents>
