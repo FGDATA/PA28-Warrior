@@ -36,7 +36,7 @@ var update_dlg = gui.Dialog.new("sim/gui/dialogs/acconfig/update/dialog", "Aircr
 spinning.start();
 init_dlg.open();
 
-http.load("https://raw.githubusercontent.com/it0uchpods/PA28-Warrior/master/revision.txt").done(func(r) setprop("/systems/acconfig/new-revision", r.response));
+http.load("https://raw.githubusercontent.com/FGMEMBERS/PA28-Warrior/master/revision.txt").done(func(r) setprop("/systems/acconfig/new-revision", r.response));
 var revisionFile = (getprop("/sim/aircraft-dir")~"/revision.txt");
 var current_revision = io.readfile(revisionFile);
 
