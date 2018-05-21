@@ -3,9 +3,9 @@
 <!-- Copyright (c) 2017 Joshua Davidson (it0uchpods) -->
 
 <PropertyList>
-
+	
 	<sim include="Systems/help.xml">
-
+		
 		<author>Gerhard Kick, Joshua Davidson (it0uchpods), Gabriel Hernandez (YV3399)</author>
 		
 		<rating>
@@ -14,7 +14,7 @@
 			<cockpit type="int">4</cockpit>
 			<model type="int">4</model>
 		</rating>
-  
+		
 		<hud>
 			<path n="1">Aircraft/PA28-Warrior/Huds/PA161HUD.xml</path>
 			<path n="2">Aircraft/PA28-Warrior/Huds/FGN.xml</path>
@@ -51,7 +51,7 @@
 				</color>
 			</palette>
 		</hud>
-
+		
 		<panel>
 			<visibility archive="y">false</visibility>
 		</panel>
@@ -81,22 +81,23 @@
 				<splash type="bool">true</splash>
 				<path>Splash/Splash4.png</path>
 			</preview>	
-
-
 		</previews>
-
+		
 		<systems>
 			<electrical>
 				<path></path>
 			</electrical>
-			<autopilot>
+			<autopilot n="0">
 				<path>Aircraft/PA28-Warrior/Systems/it-autoflight.xml</path>
 			</autopilot>
-			<autopilot>
+			<autopilot n="1">
 				<path>Aircraft/PA28-Warrior/Systems/libraries.xml</path>
 			</autopilot>
+			<autopilot n="2">
+				<path>Aircraft/PA28-Warrior/Systems/zoom-views.xml</path>
+			</autopilot>
 		</systems>
-
+		
 		<menubar>
 			<default>
 				<menu n="100">
@@ -159,7 +160,6 @@
 							<path>Aircraft/PA28-Warrior/Docs/Fuel.pdf</path>
 						</binding>
 					</item>	
-					
 					<item>
 						<label>Fundamentals</label>
 						<binding>
@@ -198,11 +198,12 @@
 				</menu>
 			</default>
 		</menubar>
-
+		
 		<sound>
-			<path>Aircraft/PA28-Warrior/Pa28-sound.xml</path>
+			<path>Aircraft/PA28-Warrior/PNavSounds/sound.xml</path>
 		</sound>
-
+		
+		<chase-distance-m type="double" archive="y">-30.0</chase-distance-m>
 		<view n="0">
 			<name>Pilot View</name>
 			<internal archive="y">true</internal>
@@ -215,50 +216,27 @@
 			</config>
 		</view>
 		<view n="1">
-			<internal archive="y">true</internal>
 			<name>Helicopter View</name>
 			<config>
 				<target-z-offset-m archive="y" type="double">3.0</target-z-offset-m>
-				<x-offset-m archive="y">0</x-offset-m>
-				<y-offset-m archive="y">0</y-offset-m>
-				<z-offset-m archive="y">0</z-offset-m>
-				<default-field-of-view-deg type="double">66</default-field-of-view-deg>
-				<heading-offset-deg>-35</heading-offset-deg>
 			</config>
 		</view>
 		<view n="2">
-			<internal archive="y">true</internal>
 			<name>Chase View</name>
 			<config>
 				<target-z-offset-m archive="y" type="double">3.0</target-z-offset-m>
-				<x-offset-m archive="y">0</x-offset-m>
-				<y-offset-m archive="y">0</y-offset-m>
-				<z-offset-m archive="y">0</z-offset-m>
-				<default-field-of-view-deg type="double">66</default-field-of-view-deg>
-				<heading-offset-deg>-35</heading-offset-deg>
+			</config>
+		</view>
+		<view n="5">
+			<name>Chase without Yaw</name>
+			<config>
+				<target-z-offset-m archive="y" type="double">3.0</target-z-offset-m>
 			</config>
 		</view>
 		<view n="7">
 			<config>
-				<internal archive="y">true</internal>
 				<name>Model View</name>
 				<target-z-offset-m archive="y" type="double">3.0</target-z-offset-m>
-				<x-offset-m archive="y">0</x-offset-m>
-				<y-offset-m archive="y">0</y-offset-m>
-				<z-offset-m archive="y">0</z-offset-m>
-				<default-field-of-view-deg type="double">66</default-field-of-view-deg>
-				<heading-offset-deg>35</heading-offset-deg>
-			</config>
-		</view>
-		<view n="5">
-			<internal archive="y">true</internal>
-			<name>Chase without Yaw</name>
-			<config>
-				<x-offset-m archive="y">25</x-offset-m>
-				<y-offset-m archive="y">2</y-offset-m>
-				<z-offset-m archive="y">-10</z-offset-m>
-				<default-field-of-view-deg type="double">47</default-field-of-view-deg>
-				<heading-offset-deg>110</heading-offset-deg>
 			</config>
 		</view>
 		<view n="100">
@@ -285,7 +263,7 @@
 			<weight-lb>190</weight-lb>
 			<max-lb>200</max-lb>
 		</weight>
-
+		
 		<sound>
 			<volume>0.8</volume>
 		</sound>
@@ -299,7 +277,7 @@
 				<string alias="/sim/multiplay/callsign"/>
 			</generic>
 		</multiplay>
-
+		
 		<flight-recorder>
 			<replay-config type="int">0</replay-config>
 			<config n="0" include="/Aircraft/Generic/flightrecorder/generic-piston-propeller-1.xml">
@@ -351,8 +329,18 @@
 		</aircraft-data>
 		
 		<gui n="0" include="Systems/it-gui.xml"/>
+		
+		<current-view>
+			<z-offset-dec-step type="double">0.0</z-offset-dec-step>
+			<z-offset-inc-step type="double">0.0</z-offset-inc-step>
+			<can-change-z-offset type="bool">false</can-change-z-offset>
+			
+			<z-offset-default type="float">30.0</z-offset-default>
+			<z-offset-min-m type="float">10.0</z-offset-min-m>
+			<z-offset-max-m type="float">200.0</z-offset-max-m>
+		</current-view>
 	</sim>
-
+	
 	<airport>
 		<runways>
 			<start-offset-m>20</start-offset-m>
@@ -381,7 +369,7 @@
 			</tank>
 		</fuel>
 	</consumables>
-
+	
 	<controls n="0">
 		<electrical>
 			<battery type="bool">0</battery>
@@ -414,12 +402,12 @@
 		</switches>
 	</controls>
 	
-   <environment>
-	 <aircraft-effects>
-	  <overlay-alpha type="double">0.5</overlay-alpha>
-	 </aircraft-effects>
-   </environment>
-
+	<environment>
+		<aircraft-effects>
+			<overlay-alpha type="double">0.5</overlay-alpha>
+		</aircraft-effects>
+	</environment>
+	
 	<gear n="0">
 		<gear n="0">
 			<position-norm type="double">1</position-norm>
@@ -441,8 +429,322 @@
 			<spray-density type="double">0</spray-density>
 		</gear>
 	</gear>
- 
-	<input include="Systems/pa28-keyboard.xml"/>
+	
+	<input>
+		<mice n="0">
+			<mouse n="0">
+				<mode n="0">
+					<button n="3">
+						<binding n="0">
+							<script></script>
+						</binding>
+						<binding n="1">
+							<condition>
+								<and>
+									<property>/devices/status/mice/mouse[0]/button[2]</property>
+									<not><property>/sim/mouse/right-button-mode-cycle-enabled</property></not>
+								</and>
+							</condition>
+							<command>nasal</command>
+							<script>
+							if (getprop("/sim/current-view/can-change-z-offset")) {
+								var distance = getprop("/sim/current-view/z-offset-m");
+								var multiple = getprop("/sim/current-view/z-offset-inc-step");
+								var min_dist = getprop("/sim/current-view/z-offset-min-m");
+
+								distance = math.round(std.min(-min_dist, distance + multiple) / multiple) * multiple;
+								setprop("/sim/current-view/z-offset-m", distance);
+
+								gui.popupTip(sprintf("%d meters", abs(distance)));
+							} else {
+								view.decrease();
+							}
+							</script>
+						</binding>
+					</button>
+					<button n="4">
+						<binding n="0">
+							<script></script>
+						</binding>
+						<binding n="1">
+							<condition>
+								<and>
+									<property>/devices/status/mice/mouse[0]/button[2]</property>
+									<not><property>/sim/mouse/right-button-mode-cycle-enabled</property></not>
+								</and>
+							</condition>
+							<command>nasal</command>
+							<script>
+								if (getprop("/sim/current-view/can-change-z-offset")) {
+									var distance = getprop("/sim/current-view/z-offset-m");
+									var multiple = getprop("/sim/current-view/z-offset-dec-step");
+									var max_dist = getprop("/sim/current-view/z-offset-max-m");
+
+									distance = math.round(std.max(-max_dist, distance + multiple) / multiple) * multiple;
+									setprop("/sim/current-view/z-offset-m", distance);
+
+									gui.popupTip(sprintf("%d meters", abs(distance)));
+								} else {
+									view.increase();
+								}
+							</script>
+						</binding>
+					</button>
+				</mode>
+			</mouse>
+		</mice>
+		<keyboard>
+			<key n="12">
+				<name>Ctrl-L</name>
+				<desc>toggle panel lights</desc>
+				<binding>
+					<command>property-cycle</command>
+					<property>/controls/switches/panel-lights-factor</property>
+					<value>1</value>
+					<value>0</value>
+				</binding>
+			</key>
+			<key n="24">
+				<name>Ctrl-x</name>
+				<desc>Reset zoom to default</desc>
+				<binding>
+					<command>nasal</command>
+					<script>
+						if (getprop("/sim/current-view/can-change-z-offset")) {
+							setprop("/sim/current-view/z-offset-m", getprop("/sim/current-view/z-offset-default") * -1);
+
+							gui.popupTip(sprintf("%d meters", getprop("/sim/current-view/z-offset-default")));
+						} else {
+							setprop("/sim/current-view/field-of-view", getprop("/sim/view/config/default-field-of-view-deg"));
+						}
+					</script>
+				</binding>
+			</key>
+			<key n="33">
+				<name>!</name>
+				<desc>toggle battery</desc>
+				<binding>
+					<command>property-cycle</command>
+					<property>/controls/electrical/battery</property>
+					<value>1</value>
+					<value>0</value>
+				</binding>
+			</key>
+			<key n="35">
+				<name>#</name>
+				<desc>toggle fuelpump</desc>
+				<binding>
+					<command>property-cycle</command>
+					<property>/controls/switches/fuel-pump</property>
+					<value>1</value>
+					<value>0</value>
+				</binding>
+			</key>
+			<key n="42">
+				<name>*</name>
+				<desc>toggle pitot heat</desc>
+				<binding>
+					<command>property-cycle</command>
+					<property>/controls/switches/pitot-heat</property>
+					<value>1</value>
+					<value>0</value>
+				</binding>
+			</key>
+			<key n="64">
+				<name>@</name>
+				<desc>toggle alternator</desc>
+				<binding>
+					<command>property-cycle</command>
+					<property>/controls/electrical/alternator</property>
+					<value>1</value>
+					<value>0</value>
+				</binding>
+			</key>
+			<key n="66">
+				<name>B</name>
+				<desc>Toggle parking brake on or off</desc>
+				<binding>
+					<command>nasal</command>
+					<script>controls.applyParkingBrake(1)</script>
+				</binding>
+				<binding>
+					<command>show-message</command>
+					<id>bs</id>
+					<label>ParkingBrake set</label>
+					<delay>3.75</delay>
+				</binding>
+				<mod-up>
+					<binding>
+						<command>nasal</command>
+						<script>controls.applyParkingBrake(0)</script>
+					</binding>
+				</mod-up>	
+				<binding>
+					<condition>
+						<not><property>/controls/gear/brake-parking</property></not>
+					</condition>	
+					<command>show-message</command>
+					<id>strap</id>
+					<label>Fasten Your Seat Belt</label>
+					<delay>3.75</delay>
+				</binding>
+			</key>
+			<key n="88">
+				<name>X</name>
+				<desc>Increase field of view</desc>
+				<repeatable type="bool">true</repeatable>
+				<binding>
+				<command>nasal</command>
+				<script>
+					if (getprop("/sim/current-view/can-change-z-offset")) {
+						var distance = getprop("/sim/current-view/z-offset-m");
+						var multiple = getprop("/sim/current-view/z-offset-dec-step");
+						var max_dist = getprop("/sim/current-view/z-offset-max-m");
+
+						distance = math.round(std.max(-max_dist, distance + multiple) / multiple) * multiple;
+						setprop("/sim/current-view/z-offset-m", distance);
+
+						gui.popupTip(sprintf("%d meters", abs(distance)));
+					} else {
+						view.increase();
+					}
+				</script>
+				</binding>
+			</key>
+			<key n="100">
+				<name>d</name>
+				<desc>toggle door</desc>
+				<binding>
+					<command>property-cycle</command>
+					<property>/sim/model/door-positions/rightDoor/position-norm</property>
+					<value>0</value>
+					<value>1</value>
+				</binding>
+				<binding>
+					<condition>
+						<property>/sim/model/door-positions/rightDoor/position-norm</property>
+					</condition>
+					<command>show-message</command>
+					<id>openclose</id>
+					<label>Door is Open </label>
+					<property>/sim/model/door-positions/rightDoor/position-norm</property>
+					<value>1</value>
+					<delay>1.75</delay>
+				</binding>
+				<binding>
+					<condition>
+						<not><property>/sim/model/door-positions/rightDoor/position-norm</property></not>
+					</condition>
+					<command>show-message</command>
+					<id>openclose</id>
+					<label>Door is Closed </label>
+					<property>/sim/model/door-positions/rightDoor/position-norm</property>
+					<value>0</value>
+					<delay>1.75</delay>
+				</binding>
+			</key>
+			<key n="102">
+				<name>f</name>
+				<desc>full throttle</desc>
+				<binding>
+					<command>property-cycle</command>
+					<property>/controls/engines/engine/throttle</property>
+					<value>1</value>
+					<value>0</value>
+				</binding>
+			</key>
+			<key n="103">
+				<name>g</name>
+				<desc>reset DH</desc>
+				<binding>
+					<command>property-cycle</command>
+					<property>/instrumentation/radar-altimeter/decision-height</property>
+					<value>0</value>
+				</binding>
+				<binding>
+					<command>show-message</command>
+					<id>dh</id>
+					<label>Decision Height reset</label>
+					<delay>1.75</delay>
+				</binding>
+			</key>
+			<key n="106">
+				<name>j</name>
+				<desc>toggle tanks</desc>
+				<binding>
+					<command>property-cycle</command>
+					<property>/controls/fuel-selector</property>
+					<value>1</value>
+					<value>2</value>
+				</binding>
+				<binding>
+					<command>property-cycle</command>
+					<property>/systems/fuel/selected-tank</property>
+					<property>/controls/fuel-selector</property>
+					<value>1</value>
+					<value>2</value>
+				</binding>
+			</key>
+			<key n="107">
+				<name>k</name>
+				<desc>Show Map</desc>
+				<binding>
+					<command>dialog-show</command>
+					<dialog-name>map</dialog-name>
+				</binding>
+			</key>
+			<key n="114">
+				<name>r</name>
+				<desc>Show RM</desc>
+				<binding>
+					<command>dialog-show</command>
+					<dialog-name>route-manager</dialog-name>
+				</binding>
+			</key>
+			<key n="117">
+				<name>u</name>
+				<desc>toggle carb heat</desc>
+				<binding>
+					<command>property-cycle</command>
+					<property>/controls/anti-ice/engine/carb-heat</property>
+					<value>false</value>
+					<value>true</value>
+				</binding>
+			</key>
+			<key n="119">
+				<name>w</name>
+				<desc>Show AC Config</desc>
+				<binding>
+					<command>nasal</command>
+					<script>
+					acconfig.main_dlg.open();
+					</script>
+				</binding>
+			</key>
+			<key n="120">
+				<name>x</name>
+				<desc>Decrease field of view</desc>
+				<repeatable type="bool">true</repeatable>
+				<binding>
+					<command>nasal</command>
+					<script>
+						if (getprop("/sim/current-view/can-change-z-offset")) {
+							var distance = getprop("/sim/current-view/z-offset-m");
+							var multiple = getprop("/sim/current-view/z-offset-inc-step");
+							var min_dist = getprop("/sim/current-view/z-offset-min-m");
+
+							distance = math.round(std.min(-min_dist, distance + multiple) / multiple) * multiple;
+							setprop("/sim/current-view/z-offset-m", distance);
+
+							gui.popupTip(sprintf("%d meters", abs(distance)));
+						} else {
+							view.decrease();
+						}
+					</script>
+				</binding>
+			</key>
+		</keyboard>
+	</input>
 	
 	<instrumentation n="0">
 		<kcs55 include="Systems/kcs55.xml"/>
@@ -494,7 +796,6 @@
 			<!-- flag for marker lights test -->
 			<test type="int" archive="y">0</test>
 		</kma20>
-
 	</instrumentation>
 	
 	<it-autoflight>
@@ -545,7 +846,7 @@
 		</fuel>
 
 	</systems>
-
+	
 	<nasal n="0">
 		<libraries>
 			<file>Aircraft/PA28-Warrior/Nasal/libraries.nas</file>

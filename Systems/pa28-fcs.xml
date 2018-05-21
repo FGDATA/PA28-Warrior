@@ -53,10 +53,10 @@
 		
 		<pure_gain name="helpers/a-c-p">
 			<input>aero/beta-rad</input>
-			<gain>-2</gain>
+			<gain>-2.5</gain>
 			<clipto>
-				<min>-0.2</min>
-				<max>0.2</max>
+				<min>-0.3</min>
+				<max>0.3</max>
 			</clipto>
 		</pure_gain>
 		
@@ -66,8 +66,8 @@
 				/options/autocoordinate eq 1
 				gear/unit[1]/WOW eq 0
 				gear/unit[2]/WOW eq 0
-				/controls/flight/rudder lt 0.2
-				/controls/flight/rudder gt -0.2
+				/controls/flight/rudder lt 0.1
+				/controls/flight/rudder gt -0.1
 			</test>
 		</switch>
 	
@@ -183,8 +183,13 @@
 			</test>
 		</switch>
 		
-		<actuator name="fcs/steer-deg">
+		<pure_gain name="fcs/steer-switch-deg">
 			<input>fcs/steer-switch</input>
+			<gain>70</gain>
+		</pure_gain>
+		
+		<actuator name="fcs/steer-deg">
+			<input>fcs/steer-switch-deg</input>
 			<rate_limit>200</rate_limit>
 			<output>fcs/steer-pos-deg[0]</output>
 		</actuator>

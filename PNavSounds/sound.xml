@@ -10,7 +10,7 @@
     <oof>
       <name>Alarme-carburant</name>
       <mode>looped</mode>
-      <path>PNavSounds/alarm.wav</path>
+      <path>alarm.wav</path>
       <condition>
           <equals>
             <property>consumables/fuel/total-fuel-lbs</property>
@@ -28,7 +28,7 @@
     <oof>
       <name>Alarme-Low</name>
       <mode>once</mode>
-      <path>PNavSounds/alarme_fuel.wav</path>
+      <path>alarme_fuel.wav</path>
       <condition>          
             <property>systems/fuel/low-fuel</property>
       </condition>
@@ -106,7 +106,7 @@
       </volume>
       <pitch>
         <property>engines/engine/rpm</property>
-        <factor>0.002</factor>
+        <factor>0.001</factor>
         <min>0.2</min>
         <max>1.2</max>
         <offset>0.04</offset>
@@ -248,7 +248,7 @@
     <stall>
       <name>stall</name>
       <mode>looped</mode>
-      <path>PNavSounds/stall.wav</path>
+      <path>stall.wav</path>
       <condition>
         <and>
           <property>sim/current-view/internal</property>
@@ -318,7 +318,7 @@
           <dooropen>
 		<name>door open</name>
 		<mode>once</mode>
-		<path>PNavSounds/lidcreak.wav</path>
+		<path>lidcreak.wav</path>
 		<condition>
 		<property>sim/model/door-positions/rightDoor/position-norm</property>
 	</condition>
@@ -337,7 +337,7 @@
       <doorclose>
 		<name>door close</name>
 		<mode>once</mode>
-		<path>PNavSounds/door_close.wav</path>
+		<path>door_close.wav</path>
 		<condition>
 			<not>
 		<property>sim/model/door-positions/rightDoor/position-norm</property>
@@ -356,7 +356,7 @@
          <alarmalt>
 		<name>alarmalt</name>
 		<mode>once</mode>
-		<path>PNavSounds/alarme_fuel.wav</path>
+		<path>alarme_fuel.wav</path>
 			
             <condition>
 				<less-than-equals>
