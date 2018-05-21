@@ -49,12 +49,36 @@
 	
 	</channel>
 	
+	<channel name="Yaw Helper"> <!-- Autocoordinate -->
+		
+		<pure_gain name="helpers/a-c-p">
+			<input>aero/beta-rad</input>
+			<gain>-2</gain>
+			<clipto>
+				<min>-0.2</min>
+				<max>0.2</max>
+			</clipto>
+		</pure_gain>
+		
+		<switch name="helpers/a-c-f">
+			<default value="0"/>
+			<test logic="AND" value="helpers/a-c-p">
+				/options/autocoordinate eq 1
+				gear/unit[1]/WOW eq 0
+				gear/unit[2]/WOW eq 0
+				/controls/flight/rudder lt 0.2
+				/controls/flight/rudder gt -0.2
+			</test>
+		</switch>
+	
+	</channel>
+	
 	<channel name="Yaw">
 		
 		<summer name="fcs/yaw-input">
 			<input>fcs/rudder-cmd-norm</input>
 			<input>fcs/yaw-trim-cmd-norm</input>
-			<!--input>helpers/a-c-f</input-->
+			<input>helpers/a-c-f</input>
 			<clipto>
 				<min>-1</min>
 				<max>1</max>
