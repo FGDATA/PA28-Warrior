@@ -1,7 +1,7 @@
 # Aircraft Config Center
 # Joshua Davidson (it0uchpods)
 
-# Copyright (c) 2017 Joshua Davidson (it0uchpods)
+# Copyright (c) 2018 Joshua Davidson (it0uchpods)
 
 var spinning = maketimer(0.05, func {
 	var spinning = getprop("/systems/acconfig/spinning");
@@ -23,8 +23,15 @@ var spinning = maketimer(0.05, func {
 setprop("/systems/acconfig/autoconfig-running", 0);
 setprop("/systems/acconfig/spinning", 0);
 setprop("/systems/acconfig/spin", "-");
+setprop("/systems/acconfig/options/revision", 0);
 setprop("/systems/acconfig/new-revision", "");
 setprop("/systems/acconfig/out-of-date", 0);
+setprop("/systems/acconfig/options/welcome-skip", 0);
+setprop("/systems/acconfig/options/panel", "HSI Panel");
+setprop("/systems/acconfig/options/autocoordinate", 0);
+setprop("/systems/acconfig/options/slave-rudder", 0);
+setprop("/systems/acconfig/options/show-l-yoke", 1);
+setprop("/systems/acconfig/options/show-r-yoke", 1);
 var main_dlg = gui.Dialog.new("sim/gui/dialogs/acconfig/main/dialog", "Aircraft/PA28-Warrior/AircraftConfig/main.xml");
 var welcome_dlg = gui.Dialog.new("sim/gui/dialogs/acconfig/welcome/dialog", "Aircraft/PA28-Warrior/AircraftConfig/welcome.xml");
 var ps_load_dlg = gui.Dialog.new("sim/gui/dialogs/acconfig/psload/dialog", "Aircraft/PA28-Warrior/AircraftConfig/psload.xml");
@@ -33,12 +40,14 @@ var init_dlg = gui.Dialog.new("sim/gui/dialogs/acconfig/init/dialog", "Aircraft/
 var help_dlg = gui.Dialog.new("sim/gui/dialogs/acconfig/help/dialog", "Aircraft/PA28-Warrior/AircraftConfig/help.xml");
 var about_dlg = gui.Dialog.new("sim/gui/dialogs/acconfig/about/dialog", "Aircraft/PA28-Warrior/AircraftConfig/about.xml");
 var update_dlg = gui.Dialog.new("sim/gui/dialogs/acconfig/update/dialog", "Aircraft/PA28-Warrior/AircraftConfig/update.xml");
+var updated_dlg = gui.Dialog.new("sim/gui/dialogs/acconfig/update/dialog", "Aircraft/PA28-Warrior/AircraftConfig/updated.xml");
 spinning.start();
 init_dlg.open();
 
-http.load("https://raw.githubusercontent.com/FGMEMBERS/PA28-Warrior/master/revision.txt").done(func(r) setprop("/systems/acconfig/new-revision", r.response));
+http.load("https://raw.githubusercontent.com/it0uchpods/PA28-Warrior/master/revision.txt").done(func(r) setprop("/systems/acconfig/new-revision", r.response));
 var revisionFile = (getprop("/sim/aircraft-dir")~"/revision.txt");
 var current_revision = io.readfile(revisionFile);
+setprop("/systems/acconfig/revision", current_revision);
 
 setlistener("/systems/acconfig/new-revision", func {
 	if (getprop("/systems/acconfig/new-revision") > current_revision) {
@@ -53,21 +62,37 @@ setlistener("/sim/signals/fdm-initialized", func {
 	if (getprop("/systems/acconfig/out-of-date") == 1) {
 		update_dlg.open();
 		print("The PA28-Warrior is out of date!");
-	} else {
+	}
+	readSettings();
+	if (getprop("/systems/acconfig/options/revision") < current_revision) {
+		updated_dlg.open();
+	} else if (getprop("/systems/acconfig/out-of-date") != 1 and getprop("/systems/acconfig/options/welcome-skip") != 1) {
 		welcome_dlg.open();
 	}
+	setprop("/systems/acconfig/options/revision", current_revision);
+	writeSettings();
 	spinning.stop();
 });
 
-var saveSettings = func {
-	aircraft.data.add("/options/panel","/options/autocoordinate","/options/slave-rudder");
-aircraft.data.add("/instrumentation/nav/radials/selected-deg");
-
-
-	aircraft.data.save();
+var readSettings = func {
+	io.read_properties(getprop("/sim/fg-home") ~ "/Export/PA28-Warrior-config.xml", "/systems/acconfig/options");
+	setprop("/options/panel", getprop("/systems/acconfig/options/panel"));
+	setprop("/options/autocoordinate", getprop("/systems/acconfig/options/autocoordinate"));
+	setprop("/options/slave-rudder", getprop("/systems/acconfig/options/slave-rudder"));
+	setprop("/options/show-l-yoke", getprop("/systems/acconfig/options/show-l-yoke"));
+	setprop("/options/show-r-yoke", getprop("/systems/acconfig/options/show-r-yoke"));
+	setprop("/options/panel", getprop("/systems/acconfig/options/panel"));
 }
 
-saveSettings();
+var writeSettings = func {
+	setprop("/systems/acconfig/options/panel", getprop("/options/panel"));
+	setprop("/systems/acconfig/options/autocoordinate", getprop("/options/autocoordinate"));
+	setprop("/systems/acconfig/options/slave-rudder", getprop("/options/slave-rudder"));
+	setprop("/systems/acconfig/options/show-l-yoke", getprop("/options/show-l-yoke"));
+	setprop("/systems/acconfig/options/show-r-yoke", getprop("/options/show-r-yoke"));
+	setprop("/systems/acconfig/options/panel", getprop("/options/panel"));
+	io.write_properties(getprop("/sim/fg-home") ~ "/Export/PA28-Warrior-config.xml", "/systems/acconfig/options");
+}
 
 var systemsReset = func {
 	systems.elec_init();

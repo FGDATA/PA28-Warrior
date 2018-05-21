@@ -82,6 +82,12 @@
 				<command>property-toggle</command>
 				<property>options/show-l-yoke</property>
 			</binding>
+			<binding>
+				<command>nasal</command>
+				<script>
+				acconfig.writeSettings();
+				</script>
+			</binding>
 		</action>
 	</animation>
 </PropertyList>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<!-- Copyright (c) 2017 Joshua Davidson (it0uchpods) -->
+<!-- Copyright (c) 2018 Joshua Davidson (it0uchpods) -->
 
 <!-- PA28-161 Aircraft Config Dialog -->
 
@@ -16,7 +16,7 @@
 		<layout>hbox</layout>
 		<text>
 			<halign>left</halign>
-			<label>Aircraft Configuration V1.4.5</label>
+			<label>Aircraft Configuration V1.5.0</label>
 		</text>
 		<button>
 			<halign>right</halign>
@@ -62,15 +62,6 @@
 						aircraft.livery.dialog.toggle();
 						</script>
 					</binding>
-				</button>
-				<button>
-					<halign>center</halign>
-					<legend>Aircraft Help</legend>
-					<pref-width>140</pref-width>
-					<binding>
-				<command>nasal</command>
-				<script>gui.showHelpDialog("/sim/help")</script>
-			</binding>
 				</button>
 			</group>
 			
@@ -252,7 +243,7 @@
 				<binding>
 					<command>nasal</command>
 					<script>
-					acconfig.saveSettings();
+					acconfig.writeSettings();
 					</script>
 				</binding>
 				<live>true</live>
@@ -268,7 +259,7 @@
 				<binding>
 					<command>nasal</command>
 					<script>
-					acconfig.saveSettings();
+					acconfig.writeSettings();
 					</script>
 				</binding>
 				<live>true</live>
@@ -292,7 +283,7 @@
 				<binding>
 					<command>nasal</command>
 					<script>
-					acconfig.saveSettings();
+					acconfig.writeSettings();
 					</script>
 				</binding>
 				<live>true</live>
