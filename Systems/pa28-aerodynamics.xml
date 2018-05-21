@@ -88,7 +88,7 @@
 			<product>
 				<property>aero/qbar-psf</property>
 				<property>metrics/Sw-sqft</property>
-				<property>fcs/elevator-pos-rad</property>
+				<property>fcs/elevator-rad</property>
 				<value>0.4090</value>
 			</product>
 		</function>
@@ -192,7 +192,7 @@
 			<product>
 				<property>aero/qbar-psf</property>
 				<property>metrics/Sw-sqft</property>
-				<abs><property>fcs/elevator-pos-rad</property></abs>
+				<abs><property>fcs/elevator-rad</property></abs>
 				<value>0.04</value>
 			</product>
 		</function>
@@ -265,7 +265,7 @@
 			<product>
 				<property>aero/qbar-psf</property>
 				<property>metrics/Sw-sqft</property>
-				<property>fcs/rudder-pos-rad</property>
+				<property>fcs/rudder-rad</property>
 				<value>0.1020</value>
 			</product>
 		</function>
@@ -315,7 +315,7 @@
 				<property>aero/qbar-psf</property>
 				<property>metrics/Sw-sqft</property>
 				<property>metrics/bw-ft</property>
-				<property>fcs/left-aileron-pos-rad</property>
+				<property>fcs/aileron-rad</property>
 				<value>0.28</value>
 			</product>
 		</function>
@@ -326,7 +326,7 @@
 				<property>aero/qbar-psf</property>
 				<property>metrics/Sw-sqft</property>
 				<property>metrics/bw-ft</property>
-				<property>fcs/rudder-pos-rad</property>
+				<property>fcs/rudder-rad</property>
 				<value>0.01</value>
 			</product>
 		</function>
@@ -352,7 +352,7 @@
 				<property>aero/qbar-psf</property>
 				<property>metrics/Sw-sqft</property>
 				<property>metrics/cbarw-ft</property>
-				<property>fcs/elevator-pos-rad</property>
+				<property>fcs/elevator-rad</property>
 				<value>-1.050</value>
 			</product>
 		</function>
@@ -414,7 +414,7 @@
 				<property>aero/qbar-psf</property>
 				<property>metrics/Sw-sqft</property>
 				<property>metrics/bw-ft</property>
-				<property>fcs/rudder-pos-rad</property>
+				<property>fcs/rudder-rad</property>
 				<value>-0.1</value>
 			</product>
 		</function>
@@ -425,7 +425,7 @@
 				<property>aero/qbar-psf</property>
 				<property>metrics/Sw-sqft</property>
 				<property>metrics/bw-ft</property>
-				<property>fcs/left-aileron-pos-rad</property>
+				<property>fcs/aileron-rad</property>
 				<value>0</value>
 			</product>
 		</function>

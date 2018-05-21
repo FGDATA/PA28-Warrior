@@ -29,7 +29,6 @@ setprop("/systems/acconfig/out-of-date", 0);
 setprop("/systems/acconfig/options/welcome-skip", 0);
 setprop("/systems/acconfig/options/panel", "HSI Panel");
 setprop("/systems/acconfig/options/autocoordinate", 0);
-setprop("/systems/acconfig/options/slave-rudder", 0);
 setprop("/systems/acconfig/options/show-l-yoke", 1);
 setprop("/systems/acconfig/options/show-r-yoke", 1);
 var main_dlg = gui.Dialog.new("sim/gui/dialogs/acconfig/main/dialog", "Aircraft/PA28-Warrior/AircraftConfig/main.xml");
@@ -78,7 +77,6 @@ var readSettings = func {
 	io.read_properties(getprop("/sim/fg-home") ~ "/Export/PA28-Warrior-config.xml", "/systems/acconfig/options");
 	setprop("/options/panel", getprop("/systems/acconfig/options/panel"));
 	setprop("/options/autocoordinate", getprop("/systems/acconfig/options/autocoordinate"));
-	setprop("/options/slave-rudder", getprop("/systems/acconfig/options/slave-rudder"));
 	setprop("/options/show-l-yoke", getprop("/systems/acconfig/options/show-l-yoke"));
 	setprop("/options/show-r-yoke", getprop("/systems/acconfig/options/show-r-yoke"));
 	setprop("/options/panel", getprop("/systems/acconfig/options/panel"));
@@ -87,7 +85,6 @@ var readSettings = func {
 var writeSettings = func {
 	setprop("/systems/acconfig/options/panel", getprop("/options/panel"));
 	setprop("/systems/acconfig/options/autocoordinate", getprop("/options/autocoordinate"));
-	setprop("/systems/acconfig/options/slave-rudder", getprop("/options/slave-rudder"));
 	setprop("/systems/acconfig/options/show-l-yoke", getprop("/options/show-l-yoke"));
 	setprop("/systems/acconfig/options/show-r-yoke", getprop("/options/show-r-yoke"));
 	setprop("/systems/acconfig/options/panel", getprop("/options/panel"));

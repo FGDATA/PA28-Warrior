@@ -6,56 +6,30 @@
 	
 	<channel name="Roll">
 		
-		<summer name="Roll Trim Sum">
+		<summer name="fcs/roll-input">
 			<input>fcs/aileron-cmd-norm</input>
 			<input>fcs/roll-trim-cmd-norm</input>
 			<clipto>
 				<min>-1</min>
 				<max>1</max>
 			</clipto>
+			<output>fcs/left-aileron-pos-norm</output>
+			<output>fcs/right-aileron-pos-norm</output>
 		</summer>
 		
-		<aerosurface_scale name="Left Aileron Control">
-			<input>fcs/roll-trim-sum</input>
+		<aerosurface_scale name="fcs/aileron-rad">
+			<input>fcs/roll-input</input>
 			<range>
 				<min>-0.349066</min>
 				<max>0.349066</max>
 			</range>
-			<output>fcs/left-aileron-pos-rad</output>
-		</aerosurface_scale>
-		
-		<aerosurface_scale name="Left Aileron Norm">
-			<input>fcs/roll-trim-sum</input>
-			<range>
-				<min>-1</min>
-				<max>1</max>
-			</range>
-			<output>fcs/left-aileron-pos-norm</output>
-		</aerosurface_scale>
-		
-		<aerosurface_scale name="Right Aileron Control">
-			<input>-fcs/roll-trim-sum</input>
-			<range>
-				<min>-0.349066</min>
-				<max>0.349066</max>
-			</range>
-			<output>fcs/right-aileron-pos-rad</output>
-		</aerosurface_scale>
-		
-		<aerosurface_scale name="Right Aileron Norm">
-			<input>-fcs/roll-trim-sum</input>
-			<range>
-				<min>-1</min>
-				<max>1</max>
-			</range>
-			<output>fcs/right-aileron-pos-norm</output>
 		</aerosurface_scale>
 	
 	</channel>
 	
 	<channel name="Pitch">
 		
-		<summer name="Pitch Trim Sum">
+		<summer name="fcs/pitch-input">
 			<input>fcs/elevator-cmd-norm</input>
 			<input>fcs/pitch-trim-cmd-norm</input>
 			<clipto>
@@ -65,22 +39,22 @@
 			<output>fcs/elevator-pos-norm</output>
 		</summer>
 		
-		<aerosurface_scale name="Elevator Control">
-			<input>fcs/pitch-trim-sum</input>
+		<aerosurface_scale name="fcs/elevator-rad">
+			<input>fcs/pitch-input</input>
 			<range>
 				<min>-0.349066</min>
 				<max>0.349066</max>
 			</range>
-			<output>fcs/elevator-pos-rad</output>
 		</aerosurface_scale>
 	
 	</channel>
 	
 	<channel name="Yaw">
 		
-		<summer name="Yaw Trim Sum">
+		<summer name="fcs/yaw-input">
 			<input>fcs/rudder-cmd-norm</input>
 			<input>fcs/yaw-trim-cmd-norm</input>
+			<!--input>helpers/a-c-f</input-->
 			<clipto>
 				<min>-1</min>
 				<max>1</max>
@@ -88,13 +62,12 @@
 			<output>fcs/rudder-pos-norm</output>
 		</summer>
 		
-		<aerosurface_scale name="Rudder Control">
-			<input>fcs/yaw-trim-sum</input>
+		<aerosurface_scale name="fcs/rudder-rad">
+			<input>fcs/yaw-input</input>
 			<range>
 				<min>-0.436332</min>
 				<max>0.436332</max>
 			</range>
-			<output>fcs/rudder-pos-rad</output>
 		</aerosurface_scale>
 	
 	</channel>
@@ -113,8 +86,8 @@
 					</tableData>
 				</table>
 			</function>
-			<output>fcs/throttle-cmd-norm</output>
-			<output>fcs/throttle-pos-norm</output>
+			<output>fcs/throttle-cmd-norm[0]</output>
+			<output>fcs/throttle-pos-norm[0]</output>
 		</fcs_function>
 	
 	</channel>
@@ -131,8 +104,8 @@
 					</tableData>
 				</table>
 			</function>
-			<output>fcs/mixture-cmd-norm</output>
-			<output>fcs/mixture-pos-norm</output>
+			<output>fcs/mixture-cmd-norm[0]</output>
+			<output>fcs/mixture-pos-norm[0]</output>
 		</fcs_function>
 	
 	</channel>
@@ -174,6 +147,23 @@
 			</range>
 			<output>fcs/flap-pos-norm</output>
 		</aerosurface_scale>
+	
+	</channel>
+	
+	<channel name="Nose Wheel">
+		
+		<switch name="fcs/steer-switch">
+			<default value="/controls/flight/rudder"/>
+			<test logic="AND" value="/controls/flight/aileron">
+				/controls/flight/aileron-drives-tiller eq 1
+			</test>
+		</switch>
+		
+		<actuator name="fcs/steer-deg">
+			<input>fcs/steer-switch</input>
+			<rate_limit>200</rate_limit>
+			<output>fcs/steer-pos-deg[0]</output>
+		</actuator>
 	
 	</channel>
 

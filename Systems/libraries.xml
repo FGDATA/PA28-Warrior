@@ -85,7 +85,7 @@
 		<output>/instrumentation/nav[1]/filtered-gsNAV1-deflection</output>
 	</filter>
 	
-	<filter>
+	<!--filter>
 		<name>RUDDER COMMANDER</name>
 		<type>gain</type>
 		<gain>1.0</gain>
@@ -259,7 +259,7 @@
 			<property>/controls/flight/rudder-slave</property>
 		</input>
 		<output>/controls/flight/rudder-fdm</output>
-	</filter>
+	</filter-->
 
 </PropertyList>
 

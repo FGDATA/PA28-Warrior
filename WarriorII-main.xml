@@ -395,7 +395,7 @@
 			</engine>
 		</engines>
 		<flight>
-			<rudder-fdm type="double">0</rudder-fdm>
+			<aileron-drives-tiller type="bool">0</aileron-drives-tiller>
 		</flight>
 		<gear>
 			<brake-parking type="double">1.0</brake-parking>
@@ -536,7 +536,6 @@
 		<panel type="string">HSI Panel</panel>
 		<show-l-yoke type="bool">1</show-l-yoke>
 		<show-r-yoke type="bool">1</show-r-yoke>
-		<slave-rudder type="bool">0</slave-rudder>
 	</options>
 	
 	<systems n="0">
