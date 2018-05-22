@@ -13,15 +13,13 @@
 	<sparkfaildrop>               0.10 </sparkfaildrop>
 	<volumetric-efficiency>       0.85 </volumetric-efficiency>
 	<man-press-lag>               0.10 </man-press-lag>
-	<static-friction unit="HP">   0.80 </static-friction>
+	<static-friction unit="HP">   1.80 </static-friction>
 	<starter-torque>            128.00 </starter-torque>
 	<starter-rpm>              1487.00 </starter-rpm>
 	<stroke unit="IN">            4.38 </stroke>
 	<bore unit="IN">              5.13 </bore>
 	<cylinders>                   3.00 </cylinders>
 	<compression-ratio>           8.00 </compression-ratio>
-	<maxthrottle>                 0.90 </maxthrottle>
+	<maxthrottle>                 1.00 </maxthrottle>
 	<minthrottle>                 0.00 </minthrottle>
-	<sparkfaildrop>               0.10 </sparkfaildrop>
-	<volumetric-efficiency>       0.68 </volumetric-efficiency>
 </piston_engine>

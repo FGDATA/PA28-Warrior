@@ -2,10 +2,12 @@
 
 <!-- Copyright (c) 2018 Joshua Davidson (it0uchpods) -->
 
-<propeller version="1.01" name="fixed-pitch-2-blade">
+<propeller name="fixed-pitch-2-blade">
 	<ixx>                4.258 </ixx>
 	<diameter unit="IN">  73.2 </diameter>
 	<numblades>              2 </numblades>
+	<minrpm>                 0 </minrpm>
+	<maxrpm>              2477 </maxrpm>
 	<gearratio>              1 </gearratio>
 	<cp_factor>              1 </cp_factor>
 	<ct_factor>              2 </ct_factor>
