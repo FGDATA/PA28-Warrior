@@ -175,7 +175,7 @@ var taxi = func {
 	setprop("/controls/engines/engine[0]/mixture", 1);
 	setprop("/controls/engines/engine[0]/throttle", 0.4);
 	setprop("/controls/engines/engine[0]/magnetos-switch", 4);
-	interpolate("/controls/engines/engine[0]/throttle", 0.15, 3);
+	interpolate("/controls/engines/engine[0]/throttle", 0.2, 3);
 	settimer(func {
 		setprop("/controls/engines/engine[0]/magnetos-switch", 3);
 		setprop("/systems/acconfig/autoconfig-running", 0);
