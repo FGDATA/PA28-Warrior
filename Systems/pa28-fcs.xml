@@ -1,61 +1,35 @@
 <!-- PA28-161 FCS -->
 
-<!-- Copyright (c) 2017 Joshua Davidson (it0uchpods) -->
+<!-- Copyright (c) 2018 Joshua Davidson (it0uchpods) -->
 
 <system name="PA28-161: FCS">
-
-	<channel name="Roll">
 	
-		<summer name="Roll Trim Sum">
+	<channel name="Roll">
+		
+		<summer name="fcs/roll-input">
 			<input>fcs/aileron-cmd-norm</input>
 			<input>fcs/roll-trim-cmd-norm</input>
 			<clipto>
 				<min>-1</min>
 				<max>1</max>
 			</clipto>
-		</summer>
-
-		<aerosurface_scale name="Left Aileron Control">
-			<input>fcs/roll-trim-sum</input>
-			<range>
-				<min>-0.349066</min>
-				<max>0.349066</max>
-			</range>
-			<output>fcs/left-aileron-pos-rad</output>
-		</aerosurface_scale>
-
-		<aerosurface_scale name="Left Aileron Norm">
-			<input>fcs/roll-trim-sum</input>
-			<range>
-				<min>-1</min>
-				<max>1</max>
-			</range>
 			<output>fcs/left-aileron-pos-norm</output>
-		</aerosurface_scale>
-
-		<aerosurface_scale name="Right Aileron Control">
-			<input>-fcs/roll-trim-sum</input>
+			<output>fcs/right-aileron-pos-norm</output>
+		</summer>
+		
+		<aerosurface_scale name="fcs/aileron-rad">
+			<input>fcs/roll-input</input>
 			<range>
 				<min>-0.349066</min>
 				<max>0.349066</max>
 			</range>
-			<output>fcs/right-aileron-pos-rad</output>
 		</aerosurface_scale>
-
-		<aerosurface_scale name="Right Aileron Norm">
-			<input>-fcs/roll-trim-sum</input>
-			<range>
-				<min>-1</min>
-				<max>1</max>
-			</range>
-			<output>fcs/right-aileron-pos-norm</output>
-		</aerosurface_scale>
-		
+	
 	</channel>
 	
 	<channel name="Pitch">
-	
-		<summer name="Pitch Trim Sum">
+		
+		<summer name="fcs/pitch-input">
 			<input>fcs/elevator-cmd-norm</input>
 			<input>fcs/pitch-trim-cmd-norm</input>
 			<clipto>
@@ -64,23 +38,47 @@
 			</clipto>
 			<output>fcs/elevator-pos-norm</output>
 		</summer>
-
-		<aerosurface_scale name="Elevator Control">
-			<input>fcs/pitch-trim-sum</input>
+		
+		<aerosurface_scale name="fcs/elevator-rad">
+			<input>fcs/pitch-input</input>
 			<range>
 				<min>-0.349066</min>
 				<max>0.349066</max>
 			</range>
-			<output>fcs/elevator-pos-rad</output>
 		</aerosurface_scale>
-		
-	</channel>
-
-	<channel name="Yaw">
 	
-		<summer name="Yaw Trim Sum">
+	</channel>
+	
+	<channel name="Yaw Helper"> <!-- Autocoordinate -->
+		
+		<pure_gain name="helpers/a-c-p">
+			<input>aero/beta-rad</input>
+			<gain>-2.5</gain>
+			<clipto>
+				<min>-0.3</min>
+				<max>0.3</max>
+			</clipto>
+		</pure_gain>
+		
+		<switch name="helpers/a-c-f">
+			<default value="0"/>
+			<test logic="AND" value="helpers/a-c-p">
+				/options/autocoordinate eq 1
+				gear/unit[1]/WOW eq 0
+				gear/unit[2]/WOW eq 0
+				/controls/flight/rudder lt 0.1
+				/controls/flight/rudder gt -0.1
+			</test>
+		</switch>
+	
+	</channel>
+	
+	<channel name="Yaw">
+		
+		<summer name="fcs/yaw-input">
 			<input>fcs/rudder-cmd-norm</input>
 			<input>fcs/yaw-trim-cmd-norm</input>
+			<input>helpers/a-c-f</input>
 			<clipto>
 				<min>-1</min>
 				<max>1</max>
@@ -88,58 +86,57 @@
 			<output>fcs/rudder-pos-norm</output>
 		</summer>
 		
-		<aerosurface_scale name="Rudder Control">
-			<input>fcs/yaw-trim-sum</input>
+		<aerosurface_scale name="fcs/rudder-rad">
+			<input>fcs/yaw-input</input>
 			<range>
 				<min>-0.436332</min>
 				<max>0.436332</max>
 			</range>
-			<output>fcs/rudder-pos-rad</output>
 		</aerosurface_scale>
-		
+	
 	</channel>
 	
 	<channel name="Throttle">
-	
-		<fcs_function name="Throttle 1 Scaler">
+		
+		<fcs_function name="fcs/throttle-cmd-modified">
 			<function>
 				<table>
 					<independentVar lookup="row">/controls/engines/engine[0]/throttle</independentVar>
 					<tableData>
-						0.0 0.0
-						0.2 0.4
-						0.6 0.8
-						1.0 1.0
+						0.0 0.00
+						0.2 0.32
+						0.6 0.64
+						1.0 0.80
 					</tableData>
 				</table>
 			</function>
-			<output>fcs/throttle-cmd-norm</output>
-			<output>fcs/throttle-pos-norm</output>
+			<output>fcs/throttle-cmd-norm[0]</output>
+			<output>fcs/throttle-pos-norm[0]</output>
 		</fcs_function>
-		
+	
 	</channel>
 	
 	<channel name="Mixture">
-	
-		<fcs_function name="Mixture 1 Scaler">
+		
+		<fcs_function name="fcs/mixture-cmd-modified">
 			<function>
 				<table>
 					<independentVar lookup="row">/controls/engines/engine[0]/mixture</independentVar>
 					<tableData>
-						0 0.6
-						1 1.0
+						0  0.55
+						1  1.00
 					</tableData>
 				</table>
 			</function>
-			<output>fcs/mixture-cmd-norm</output>
-			<output>fcs/mixture-pos-norm</output>
+			<output>fcs/mixture-cmd-norm[0]</output>
+			<output>fcs/mixture-pos-norm[0]</output>
 		</fcs_function>
-		
-	</channel>
-
-	<channel name="Flaps">
 	
-		<kinematic name="Flaps Control">
+	</channel>
+	
+	<channel name="Flaps">
+		
+		<kinematic name="rubbish/flap-pos-deg">
 			<input>fcs/flap-cmd-norm</input>
 			<traverse>
 				<setting>
@@ -161,8 +158,8 @@
 			</traverse>
 			<output>fcs/flap-pos-deg</output>
 		</kinematic>
-
-		<aerosurface_scale name="Flap Position Normalizer">
+		
+		<aerosurface_scale name="rubbish/flap-pos-norm">
 			<input>fcs/flap-pos-deg</input>
 			<domain>
 				<min>0</min>
@@ -174,7 +171,29 @@
 			</range>
 			<output>fcs/flap-pos-norm</output>
 		</aerosurface_scale>
+	
+	</channel>
+	
+	<channel name="Nose Wheel">
 		
+		<switch name="fcs/steer-switch">
+			<default value="/controls/flight/rudder"/>
+			<test logic="AND" value="/controls/flight/aileron">
+				/controls/flight/aileron-drives-tiller eq 1
+			</test>
+		</switch>
+		
+		<pure_gain name="fcs/steer-switch-deg">
+			<input>fcs/steer-switch</input>
+			<gain>70</gain>
+		</pure_gain>
+		
+		<actuator name="fcs/steer-deg">
+			<input>fcs/steer-switch-deg</input>
+			<rate_limit>200</rate_limit>
+			<output>fcs/steer-pos-deg[0]</output>
+		</actuator>
+	
 	</channel>
 
 </system>

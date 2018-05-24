@@ -18,39 +18,6 @@
 		<texture>PA28-WarriorII.png</texture>
 	</animation>
 
-  <effect>
-    <inherits-from>Models/Effects/fuselage</inherits-from>
-     <object-name>Fuselage</object-name>
-    <object-name>VTail</object-name>
-    <object-name>Rudder</object-name>
-    <object-name>LeftWing</object-name>
-    <object-name>RightAileron</object-name>
-    <object-name>LeftAileron</object-name>
-    <object-name>LeftFlap</object-name>
-    <object-name>RightFlap</object-name>
-  </effect>
-
-<!-- shadow -->
-
-  <model>
-    <path>Aircraft/PA28-Warrior/Models/shadow.xml</path>
-    <offsets>
-      <x-m>  0.0 </x-m>
-      <y-m>  0.0 </y-m>
-      <z-m> -1.2 </z-m>
-    </offsets>
-  </model>
-
-  <effect>
-    <condition>
-      <property>/sim/rendering/rembrandt/enabled</property>
-    </condition>
-
-    <inherits-from>Effects/model-transparent</inherits-from>
-    <object-name>prop disc front</object-name>
-    <object-name>prop disc rear</object-name>
-  </effect>
-
 	<!-- Nasal code -->
 	<nasal>
 		<load>
@@ -60,15 +27,15 @@
 		 livery_update.stop();
 		</unload>
 	</nasal>
-
-  <effect>
-    <condition>
-      <property>/sim/rendering/rembrandt/enabled</property>
-    </condition>
-    <inherits-from>Effects/model-transparent</inherits-from>
-    <object-name>prop disc front</object-name>
-    <object-name>prop disc rear</object-name>
-  </effect>
+	
+	<effect>
+		<condition>
+		<property>/sim/rendering/rembrandt/enabled</property>
+		</condition>
+		<inherits-from>Effects/model-transparent</inherits-from>
+		<object-name>prop disc front</object-name>
+		<object-name>prop disc rear</object-name>
+	</effect>
 
  <animation>
   <type>material</type>
@@ -161,15 +128,6 @@
   </offsets>
  </model>
 
- <model>
-  <name>flapsl</name>
-  <path>Aircraft/PA28-Warrior/Models/flaps/flaps.xml</path>
-  <offsets>
-    <x-m>1.935</x-m>
-   <y-m>0.370</y-m>
-   <z-m>0.104</z-m>
-  </offsets>
- </model>
 
  
 	<model>
@@ -191,22 +149,7 @@
 			<z-m>0.020</z-m>
 		</offsets>
 	</model>
-
- <!-- Logo illumination -->
-
-      <animation>
-		<name>Logo illumination</name>
-		<type>material</type>
-               <object-name>VTail</object-name>
-                  <object-name>Rudder</object-name>
- 		<emission>
-			<red>0.25</red>
-			<green>0.25</green>
-			<blue>0.25</blue>
-			<factor-prop>controls/lighting/logo-lights</factor-prop>
-		</emission>
-	</animation>
-
+ 
 <!-- New illumination -->
 
  <animation>
@@ -233,34 +176,34 @@
 
 <!-- Lights -->
 
-  <model>
-    <path>Aircraft/PA28-Warrior/Models/light/RedLight.xml</path>
-    <offsets>
- 		 <x-m>2.68980</x-m>
-                 <y-m>-5.28975</y-m>
-                 <z-m>0.11596</z-m>
-   </offsets>
-  </model>
+	<model>
+		<path>Aircraft/PA28-Warrior/Models/light/RedLight.xml</path>
+		<offsets>
+			<x-m>2.68980</x-m>
+			<y-m>-5.28975</y-m>
+			<z-m>0.11596</z-m>
+		</offsets>
+	</model>
 
-  <model>
-    <path>Aircraft/PA28-Warrior/Models/light/GreenLight.xml</path>
-         <offsets>
- 		 <x-m>2.68980</x-m>
-                 <y-m>5.28975</y-m>
-                 <z-m>0.11596</z-m>
-	</offsets>
-  </model>
+	<model>
+		<path>Aircraft/PA28-Warrior/Models/light/GreenLight.xml</path>
+		<offsets>
+			<x-m>2.68980</x-m>
+			<y-m>5.28975</y-m>
+			<z-m>0.11596</z-m>
+		</offsets>
+	</model>
 
- <model>
-    <name>LandingLight-Left</name>
-   <path>Aircraft/PA28-Warrior/Models/light/Landinglight.xml</path>
-    <offsets>
-      <x-m> 0.50</x-m>
-      <y-m>  -0.00 </y-m>
-      <z-m>  -0.30 </z-m>
-      <pitch-deg> -15.00 </pitch-deg>
-    </offsets>
-  </model>
+	<model>
+		<name>LandingLight-Left</name>
+		<path>Aircraft/PA28-Warrior/Models/light/Landinglight.xml</path>
+		<offsets>
+		<x-m>0.5</x-m>
+		<y-m>0.0</y-m>
+		<z-m>-0.3</z-m>
+		<pitch-deg>-15.00</pitch-deg>
+		</offsets>
+	</model>
 
 <!-- Effects -->
 
@@ -964,7 +907,6 @@
  </animation>
 
 <!--pick animation for the door--> 
-
  <animation>
    <type>pick</type>
    <object-name>DoorLatch</object-name>
@@ -994,7 +936,6 @@
  </animation>
 
 <!--door animation--> 
-
  <animation> 
    <type>rotate</type>
    <object-name>DoorGroup</object-name>
@@ -1210,7 +1151,7 @@
   <type>rotate</type>
   <object-name>RightAileron</object-name>
   <property>surface-positions/right-aileron-pos-norm</property>
-  <factor>20</factor>
+  <factor>-20</factor>
   <center>
    <x-m>3.1338</x-m>
    <y-m>5.0553</y-m>
@@ -1306,108 +1247,6 @@
    <x>0.0</x>
    <y>1.0</y>
    <z>0.0</z>
-  </axis>
- </animation>
-
- <animation>
-  <type>rotate</type>
-  <object-name>NoseWheel</object-name>
-  <object-name>NoseOleo</object-name>
-  <object-name>NoseOleoMount</object-name>
-  <object-name>UpperLink</object-name>
-  <object-name>LowerLink</object-name>
-  <object-name>NoseStrutLinkMount</object-name>
-  <object-name>NoseFork</object-name>
-  <object-name>NoseWheelFairing</object-name>
-  <object-name>NoseWheelStrut</object-name>
-  <property>surface-positions/rudder-pos-norm</property>
-  <factor>-17.5</factor>
-  <center>
-   <x-m>1.07906</x-m>
-   <y-m>0.0</y-m>
-   <z-m>-0.-0.61773</z-m>
-  </center>
-  <axis>
-   <x>-0.100868</x>
-   <y>0.0</y>
-   <z>1.0</z>
-  </axis>
- </animation>
-
- <animation>
-  <type>translate</type>
-  <object-name>NoseWheel</object-name>
-  <object-name>NoseWheelStrut</object-name>
-  <object-name>LowerLink</object-name>
-  <object-name>NoseStrutLinkMount</object-name>
-  <object-name>NoseFork</object-name>
-  <object-name>NoseWheelFairing</object-name>
-  <property>gear/gear[0]/compression-m</property>
-  <factor>1.0</factor>
-  <axis>
-   <x>-0.100868</x>
-   <y>0.0</y>
-   <z>1.0</z>
-  </axis>
- </animation>
-
- <animation>
-  <type>rotate</type>
-  <object-name>UpperLink</object-name>
-  <property>gear/gear[0]/compression-norm</property>
-  <center>
-   <x-m>1.11548</x-m>
-   <y-m>0.0</y-m>
-   <z-m>-0.61490</z-m>
-  </center>
-  <axis>
-   <x>0</x>
-   <y>-1</y>
-   <z>0</z>
-  </axis>
-  <interpolation include="NoseGearScissorInterpolation.xml"/>
- </animation>
-
- <animation>
-  <type>rotate</type>
-  <object-name>LowerLink</object-name>
-  <property>gear/gear[0]/compression-norm</property>
-  <center>
-   <x-m>1.10549</x-m>
-   <y-m>0.0</y-m>
-   <z-m>-0.71349</z-m>
-  </center>
-  <axis>
-   <x>0</x>
-   <y>1</y>
-   <z>0</z>
-  </axis>
-  <interpolation include="NoseGearScissorInterpolation.xml"/>
- </animation>
-
- <animation>
-  <type>translate</type>
-  <object-name>LeftWheel</object-name>
-  <object-name>LeftMainFairing</object-name>
-  <property>gear/gear[1]/compression-m</property>
-  <factor>1.0</factor>
-  <axis>
-   <x>0.0</x>
-   <y>0.0</y>
-   <z>1.0</z>
-  </axis>
- </animation>
-
- <animation>
-  <type>translate</type>
-  <object-name>RightWheel</object-name>
-  <object-name>RightMainFairing</object-name>
-  <property>gear/gear[2]/compression-m</property>
-  <factor>1.0</factor>
-  <axis>
-   <x>0.0</x>
-   <y>0.0</y>
-   <z>1.0</z>
   </axis>
  </animation>
 

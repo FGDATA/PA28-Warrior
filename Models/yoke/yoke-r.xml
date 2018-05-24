@@ -29,7 +29,7 @@
 	<animation>
 		<type>translate</type>
 		<object-name>Yoke</object-name>
-		<property>fdm/jsbsim/fcs/pitch-trim-sum</property>
+		<property>fdm/jsbsim/fcs/pitch-input</property>
 		<factor>-0.12</factor>
 		<axis>
 			<x>1.0</x>
@@ -81,6 +81,12 @@
 			<binding>
 				<command>property-toggle</command>
 				<property>options/show-r-yoke</property>
+			</binding>
+			<binding>
+				<command>nasal</command>
+				<script>
+				acconfig.writeSettings();
+				</script>
 			</binding>
 		</action>
 	</animation>

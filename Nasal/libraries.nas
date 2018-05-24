@@ -69,3 +69,10 @@ setlistener("/options/nav-source", func {
 		setprop("/it-autoflight/settings/slave-gps-nav", 0);
 	}
 });
+
+if (getprop("/controls/flight/auto-coordination") == 1) {
+	setprop("/controls/flight/auto-coordination", 0);
+	setprop("/controls/flight/aileron-drives-tiller", 1);
+} else {
+	setprop("/controls/flight/aileron-drives-tiller", 0);
+}
