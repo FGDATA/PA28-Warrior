@@ -7,6 +7,7 @@
 
 setprop("/systems/electrical/bus/elec1", 0);
 setprop("/systems/electrical/bus/elec2", 0);
+setprop("/systems/electrical/outputs/stby", 0);
 setprop("/sim/menubar/default/menu[5]/item[4]/enabled", 0);
 
 setlistener("/sim/signals/fdm-initialized", func {
@@ -166,6 +167,7 @@ var master_elec = func {
 	setprop("/systems/electrical/outputs/nav[0]", avionics1);
 	setprop("/systems/electrical/outputs/oat", avionics1);
 	setprop("/systems/electrical/outputs/dme", avionics1);
+	setprop("/systems/electrical/outputs/stby", avionics1);
 	
 	setprop("/systems/electrical/outputs/adf", avionics2);
 	setprop("/systems/electrical/outputs/autopilot", avionics2);

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+	<path>NavSourceSwitch.ac</path>
+	
+	<params>
+		<value>instrumentation/ki227/vor-bearing-source</value>
+	</params>
+
+	<animation>
+		<object-name>Lever</object-name>
+		<type>pick</type>
+		<visible>true</visible>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>property-cycle</command>
+				<property>options/nav-source</property>
+				<value>1</value>
+				<value>2</value>
+				<value>3</value>
+			</binding>
+		</action>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>ToogleNavSource</tooltip-id>
+				<label>Nav Source</label>
+			</binding>
+		</hovered>
+	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>Lever</object-name>
+		<property>options/nav-source</property>
+		<interpolation>
+			<entry><ind>1</ind><dep> 0</dep></entry>
+			<entry><ind>2</ind><dep>16</dep></entry>
+			<entry><ind>3</ind><dep>32</dep></entry>
+		</interpolation>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>1</z>
+		</axis>
+	</animation>
+
+</PropertyList>

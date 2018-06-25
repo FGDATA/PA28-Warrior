@@ -49232,7 +49232,6 @@ kids 0
 OBJECT poly
 name "LandingGearGroup"
 loc 2.89843 -0.707185 1.38861
-texture "Landing Gear/LFL.png"
 crease 45.000000
 numvert 32
 0.0215626 0 0
@@ -58197,7 +58196,6 @@ kids 0
 OBJECT poly
 name "LandingGearGroup"
 loc 1.04121 -0.682385 0
-texture "Landing Gear/LFL.png"
 crease 45.000000
 numvert 64
 0.032774 0.0619122 -2.98023e-008
@@ -68249,7 +68247,6 @@ kids 0
 OBJECT poly
 name "LandingGearGroup"
 loc 2.89843 -0.707182 -1.38861
-texture "Landing Gear/LFL.png"
 crease 45.000000
 numvert 32
 0.0215626 0 0
