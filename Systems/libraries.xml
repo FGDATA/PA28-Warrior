@@ -53,36 +53,108 @@
 		<name>CDI0 lowpass</name>
 		<debug>false</debug>
 		<type>exponential</type>
-		<filter-time>2.0</filter-time>
 		<input>/instrumentation/nav[0]/heading-needle-deflection</input>
 		<output>/instrumentation/nav[0]/filtered-cdiNAV0-deflection</output>
+		<filter-time>2.0</filter-time>
 	</filter>
 
 	<filter>
 		<name>CDI1 lowpass</name>
 		<debug>false</debug>
 		<type>exponential</type>
-		<filter-time>2.0</filter-time>
 		<input>/instrumentation/nav[1]/heading-needle-deflection</input>
 		<output>/instrumentation/nav[1]/filtered-cdiNAV1-deflection</output>
+		<filter-time>2.0</filter-time>
 	</filter>
 
 	<filter>
 		<name>GS0 lowpass</name>
 		<debug>false</debug>
 		<type>exponential</type>
-		<filter-time>2.0</filter-time>
 		<input>/instrumentation/nav[0]/gs-needle-deflection-norm</input>
 		<output>/instrumentation/nav[0]/filtered-gsNAV0-deflection</output>
+		<filter-time>2.0</filter-time>
 	</filter>
 
 	<filter>
 		<name>GS1 lowpass</name>
 		<debug>false</debug>
 		<type>exponential</type>
-		<filter-time>2.0</filter-time>
 		<input>/instrumentation/nav[1]/gs-needle-deflection-norm</input>
 		<output>/instrumentation/nav[1]/filtered-gsNAV1-deflection</output>
+		<filter-time>2.0</filter-time>
+	</filter>
+	
+	<filter>
+		<name>Attitude Indicator Roll lowpass</name>
+		<debug>false</debug>
+		<type>exponential</type>
+		<input>/instrumentation/attitude-indicator/indicated-roll-deg</input>
+		<output>/instrumentation/attitude-indicator/actual-indicated-roll-deg</output>
+		<filter-time>0.04</filter-time>
+	</filter>
+	
+	<filter>
+		<name>Attitude Indicator Pitch lowpass</name>
+		<debug>false</debug>
+		<type>exponential</type>
+		<input>/instrumentation/attitude-indicator/indicated-pitch-deg</input>
+		<output>/instrumentation/attitude-indicator/actual-indicated-pitch-deg</output>
+		<filter-time>0.04</filter-time>
+	</filter>
+	
+	<filter>
+		<name>STBY Attitude Indicator Roll lowpass</name>
+		<debug>false</debug>
+		<type>exponential</type>
+		<input>
+			<condition>
+				<less-than>
+					<property>/systems/electrical/outputs/stby</property>
+					<value>9</value>
+				</less-than>
+			</condition>
+			<value>34</value>
+		</input>
+		<input>/orientation/roll-deg</input>
+		<output>/instrumentation/stby-ai/roll-deg</output>
+		<filter-time>
+			<condition>
+				<less-than>
+					<property>/systems/electrical/outputs/stby</property>
+					<value>9</value>
+				</less-than>
+			</condition>
+			<value>2.0</value>
+		</filter-time>
+		<filter-time>0.02</filter-time>
+	</filter>
+	
+	<filter>
+		<name>STBY Attitude Indicator Pitch lowpass</name>
+		<debug>false</debug>
+		<type>exponential</type>
+		<input>
+			<condition>
+				<less-than>
+					<property>/systems/electrical/outputs/stby</property>
+					<value>9</value>
+				</less-than>
+			</condition>
+			<value>18</value>
+		</input>
+		<input>/orientation/pitch-deg</input>
+		<output>/instrumentation/stby-ai/pitch-deg</output>
+		<filter-time>
+			<condition>
+				<less-than>
+					<property>/systems/electrical/outputs/stby</property>
+					<value>9</value>
+				</less-than>
+			</condition>
+			<value>2.0</value>
+		</filter-time>
+		<filter-time>0.02</filter-time>
 	</filter>
 
 </PropertyList>

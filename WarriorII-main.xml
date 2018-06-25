@@ -747,42 +747,50 @@
 	</input>
 	
 	<instrumentation n="0">
-		<kcs55 include="Systems/kcs55.xml"/>
-		<kcs55 n="0">
-			<ka51>
-				<slaved>true</slaved>
-			</ka51>
-		</kcs55>
+		<adf>
+			<model>ki228</model>
+			<volume-norm type="double">1</volume-norm>
+		</adf>
 		<attitude-indicator>
 			<config>
 				<tumble-flag>true</tumble-flag>
 			</config>
 		</attitude-indicator>
-		<encoder>
-			<serviceable type="bool">true</serviceable>
-		</encoder>
-		<adf>
-			<model>ki228</model>
-			<volume-norm type="double">1</volume-norm>
-		</adf>
-		<oat>
-			<mode type="int">0</mode>
-		</oat>
+		<dme>
+			<switch-position type="int">1</switch-position>
+			<volume type="double">0</volume>
+		</dme>
 		<elt>
 			<armed type="bool">false</armed>
 			<on type="bool">true</on>
 			<on-pos type="double">1</on-pos>
 			<test type="bool">false</test>
 		</elt>
-		<dme>
-			<switch-position type="int">1</switch-position>
-			<volume type="double">0</volume>
-		</dme>
+		<encoder>
+			<serviceable type="bool">true</serviceable>
+		</encoder>
+		<kcs55>
+			<ka51>
+				<slaved>true</slaved>
+			</ka51>
+			<ki525>
+				<selected-course-property>instrumentation/nav[0]/radials/selected-deg</selected-course-property>
+				<cdi-deflection-property type="string">instrumentation/nav[0]/heading-needle-deflection</cdi-deflection-property>
+				<gs-deflection-property type="string">instrumentation/nav[0]/gs-needle-deflection-filtered</gs-deflection-property>
+				<to-flag-property type="string">instrumentation/nav[0]/to-flag</to-flag-property>
+				<from-flag-property type="string">instrumentation/nav[0]/from-flag</from-flag-property>
+				<nav-flag-property type="string">instrumentation/nav[0]/signal-quality-norm</nav-flag-property>
+				<course-error-property type="string">autopilot/internal/course-error-deg</course-error-property>
+				<heading-error-property type="string">autopilot/internal/heading-error-deg</heading-error-property>
+			</ki525>
+			<kg102>
+				<input-power-node>systems/electrical/outputs/hsi</input-power-node>
+				<input-power-min type="double">11.0</input-power-min>
+				<input-power-max type="double">15.8</input-power-max>
+			</kg102>
+		</kcs55>
 		<kma20>
-			<!-- -1: COM1, 0: COM2, 1: EXT -->
 			<knob type="int" archive="y">-1</knob>
-
-			<!-- -1: SPEAKER, 0: OFF, 1: PHONE -->
 			<auto type="int" archive="y">1</auto>
 			<com1 type="int" archive="y">0</com1>
 			<com2 type="int" archive="y">0</com2>
@@ -792,10 +800,14 @@
 			<dme  type="int" archive="y">0</dme>
 			<mkr  type="int" archive="y">-1</mkr>
 			<sens type="int" archive="y">0</sens>
-
-			<!-- flag for marker lights test -->
 			<test type="int" archive="y">0</test>
 		</kma20>
+		<oat>
+			<mode type="int">0</mode>
+		</oat>
+		<stby-ai n="0">
+			<pitch-reference-offset-deg type="double">0</pitch-reference-offset-deg>
+		</stby-ai>
 	</instrumentation>
 	
 	<it-autoflight>
@@ -855,7 +867,6 @@
 			<file>Aircraft/PA28-Warrior/Models/instruments/elt/ELTmessage.nas</file>
 			<file>Aircraft/PA28-Warrior/Nasal/kr87.nas</file>
 			<file>Aircraft/PA28-Warrior/Nasal/ki266.nas</file>
-			<file>Aircraft/PA28-Warrior/Models/instruments/KLN90B/kln90b.nas</file>
 			<file>Aircraft/PA28-Warrior/Nasal/kcs55.nas</file>
 			<file>Aircraft/PA28-Warrior/Nasal/kma20.nas</file>
 			<script>
