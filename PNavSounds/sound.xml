@@ -6,39 +6,6 @@
 
  <fx>
 
-    <!-- Out Of Fuel -->
-    <oof>
-      <name>Alarme-carburant</name>
-      <mode>looped</mode>
-      <path>alarm.wav</path>
-      <condition>
-          <equals>
-            <property>consumables/fuel/total-fuel-lbs</property>
-            <value>0</value>
-          </equals>
-      </condition>
-	      <volume>
-        <factor>1.1</factor>
-      </volume>
-      <reference-dist>5</reference-dist>
-      <max-dist>1000</max-dist>      
-    </oof>
-
-    <!-- Low Of Fuel -->
-    <oof>
-      <name>Alarme-Low</name>
-      <mode>once</mode>
-      <path>alarme_fuel.wav</path>
-      <condition>          
-            <property>systems/fuel/low-fuel</property>
-      </condition>
-	      <volume>
-        <factor>1.1</factor>
-      </volume>
-      <reference-dist>80</reference-dist>
-      <max-dist>1000</max-dist>      
-    </oof>
-
 <!-- Running -->
 
    <engine>

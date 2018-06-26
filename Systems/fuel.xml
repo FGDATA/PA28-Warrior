@@ -8,20 +8,20 @@
 		<switch name="fuel/from-tank0-to-tank2">
 			<default value="0"/>
 			<test logic="AND" value="0.1">
-				/systems/fuel/selected-tank EQ 1
-				/systems/fuel/suck-fuel EQ 1
-				propulsion/tank[0]/contents-lbs GT 0
-				propulsion/tank[2]/contents-lbs LT 0.008
+				/systems/fuel/selected-tank eq 1
+				/systems/fuel/suck-fuel eq 1
+				propulsion/tank[0]/contents-lbs gt 0
+				propulsion/tank[2]/contents-lbs lt 0.008
 			</test>
 		</switch>
 
 		<switch name="fuel/from-tank1-to-tank2">
 			<default value="0"/>
 			<test logic="AND" value="0.1">
-				/systems/fuel/selected-tank EQ 2
-				/systems/fuel/suck-fuel EQ 1
-				propulsion/tank[1]/contents-lbs GT 0
-				propulsion/tank[2]/contents-lbs LT 0.008
+				/systems/fuel/selected-tank eq 2
+				/systems/fuel/suck-fuel eq 1
+				propulsion/tank[1]/contents-lbs gt 0
+				propulsion/tank[2]/contents-lbs lt 0.008
 			</test>
 		</switch>
 	</channel>
