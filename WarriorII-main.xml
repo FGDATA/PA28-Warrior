@@ -203,7 +203,7 @@
 			<path>Aircraft/PA28-Warrior/PNavSounds/sound.xml</path>
 		</sound>
 		
-		<chase-distance-m type="double" archive="y">-30.0</chase-distance-m>
+		<chase-distance-m type="double" archive="y">-15.0</chase-distance-m>
 		<view n="0">
 			<name>Pilot View</name>
 			<internal archive="y">true</internal>
@@ -274,6 +274,8 @@
 				<float n="0" alias="/gear/gear[0]/compression-m"/>
 				<float n="1" alias="/gear/gear[1]/compression-m"/>
 				<float n="2" alias="/gear/gear[2]/compression-m"/>
+				<float n="3" alias="/fdm/jsbsim/fcs/steer-deg"/>
+				<float n="4" alias="/fdm/jsbsim/extra/door-main-norm"/>
 				<string alias="/sim/multiplay/callsign"/>
 			</generic>
 		</multiplay>
@@ -407,6 +409,17 @@
 			<overlay-alpha type="double">0.5</overlay-alpha>
 		</aircraft-effects>
 	</environment>
+	
+	<fdm n="0">
+		<jsbsim n="0">
+			<extra n="0">
+				<door-main-cmd type="double">0</door-main-cmd>
+			</extra>
+			<helpers n="0">
+				<a-c-pid>0</a-c-pid>
+			</helpers>
+		</jsbsim>
+	</fdm>
 	
 	<gear n="0">
 		<gear n="0">

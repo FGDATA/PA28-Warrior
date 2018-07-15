@@ -1008,8 +1008,8 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>LeftAileron</object-name>
-		<property>surface-positions/left-aileron-pos-norm</property>
-		<factor>20</factor>
+		<property>surface-positions/aileron-rad</property>
+		<factor>57.2958</factor> <!-- Rad to Deg -->
 		<center>
 			<x-m>3.1338</x-m>
 			<y-m>-5.0553</y-m>
@@ -1025,8 +1025,8 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>RightAileron</object-name>
-		<property>surface-positions/right-aileron-pos-norm</property>
-		<factor>-20</factor>
+		<property>surface-positions/aileron-rad</property>
+		<factor>-57.2958</factor> <!-- Rad to Deg -->
 		<center>
 			<x-m>3.1338</x-m>
 			<y-m>5.0553</y-m>
@@ -1077,8 +1077,8 @@
 		<type>rotate</type>
 		<object-name>Stabilator</object-name>
 		<object-name>AntiServoTab</object-name>
-		<property>surface-positions/elevator-pos-norm</property>
-		<factor>15</factor>
+		<property>surface-positions/elevator-rad</property>
+		<factor>57.2958</factor> <!-- Rad to Deg -->
 		<center>
 			<x-m>6.5</x-m>
 			<y-m>0.0</y-m>
@@ -1094,8 +1094,8 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>AntiServoTab</object-name>
-		<property>surface-positions/elevator-pos-norm</property>
-		<factor>30</factor>
+		<property>surface-positions/elevator-rad</property>
+		<factor>57.2958</factor> <!-- Rad to Deg -->
 		<center>
 			<x-m>6.79</x-m>
 			<y-m>0.0</y-m>
@@ -1129,7 +1129,7 @@
 		<name>NoseTrim</name>
 		<type>rotate</type>
 		<object-name>RudderTrim</object-name>
-		<property>controls/flight/rudder-trim[0]</property>
+		<property>controls/flight/rudder-trim</property>
 		<factor>1080</factor>
 		<center>
 			<x-m>1.88419</x-m>
@@ -1146,7 +1146,7 @@
 	<animation>
 		<type>translate</type>
 		<object-name>RudderTrimIndicator</object-name>
-		<property>controls/flight/rudder-trim[0]</property>
+		<property>controls/flight/rudder-trim</property>
 		<factor>0.03</factor>
 		<axis>
 			<x>1</x>
@@ -1159,8 +1159,8 @@
 		<type>rotate</type>
 		<object-name>Rudder</object-name>
 		<object-name>TailNavLight</object-name>
-		<property>surface-positions/rudder-pos-norm</property>
-		<factor>17.5</factor>
+		<property>surface-positions/rudder-rad</property>
+		<factor>57.2958</factor> <!-- Rad to Deg -->
 		<center>
 			<x-m>6.36</x-m>
 			<y-m>0.0</y-m>
@@ -1170,6 +1170,49 @@
 			<x>0.25</x>
 			<y>0.0</y>
 			<z>1.0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>rotate</type>
+		<object-name>NoseGear</object-name>
+		<property>sim/multiplay/generic/float[3]</property>
+		<factor>1</factor>
+		<axis>
+			<x1-m>1.0471</x1-m>
+			<y1-m>0.0</y1-m>
+			<z1-m>-0.65873</z1-m>
+			<x2-m>1.01881</x2-m>
+			<y2-m>0.0</y2-m>
+			<z2-m>-0.77222</z2-m>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>pick</type>
+		<object-name>DoorGroup</object-name>
+		<action>
+			<button>0</button>
+			<repeatable type="bool">false</repeatable>
+			<binding>
+				<command>property-toggle</command>
+				<property>fdm/jsbsim/extra/door-main-cmd</property>
+			</binding>
+		</action>
+	</animation>
+	
+	<animation>
+		<type>rotate</type>
+		<object-name>DoorGroup</object-name>
+		<property>sim/multiplay/generic/float[4]</property>
+		<factor>-70</factor>
+		<axis>
+			<x1-m>2.0285</x1-m>
+			<y1-m>0.56719</y1-m>
+			<z1-m>0.21468</z1-m>
+			<x2-m>2.0381</x2-m>
+			<y2-m>0.58657</y2-m>
+			<z2-m>-0.33076</z2-m>
 		</axis>
 	</animation>
 

@@ -20,18 +20,27 @@
 		<aerosurface_scale name="fcs/aileron-rad">
 			<input>fcs/roll-input</input>
 			<range>
-				<min>-0.349066</min>
-				<max>0.349066</max>
+				<min>-0.366519</min>
+				<max>0.366519</max>
 			</range>
+			<output>/surface-positions/aileron-rad</output>
 		</aerosurface_scale>
 	
 	</channel>
 	
 	<channel name="Pitch">
 		
+		<aerosurface_scale name="fcs/elevator-trim-input">
+			<input>fcs/pitch-trim-cmd-norm</input>
+			<range>
+				<min>-0.62500000000</min>
+				<max>0.78947368421</max>
+			</range>
+		</aerosurface_scale>
+		
 		<summer name="fcs/pitch-input">
 			<input>fcs/elevator-cmd-norm</input>
-			<input>fcs/pitch-trim-cmd-norm</input>
+			<input>fcs/elevator-trim-input</input>
 			<clipto>
 				<min>-1</min>
 				<max>1</max>
@@ -42,32 +51,50 @@
 		<aerosurface_scale name="fcs/elevator-rad">
 			<input>fcs/pitch-input</input>
 			<range>
-				<min>-0.349066</min>
-				<max>0.349066</max>
+				<min>-0.418879</min>
+				<max>0.331613</max>
 			</range>
+			<output>/surface-positions/elevator-rad</output>
 		</aerosurface_scale>
 	
-	</channel>
+	</channel><property value="0">kp</property><property value="0">kd</property>
 	
 	<channel name="Yaw Helper"> <!-- Autocoordinate -->
 		
-		<pure_gain name="helpers/a-c-p">
-			<input>aero/beta-rad</input>
-			<gain>-2.5</gain>
-			<clipto>
-				<min>-0.3</min>
-				<max>0.3</max>
-			</clipto>
-		</pure_gain>
-		
-		<switch name="helpers/a-c-f">
-			<default value="0"/>
-			<test logic="AND" value="helpers/a-c-p">
+		<switch name="helpers/a-c-gs">
+			<default value="1"/>
+			<test logic="AND" value="0">
 				/options/autocoordinate eq 1
 				gear/unit[1]/WOW eq 0
 				gear/unit[2]/WOW eq 0
 				/controls/flight/rudder lt 0.1
 				/controls/flight/rudder gt -0.1
+			</test>
+		</switch>
+		
+		<switch name="helpers/a-c-d-gain">
+			<default value="0"/>
+			<test logic="AND" value="kd">
+				helpers/a-c-gs eq 0
+			</test>
+		</switch>
+		
+		<pid name="helpers/a-c-pid-v">
+			<input>aero/beta-rad</input>
+			<kp>kp</kp>
+			<ki>0.0</ki>
+			<kd>helpers/a-c-d-gain</kd>
+			<clipto>
+				<min>-0.3</min>
+				<max>0.3</max>
+			</clipto>
+			<output>helpers/a-c-pid</output>
+		</pid>
+		
+		<switch name="helpers/a-c-f">
+			<default value="0"/>
+			<test value="helpers/a-c-pid">
+				helpers/a-c-gs eq 0
 			</test>
 		</switch>
 	
@@ -76,8 +103,8 @@
 	<channel name="Yaw">
 		
 		<summer name="fcs/yaw-input">
-			<input>fcs/rudder-cmd-norm</input>
-			<input>fcs/yaw-trim-cmd-norm</input>
+			<input>/controls/flight/rudder</input>
+			<input>/controls/flight/rudder-trim</input>
 			<input>helpers/a-c-f</input>
 			<clipto>
 				<min>-1</min>
@@ -89,9 +116,10 @@
 		<aerosurface_scale name="fcs/rudder-rad">
 			<input>fcs/yaw-input</input>
 			<range>
-				<min>-0.436332</min>
-				<max>0.436332</max>
+				<min>-0.279253</min>
+				<max>0.279253</max>
 			</range>
+			<output>/surface-positions/rudder-rad</output>
 		</aerosurface_scale>
 	
 	</channel>
@@ -193,6 +221,15 @@
 			<rate_limit>200</rate_limit>
 			<output>fcs/steer-pos-deg[0]</output>
 		</actuator>
+	
+	</channel>
+	
+	<channel name="Extra">
+		
+		<lag_filter name="extra/door-main-norm">
+			<input>extra/door-main-cmd</input>
+			<c1>16</c1>
+		</lag_filter>
 	
 	</channel>
 

@@ -55,6 +55,7 @@ var variousReset = func {
 	setprop("/controls/switches/strobe-lights", 0);
 	setprop("/controls/engines/engine[0]/magnetos-switch", 0);
 	setprop("/controls/engines/engine[0]/mixture", 0);
+	setprop("/fdm/jsbsim/extra/door-main-cmd", 0);
 }
 
 setlistener("/options/nav-source", func {
