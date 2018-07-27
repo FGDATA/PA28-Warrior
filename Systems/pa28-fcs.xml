@@ -57,7 +57,7 @@
 			<output>/surface-positions/elevator-rad</output>
 		</aerosurface_scale>
 	
-	</channel><property value="0">kp</property><property value="0">kd</property>
+	</channel>
 	
 	<channel name="Yaw Helper"> <!-- Autocoordinate -->
 		
@@ -74,14 +74,14 @@
 		
 		<switch name="helpers/a-c-d-gain">
 			<default value="0"/>
-			<test logic="AND" value="kd">
+			<test logic="AND" value="3.5">
 				helpers/a-c-gs eq 0
 			</test>
 		</switch>
 		
 		<pid name="helpers/a-c-pid-v">
 			<input>aero/beta-rad</input>
-			<kp>kp</kp>
+			<kp>2.5</kp>
 			<ki>0.0</ki>
 			<kd>helpers/a-c-d-gain</kd>
 			<clipto>
