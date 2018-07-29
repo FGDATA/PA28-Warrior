@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<PropertyList>
+	<sim>
+		<model>
+			<livery>
+				<name>D-EZEN</name>
+				<texture>Liveries/D-EZEN.png</texture>
+				<reardisc>Liveries/propgray.png</reardisc>
+				<frontdisc>Liveries/propgray.png</frontdisc>
+			</livery>
+		</model>
+	</sim>
+</PropertyList>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<PropertyList>
+	<sim>
+		<model>
+			<livery>
+				<name>N2436Y</name>
+				<texture>Liveries/N2436Y.png</texture>
+				<reardisc>Liveries/propwhite.png</reardisc>
+				<frontdisc>Liveries/propwhite.png</frontdisc>
+			</livery>
+		</model>
+	</sim>
+</PropertyList>

@@ -215,6 +215,22 @@
 				<value>0.0012</value>
 			</product>
 		</function>
+		
+		<function name="aero/force/Drag_door">
+			<description>Drag due to main door</description>
+			<product>
+				<property>aero/qbar-psf</property>
+				<property>metrics/Sw-sqft</property>
+				<table>
+					<independentVar lookup="row">extra/door-main-norm</independentVar>
+					<tableData> <!-- To cancel out the slight offset from 0 due to the lag_filter -->
+						0.00  0.0000
+						0.01  0.0000
+						1.00  0.0019
+					</tableData>
+				</table>
+			</product>
+		</function>
 	
 	</axis>
 	
@@ -404,7 +420,7 @@
 				<property>metrics/bw-ft</property>
 				<property>aero/bi2vel</property>
 				<property>velocities/r-aero-rad_sec</property>
-				<value>-0.18</value>
+				<value>-0.19</value>
 			</product>
 		</function>
 		
@@ -415,7 +431,7 @@
 				<property>metrics/Sw-sqft</property>
 				<property>metrics/bw-ft</property>
 				<property>fcs/rudder-rad</property>
-				<value>-0.1</value>
+				<value>0.11</value>
 			</product>
 		</function>
 		
@@ -427,6 +443,23 @@
 				<property>metrics/bw-ft</property>
 				<property>fcs/aileron-rad</property>
 				<value>0</value>
+			</product>
+		</function>
+		
+		<function name="aero/moment/Yaw_door">
+			<description>Yaw moment due to main door</description>
+			<product>
+				<property>aero/qbar-psf</property>
+				<property>metrics/Sw-sqft</property>
+				<property>metrics/bw-ft</property>
+				<table>
+					<independentVar lookup="row">extra/door-main-norm</independentVar>
+					<tableData> <!-- To cancel out the slight offset from 0 due to the lag_filter -->
+						0.00  0.00
+						0.01  0.00
+						1.00  0.05
+					</tableData>
+				</table>
 			</product>
 		</function>
 	
