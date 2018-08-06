@@ -877,7 +877,7 @@
 			<file>Aircraft/PA28-Warrior/Nasal/libraries.nas</file>
 			<file>Aircraft/PA28-Warrior/Nasal/immat.nas</file>
 			<!--file>Aircraft/PA28-Warrior/Nasal/lighting.nas</file-->
-			<file>Aircraft/PA28-Warrior/Models/instruments/elt/ELTmessage.nas</file>
+			<file>Aircraft/PA28-Warrior/Models/Instruments/elt/ELTmessage.nas</file>
 			<file>Aircraft/PA28-Warrior/Nasal/kr87.nas</file>
 			<file>Aircraft/PA28-Warrior/Nasal/ki266.nas</file>
 			<file>Aircraft/PA28-Warrior/Nasal/kcs55.nas</file>
@@ -905,7 +905,7 @@
 			<file>Aircraft/PA28-Warrior/Nasal/tyresmoke.nas</file>
 		</tyresmoke>
 		<HobbsMeter>
-			<file>Aircraft/PA28-Warrior/Models/instruments/Hobbs/hobbs.nas</file>
+			<file>Aircraft/PA28-Warrior/Models/Instruments/Hobbs/hobbs.nas</file>
 			<script>
 			<![CDATA[HobbsMeter.new(index: 0, switchPath: 'gear/gear/wow', inverted: 1);]]>
 			</script>
