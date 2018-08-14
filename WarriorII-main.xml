@@ -60,6 +60,20 @@
 			<splash-texture>Aircraft/PA28-Warrior/Splash/splash1.png</splash-texture>
 		</startup>
 		
+		<tags>
+			<tag>ga</tag>
+			<tag>piper</tag>
+			<tag>1960s</tag>
+			<tag>1970s</tag>
+			<tag>1980s</tag>
+			<tag>1990s</tag>
+			<tag>2000s</tag>
+			<tag>ifr</tag>
+			<tag>fixed-gear</tag>
+			<tag>piston</tag>
+			<tag>1-engine</tag>
+		</tags>
+		
 		<previews>
 			<preview>
 				<type>cockpit</type>
