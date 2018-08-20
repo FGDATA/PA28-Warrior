@@ -256,10 +256,10 @@
 				<table>
 					<independentVar lookup="row">aero/Re</independentVar>
 					<tableData>
-					3221764  0.2763
-					3543940  0.0243
-					4832646  0.0108
-					6440811  0.0061
+						3221764  0.2763
+						3543940  0.0243
+						4832646  0.0108
+						6440811  0.0061
 					</tableData>
 				</table>
 			</product>
@@ -432,17 +432,6 @@
 				<property>metrics/bw-ft</property>
 				<property>fcs/rudder-rad</property>
 				<value>0.11</value>
-			</product>
-		</function>
-		
-		<function name="aero/moment/Yaw_aileron">
-			<description>Adverse yaw</description>
-			<product>
-				<property>aero/qbar-psf</property>
-				<property>metrics/Sw-sqft</property>
-				<property>metrics/bw-ft</property>
-				<property>fcs/aileron-rad</property>
-				<value>0</value>
 			</product>
 		</function>
 		

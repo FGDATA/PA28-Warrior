@@ -1,0 +1,43 @@
+<!-- PA28-161 JSBsim -->
+<!-- Joshua Davidson (it0uchpods) -->
+
+<!--
+##############################################
+# Copyright (c) Joshua Davidson (it0uchpods) #
+##############################################
+-->
+
+<mass_balance>
+	<ixx unit="SLUG*FT2">  387 </ixx>
+	<iyy unit="SLUG*FT2">  546 </iyy>
+	<izz unit="SLUG*FT2"> 1167 </izz>
+	
+	<ixy unit="SLUG*FT2">    0 </ixy>
+	<ixz unit="SLUG*FT2">    0 </ixz>
+	<iyz unit="SLUG*FT2">    0 </iyz>
+	<emptywt unit="LBS" > 1201 </emptywt>
+	
+	<location name="CG" unit="M">
+		<x> 2.5003 </x>
+		<y> 0 </y>
+		<z> 0.2512 </z>
+	</location>
+
+	<pointmass name="Pilot">
+		<weight unit="LBS"> 200.0 </weight>
+		<location name="POINTMASS" unit="M">
+			<x> 2.5003 </x>
+			<y> 0 </y>
+			<z> 0.2512 </z>
+		</location>
+	</pointmass>
+
+	<pointmass name="Right Seat">
+		<weight unit="LBS"> 200.0 </weight>
+		<location name="POINTMASS" unit="M">
+			<x> 2.5003 </x>
+			<y> 0 </y>
+			<z> 0.2512 </z>
+		</location>
+	</pointmass>
+</mass_balance>
