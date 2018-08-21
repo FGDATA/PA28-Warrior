@@ -290,6 +290,10 @@
 				<float n="2" alias="/gear/gear[2]/compression-m"/>
 				<float n="3" alias="/fdm/jsbsim/fcs/steer-deg"/>
 				<float n="4" alias="/fdm/jsbsim/extra/door-main-norm"/>
+				<float n="5" alias="/fdm/jsbsim/fcs/aileron-deg"/>
+				<float n="6" alias="/fdm/jsbsim/fcs/elevator-deg"/>
+				<float n="7" alias="/fdm/jsbsim/fcs/elevator-tab-deg"/>
+				<float n="8" alias="/fdm/jsbsim/fcs/rudder-deg"/>
 				<string alias="/sim/multiplay/callsign"/>
 			</generic>
 		</multiplay>

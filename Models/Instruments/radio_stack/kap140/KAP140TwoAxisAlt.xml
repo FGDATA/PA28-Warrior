@@ -21,12 +21,28 @@ Modified for IT-AUTOFLIGHT by Joshua Davidson
   <name>KAP140TwoAxisAlt</name>
   <path>kap140.ac</path>
 <!-- Annunciators -->
+	<animation>
+		<type>select</type>
+		<object-name>annunciators</object-name>
+		<object-name>alt-digits</object-name>
+		<object-name>inhg-digits</object-name>
+		<object-name>hpa-digits</object-name>
+		<object-name>vs-digits</object-name>
+		<object-name>vs-digits-minus</object-name>
+		<name>Annunciators</name>
+		<condition>
+			<greater-than-equals>
+				<property>systems/electrical/outputs/autopilot</property>
+				<value>8</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
   <animation>
     <type>select</type>
     <object-name>pitch-axis-fail</object-name>
     <name>Pitch Axis Failure</name>
     <condition>
-      <property>/autopilot/KAP140/annunciators/pitchfail</property>
+      <property>autopilot/KAP140/annunciators/pitchfail</property>
       <value type="bool">true</value>
     </condition>
   </animation>
@@ -35,7 +51,7 @@ Modified for IT-AUTOFLIGHT by Joshua Davidson
     <object-name>roll-axis-fail</object-name>
     <name>Roll Axis Failure</name>
     <condition>
-      <property>/autopilot/KAP140/annunciators/rollfail</property>
+      <property>autopilot/KAP140/annunciators/rollfail</property>
       <value type="bool">true</value>
     </condition>
   </animation>
@@ -201,7 +217,7 @@ Modified for IT-AUTOFLIGHT by Joshua Davidson
     <name>REV-ARM Anunciator</name>
     <condition>
       <equals>
-        <property>/autopilot/KAP140/annunciators/rev-arm</property>
+        <property>autopilot/KAP140/annunciators/rev-arm</property>
         <value type="bool">true</value>
       </equals>
     </condition>
@@ -291,7 +307,7 @@ Modified for IT-AUTOFLIGHT by Joshua Davidson
     <name>ALERT Anunciator</name>
     <condition>
       <equals>
-        <property>/autopilot/KAP140/annunciators/alt-alert/state</property>
+        <property>autopilot/KAP140/annunciators/alt-alert/state</property>
         <value type="bool">true</value>
       </equals>
     </condition>
@@ -718,13 +734,13 @@ Modified for IT-AUTOFLIGHT by Joshua Davidson
     <name>Baro Setting hPa number</name>
     <condition>
       <equals>
-        <property>/autopilot/KAP140/annunciators/bs-hpa-number</property>
+        <property>autopilot/KAP140/annunciators/bs-hpa-number</property>
         <value type="bool">true</value>
       </equals>
     </condition>
     <chunk>
       <type>number-value</type>
-      <property>/autopilot/KAP140/settings/baro-setting-hpa</property>
+      <property>autopilot/KAP140/settings/baro-setting-hpa</property>
       <scale>1</scale>
       <format>%01.3f</format>
     </chunk>
@@ -802,20 +818,22 @@ Modified for IT-AUTOFLIGHT by Joshua Davidson
     </axis>
   </animation>
 <!-- Actions -->
-  <animation>
-    <type>pick</type>
-    <object-name>ap-btn</object-name>
-    <action>
-      <name>AP Button</name>
-      <button>0</button>
-      <binding>
-        <command>nasal</command>
-        <script>
-      kap140.btnAP();
-     </script>
-      </binding>
-    </action>
-  </animation>
+	<animation>
+		<type>pick</type>
+		<object-name>ap-btn</object-name>
+		<action>
+			<name>AP Button</name>
+			<button>0</button>
+			<binding>
+				<command>nasal</command>
+				<script>
+				if (getprop("/systems/electrical/outputs/autopilot") >= 8) {
+					kap140.btnAP();
+				}
+				</script>
+			</binding>
+		</action>
+	</animation>
   <animation>
     <type>pick</type>
     <object-name>hdg-btn</object-name>
@@ -1031,38 +1049,6 @@ Modified for IT-AUTOFLIGHT by Joshua Davidson
         <script>kap140.knbLargeUp();</script>
       </binding>
     </action>
-  </animation>
-
- <animation>
-    <type>pick</type>
-    <object-name>base</object-name>
-    <action>
-    <button>0</button>
-    <repeatable>false</repeatable>
-	<binding>
-		<command>property-assign</command>
-		<property>sim/gui/dialogs/autopilot/dialog/x</property>
-		<value>-5</value>
-	</binding>
-	<binding>
-		<command>property-assign</command>
-		<property>sim/gui/dialogs/autopilot/dialog/y</property>
-		<value>5</value>
-	</binding>
-
-          <binding>
-             <command>dialog-show</command>
-            <dialog-name>autopilot</dialog-name>
-          </binding>
-     </action>
-
-   <hovered>
-            <binding>
-                <command>set-tooltip</command>
-                <tooltip-id>ap</tooltip-id>
-                <label>Display ITAF</label>
-            </binding>
-        </hovered>
   </animation>
   
   <animation>

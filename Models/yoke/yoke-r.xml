@@ -41,7 +41,7 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>Yoke</object-name>
-		<property>controls/flight/aileron</property>
+		<property>fdm/jsbsim/fcs/roll-input</property>
 		<factor>-90.0</factor>
 		<axis>
 			<x>1.0</x>

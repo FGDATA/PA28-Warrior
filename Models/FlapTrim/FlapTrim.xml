@@ -36,7 +36,7 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>ElevatorTrimControl</object-name>
-		<property>controls/flight/elevator-trim</property>
+		<property>fdm/jsbsim/fcs/elevator-trim-knob</property>
 		<factor>1500</factor>
 		<center>
 			<x-m>0.05924</x-m>
@@ -53,7 +53,7 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>ElevatorTrimIndicator</object-name>
-		<property>controls/flight/elevator-trim</property>
+		<property>fdm/jsbsim/fcs/elevator-trim-knob</property>
 		<factor>20.0</factor>
 		<center>
 			<x-m>0.05924</x-m>

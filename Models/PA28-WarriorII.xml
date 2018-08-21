@@ -976,8 +976,8 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>LeftAileron</object-name>
-		<property>surface-positions/aileron-rad</property>
-		<factor>57.2958</factor> <!-- Rad to Deg -->
+		<property>sim/multiplay/generic/float[5]</property>
+		<factor>1</factor>
 		<center>
 			<x-m>3.1338</x-m>
 			<y-m>-5.0553</y-m>
@@ -993,8 +993,8 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>RightAileron</object-name>
-		<property>surface-positions/aileron-rad</property>
-		<factor>-57.2958</factor> <!-- Rad to Deg -->
+		<property>sim/multiplay/generic/float[5]</property>
+		<factor>-1</factor>
 		<center>
 			<x-m>3.1338</x-m>
 			<y-m>5.0553</y-m>
@@ -1011,7 +1011,7 @@
 		<type>rotate</type>
 		<object-name>LeftFlap</object-name>
 		<property>surface-positions/flap-pos-norm</property>
-		<factor>-45</factor>
+		<factor>-40</factor>
 		<center>
 			<x-m>3.30</x-m>
 			<y-m>0.0</y-m>
@@ -1028,7 +1028,7 @@
 		<type>rotate</type>
 		<object-name>RightFlap</object-name>
 		<property>surface-positions/flap-pos-norm</property>
-		<factor>45</factor>
+		<factor>40</factor>
 		<center>
 			<x-m>3.30</x-m>
 			<y-m>0.0</y-m>
@@ -1045,8 +1045,8 @@
 		<type>rotate</type>
 		<object-name>Stabilator</object-name>
 		<object-name>AntiServoTab</object-name>
-		<property>surface-positions/elevator-rad</property>
-		<factor>57.2958</factor> <!-- Rad to Deg -->
+		<property>sim/multiplay/generic/float[6]</property>
+		<factor>1</factor>
 		<center>
 			<x-m>6.5</x-m>
 			<y-m>0.0</y-m>
@@ -1062,25 +1062,8 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>AntiServoTab</object-name>
-		<property>surface-positions/elevator-rad</property>
-		<factor>57.2958</factor> <!-- Rad to Deg -->
-		<center>
-			<x-m>6.79</x-m>
-			<y-m>0.0</y-m>
-			<z-m>0.17</z-m>
-		</center>
-		<axis>
-			<x>0.0</x>
-			<y>1.0</y>
-			<z>0.0</z>
-		</axis>
-	</animation>
-
-	<animation>
-		<type>rotate</type>
-		<object-name>AntiServoTab</object-name>
-		<property>controls/flight/elevator-trim</property>
-		<factor>-30</factor>
+		<property>sim/multiplay/generic/float[7]</property>
+		<factor>1</factor>
 		<center>
 			<x-m>6.79</x-m>
 			<y-m>0.0</y-m>
@@ -1097,7 +1080,7 @@
 		<name>NoseTrim</name>
 		<type>rotate</type>
 		<object-name>RudderTrim</object-name>
-		<property>controls/flight/rudder-trim</property>
+		<property>fdm/jsbsim/fcs/rudder-trim-knob</property>
 		<factor>1080</factor>
 		<center>
 			<x-m>1.88419</x-m>
@@ -1114,7 +1097,7 @@
 	<animation>
 		<type>translate</type>
 		<object-name>RudderTrimIndicator</object-name>
-		<property>controls/flight/rudder-trim</property>
+		<property>fdm/jsbsim/fcs/rudder-trim-knob</property>
 		<factor>0.03</factor>
 		<axis>
 			<x>1</x>
@@ -1127,8 +1110,8 @@
 		<type>rotate</type>
 		<object-name>Rudder</object-name>
 		<object-name>TailNavLight</object-name>
-		<property>surface-positions/rudder-rad</property>
-		<factor>57.2958</factor> <!-- Rad to Deg -->
+		<property>sim/multiplay/generic/float[8]</property>
+		<factor>1</factor>
 		<center>
 			<x-m>6.36</x-m>
 			<y-m>0.0</y-m>
