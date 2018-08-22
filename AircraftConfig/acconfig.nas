@@ -63,7 +63,7 @@ setlistener("/sim/signals/fdm-initialized", func {
 		print("The PA28-Warrior is out of date!");
 	}
 	readSettings();
-	if (getprop("/systems/acconfig/options/revision") < current_revision) {
+	if (getprop("/systems/acconfig/out-of-date") != 1 and getprop("/systems/acconfig/options/revision") < current_revision) {
 		updated_dlg.open();
 	} else if (getprop("/systems/acconfig/out-of-date") != 1 and getprop("/systems/acconfig/options/welcome-skip") != 1) {
 		welcome_dlg.open();
