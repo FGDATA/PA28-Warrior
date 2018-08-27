@@ -30,6 +30,11 @@
 			<input>/controls/flight/rudder-trim</input>
 			<c1>20</c1>
 		</lag_filter>
+		
+		<lag_filter name="fcs/parking-brake-lever">
+			<input>/controls/gear/brake-parking</input>
+			<c1>20</c1>
+		</lag_filter>
 	
 	</channel>
 	
@@ -173,32 +178,40 @@
 	
 	</channel>
 	
-	<channel name="Throttle">
+	<channel name="Engine">
+		
+		<lag_filter name="fcs/throttle-cmd-lag">
+			<input>/controls/engines/engine[0]/throttle</input>
+			<c1>20</c1>
+		</lag_filter>
 		
 		<fcs_function name="fcs/throttle-cmd-modified">
 			<function>
 				<table>
-					<independentVar lookup="row">/controls/engines/engine[0]/throttle</independentVar>
+					<independentVar lookup="row">fcs/throttle-cmd-lag</independentVar>
+					<independentVar lookup="column">velocities/vc-kts</independentVar>
 					<tableData>
-						0.0 0.00
-						0.2 0.32
-						0.6 0.64
-						1.0 0.80
+						     30    120
+						0.0  0.00  0.00
+						0.2  0.42  0.24
+						0.6  0.74  0.61
+						1.0  1.00  0.81
 					</tableData>
 				</table>
 			</function>
 			<output>fcs/throttle-cmd-norm[0]</output>
 			<output>fcs/throttle-pos-norm[0]</output>
 		</fcs_function>
-	
-	</channel>
-	
-	<channel name="Mixture">
+		
+		<lag_filter name="fcs/mixture-cmd-lag">
+			<input>/controls/engines/engine[0]/mixture</input>
+			<c1>20</c1>
+		</lag_filter>
 		
 		<fcs_function name="fcs/mixture-cmd-modified">
 			<function>
 				<table>
-					<independentVar lookup="row">/controls/engines/engine[0]/mixture</independentVar>
+					<independentVar lookup="row">fcs/mixture-cmd-lag</independentVar>
 					<tableData>
 						0  0.55
 						1  1.00

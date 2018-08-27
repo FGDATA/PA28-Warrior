@@ -1,25 +1,17 @@
 <?xml version="1.0"?>
 
-<!-- Copyright (c) 2018 Joshua Davidson (it0uchpods) -->
+<!-- Ron Jenson -->
 
-<piston_engine name="lycoming-O-320-D3G">
-	<minmp unit="INHG">           8.30 </minmp>
-	<maxmp unit="INHG">          28.50 </maxmp>
-	<displacement unit="IN3">   319.82 </displacement>
-	<maxhp>                     160.00 </maxhp>
-	<cycles>                      4.00 </cycles>
-	<idlerpm>                   668.00 </idlerpm>
-	<maxrpm>                   2477.00 </maxrpm>
-	<sparkfaildrop>               0.10 </sparkfaildrop>
-	<volumetric-efficiency>       0.85 </volumetric-efficiency>
-	<man-press-lag>               0.10 </man-press-lag>
-	<static-friction unit="HP">   1.80 </static-friction>
-	<starter-torque>            128.00 </starter-torque>
-	<starter-rpm>              1487.00 </starter-rpm>
-	<stroke unit="IN">            4.38 </stroke>
-	<bore unit="IN">              5.13 </bore>
-	<cylinders>                   3.00 </cylinders>
-	<compression-ratio>           8.00 </compression-ratio>
-	<maxthrottle>                 1.00 </maxthrottle>
-	<minthrottle>                 0.00 </minthrottle>
+<piston_engine name="IO320">
+    <minmp unit="INHG">         8.3 </minmp>
+    <maxmp unit="INHG">        28.5 </maxmp>
+    <displacement unit="IN3"> 320.0 </displacement>
+    <maxhp>                   160.0 </maxhp>
+    <cycles>                    4.0 </cycles>
+    <idlerpm>                 600.0 </idlerpm>
+    <maxrpm>                 2700.0 </maxrpm>
+    <maxthrottle>               1.0 </maxthrottle>
+    <minthrottle>               0.1 </minthrottle>
+    <sparkfaildrop>             0.1 </sparkfaildrop>
+    <oil-pressure-rpm-max>     1215 </oil-pressure-rpm-max>
 </piston_engine>

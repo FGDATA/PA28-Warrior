@@ -52,6 +52,13 @@
 			</palette>
 		</hud>
 		
+		<flaps>
+			<setting>0.00</setting>
+			<setting>0.25</setting>
+			<setting>0.50</setting>
+			<setting>1.00</setting>
+		</flaps>
+		
 		<panel>
 			<visibility archive="y">false</visibility>
 		</panel>
@@ -406,7 +413,7 @@
 			<aileron-drives-tiller type="bool">0</aileron-drives-tiller>
 		</flight>
 		<gear>
-			<brake-parking type="double">1.0</brake-parking>
+			<brake-parking type="double">0</brake-parking>
 		</gear>
 		<switches>
 			<avionics-master type="bool">0</avionics-master>
@@ -592,17 +599,11 @@
 				</binding>
 			</key>
 			<key n="66">
-				<name>B</name>
+				<name>Shift-B</name>
 				<desc>Toggle parking brake on or off</desc>
 				<binding>
 					<command>nasal</command>
 					<script>controls.applyParkingBrake(1)</script>
-				</binding>
-				<binding>
-					<command>show-message</command>
-					<id>bs</id>
-					<label>ParkingBrake set</label>
-					<delay>3.75</delay>
 				</binding>
 				<mod-up>
 					<binding>
@@ -610,15 +611,6 @@
 						<script>controls.applyParkingBrake(0)</script>
 					</binding>
 				</mod-up>	
-				<binding>
-					<condition>
-						<not><property>/controls/gear/brake-parking</property></not>
-					</condition>	
-					<command>show-message</command>
-					<id>strap</id>
-					<label>Fasten Your Seat Belt</label>
-					<delay>3.75</delay>
-				</binding>
 			</key>
 			<key n="88">
 				<name>X</name>

@@ -21,11 +21,7 @@
 		<type>rotate</type>
 		<object-name>Airplane</object-name>
 		<property>/instrumentation/turn-indicator/indicated-turn-rate</property>
-		<interpolation>
-			<entry><ind>-1</ind><dep>-18.75</dep></entry>
-			<entry><ind> 0</ind><dep>  0.00</dep></entry>
-			<entry><ind> 1</ind><dep> 18.75</dep></entry>
-		</interpolation>
+		<factor>18.75</factor>
 		<axis>
 			<x>-1</x>
 			<y>0</y>

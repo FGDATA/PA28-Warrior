@@ -739,7 +739,7 @@
 		<condition>
 			<less-than>
 				<property>engines/engine/rpm</property>
-				<value>600</value>
+				<value>550</value>
 			</less-than>
 		</condition>
 	</animation>
@@ -771,7 +771,7 @@
 		<condition>
 			<greater-than>
 				<property>engines/engine/rpm</property>
-				<value>600</value>
+				<value>550</value>
 			</greater-than>
 		</condition>
 	</animation>
@@ -803,7 +803,7 @@
 		<type>rotate</type>
 		<object-name>ParkingBrakeControl</object-name>
 		<factor>35</factor>
-		<property>controls/gear/brake-parking</property>
+		<property>fdm/jsbsim/fcs/parking-brake-lever</property>
 		<center>
 			<x-m>1.891</x-m>
 			<y-m>-0.0</y-m>
@@ -814,6 +814,19 @@
 			<y>-1.0</y>
 			<z>0.0</z>
 		</axis>
+	</animation>
+	
+	<animation>
+		<type>pick</type>
+		<object-name>ParkingBrakeControl</object-name>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>property-toggle</command>
+				<property>controls/gear/brake-parking</property>
+			</binding>
+		</action>
 	</animation>
 
 	<animation>
@@ -847,7 +860,7 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>Throttle</object-name>
-		<property>controls/engines/engine[0]/throttle</property>
+		<property>fdm/jsbsim/fcs/throttle-cmd-lag</property>
 		<factor>47</factor>
 		<center>
 			<x-m>1.937</x-m>
@@ -895,7 +908,7 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>Mixture</object-name>
-		<property>controls/engines/engine[0]/mixture</property>
+		<property>fdm/jsbsim/fcs/mixture-cmd-lag</property>
 		<factor>47</factor>
 		<center>
 			<x-m>1.937</x-m>
