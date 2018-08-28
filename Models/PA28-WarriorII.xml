@@ -166,7 +166,7 @@
 		<offsets>
 		<x-m>0.5</x-m>
 		<y-m>0.0</y-m>
-		<z-m>-0.3</z-m>
+		<z-m>-0.225</z-m>
 		<pitch-deg>-15.00</pitch-deg>
 		</offsets>
 	</model>
@@ -1156,6 +1156,57 @@
 			<y>1.0</y>
 			<z>0.1</z>
 		</axis>
+	</animation>
+	
+	<animation>
+		<type>spin</type>
+		<object-name>WheelN</object-name>
+		<property>gear/gear[0]/rollspeed-ms</property>
+		<factor>10</factor>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+		<center>
+			<x-m>0.95194</x-m>
+			<y-m>0</y-m>
+			<z-m>-1.04043</z-m>
+		</center>
+	</animation>
+	
+	<animation>
+		<type>spin</type>
+		<object-name>WheelL</object-name>
+		<property>gear/gear[1]/rollspeed-ms</property>
+		<factor>10</factor>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+		<center>
+			<x-m>2.89843</x-m>
+			<y-m>0</y-m>
+			<z-m>-1.0068</z-m>
+		</center>
+	</animation>
+	
+	<animation>
+		<type>spin</type>
+		<object-name>WheelR</object-name>
+		<property>gear/gear[2]/rollspeed-ms</property>
+		<factor>10</factor>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+		<center>
+			<x-m>2.89843</x-m>
+			<y-m>0</y-m>
+			<z-m>-1.0068</z-m>
+		</center>
 	</animation>
 
 </PropertyList>

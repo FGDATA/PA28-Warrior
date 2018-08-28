@@ -89,7 +89,7 @@
 				<property>aero/qbar-psf</property>
 				<property>metrics/Sw-sqft</property>
 				<toradians><property>fcs/elevator-deg</property></toradians>
-				<value>0.4276</value>
+				<value>0.5701</value>
 			</product>
 		</function>
 		
@@ -350,7 +350,7 @@
 				<property>metrics/Sw-sqft</property>
 				<property>metrics/cbarw-ft</property>
 				<toradians><property>fcs/elevator-deg</property></toradians>
-				<value>-1.150</value>
+				<value>-1.533</value>
 			</product>
 		</function>
 		

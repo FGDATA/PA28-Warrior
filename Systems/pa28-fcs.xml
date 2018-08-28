@@ -64,8 +64,8 @@
 		<aerosurface_scale name="fcs/elevator-trim-input">
 			<input>fcs/elevator-trim-knob</input>
 			<range>
-				<min>-0.78947368421</min>
-				<max>0.78947368421</max>
+				<min>-0.75</min>
+				<max>0.75</max>
 			</range>
 		</aerosurface_scale>
 		
@@ -92,8 +92,8 @@
 		<aerosurface_scale name="fcs/elevator-deg">
 			<input>fcs/pitch-input</input>
 			<range>
-				<min>-19</min>
-				<max>19</max>
+				<min>-12</min>
+				<max>12</max>
 			</range>
 		</aerosurface_scale>
 		
@@ -103,13 +103,14 @@
 					<property>fcs/elevator-deg</property>
 					<product>
 						<property>fcs/elevator-trim-input</property>
-						<value>-15</value>
+						<value>-9</value>
 					</product>
+					<value>-3</value>
 				</sum>
 			</function>
 			<clipto>
-				<min>-19</min>
-				<max>19</max>
+				<min>-15</min>
+				<max>9</max>
 			</clipto>
 		</fcs_function>
 	
