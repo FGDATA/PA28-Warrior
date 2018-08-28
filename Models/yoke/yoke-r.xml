@@ -19,9 +19,9 @@
 		<object-name>Yoke</object-name>
 		<object-name>Stud</object-name>
 		<emission>
-			<red>0.1</red>
+			<red>0.02</red>
 			<green>0.02</green>
-			<blue>0.00001</blue>
+			<blue>0.02</blue>
 			<factor-prop>sim/model/material/instruments/factor</factor-prop>
 		</emission>
 	</animation>

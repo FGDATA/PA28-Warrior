@@ -19,9 +19,9 @@
 		<object-name>Roll</object-name>
 		<object-name>RollReference</object-name>
 		<emission>
-			<red>1.0</red>
-			<green>0.8</green>
-			<blue>0.4</blue>
+			<red>0.6</red>
+			<green>0.6</green>
+			<blue>0.6</blue>
 			<factor-prop>/systems/electrical/outputs/instrument-lights-norm</factor-prop>
 		</emission>
 	</animation>

@@ -8,26 +8,4 @@
     <object-name>carte</object-name>
   </animation>
 
- <animation>
-    <type>pick</type>
-    <type>material</type>
-    <object-name>carte</object-name>
-    <action>
-    <button>0</button>
-    <repeatable>false</repeatable>
-            <binding>
-				<command>dialog-show</command>
-				<dialog-name>map</dialog-name>
-			</binding>
-     </action>
-
-      <hovered>
-            <binding>
-                <command>set-tooltip</command>
-                <tooltip-id>chart</tooltip-id>
-                <label>Show Map</label>
-            </binding>
-        </hovered>
-	
-  </animation>
 </PropertyList>

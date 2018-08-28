@@ -1050,7 +1050,7 @@ Modified for IT-AUTOFLIGHT by Joshua Davidson
       </binding>
     </action>
   </animation>
-  
+
   <animation>
     <type>material</type>
     <object-name>knob-outer</object-name>
@@ -1058,12 +1058,13 @@ Modified for IT-AUTOFLIGHT by Joshua Davidson
     <object-name>base</object-name>
     <object-name>buttons</object-name>
    <emission>
-      <red>0.4</red>
-      <green>0.08</green>
-      <blue>0.00004</blue>
+      <red>0.1</red>
+      <green>0.1</green>
+      <blue>0.1</blue>
       <factor-prop>sim/model/material/instruments/factor</factor-prop>
     </emission>
   </animation>
+
 </PropertyList>
 
 

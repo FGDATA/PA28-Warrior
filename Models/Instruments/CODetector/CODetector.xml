@@ -3,29 +3,6 @@
 <PropertyList>
 
  <path>CODetector.ac</path>
- 
- <animation>
-    <type>pick</type>
-    <type>material</type>
-    <object-name>Detector</object-name>
-    <action>
-    <button>0</button>
-    <repeatable>false</repeatable>
-            <binding>
-				<command>dialog-show</command>
-				<dialog-name>route-manager</dialog-name>
-			</binding>
-     </action>
-
-
-      <hovered>
-            <binding>
-                <command>set-tooltip</command>
-                <tooltip-id>rm</tooltip-id>
-                <label>Open Route Manager</label>
-            </binding>
-        </hovered>
-  </animation>
 
 </PropertyList>
 

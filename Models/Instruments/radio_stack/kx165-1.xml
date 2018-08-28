@@ -71,10 +71,12 @@
     <object-name>NavKHz</object-name>
     <object-name>NavMHz</object-name>
     <object-name>NavVolume</object-name>
+    <object-name>CommToggle</object-name>
+    <object-name>NavToggle</object-name>
     <emission>
-      <red>0.5</red>
+      <red>0.1</red>
       <green>0.1</green>
-      <blue>0.00005</blue>
+      <blue>0.1</blue>
       <factor-prop>sim/model/material/instruments/factor</factor-prop>
     </emission>
   </animation>
@@ -102,18 +104,6 @@
                 <label>Click to change frequency</label>
             </binding>
         </hovered>
-  </animation>
-
-  <animation>
-    <type>material</type>
-    <object-name>CommToggle</object-name>
-    <object-name>NavToggle</object-name>
-    <emission>
-      <red>0.4</red>
-      <green>0.08</green>
-      <blue>0.00004</blue>
-      <factor-prop>sim/model/material/instruments/factor</factor-prop>
-    </emission>
   </animation>
 
   <animation>

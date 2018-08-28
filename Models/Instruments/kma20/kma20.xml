@@ -45,6 +45,17 @@
 
   <path>kma20.ac</path>
 
+	<animation>
+		<type>material</type>
+		<object-name>GroupLighting</object-name>
+		<emission>
+			<red>0.1</red>
+			<green>0.1</green>
+			<blue>0.1</blue>
+		  <factor-prop>sim/model/material/instruments/factor</factor-prop>
+		</emission>
+	</animation>
+
   <animation>
     <type>material</type>
     <object-name>O</object-name>

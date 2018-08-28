@@ -7,26 +7,6 @@
 	<path>SwitchPanel.ac</path>
 
 	<animation>
-		<type>material</type>
-		<object-name>Bezel</object-name>
-		<object-name>NavDimmer</object-name>
-		<object-name>PanelDimmer</object-name>
-		<object-name>BAT.sw</object-name>
-		<object-name>ALT.sw</object-name>
-		<object-name>FuelPump</object-name>
-		<object-name>LandingLight</object-name>
-		<object-name>AntiCollLight.Fin</object-name>
-		<object-name>AntiCollLight.Wing</object-name>
-		<object-name>PitotHeat</object-name>
-		<emission>
-			<red>0.45</red>
-			<green>0.09</green>
-			<blue>0.00001</blue>
-			<factor-prop>/sim/model/material/instruments/factor</factor-prop>
-		</emission>
-	</animation>
-
-	<animation>
 		<type>rotate</type>
 		<object-name>NavDimmer</object-name>
 		<property>controls/switches/nav-lights-factor</property>

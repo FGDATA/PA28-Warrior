@@ -26,21 +26,11 @@
 		<object-name>Roll</object-name>
 		<object-name>RollReference</object-name>
 		<object-name>PitchReference</object-name>
-		<emission>
-			<red>1.0</red>
-			<green>0.2</green>
-			<blue>0.0</blue>
-			<factor-prop>sim/model/material/instruments/factor</factor-prop>
-		</emission>
-	</animation>
-	
-	<animation>
-		<type>material</type>
 		<object-name>Background</object-name>
 		<emission>
-			<red>1.0</red>
-			<green>0.2</green>
-			<blue>0.0</blue>
+			<red>0.6</red>
+			<green>0.6</green>
+			<blue>0.6</blue>
 			<factor-prop>sim/model/material/instruments/factor</factor-prop>
 		</emission>
 	</animation>

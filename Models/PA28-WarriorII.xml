@@ -69,46 +69,6 @@
 
 	<animation>
 		<type>material</type>
-		<object-name>AC_Num</object-name>
-		<object-name>CompassLine</object-name>
-		<object-name>ThrottleQuadrant</object-name>
-		<object-name>FuelValvePointer</object-name>
-		<object-name>OFF-Placard</object-name>
-		<object-name>LeftTankPlacard</object-name>
-		<object-name>RightTankPlacard</object-name>
-		<object-name>RudderTrimPlacard</object-name>
-		<object-name>CarbHeatPlacard</object-name>
-		<object-name>CarbHeatKnob</object-name>
-		<object-name>CH-Lever</object-name>
-		<emission>
-			<red>0.5</red>
-			<green>0.375</green>
-			<blue>0.125</blue>
-			<factor-prop>sim/model/material/instruments/factor</factor-prop>
-		</emission>
-	</animation>
-
-	<animation>
-		<type>material</type>
-		<object-name>PrimeFace</object-name>
-		<object-name>Throttle</object-name>
-		<object-name>Mixture</object-name>
-		<object-name>FuelValveFace</object-name>
-		<object-name>CompassCasing</object-name>
-		<object-name>CarbHeatKnob</object-name>
-		<object-name>CH-Lever</object-name>
-		<object-name>RudderTrim</object-name>
-		<object-name>RudderTrimIndicator</object-name>
-		<emission>
-			<red>0.1</red>
-			<green>0.02</green>
-			<blue>0.00001</blue>
-			<factor-prop>sim/model/material/instruments/factor</factor-prop>
-		</emission>
-	</animation>
-
-	<animation>
-		<type>material</type>
 		<object-name>LandingLightBulb</object-name>
 		<emission>
 			<red>1.0</red>
@@ -122,9 +82,9 @@
 		<type>material</type>
 		<object-name>Panel</object-name>
 		<emission>
-			<red>0.5</red>
-			<green>0.49</green>
-			<blue>0.48</blue>
+			<red>0.1</red>
+			<green>0.1</green>
+			<blue>0.1</blue>
 			<factor-prop>/controls/lighting/panel-lights</factor-prop>
 		</emission>
 	</animation>
@@ -133,9 +93,9 @@
 		<type>material</type>
 		<object-name>Cabin</object-name>
 		<emission>
-			<red>0.1</red>
-			<green>0.098</green>
-			<blue>0.096</blue>
+			<red>0.05</red>
+			<green>0.05</green>
+			<blue>0.05</blue>
 			<factor-prop>/controls/lighting/panel-lights</factor-prop>
 		</emission>
 	</animation>
@@ -417,7 +377,7 @@
 
 	<model>
 		<name>cvor</name>
-		<path>Aircraft/instruments-3d/vor/vor2.xml</path>
+		<path>Aircraft/PA28-Warrior/Models/Instruments/vor/vor2.xml</path>
 		<condition>
 			<equals>
 				<property>options/panel</property>
@@ -678,19 +638,19 @@
 		</offsets>
 	</model>
 
-	<model>
-		<name>dme</name>
-		<path>Aircraft/PA28-Warrior/Models/Instruments/ki266/dme.xml</path>
+	<!--model>
+		<name></name>
+		<path></path>
 		<offsets>
 			<x-m>1.927</x-m>
 			<y-m>0.298</y-m>
 			<z-m>0.18</z-m>
 		</offsets>
-	</model>
+	</model-->
 
 	<model>
 		<name>Transponder</name>
-		<path>Aircraft/instruments-3d/kt70/kt70.xml</path>
+		<path>Aircraft/PA28-Warrior/Models/Instruments/kt70/kt70.xml</path>
 		<offsets>
 			<x-m>1.9312</x-m>
 			<y-m>0.292</y-m>
