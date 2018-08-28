@@ -9,10 +9,10 @@
 		<object-name>mount</object-name>
 		<object-name>knob</object-name>
 		<emission>
-			<red>0.2</red>
-			<green>0.15</green>
+			<red>0.05</red>
+			<green>0.05</green>
 			<blue>0.05</blue>
-			<factor-prop>electrical/outputs/cockpit-lights/brightness</factor-prop>
+			<factor-prop>/sim/model/material/instruments/factor</factor-prop>
 		</emission>
 	</animation>
 

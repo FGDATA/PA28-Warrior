@@ -55,6 +55,32 @@
 		  <factor-prop>sim/model/material/instruments/factor</factor-prop>
 		</emission>
 	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>Ooff</object-name>
+		<object-name>Moff</object-name>
+		<object-name>Aoff</object-name>
+		<condition>
+			<less-than>
+				<property>systems/electrical/bus/avionics2</property>
+				<value>8</value>
+			</less-than>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>O</object-name>
+		<object-name>M</object-name>
+		<object-name>A</object-name>
+		<condition>
+			<greater-than-equals>
+				<property>systems/electrical/bus/avionics2</property>
+				<value>8</value>
+			</greater-than-equals>
+		</condition>
+	</animation>
 
   <animation>
     <type>material</type>

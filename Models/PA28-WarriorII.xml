@@ -591,7 +591,7 @@
 		<name>kx165-1</name>
 		<path>Aircraft/PA28-Warrior/Models/Instruments/radio_stack/kx165-1.xml</path>
 		<offsets>
-			<x-m>1.925</x-m>
+			<x-m>1.92</x-m>
 			<y-m>0.123</y-m>
 			<z-m>0.32</z-m>
 		</offsets>
@@ -601,7 +601,7 @@
 		<name>kx165-2</name>
 		<path>Aircraft/PA28-Warrior/Models/Instruments/radio_stack/kx165-2.xml</path>
 		<offsets>
-			<x-m>1.925</x-m>
+			<x-m>1.92</x-m>
 			<y-m>0.123</y-m>
 			<z-m>0.265</z-m>
 		</offsets>
@@ -611,8 +611,8 @@
 		<name>KAP140</name>
 		<path>Aircraft/PA28-Warrior/Models/Instruments/radio_stack/kap140/KAP140TwoAxisAlt.xml</path>
 		<offsets>
-			<x-m>1.9325</x-m>
-			<y-m>0.125</y-m>
+			<x-m>1.929</x-m>
+			<y-m>0.1225</y-m>
 			<z-m>0.213</z-m>
 		</offsets>
 	</model>
@@ -621,7 +621,7 @@
 		<name>kma20</name>
 		<path>Aircraft/PA28-Warrior/Models/Instruments/kma20/kma20.xml</path>
 		<offsets>
-			<x-m>1.925</x-m>
+			<x-m>1.92</x-m>
 			<y-m>0.292</y-m>
 			<z-m>0.24</z-m>
 		</offsets>
@@ -651,9 +651,9 @@
 		<name>kr87</name>
 		<path>Aircraft/PA28-Warrior/Models/Instruments/kr87-adf/kr87.xml</path>
 		<offsets>
-			<x-m>1.925</x-m>
-			<y-m>0.120</y-m>
-			<z-m>0.163</z-m>
+			<x-m>1.92</x-m>
+			<y-m>0.1225</y-m>
+			<z-m>0.173</z-m>
 		</offsets>
 	</model>
 
@@ -784,8 +784,8 @@
 			<button>0</button>
 			<repeatable>false</repeatable>
 			<binding>
-				<command>nasal</command>
-				<script>libraries.rightDoor.toggle();</script>
+				<command>property-toggle</command>
+				<property>fdm/jsbsim/extra/door-main-cmd</property>
 			</binding>
 		</action>
 	</animation>
@@ -798,8 +798,8 @@
 			<button>0</button>
 			<repeatable>false</repeatable>
 			<binding>
-				<command>nasal</command>
-				<script>libraries.rightDoor.toggle();</script>
+				<command>property-toggle</command>
+				<property>fdm/jsbsim/extra/door-main-cmd</property>
 			</binding>
 		</action>
 	</animation>

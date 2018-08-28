@@ -240,6 +240,34 @@
 				<default-field-of-view-deg type="double">82</default-field-of-view-deg>
 			</config>
 		</view>
+		<view n="101">
+			<name>Right View</name>
+			<type>lookfrom</type>
+			<internal archive="y">true</internal>
+			<config>
+				<from-model type="bool">true</from-model>
+				<x-offset-m archive="y">0.24</x-offset-m>
+				<y-offset-m archive="y">0.5</y-offset-m>
+				<z-offset-m archive="y">2.6</z-offset-m>
+				<pitch-offset-deg>-15</pitch-offset-deg>
+				<heading-offset-deg>-95</heading-offset-deg>
+				<default-field-of-view-deg type="double">82</default-field-of-view-deg>
+			</config>
+		</view>
+		<view n="102">
+			<name>Left View</name>
+			<type>lookfrom</type>
+			<internal archive="y">true</internal>
+			<config>
+				<from-model type="bool">true</from-model>
+				<x-offset-m archive="y">-0.24</x-offset-m>
+				<y-offset-m archive="y">0.5</y-offset-m>
+				<z-offset-m archive="y">2.6</z-offset-m>
+				<pitch-offset-deg>-15</pitch-offset-deg>
+				<heading-offset-deg>95</heading-offset-deg>
+				<default-field-of-view-deg type="double">82</default-field-of-view-deg>
+			</config>
+		</view>
 		
 		<weight n="0">
 			<name>Pilot</name>
@@ -663,33 +691,14 @@
 				<desc>toggle tanks</desc>
 				<binding>
 					<command>property-cycle</command>
-					<property>/controls/fuel-selector</property>
-					<value>1</value>
-					<value>2</value>
-				</binding>
-				<binding>
-					<command>property-cycle</command>
 					<property>/systems/fuel/selected-tank</property>
-					<property>/controls/fuel-selector</property>
 					<value>1</value>
 					<value>2</value>
 				</binding>
 			</key>
-			<key n="107">
-				<name>k</name>
-				<desc>Show Map</desc>
-				<binding>
-					<command>dialog-show</command>
-					<dialog-name>map</dialog-name>
-				</binding>
-			</key>
-			<key n="114">
-				<name>r</name>
-				<desc>Show RM</desc>
-				<binding>
-					<command>dialog-show</command>
-					<dialog-name>route-manager</dialog-name>
-				</binding>
+			<key n="115">
+				<name>s</name>
+				<desc>Kill starter-key</desc>
 			</key>
 			<key n="117">
 				<name>u</name>
