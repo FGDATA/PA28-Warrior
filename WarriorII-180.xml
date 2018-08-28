@@ -84,6 +84,7 @@ xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
 		</tank>
 	</propulsion>
 	
+	<system file="pa28-engine"/>
 	<system file="pa28-fcs"/>
 	<system file="fuel"/>
 

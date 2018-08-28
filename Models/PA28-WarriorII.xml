@@ -286,7 +286,7 @@
 		<offsets>
 			<x-m>1.925</x-m>
 			<y-m>-0.334</y-m>
-			<z-m>0.268</z-m>
+			<z-m>0.271</z-m>
 		</offsets>
 	</model>
 
@@ -318,7 +318,7 @@
 		<offsets>
 			<x-m>1.925</x-m>
 			<y-m>-0.433</y-m>
-			<z-m>0.183</z-m>
+			<z-m>0.185</z-m>
 		</offsets>
 	</model>
 
@@ -355,34 +355,12 @@
 	</model>
 
 	<model>
-		<name>cvor</name>
-		<path>Aircraft/PA28-Warrior/Models/Instruments/vor/vor2.xml</path>
-		<condition>
-			<equals>
-				<property>options/panel</property>
-				<value>DG Panel</value>
-			</equals>
-		</condition>
-		<offsets>
-			<x-m>1.925</x-m>
-			<y-m>-0.029</y-m>
-			<z-m>0.183</z-m>
-		</offsets>
-	</model>
-
-	<model>
 		<name>VOR2</name>
 		<path>Aircraft/PA28-Warrior/Models/Instruments/ki209a/ki209a-2.xml</path>
-		<condition>
-			<equals>
-				<property>options/panel</property>
-				<value>HSI Panel</value>
-			</equals>
-		</condition>
 		<offsets>
 			<x-m>1.923</x-m>
 			<y-m>-0.029</y-m>
-			<z-m>0.183</z-m>
+			<z-m>0.185</z-m>
 		</offsets>
 	</model>
 
@@ -392,7 +370,7 @@
 		<offsets>
 			<x-m>1.925</x-m>
 			<y-m>-0.4235</y-m>
-			<z-m>0.2585</z-m>
+			<z-m>0.259</z-m>
 		</offsets>
 	</model>
 
@@ -433,7 +411,7 @@
 		<offsets>
 			<x-m>1.925</x-m>
 			<y-m>-0.336</y-m>
-			<z-m>0.183</z-m>
+			<z-m>0.185</z-m>
 		</offsets>
 	</model>
 
@@ -449,7 +427,7 @@
 		<offsets>
 			<x-m>1.926</x-m>
 			<y-m>-0.233</y-m>
-			<z-m>0.184</z-m>
+			<z-m>0.185</z-m>
 		</offsets>
 	</model>
 
@@ -475,7 +453,7 @@
 		<offsets>
 			<x-m>1.925</x-m>
 			<y-m>-0.126</y-m>
-			<z-m>0.183</z-m>
+			<z-m>0.185</z-m>
 		</offsets>
 	</model>
 
@@ -532,6 +510,16 @@
 			<x-m>1.917</x-m>
 			<y-m>0.1775</y-m>
 			<z-m>0.0155</z-m>
+		</offsets>
+	</model>
+	
+	<model>
+		<name>Vacuum</name>
+		<path>Aircraft/PA28-Warrior/Models/Instruments/vac/vac.xml</path>
+		<offsets>
+			<x-m>1.925</x-m>
+			<y-m>0.436</y-m>
+			<z-m>0.237</z-m>
 		</offsets>
 	</model>
 

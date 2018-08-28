@@ -44,10 +44,9 @@
   
   <animation>
     <type>scale</type>
-    <x-offset>0.85</x-offset>
-    <y-offset>0.85</y-offset>
-    <z-offset>0.85</z-offset>
-    <roll-deg>-1</roll-deg>
+    <x-offset>0.95</x-offset>
+    <y-offset>0.95</y-offset>
+    <z-offset>0.95</z-offset>
    </animation>
 
 
@@ -78,11 +77,9 @@
   <animation>
     <type>material</type>
     <object-name>CompassRose</object-name>
-    <object-name>KI227.ADFNeedle</object-name>
     <object-name>KI228.ADFNeedle</object-name>
     <object-name>KI228.VORNeedle</object-name>
     <object-name>Marker</object-name>
-    <object-name>HDGSelector</object-name>
     <emission>
 			<red>0.6</red>
 			<green>0.6</green>
@@ -92,55 +89,9 @@
   </animation>
 
   <animation>
-    <type>select</type>
-    <object-name>KI228.ADFNeedle</object-name>
-    <object-name>KI228.VORNeedle</object-name>
-    <condition>
-      <equals>
-        <property alias="../../../../params/model"/>
-        <value>ki228</value>
-      </equals>
-    </condition>
-  </animation>
-
-  <animation>
-    <type>select</type>
-    <object-name>KI227.ADFNeedle</object-name>
-    <object-name>HDGSelector</object-name>
-    <object-name>HDGSelectorPick.L</object-name>
-    <object-name>HDGSelectorPick.R</object-name>
-    <condition>
-      <not>
-        <equals>
-          <property alias="../../../../../params/model"/>
-          <value>ki228</value>
-        </equals>
-      </not>
-    </condition>
-  </animation>
-
-  <animation>
     <type>rotate</type>
     <object-name>CompassRose</object-name>
     <property alias="../../params/rotation-deg"/>
-    <factor>-1</factor>
-    <axis>
-      <x>-1</x>
-      <y>0</y>
-      <z>0</z>
-    </axis>
-  </animation>
-
-  <animation>
-    <type>rotate</type>
-    <object-name>CompassRose</object-name>
-    <property alias="../../params/indicated-heading"/>
-    <condition>
-      <equals>
-        <property alias="../../../../params/model"/>
-        <value>ki227</value>
-      </equals>
-    </condition>
     <factor>-1</factor>
     <axis>
       <x>-1</x>
@@ -206,8 +157,8 @@
     </axis>
     <center>
       <x-m>0</x-m>
-      <y-m>-0.0318072</y-m>
-      <z-m>-0.0327009</z-m>
+      <y-m>-0.03476</y-m>
+      <z-m>-0.03572</z-m>
     </center>
   </animation>
 
@@ -244,20 +195,3 @@
   </animation>
 
 </PropertyList>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

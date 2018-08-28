@@ -110,6 +110,7 @@
     <object-name>GSLabel</object-name>
     <object-name>Marker</object-name>
     <object-name>LubberLine</object-name>
+    <object-name>CDIPlate</object-name>
     <emission>
 			<red>0.6</red>
 			<green>0.6</green>
@@ -182,8 +183,8 @@
     </axis>
     <center>
       <x-m>0</x-m>
-      <y-m>0.0309671</y-m>
-      <z-m>-0.0274502</z-m>
+      <y-m>0.03097</y-m>
+      <z-m>-0.03002</z-m>
     </center>
       </animation>
 
@@ -199,11 +200,10 @@
     </axis>
     <center>
       <x-m>0</x-m>
-      <y-m>0.0309671</y-m>
-      <z-m>-0.0274502</z-m>
+      <y-m>0.03097</y-m>
+      <z-m>-0.03002</z-m>
     </center>
-
-      </animation>
+  </animation>
 
   <animation>
     <type>rotate</type>
@@ -217,8 +217,8 @@
     </axis>
     <center>
       <x-m>0</x-m>
-      <y-m>-0.0309671</y-m>
-      <z-m>-0.0274502</z-m>
+      <y-m>-0.03097</y-m>
+      <z-m>-0.03002</z-m>
     </center>
   </animation>
 
@@ -234,8 +234,8 @@
     </axis>
     <center>
       <x-m>0</x-m>
-      <y-m>-0.0309671</y-m>
-      <z-m>-0.0274502</z-m>
+      <y-m>-0.03097</y-m>
+      <z-m>-0.03002</z-m>
     </center>
   </animation>
 

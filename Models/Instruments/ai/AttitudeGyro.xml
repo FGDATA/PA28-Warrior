@@ -15,9 +15,9 @@
 
 	<animation>
 		<type>scale</type>
-		<x-offset>0.9</x-offset>
-		<y-offset>0.9</y-offset>
-		<z-offset>0.9</z-offset>
+		<x-offset>0.95</x-offset>
+		<y-offset>0.95</y-offset>
+		<z-offset>0.95</z-offset>
 	</animation>
 
 	<animation>
@@ -84,87 +84,35 @@
 	</animation>
 	
 	<animation>
-		<type>pick</type>
-		<object-name>Knob.Pick.L</object-name>
-		<visible>false</visible>
+		<type>knob</type>
+		<object-name>Knob</object-name>
 		<action>
-			<button>0</button>
-			<repeatable>true</repeatable>
-			<binding>
-				<command>property-adjust</command>
-				<property alias="../../../../params/pitch-reference"/>
-				<step>-1</step>
-				<min>-7.5</min>
-				<max>7.5</max>
-				<wrap>0</wrap>
-			</binding>
+		<repeatable>true</repeatable>
+		<binding>
+			<command>property-adjust</command>
+			<property alias="../../params/pitch-reference"/>
+			<factor type="double">0.5</factor>
+		</binding>
 		</action>
-		<action>
-			<button>3</button>
-			<repeatable>true</repeatable>
+		<value>0.0</value>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+		<center>
+			<x-m>0.0</x-m>
+			<y-m>0.0</y-m>
+			<z-m>-0.03273</z-m>
+		</center>
+		<hovered>
 			<binding>
-				<command>property-adjust</command>
-				<property alias="../../../../params/pitch-reference"/>
-				<step>-1</step>
-				<min>-7.5</min>
-				<max>7.5</max>
-				<wrap>0</wrap>
+				<command>set-tooltip</command>
+				<tooltip-id>ai-horizon-offset</tooltip-id>
+				<label>Horizon Offset: %2d</label>
+				<property alias="../../params/pitch-reference"/>
 			</binding>
-		</action>
-		<action>
-			<button>4</button>
-			<repeatable>true</repeatable>
-			<binding>
-				<command>property-adjust</command>
-				<property alias="../../../../params/pitch-reference"/>
-				<step>1</step>
-				<min>-7.5</min>
-				<max>7.5</max>
-				<wrap>0</wrap>
-			</binding>
-		</action>
-	</animation>
-	
-	<animation>
-		<type>pick</type>
-		<object-name>Knob.Pick.R</object-name>
-		<visible>false</visible>
-		<action>
-			<button>0</button>
-			<repeatable>true</repeatable>
-			<binding>
-				<command>property-adjust</command>
-				<property alias="../../../../params/pitch-reference"/>
-				<step>1</step>
-				<min>-7.5</min>
-				<max>7.5</max>
-				<wrap>0</wrap>
-			</binding>
-		</action>
-		<action>
-			<button>3</button>
-			<repeatable>true</repeatable>
-			<binding>
-				<command>property-adjust</command>
-				<property alias="../../../../params/pitch-reference"/>
-				<step>-1</step>
-				<min>-7.5</min>
-				<max>7.5</max>
-				<wrap>0</wrap>
-			</binding>
-		</action>
-		<action>
-			<button>4</button>
-			<repeatable>true</repeatable>
-			<binding>
-				<command>property-adjust</command>
-				<property alias="../../../../params/pitch-reference"/>
-				<step>1</step>
-				<min>-7.5</min>
-				<max>7.5</max>
-				<wrap>0</wrap>
-			</binding>
-		</action>
+		</hovered>
 	</animation>
 
 </PropertyList>

@@ -424,6 +424,13 @@
 		</switches>
 	</controls>
 	
+	<engines n="0">
+		<engine n="0">
+			<egt-actual type="double">0</egt-actual>
+			<egt-bug type="double">1400</egt-bug>
+		</engine>
+	</engines>
+	
 	<environment>
 		<aircraft-effects>
 			<overlay-alpha type="double">0.5</overlay-alpha>
@@ -436,6 +443,7 @@
 				<door-main-cmd type="double">0</door-main-cmd>
 			</extra>
 			<fcs n="0">
+				<egt-feedback type="double">0</egt-feedback>
 				<oil-temp-feedback type="double">0</oil-temp-feedback>
 			</fcs>
 			<fuel n="0">

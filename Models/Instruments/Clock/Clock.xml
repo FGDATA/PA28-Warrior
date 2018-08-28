@@ -1,101 +1,78 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml version="1.0"?>
 
 <PropertyList>
 
-  <path>Clock.ac</path>
-  
-   <animation>
-  <type>scale</type>
-  <x-offset>0.9</x-offset>
-  <y-offset>0.9</y-offset>
-  <z-offset>0.9</z-offset>
- </animation>
+	<path>Clock.ac</path>
 
-  <animation>
-    <object-name>Bezel</object-name>
-    <object-name>Face</object-name>
-    <object-name>Seconds</object-name>
-    <object-name>Minutes</object-name>
-    <object-name>Hours</object-name>
+	<animation>
+		<type>scale</type>
+		<x-offset>1.1</x-offset>
+		<y-offset>1.1</y-offset>
+		<z-offset>1.1</z-offset>
+	</animation>
 
-    <object-name>vitre</object-name>
-  </animation>
-
-   <animation>
-    <type>pick</type>
-    <object-name>Face</object-name>
-    <action>
-    <button>0</button>
-    <repeatable>false</repeatable>
-          <binding>
-             <command>dialog-show</command>
-             <dialog-name>stopwatch-dialog</dialog-name>
-          </binding>
-     </action>
-
-   <hovered>
-            <binding>
-                <command>set-tooltip</command>
-                <tooltip-id>timer</tooltip-id>
-                <label>Display Stopwatch</label>
-            </binding>
-        </hovered>
-  </animation>
-
-  
-  <animation>
-    <type>material</type>
-    <object-name>Face</object-name>
-    <object-name>Seconds</object-name>
-    <object-name>Minutes</object-name>
-    <object-name>Hours</object-name>
-    <emission>
+	<animation>
+		<type>material</type>
+		<object-name>Face</object-name>
+		<object-name>SecondHand</object-name>
+		<object-name>MinuteHand</object-name>
+		<object-name>HourHand</object-name>
+		<emission>
 			<red>0.6</red>
 			<green>0.6</green>
 			<blue>0.6</blue>
-      <factor-prop>/sim/model//material/instruments/factor</factor-prop>
-    </emission>
-  </animation>
+			<factor-prop>/sim/model/material/instruments/factor</factor-prop>
+		</emission>
+	</animation>
 
-  <animation>
-    <type>rotate</type>
-    <object-name>Seconds</object-name>
-    <property>/sim/time/utc/day-seconds</property>
-    <factor>6</factor>
-    <axis>
-      <x> -1 </x>
-      <y>  0 </y>
-      <z>  0 </z>
-    </axis>
-  </animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>SecondHand</object-name>
+		<property>/sim/time/utc/day-seconds</property>
+		<factor>6</factor>
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+		<center>
+			<x-m>0</x-m>
+			<y-m>0</y-m>
+			<z-m>0</z-m>
+		</center>
+	</animation>
 
-  <animation>
-    <type>rotate</type>
-    <object-name>Minutes</object-name>
-    <property>/sim/time/utc/day-seconds</property>
-    <factor>0.1</factor>
-    <axis>
-      <x> -1 </x>
-      <y>  0 </y>
-      <z>  0 </z>
-    </axis>
-  </animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>MinuteHand</object-name>
+		<property>/sim/time/utc/day-seconds</property>
+		<factor>0.1</factor>
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+		<center>
+			<x-m>0</x-m>
+			<y-m>0</y-m>
+			<z-m>0</z-m>
+		</center>
+	</animation>
 
-  <animation>
-    <type>rotate</type>
-    <object-name>Hours</object-name>
-    <property>/sim/time/utc/day-seconds</property>
-    <factor>0.008333</factor>
-    <axis>
-      <x> -1 </x>
-      <y>  0 </y>
-      <z>  0 </z>
-    </axis>
-  </animation>
-
+	<animation>
+		<type>rotate</type>
+		<object-name>HourHand</object-name>
+		<property>/sim/time/utc/day-seconds</property>
+		<factor>0.008333</factor>
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+		<center>
+			<x-m>0</x-m>
+			<y-m>0</y-m>
+			<z-m>0</z-m>
+		</center>
+	</animation>
 </PropertyList>
-
-
-
-
-

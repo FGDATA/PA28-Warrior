@@ -1,0 +1,125 @@
+<!-- PA28-161 Engine -->
+
+<!-- Copyright (c) 2018 Joshua Davidson (it0uchpods) -->
+
+<system name="PA28-161: Engine">
+	
+	<channel name="Engine">
+		
+		<lag_filter name="fcs/throttle-cmd-lag">
+			<input>/controls/engines/engine[0]/throttle</input>
+			<c1>20</c1>
+		</lag_filter>
+		
+		<fcs_function name="fcs/throttle-cmd-modified">
+			<function>
+				<table>
+					<independentVar lookup="row">fcs/throttle-cmd-lag</independentVar>
+					<independentVar lookup="column">velocities/vc-kts</independentVar>
+					<tableData>
+						     30    120
+						0.0  0.00  0.00
+						0.2  0.42  0.24
+						0.6  0.74  0.61
+						1.0  1.00  0.81
+					</tableData>
+				</table>
+			</function>
+			<output>fcs/throttle-cmd-norm[0]</output>
+			<output>fcs/throttle-pos-norm[0]</output>
+		</fcs_function>
+		
+		<lag_filter name="fcs/mixture-cmd-lag">
+			<input>/controls/engines/engine[0]/mixture</input>
+			<c1>20</c1>
+		</lag_filter>
+		
+		<fcs_function name="fcs/mixture-cmd-modified">
+			<function>
+				<table>
+					<independentVar lookup="row">fcs/mixture-cmd-lag</independentVar>
+					<tableData>
+						0  0.55
+						1  1.00
+					</tableData>
+				</table>
+			</function>
+			<output>fcs/mixture-cmd-norm[0]</output>
+			<output>fcs/mixture-pos-norm[0]</output>
+		</fcs_function>
+		
+		<fcs_function name="fcs/oil-temp-inc">
+			<function>
+				<sum>
+					<property>fcs/oil-temp-feedback</property>
+					<value>0.03</value>
+				</sum>
+			</function>
+		</fcs_function>
+		
+		<fcs_function name="fcs/oil-temp-dec">
+			<function>
+				<difference>
+					<property>fcs/oil-temp-feedback</property>
+					<value>0.01</value>
+				</difference>
+			</function>
+		</fcs_function>
+		
+		<switch name="fcs/oil-temp-switch">
+			<default value="fcs/oil-temp-switch"/>
+			<test logic="AND" value="fcs/oil-temp-inc">
+				/engines/engine[0]/running eq 1
+				fcs/oil-temp-feedback lt 177
+			</test>
+			<test logic="AND" value="fcs/oil-temp-dec">
+				/engines/engine[0]/running ne 1
+				fcs/oil-temp-feedback gt 0
+			</test>
+		</switch>
+		
+		<pure_gain name="fcs/oil-temp-update">
+			<input>fcs/oil-temp-switch</input>
+			<gain>1.0</gain>
+			<output>fcs/oil-temp-feedback</output>
+		</pure_gain>
+		
+		<fcs_function name="fcs/egt-inc">
+			<function>
+				<sum>
+					<property>fcs/egt-feedback</property>
+					<value>0.4</value>
+				</sum>
+			</function>
+		</fcs_function>
+		
+		<fcs_function name="fcs/egt-dec">
+			<function>
+				<difference>
+					<property>fcs/egt-feedback</property>
+					<value>0.1</value>
+				</difference>
+			</function>
+		</fcs_function>
+		
+		<switch name="fcs/egt-switch">
+			<default value="fcs/egt-switch"/>
+			<test logic="AND" value="fcs/egt-inc">
+				/engines/engine[0]/running eq 1
+				fcs/egt-feedback lt 1028
+			</test>
+			<test logic="AND" value="fcs/egt-dec">
+				/engines/engine[0]/running ne 1
+				fcs/egt-feedback gt 0
+			</test>
+		</switch>
+		
+		<pure_gain name="fcs/egt-update">
+			<input>fcs/egt-switch</input>
+			<gain>1.0</gain>
+			<output>fcs/egt-feedback</output>
+		</pure_gain>
+	
+	</channel>
+
+</system>

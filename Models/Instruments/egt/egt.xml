@@ -1,40 +1,122 @@
 <?xml version="1.0"?>
 
+<!--
+ This file is part of FlightGear, the free flight simulator
+ http://www.flightgear.org/
+
+ Copyright (C) 2009 Torsten Dreyer, Torsten (at) t3r _dot_ de
+
+ This program is free software; you can redistribute it and/or
+ modify it under the terms of the GNU General Public License as
+ published by the Free Software Foundation; either version 2 of the
+ License, or (at your option) any later version.
+
+ This program is distributed in the hope that it will be useful, but
+ WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ General Public License for more details.
+-->
+
 <PropertyList>
 
- <path>egt.ac</path>
+	<path>egt.ac</path>
 
- <animation>
-  <type>material</type>
-  <object-name>Face</object-name>
-  <object-name>Needle</object-name>
-  <emission>
+	<params>
+		<value>engines/engine[0]/egt-actual</value>
+		<bug>engines/engine[0]/egt-bug</bug>
+	</params>
+
+	<animation>
+		<type>material</type>
+		<object-name>Needle</object-name>
+		<object-name>Bug</object-name>
+		<object-name>Face</object-name>
+		<emission>
 			<red>0.6</red>
 			<green>0.6</green>
 			<blue>0.6</blue>
-   <factor-prop>/sim/model//material/instruments/factor</factor-prop>
-  </emission>
- </animation>
+			<factor-prop>/sim/model/material/instruments/factor</factor-prop>
+		</emission>
+	</animation>
 
- <animation>
-  <type>rotate</type>
-  <object-name>Needle</object-name>
-  <property>/engines/engine[0]/cht-degf</property>
-  <factor>0.18</factor>
-  <offset-deg>-45</offset-deg>
-  <center>
-   <x-m>0</x-m>
-   <y-m>0</y-m>
-   <z-m>-0.012</z-m>
-  </center>
-  <axis>
-   <x>-1</x>
-   <y>0</y>
-   <z>0</z>
-  </axis>
+	<animation>
+		<type>rotate</type>
+		<object-name>Needle</object-name>
+		<property alias="../../params/value"/>
+		<factor>-0.05</factor>
+		<axis>
+			<x>1.0</x>
+			<y>0.0</y>
+			<z>0.0</z>
+		</axis>
+		<center>
+			<x-m>0</x-m>
+			<y-m>-0.00025</y-m>
+			<z-m>-0.00902</z-m>
+		</center>
+	</animation>
 
- </animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>Knob</object-name>
+		<property alias="../../params/bug"/>
+		<factor>-90.0</factor>
+		<axis>
+			<x>1.0</x>
+			<y>0.0</y>
+			<z>0.0</z>
+		</axis>
+		<center>
+			<x-m>0</x-m>
+			<y-m>-0.00025</y-m>
+			<z-m>-0.00902</z-m>
+		</center>
+	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>Bug</object-name>
+		<property alias="../../params/bug"/>
+		<factor>-0.05</factor>
+		<axis>
+			<x>1.0</x>
+			<y>0.0</y>
+			<z>0.0</z>
+		</axis>
+		<center>
+			<x-m>0</x-m>
+			<y-m>-0.00025</y-m>
+			<z-m>-0.00902</z-m>
+		</center>
+	</animation>
+
+	<animation>
+		<type>knob</type>
+		<object-name>Knob</object-name>
+		<action>
+			<repeatable>true</repeatable>
+			<binding>
+				<command>property-adjust</command>
+				<property alias="../../../../params/bug"/>
+				<factor>100</factor>
+				<min>0</min>
+				<max>1800</max>
+				<wrap>0</wrap>
+			</binding>
+		</action>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+				<tooltip-id>egt-bug</tooltip-id>
+				<label>EGT Bug: %4.0f</label>
+				<property alias="/params/bug"/>
+			</binding>
+		</hovered>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
 
 </PropertyList>
-
-

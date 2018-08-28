@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+	<path>vac.ac</path>
+
+	<animation>
+		<type>material</type>
+		<object-name>VacFace</object-name>
+		<object-name>VacNeedle</object-name>
+		<emission>
+			<red>0.6</red>
+			<green>0.6</green>
+			<blue>0.6</blue>
+			<factor-prop>/sim/model/material/instruments/factor</factor-prop>
+		</emission>
+	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>VacNeedle</object-name>
+		<property>systems/vacuum/suction-inhg-actual</property>
+		<interpolation>
+			<entry>
+				<ind>3</ind>
+				<dep>-95</dep>
+			</entry>
+			<entry>
+				<ind>5</ind>
+				<dep>0</dep>
+			</entry>
+			<entry>
+				<ind>7</ind>
+				<dep>95</dep>
+			</entry>
+		</interpolation>
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+		<center>
+			<x-m>0</x-m>
+			<y-m>-0.00019</y-m>
+			<z-m>-0.0055</z-m>
+		</center>
+	</animation>
+
+</PropertyList>

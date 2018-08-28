@@ -169,6 +169,26 @@
 	</filter>
 	
 	<filter>
+		<name>EGT lowpass</name>
+		<debug>false</debug>
+		<type>exponential</type>
+		<input>
+			<condition>
+				<less-than>
+					<property>/systems/electrical/bus/elec1</property>
+					<value>8</value>
+				</less-than>
+			</condition>
+			<value>0</value>
+		</input>
+		<input>/fdm/jsbsim/fcs/egt-feedback</input>
+		<output>/engines/engine[0]/egt-actual</output>
+		<filter-time>0.16</filter-time>
+		<min>0</min>
+		<max>1800</max>
+	</filter>
+	
+	<filter>
 		<name>Left Tank lowpass</name>
 		<debug>false</debug>
 		<type>exponential</type>
@@ -265,6 +285,35 @@
 		<input>/consumables/fuel/tank[1]/level-gal_us</input>
 		<output>/consumables/fuel/tank[1]/level-gal_us-lag</output>
 		<filter-time>0.16</filter-time>
+	</filter>
+	
+	<filter>
+		<name>Suction lowpass</name>
+		<debug>false</debug>
+		<type>exponential</type>
+		<input>
+			<condition>
+				<less-than>
+					<property>/systems/electrical/bus/elec1</property>
+					<value>8</value>
+				</less-than>
+			</condition>
+			<value>0</value>
+		</input>
+		<input>
+			<expression>
+				<table>
+					<property>/engines/engine[0]/rpm</property> 
+					<entry><ind> 300</ind><dep>0.0</dep></entry>
+					<entry><ind> 500</ind><dep>4.4</dep></entry>
+					<entry><ind>2900</ind><dep>5.1</dep></entry>
+				</table>
+			</expression>
+		</input>
+		<output>/systems/vacuum/suction-inhg-actual</output>
+		<filter-time>0.16</filter-time>
+		<min>0</min>
+		<max>1800</max>
 	</filter>
 
 </PropertyList>
