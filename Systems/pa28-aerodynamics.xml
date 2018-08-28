@@ -34,9 +34,9 @@
 				<table>
 					<independentVar lookup="row">aero/alpha-rad</independentVar>
 					<tableData>
-						-0.09 -0.02
-						 0.00  0.45
-						 0.09  0.93
+						-0.09 -0.13
+						 0.00  0.27
+						 0.09  0.91
 						 0.10  1.03
 						 0.12  1.12
 						 0.14  1.22
@@ -99,7 +99,7 @@
 				<property>aero/qbar-psf</property>
 				<property>metrics/Sw-sqft</property>
 				<property>fcs/flap-pos-deg</property>
-				<value>0.00875</value>
+				<value>0.00775</value>
 			</product>
 		</function>
 	

@@ -38,9 +38,11 @@
 			<function>
 				<table>
 					<independentVar lookup="row">fcs/mixture-cmd-lag</independentVar>
+					<independentVar lookup="column">atmosphere/pressure-altitude</independentVar>
 					<tableData>
-						0  0.55
-						1  1.00
+						   0     15000
+						0  0.55  0.25
+						1  1.00  1.00
 					</tableData>
 				</table>
 			</function>
