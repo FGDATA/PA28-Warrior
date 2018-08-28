@@ -8,6 +8,7 @@
 setprop("/systems/electrical/bus/elec1", 0);
 setprop("/systems/electrical/bus/elec2", 0);
 setprop("/systems/electrical/outputs/stby", 0);
+setprop("/systems/electrical/outputs/fuel-pump", 0);
 setprop("/sim/menubar/default/menu[5]/item[4]/enabled", 0);
 
 setlistener("/sim/signals/fdm-initialized", func {
@@ -26,6 +27,7 @@ setlistener("/sim/signals/fdm-initialized", func {
 	var avionics2 = 0;
 	var nav_factor = 0;
 	var panel_factor = 0;
+	var calc = 0;
 });
 
 var elec_init = func {
@@ -44,6 +46,7 @@ var elec_init = func {
 	setprop("/controls/switches/nav-lights-factor", 0);
 	setprop("/controls/switches/panel-lights-factor", 0);
 	elec_timer.start();
+	ampereCalc.start();
 }
 
 ######################
@@ -185,3 +188,15 @@ var update_electrical = func {
 }
 
 var elec_timer = maketimer(0.2, update_electrical);
+
+var ampereCalc = maketimer(0.05, func {
+	if (getprop("/systems/electrical/altn-amp") > 0) {
+		calc = getprop("/systems/electrical/altn-amp") + (rand() - 0.5) * 20;
+		if (calc < 1) {
+			calc = 1;
+		}
+		setprop("/systems/electrical/altn-amp-calc", calc);
+	} else {
+		setprop("/systems/electrical/altn-amp-calc", 0);
+	}
+});

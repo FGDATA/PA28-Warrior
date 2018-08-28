@@ -435,6 +435,13 @@
 			<extra n="0">
 				<door-main-cmd type="double">0</door-main-cmd>
 			</extra>
+			<fcs n="0">
+				<oil-temp-feedback type="double">0</oil-temp-feedback>
+			</fcs>
+			<fuel n="0">
+				<pump-psi-feedback type="double">0</pump-psi-feedback>
+				<suck-psi-feedback type="double">0</suck-psi-feedback>
+			</fuel>
 			<helpers n="0">
 				<a-c-pid>0</a-c-pid>
 			</helpers>
@@ -853,11 +860,15 @@
 	</options>
 	
 	<systems n="0">
+		<electrical n="0">
+			<outputs n="0">
+				<fuel-pump type="double">0</fuel-pump>
+			</outputs>
+		</electrical>
 		<fuel n="0">
 			<selected-tank type="int">1</selected-tank>
 			<suck-fuel type="bool">0</suck-fuel>
 		</fuel>
-
 	</systems>
 	
 	<nasal n="0">

@@ -222,6 +222,42 @@
 			<output>fcs/mixture-cmd-norm[0]</output>
 			<output>fcs/mixture-pos-norm[0]</output>
 		</fcs_function>
+		
+		<fcs_function name="fcs/oil-temp-inc">
+			<function>
+				<sum>
+					<property>fcs/oil-temp-feedback</property>
+					<value>0.03</value>
+				</sum>
+			</function>
+		</fcs_function>
+		
+		<fcs_function name="fcs/oil-temp-dec">
+			<function>
+				<difference>
+					<property>fcs/oil-temp-feedback</property>
+					<value>0.01</value>
+				</difference>
+			</function>
+		</fcs_function>
+		
+		<switch name="fcs/oil-temp-switch">
+			<default value="fcs/oil-temp-switch"/>
+			<test logic="AND" value="fcs/oil-temp-inc">
+				/engines/engine[0]/running eq 1
+				fcs/oil-temp-feedback lt 177
+			</test>
+			<test logic="AND" value="fcs/oil-temp-dec">
+				/engines/engine[0]/running ne 1
+				fcs/oil-temp-feedback gt 0
+			</test>
+		</switch>
+		
+		<pure_gain name="fcs/oil-temp-update">
+			<input>fcs/oil-temp-switch</input>
+			<gain>1.0</gain>
+			<output>fcs/oil-temp-feedback</output>
+		</pure_gain>
 	
 	</channel>
 	

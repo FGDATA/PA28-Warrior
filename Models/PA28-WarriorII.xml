@@ -268,16 +268,6 @@
 	</model>
 
 	<model>
-		<name>cod</name>
-		<path>Aircraft/PA28-Warrior/Models/Instruments/CODetector/CODetector.xml</path>
-		<offsets>
-			<x-m>1.925</x-m>
-			<y-m>0.310</y-m>
-			<z-m>0.100</z-m>
-		</offsets>
-	</model>
-
-	<model>
 		<name>charts</name>
 		<path>Aircraft/PA28-Warrior/Models/charts/charts.xml</path>
 		<offsets>
@@ -526,17 +516,6 @@
 	</model>
 
 	<model>
-		<name>FEX</name>
-		<path>Aircraft/PA28-Warrior/Models/FE/fe.xml</path>
-		<offsets>
-			<x-m>1.935</x-m>
-			<y-m>-0.345</y-m>
-			<z-m>0.100</z-m>
-			<roll-deg>90</roll-deg>
-		</offsets>
-	</model>
-
-	<model>
 		<name>Primer</name>
 		<path>Aircraft/PA28-Warrior/Models/PrimerPump/primer.xml</path>
 		<offsets>
@@ -550,9 +529,9 @@
 		<name>AMPVOL</name>
 		<path>Aircraft/PA28-Warrior/Models/Instruments/BatteryGauge/BatteryGauge.xml</path>
 		<offsets>
-			<x-m>1.925</x-m>
-			<y-m>0.1785</y-m>
-			<z-m>0.0145</z-m>
+			<x-m>1.917</x-m>
+			<y-m>0.1775</y-m>
+			<z-m>0.0155</z-m>
 		</offsets>
 	</model>
 
