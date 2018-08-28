@@ -69,17 +69,6 @@
 
 	<animation>
 		<type>material</type>
-		<object-name>LandingLightBulb</object-name>
-		<emission>
-			<red>1.0</red>
-			<green>1.0</green>
-			<blue>1.0</blue>
-			<factor-prop>controls/lighting/landing-lights</factor-prop>
-		</emission>
-	</animation>
-
-	<animation>
-		<type>material</type>
 		<object-name>Panel</object-name>
 		<emission>
 			<red>0.1</red>
