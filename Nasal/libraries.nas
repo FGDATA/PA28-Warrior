@@ -2,27 +2,46 @@
 # Joshua Davidson (it0uchpods)
 
 # doors ============================================================
-rightDoor = aircraft.door.new( "/sim/model/door-positions/rightDoor", 2, 0 );
-#baggageDoor = aircraft.door.new( "/sim/model/door-positions/baggageDoor", 2, 0 );
-
-# Use Nasal to make some properties persistent. <aircraft-data> does
-# not work reliably.
-aircraft.data.add("/instrumentation/nav[0]/radials/selected-deg");
-aircraft.data.save();
+rightDoor = aircraft.door.new("/sim/model/door-positions/rightDoor", 2, 0);
 
 # reset compass rose rotation for the ki228
-setlistener( "/instrumentation/adf[0]/model", func(n) {
-  if( n != nil ) {
-	var v = n.getValue();
-	if( v != nil and v == "ki228" )
-	  setprop("instrumentation/adf[0]/rotation-deg", 0 );
-  }
-}, 1, 0 );
-
+setlistener("/instrumentation/adf[0]/model", func(n) {
+	if (n != nil) {
+		var v = n.getValue();
+		if (v != nil and v == "ki228")
+		setprop("/instrumentation/adf[0]/rotation-deg", 0);
+	}
+}, 1, 0);
 
 gui.Dialog.new("sim/gui/dialogs/windsim/dialog", "Aircraft/PA28-Warrior/Dialogs/windsim.xml");
 gui.Dialog.new("sim/gui/dialogs/sounddialog/dialog", "Aircraft/PA28-Warrior/Dialogs/sounddialog.xml");
 
+setlistener("/sim/sounde/switch1", func {
+	if (!getprop("/sim/sounde/switch1")) {
+		return;
+	}
+	settimer(func {
+		props.globals.getNode("/sim/sounde/switch1").setBoolValue(0);
+	}, 0.05);
+});
+
+setlistener("/sim/sounde/switch2", func {
+	if (!getprop("/sim/sounde/switch2")) {
+		return;
+	}
+	settimer(func {
+		props.globals.getNode("/sim/sounde/switch2").setBoolValue(0);
+	}, 0.05);
+});
+
+setlistener("/sim/sounde/switch3", func {
+	if (!getprop("/sim/sounde/switch3")) {
+		return;
+	}
+	settimer(func {
+		props.globals.getNode("/sim/sounde/switch3").setBoolValue(0);
+	}, 0.05);
+});
 
 setlistener("/sim/signals/fdm-initialized", func {
 	systems.elec_init();

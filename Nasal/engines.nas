@@ -55,4 +55,5 @@ var magnetoStartSwitch = func {
 		setprop("/controls/engines/engine[0]/magnetos", 0);
 		setprop("/controls/engines/engine[0]/starter", 0);
 	}
+	setprop("/sim/sounde/switch3", 1);
 }

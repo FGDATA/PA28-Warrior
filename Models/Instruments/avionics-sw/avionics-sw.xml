@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <PropertyList>
-
+	
 	<path>avionics-sw.ac</path>
-
+	
 	<animation>
 		<object-name>Lever</object-name>
 		<type>pick</type>
@@ -15,6 +15,10 @@
 				<command>property-toggle</command>
 				<property>controls/switches/avionics-master</property>
 			</binding>
+			<binding>
+				<command>nasal</command>
+				<script>setprop("/sim/sounde/switch1", 1);</script>
+			</binding>
 		</action>
 		<hovered>
 			<binding>
@@ -24,7 +28,7 @@
 			</binding>
 		</hovered>
 	</animation>
-
+	
 	<animation>
 		<type>rotate</type>
 		<object-name>Lever</object-name>
@@ -36,6 +40,7 @@
 			<z>1</z>
 		</axis>
 	</animation>
+
 </PropertyList>
 
 

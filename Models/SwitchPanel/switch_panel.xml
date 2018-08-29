@@ -79,6 +79,10 @@
 				<command>property-toggle</command>
 				<property>controls/electrical/battery</property>
 			</binding>
+			<binding>
+				<command>nasal</command>
+				<script>setprop("/sim/sounde/switch2", 1);</script>
+			</binding>
 		</action>
 	</animation>
 
@@ -108,6 +112,10 @@
 			<binding>
 				<command>property-toggle</command>
 				<property>controls/electrical/alternator</property>
+			</binding>
+			<binding>
+				<command>nasal</command>
+				<script>setprop("/sim/sounde/switch2", 1);</script>
 			</binding>
 		</action>
 	</animation>
@@ -139,6 +147,10 @@
 				<command>property-toggle</command>
 				<property>controls/switches/fuel-pump</property>
 			</binding>
+			<binding>
+				<command>nasal</command>
+				<script>setprop("/sim/sounde/switch2", 1);</script>
+			</binding>
 		</action>
 	</animation>
 	
@@ -168,6 +180,10 @@
 			<binding>
 				<command>property-toggle</command>
 				<property>controls/switches/landing-light</property>
+			</binding>
+			<binding>
+				<command>nasal</command>
+				<script>setprop("/sim/sounde/switch2", 1);</script>
 			</binding>
 		</action>
 	</animation>
@@ -199,6 +215,10 @@
 				<command>property-toggle</command>
 				<property>controls/switches/beacon</property>
 			</binding>
+			<binding>
+				<command>nasal</command>
+				<script>setprop("/sim/sounde/switch2", 1);</script>
+			</binding>
 		</action>
 	</animation>
 	
@@ -229,6 +249,10 @@
 				<command>property-toggle</command>
 				<property>controls/switches/strobe-lights</property>
 			</binding>
+			<binding>
+				<command>nasal</command>
+				<script>setprop("/sim/sounde/switch2", 1);</script>
+			</binding>
 		</action>
 	</animation>
 	
@@ -258,6 +282,10 @@
 			<binding>
 				<command>property-toggle</command>
 				<property>controls/switches/pitot-heat</property>
+			</binding>
+			<binding>
+				<command>nasal</command>
+				<script>setprop("/sim/sounde/switch2", 1);</script>
 			</binding>
 		</action>
 	</animation>

@@ -188,7 +188,7 @@
 		</menubar>
 		
 		<sound>
-			<path>Aircraft/PA28-Warrior/PNavSounds/sound.xml</path>
+			<path>Aircraft/PA28-Warrior/Sounds/sound.xml</path>
 		</sound>
 		
 		<chase-distance-m type="double" archive="y">-15.0</chase-distance-m>
@@ -714,6 +714,12 @@
 			<key n="115">
 				<name>s</name>
 				<desc>Kill starter-key</desc>
+				<binding>
+					<command>nasal</command>
+					<script>
+					setprop("/sim/unused/nothing", 0);
+					</script>
+				</binding>
 			</key>
 			<key n="117">
 				<name>u</name>
