@@ -1,30 +1,10 @@
 <?xml version="1.0" ?>
 
-<!-- Copyright (c) 2017 Joshua Davidson (it0uchpods) -->
+<!-- Copyright (c) 2018 Joshua Davidson (it0uchpods) -->
 
 <PropertyList> 
+	
 	<path>yoke.ac</path> 
-
-  <effect>
-    <condition>
-      <property>/sim/rendering/rembrandt/enabled</property>
-    </condition>
-
-    <inherits-from>Effects/model-transparent</inherits-from>
-    <object-name>Yoke</object-name>
-  </effect>
-
-	<animation>
-		<type>material</type>
-		<object-name>Yoke</object-name>
-		<object-name>Stud</object-name>
-		<emission>
-			<red>0.02</red>
-			<green>0.02</green>
-			<blue>0.02</blue>
-			<factor-prop>sim/model/material/instruments/factor</factor-prop>
-		</emission>
-	</animation>
 
 	<animation>
 		<type>translate</type>
@@ -59,7 +39,7 @@
 		<type>select</type>
 		<object-name>Stud</object-name>
 		<condition>
-			<not><property>options/show-r-yoke</property></not>
+			<not><property>options/show-l-yoke</property></not>
 		</condition>
 	</animation>
 	
@@ -67,7 +47,7 @@
 		<type>select</type>
 		<object-name>Yoke</object-name>
 		<condition>
-			<property>options/show-r-yoke</property>
+			<property>options/show-l-yoke</property>
 		</condition>
 	</animation>
  
@@ -80,7 +60,7 @@
 			<repeatable type="bool">false</repeatable>
 			<binding>
 				<command>property-toggle</command>
-				<property>options/show-r-yoke</property>
+				<property>options/show-l-yoke</property>
 			</binding>
 			<binding>
 				<command>nasal</command>

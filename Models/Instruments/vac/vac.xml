@@ -1,49 +1,47 @@
 <?xml version="1.0"?>
 
+<!-- Copyright (c) 2018 Joshua Davidson (it0uchpods) -->
+
 <PropertyList>
-
+	
 	<path>vac.ac</path>
-
+	
 	<animation>
 		<type>material</type>
-		<object-name>VacFace</object-name>
+		<object-name>Face</object-name>
 		<object-name>VacNeedle</object-name>
 		<emission>
 			<red>0.6</red>
 			<green>0.6</green>
 			<blue>0.6</blue>
-			<factor-prop>/sim/model/material/instruments/factor</factor-prop>
+			<factor-prop>sim/model/material/instruments/factor</factor-prop>
 		</emission>
 	</animation>
-
+	
 	<animation>
 		<type>rotate</type>
 		<object-name>VacNeedle</object-name>
 		<property>systems/vacuum/suction-inhg-actual</property>
 		<interpolation>
-			<entry>
-				<ind>3</ind>
-				<dep>-95</dep>
-			</entry>
-			<entry>
-				<ind>5</ind>
-				<dep>0</dep>
-			</entry>
-			<entry>
-				<ind>7</ind>
-				<dep>95</dep>
-			</entry>
+			<entry><ind> 0.0</ind><dep>-150.0</dep></entry>
+			<entry><ind> 1.0</ind><dep>-123.5</dep></entry>
+			<entry><ind> 2.0</ind><dep> -96.5</dep></entry>
+			<entry><ind> 3.0</ind><dep> -67.0</dep></entry>
+			<entry><ind> 4.0</ind><dep> -36.5</dep></entry>
+			<entry><ind> 5.0</ind><dep>  -3.5</dep></entry>
+			<entry><ind> 6.0</ind><dep>  29.5</dep></entry>
+			<entry><ind> 7.0</ind><dep>  61.0</dep></entry>
+			<entry><ind> 8.0</ind><dep>  90.0</dep></entry>
+			<entry><ind> 9.0</ind><dep> 118.5</dep></entry>
+			<entry><ind>10.0</ind><dep> 147.5</dep></entry>
 		</interpolation>
 		<axis>
 			<x>-1</x>
 			<y>0</y>
 			<z>0</z>
 		</axis>
-		<center>
-			<x-m>0</x-m>
-			<y-m>-0.00019</y-m>
-			<z-m>-0.0055</z-m>
-		</center>
 	</animation>
 
 </PropertyList>
+
+

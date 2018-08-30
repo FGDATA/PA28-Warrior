@@ -4,19 +4,6 @@
 
  <path>primer.ac</path>
 
- <animation>
-  <type>material</type>
-  <object-name>PrimeFace</object-name>
-  <object-name>PrimeShaft</object-name>
-  <object-name>PrimeLock</object-name>
-  <emission>
-    <red>0.1</red>
-    <green>0.02</green>
-    <blue>0.00001</blue>
-   <factor-prop>/sim/model//material/instruments/factor</factor-prop>
-  </emission>
- </animation>
-
  <animation> 
    <type>translate</type>
    <object-name>PrimeFace</object-name>

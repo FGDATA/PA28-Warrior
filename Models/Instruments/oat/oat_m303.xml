@@ -16,7 +16,7 @@ Gary "Buckaroo" Neely
     <red>0.2</red>
     <green>0.1</green>
     <blue>0.05</blue>
-     <factor-prop>/sim/model//material/instruments/factor</factor-prop>
+     <factor-prop>sim/model//material/instruments/factor</factor-prop>
   </emission>
 </animation>
 <animation>
@@ -38,7 +38,7 @@ Gary "Buckaroo" Neely
     <red>0.8</red>
     <green>0.4</green>
     <blue>0.2</blue>
-     <factor-prop>/sim/model//material/instruments/factor</factor-prop>
+     <factor-prop>sim/model//material/instruments/factor</factor-prop>
   </emission>
 </animation>
 
