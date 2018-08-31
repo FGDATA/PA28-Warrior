@@ -16,7 +16,7 @@ Gary "Buckaroo" Neely
     <red>0.2</red>
     <green>0.1</green>
     <blue>0.05</blue>
-     <factor-prop>sim/model//material/instruments/factor</factor-prop>
+     <factor-prop>sim/model/material/instruments/factor</factor-prop>
   </emission>
 </animation>
 <animation>
@@ -38,7 +38,7 @@ Gary "Buckaroo" Neely
     <red>0.8</red>
     <green>0.4</green>
     <blue>0.2</blue>
-     <factor-prop>sim/model//material/instruments/factor</factor-prop>
+     <factor-prop>sim/model/material/instruments/factor</factor-prop>
   </emission>
 </animation>
 
@@ -50,9 +50,9 @@ Gary "Buckaroo" Neely
   <object-name>LabelC</object-name>
   <condition>
     <and>
-      <property>/systems/electrical/outputs/oat</property>
+      <property>systems/electrical/outputs/oat</property>
       <equals>
-        <property>/instrumentation/oat/mode</property>
+        <property>instrumentation/oat/mode</property>
         <value>0</value>
       </equals>
     </and>
@@ -66,9 +66,9 @@ Gary "Buckaroo" Neely
   <object-name>LabelF</object-name>
   <condition>
     <and>
-      <property>/systems/electrical/outputs/oat</property>
+      <property>systems/electrical/outputs/oat</property>
       <equals>
-        <property>/instrumentation/oat/mode</property>
+        <property>instrumentation/oat/mode</property>
         <value>1</value>
       </equals>
     </and>
@@ -83,9 +83,9 @@ Gary "Buckaroo" Neely
   <object-name>LabelE</object-name>
   <condition>
     <and>
-      <property>/systems/electrical/outputs/oat</property>
+      <property>systems/electrical/outputs/oat</property>
       <equals>
-        <property>/instrumentation/oat/mode</property>
+        <property>instrumentation/oat/mode</property>
         <value>2</value>
       </equals>
     </and>
@@ -96,7 +96,7 @@ Gary "Buckaroo" Neely
 <animation>
   <type>textranslate</type>
   <object-name>CenDigit1</object-name>
-  <property>/environment/temperature-degc</property>
+  <property>environment/temperature-degc</property>
   <factor>0.01</factor>
   <step>10</step>
   <axis>
@@ -108,7 +108,7 @@ Gary "Buckaroo" Neely
 <animation>
   <type>textranslate</type>
   <object-name>CenDigit2</object-name>
-  <property>/environment/temperature-degc</property>
+  <property>environment/temperature-degc</property>
   <factor>0.1</factor>
   <step>1</step>
   <axis>
@@ -122,7 +122,7 @@ Gary "Buckaroo" Neely
 <animation>
   <type>textranslate</type>
   <object-name>FarDigit1</object-name>
-  <property>/environment/temperature-degf</property>
+  <property>environment/temperature-degf</property>
   <factor>0.01</factor>
   <step>10</step>
   <axis>
@@ -134,7 +134,7 @@ Gary "Buckaroo" Neely
 <animation>
   <type>textranslate</type>
   <object-name>FarDigit2</object-name>
-  <property>/environment/temperature-degf</property>
+  <property>environment/temperature-degf</property>
   <factor>0.1</factor>
   <step>1</step>
   <axis>
@@ -148,7 +148,7 @@ Gary "Buckaroo" Neely
 <animation>
   <type>textranslate</type>
   <object-name>VoltsDigit1</object-name>
-  <property>/systems/electrical/outputs/oat</property>
+  <property>systems/electrical/outputs/oat</property>
   <factor>0.01</factor>
   <step>10</step>
   <axis>
@@ -160,7 +160,7 @@ Gary "Buckaroo" Neely
 <animation>
   <type>textranslate</type>
   <object-name>VoltsDigit2</object-name>
-  <property>/systems/electrical/outputs/oat</property>
+  <property>systems/electrical/outputs/oat</property>
   <factor>0.1</factor>
   <step>1</step>
   <axis>
@@ -172,7 +172,7 @@ Gary "Buckaroo" Neely
 <animation>
   <type>textranslate</type>
   <object-name>VoltsDigit3</object-name>
-  <property>/systems/electrical/outputs/oat</property>
+  <property>systems/electrical/outputs/oat</property>
   <factor>1.0</factor>
   <step>0.1</step>
   <axis>
@@ -190,10 +190,10 @@ Gary "Buckaroo" Neely
     <repeatable>false</repeatable>
     <binding>
       <condition>
-        <property>/systems/electrical/outputs/oat</property>
+        <property>systems/electrical/outputs/oat</property>
       </condition>
       <command>property-adjust</command>
-      <property>/instrumentation/oat/mode</property>
+      <property>instrumentation/oat/mode</property>
       <step>1</step>
       <min>0</min>
       <max>3</max> <!-- max should be 2, but property-adjust doeesn't work quite right -->
