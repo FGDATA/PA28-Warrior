@@ -39,7 +39,7 @@
 		<type>select</type>
 		<object-name>Stud</object-name>
 		<condition>
-			<not><property>options/show-l-yoke</property></not>
+			<not><property>options/show-r-yoke</property></not>
 		</condition>
 	</animation>
 	
@@ -47,7 +47,7 @@
 		<type>select</type>
 		<object-name>Yoke</object-name>
 		<condition>
-			<property>options/show-l-yoke</property>
+			<property>options/show-r-yoke</property>
 		</condition>
 	</animation>
  
@@ -60,7 +60,7 @@
 			<repeatable type="bool">false</repeatable>
 			<binding>
 				<command>property-toggle</command>
-				<property>options/show-l-yoke</property>
+				<property>options/show-r-yoke</property>
 			</binding>
 			<binding>
 				<command>nasal</command>
