@@ -13,31 +13,9 @@ Gary "Buckaroo" Neely
   <type>material</type>
   <object-name>Bezel</object-name>
   <emission>
-    <red>0.2</red>
+    <red>0.1</red>
     <green>0.1</green>
-    <blue>0.05</blue>
-     <factor-prop>sim/model/material/instruments/factor</factor-prop>
-  </emission>
-</animation>
-<animation>
-  <type>material</type>
-  <object-name>LabelF</object-name>
-  <object-name>LabelC</object-name>
-  <object-name>LabelE</object-name>
-  <object-name>VoltsDigit1</object-name>
-  <object-name>VoltsDigit2</object-name>
-  <object-name>VoltsDigit3</object-name>
-  <object-name>CenDigit1</object-name>
-  <object-name>CenDigit2</object-name>
-  <object-name>FarDigit1</object-name>
-  <object-name>FarDigit2</object-name>
-  <object-name>Decimal</object-name>
-  <object-name>DegreeC</object-name>
-  <object-name>DegreeF</object-name>
-  <emission>
-    <red>0.8</red>
-    <green>0.4</green>
-    <blue>0.2</blue>
+    <blue>0.1</blue>
      <factor-prop>sim/model/material/instruments/factor</factor-prop>
   </emission>
 </animation>

@@ -3,9 +3,19 @@
 <!-- Copyright (c) 2017 Joshua Davidson (it0uchpods) -->
 
 <PropertyList>
-
+	
 	<path>SwitchPanel.ac</path>
-
+	
+	<animation>
+		<type>material</type>
+		<emission>
+			<red>0.1</red>
+			<green>0.1</green>
+			<blue>0.1</blue>
+		  <factor-prop>sim/model/material/instruments/factor</factor-prop>
+		</emission>
+	</animation>
+	
 	<animation>
 		<type>rotate</type>
 		<object-name>NavDimmer</object-name>

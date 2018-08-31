@@ -7,7 +7,17 @@
 	<params>
 		<value>instrumentation/ki227/vor-bearing-source</value>
 	</params>
-
+	
+	<animation>
+		<type>material</type>
+		<emission>
+			<red>0.1</red>
+			<green>0.1</green>
+			<blue>0.1</blue>
+		  <factor-prop>sim/model/material/instruments/factor</factor-prop>
+		</emission>
+	</animation>
+	
 	<animation>
 		<object-name>Lever</object-name>
 		<type>pick</type>

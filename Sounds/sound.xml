@@ -201,6 +201,18 @@
 				<factor>0.75</factor>
 			</volume>
 		</switch>
+		
+		<switch>
+			<name>Knob</name>
+			<mode>once</mode>
+			<path>Aircraft/PA28-Warrior/Sounds/knob.wav</path>
+			<condition>
+				<property>/sim/sounde/knb1</property>
+			</condition>
+			<volume>
+				<factor>0.60</factor>
+			</volume>
+		</switch>
 	
 	</fx>
 

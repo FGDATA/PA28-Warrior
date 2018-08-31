@@ -70,6 +70,7 @@
 	<animation>
 		<type>material</type>
 		<object-name>Panel</object-name>
+		<object-name>PlacardsGroup</object-name>
 		<emission>
 			<red>0.1</red>
 			<green>0.1</green>
@@ -594,15 +595,15 @@
 		</offsets>
 	</model>
 
-	<!--model>
-		<name></name>
-		<path></path>
+	<model>
+		<name>dme</name>
+		<path>Aircraft/PA28-Warrior/Models/Instruments/ki266/ki266.xml</path>
 		<offsets>
-			<x-m>1.927</x-m>
-			<y-m>0.298</y-m>
-			<z-m>0.18</z-m>
+			<x-m>1.93</x-m>
+			<y-m>0.292</y-m>
+			<z-m>0.19</z-m>
 		</offsets>
-	</model-->
+	</model>
 
 	<model>
 		<name>Transponder</name>

@@ -191,7 +191,7 @@ var elec_timer = maketimer(0.2, update_electrical);
 
 var ampereCalc = maketimer(0.05, func {
 	if (getprop("/systems/electrical/altn-amp") > 0) {
-		calc = getprop("/systems/electrical/altn-amp") + (rand() - 0.5) * 20;
+		calc = getprop("/systems/electrical/altn-amp") + (rand() - 0.5) * 10;
 		if (calc < 1) {
 			calc = 1;
 		}

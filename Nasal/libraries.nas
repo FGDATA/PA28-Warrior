@@ -43,6 +43,15 @@ setlistener("/sim/sounde/switch3", func {
 	}, 0.05);
 });
 
+setlistener("/sim/sounde/knob", func {
+	if (!getprop("/sim/sounde/knob")) {
+		return;
+	}
+	settimer(func {
+		props.globals.getNode("/sim/sounde/knob").setBoolValue(0);
+	}, 0.05);
+});
+
 setlistener("/sim/signals/fdm-initialized", func {
 	systems.elec_init();
 	systems.engine_init();
