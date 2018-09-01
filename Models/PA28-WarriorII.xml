@@ -703,7 +703,7 @@
 
 	<model>
 		<name>fuel selector</name>
-		<path>Models/instruments/fuel-selector/fuel-selector.xml</path>
+		<path>Models/Instruments/fuel-selector/fuel-selector.xml</path>
 		<offsets>
 			<pitch-deg>90</pitch-deg>
 			<roll-deg>180</roll-deg>
