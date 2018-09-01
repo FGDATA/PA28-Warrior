@@ -15,18 +15,9 @@
 			<model type="int">4</model>
 		</rating>
 		
-		<hud>
-			<path n="1">Aircraft/PA28-Warrior/Huds/PA161HUD.xml</path>
-			<path n="2">Aircraft/PA28-Warrior/Huds/FGN.xml</path>
-			<path n="4">Aircraft/PA28-Warrior/Huds/ICAO.xml</path>
-			<path n="3">Aircraft/PA28-Warrior/Huds/default.xml</path>
-			<visibility n="0" type="bool">true</visibility>
-			<font>
-				<gui>
-					<name type="string">HELVETICA_12</name>
-					<size type="float">8</size>
-				</gui>
-			</font>
+		<hud n="0">
+			<enable3d n="0">false</enable3d>
+			<enable3d n="1">false</enable3d>
 		</hud>
 		
 		<flaps>
