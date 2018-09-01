@@ -388,8 +388,14 @@
 				<property>aero/qbar-psf</property>
 				<property>metrics/Sw-sqft</property>
 				<property>metrics/bw-ft</property>
-				<property>aero/beta-rad</property>
-				<value>0.06</value>
+				<table>
+					<independentVar>aero/beta-rad</independentVar>
+					<tableData>
+						-0.349 -0.0205
+						 0.000  0.0000
+						 0.349  0.0205
+					</tableData>
+				</table>
 			</product>
 		</function>
 		
@@ -412,7 +418,7 @@
 				<property>metrics/Sw-sqft</property>
 				<property>metrics/bw-ft</property>
 				<toradians><property>fcs/rudder-deg</property></toradians>
-				<value>0.11</value>
+				<value>0.115</value>
 			</product>
 		</function>
 		
