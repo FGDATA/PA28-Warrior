@@ -2,7 +2,7 @@
 
 <PropertyList>
 
-	<path>Models/Instruments/fuel-selector/fuel-selector.ac</path>
+	<path>fuel-selector.ac</path>
 
 	<animation>
 		<type>material</type>
