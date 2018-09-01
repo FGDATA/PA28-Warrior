@@ -76,7 +76,7 @@ var systemsLoop = maketimer(0.1, func {
 });
 
 var variousReset = func {
-	setprop("/it-autoflight/input/hdg", getprop("/orientation/heading-magnetic-deg"));
+	setprop("/it-autoflight/input/hdg", math.round(getprop("/orientation/heading-magnetic-deg")));
 	setprop("/it-autoflight/input/alt", 2000);
 	setprop("/it-autoflight/settings/slave-gps-nav", 0);
 	setprop("/controls/switches/beacon", 0);
