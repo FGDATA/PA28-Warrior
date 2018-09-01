@@ -1,12 +1,12 @@
-# IT AUTOFLIGHT:GA System Controller V1.1.0
+# IT AUTOFLIGHT:GA System Controller V1.2.0
 # Copyright (c) 2017-2018 Joshua Davidson (it0uchpods)
 # This program is 100% GPL!
 
 setprop("/it-autoflight/internal/heading-deg", 0);
 setprop("/it-autoflight/internal/track-deg", 0);
 setprop("/it-autoflight/internal/vert-speed-fpm", 0);
-setprop("/it-autoflight/internal/heading-5-sec-ahead", 0);
-setprop("/it-autoflight/internal/altitude-5-sec-ahead", 0);
+setprop("/it-autoflight/internal/heading-predicted", 0);
+setprop("/it-autoflight/internal/altitude-predicted", 0);
 
 setlistener("/sim/signals/fdm-initialized", func {
 	var locdefl = getprop("/instrumentation/nav[0]/heading-needle-deflection-norm");
@@ -28,6 +28,10 @@ setlistener("/sim/signals/fdm-initialized", func {
 	var R = 0;
 	var dist_coeff = 0;
 	var turn_dist = 0;
+	var vsnow = 0;
+	var rollKp = 0;
+	var pitchKp = 0;
+	var vsKp = 0;
 });
 
 var ap_init = func {
@@ -142,8 +146,8 @@ var lateral = func {
 		setprop("/it-autoflight/output/nav-armed", 0);
 		setprop("/it-autoflight/output/loc-armed", 0);
 		setprop("/it-autoflight/output/appr-armed", 0);
-		var hdg5sec = math.round(getprop("/it-autoflight/internal/heading-5-sec-ahead"));
-		setprop("/it-autoflight/input/hdg", hdg5sec);
+		var hdgpredic = math.round(getprop("/it-autoflight/internal/heading-predicted"));
+		setprop("/it-autoflight/input/hdg", hdgpredic);
 		setprop("/it-autoflight/output/lat", 0);
 		setprop("/it-autoflight/mode/lat", "HDG");
 		setprop("/it-autoflight/mode/arm", " ");
@@ -172,9 +176,9 @@ var vertical = func {
 		} else {
 			setprop("/it-autoflight/mode/arm", " ");
 		}
-		var alt5sec = math.round(getprop("/it-autoflight/internal/altitude-5-sec-ahead"), 500);
-		setprop("/it-autoflight/input/alt", alt5sec);
-		setprop("/it-autoflight/internal/alt", alt5sec);
+		var altpredic = math.round(getprop("/it-autoflight/internal/altitude-predicted"), 500);
+		setprop("/it-autoflight/input/alt", altpredic);
+		setprop("/it-autoflight/internal/alt", altpredic);
 	} else if (vertset == 1) {
 		var altinput = getprop("/it-autoflight/input/alt");
 		setprop("/it-autoflight/internal/alt", altinput);
@@ -187,7 +191,7 @@ var vertical = func {
 			setprop("/it-autoflight/output/appr-armed", 0);
 			var altinput = getprop("/it-autoflight/input/alt");
 			setprop("/it-autoflight/internal/alt", altinput);
-			var vsnow = math.round(getprop("/it-autoflight/internal/vert-speed-fpm"), 100);
+			vsnow = math.round(getprop("/it-autoflight/internal/vert-speed-fpm"), 100);
 			setprop("/it-autoflight/input/vs", vsnow);
 			setprop("/it-autoflight/output/vert", 1);
 			setprop("/it-autoflight/mode/vert", "V/S");
@@ -217,7 +221,7 @@ var vertical = func {
 		var calt = getprop("/instrumentation/altimeter/indicated-altitude-ft");
 		var alt = getprop("/it-autoflight/internal/alt");
 		var dif = calt - alt;
-		var vsnow = getprop("/it-autoflight/internal/vert-speed-fpm");
+		vsnow = getprop("/it-autoflight/internal/vert-speed-fpm");
 		if (calt < alt) {
 			setprop("/it-autoflight/internal/max-vs", vsnow);
 		} else if (calt > alt) {
@@ -238,6 +242,7 @@ var ap_various = func {
 	# Calculate Roll and Pitch Kp
 	rollKp = getprop("/it-autoflight/config/roll/kp-low") + (getprop("/velocities/mach") - 0.02) * ((getprop("/it-autoflight/config/roll/kp-high") - getprop("/it-autoflight/config/roll/kp-low")) / (0.20 - 0.02));
 	pitchKp = getprop("/it-autoflight/config/pitch/kp-low") + (getprop("/velocities/mach") - 0.02) * ((getprop("/it-autoflight/config/pitch/kp-high") - getprop("/it-autoflight/config/pitch/kp-low")) / (0.20 - 0.02));
+	vsKp = getprop("/it-autoflight/config/cmd/vs-low") + (getprop("/velocities/mach") - 0.2) * ((getprop("/it-autoflight/config/cmd/vs-high") - getprop("/it-autoflight/config/cmd/vs-low")) / (0.9 - 0.2));
 	
 	if (getprop("/it-autoflight/config/roll/kp-low") > getprop("/it-autoflight/config/roll/kp-high")) {
 		rollKp = math.clamp(rollKp, getprop("/it-autoflight/config/roll/kp-high"), getprop("/it-autoflight/config/roll/kp-low"));
@@ -249,9 +254,15 @@ var ap_various = func {
 	} else if (getprop("/it-autoflight/config/pitch/kp-low") < getprop("/it-autoflight/config/pitch/kp-high")) {
 		pitchKp = math.clamp(pitchKp, getprop("/it-autoflight/config/pitch/kp-low"), getprop("/it-autoflight/config/pitch/kp-high"));
 	}
+	if (getprop("/it-autoflight/config/cmd/vs-low") > getprop("/it-autoflight/config/cmd/vs-high")) {
+		vsKp = math.clamp(vsKp, getprop("/it-autoflight/config/cmd/vs-high"), getprop("/it-autoflight/config/cmd/vs-low"));
+	} else if (getprop("/it-autoflight/config/cmd/vs-low") < getprop("/it-autoflight/config/cmd/vs-high")) {
+		vsKp = math.clamp(vsKp, getprop("/it-autoflight/config/cmd/vs-low"), getprop("/it-autoflight/config/cmd/vs-high"));
+	}
 	
 	setprop("/it-autoflight/config/roll/kp", rollKp);
 	setprop("/it-autoflight/config/pitch/kp", pitchKp);
+	setprop("/it-autoflight/config/cmd/vs-kp", vsKp);
 	
 	if (getprop("/autopilot/route-manager/route/num") > 0 and getprop("/autopilot/route-manager/active") == 1) {
 		if ((getprop("/autopilot/route-manager/current-wp") + 1) < getprop("/autopilot/route-manager/route/num")) {
@@ -343,32 +354,9 @@ setlistener("/it-autoflight/output/vert", func {
 });
 
 var altcapt = func {
-	var vsnow = getprop("/it-autoflight/internal/vert-speed-fpm");
-	if ((vsnow >= 0 and vsnow < 500) or (vsnow < 0 and vsnow > -500)) {
-		setprop("/it-autoflight/internal/captvs", 100);
-		setprop("/it-autoflight/internal/captvsneg", -100);
-	} else  if ((vsnow >= 500 and vsnow < 1000) or (vsnow < -500 and vsnow > -1000)) {
-		setprop("/it-autoflight/internal/captvs", 200);
-		setprop("/it-autoflight/internal/captvsneg", -200);
-	} else  if ((vsnow >= 1000 and vsnow < 1500) or (vsnow < -1000 and vsnow > -1500)) {
-		setprop("/it-autoflight/internal/captvs", 300);
-		setprop("/it-autoflight/internal/captvsneg", -300);
-	} else  if ((vsnow >= 1500 and vsnow < 2000) or (vsnow < -1500 and vsnow > -2000)) {
-		setprop("/it-autoflight/internal/captvs", 400);
-		setprop("/it-autoflight/internal/captvsneg", -400);
-	} else  if ((vsnow >= 2000 and vsnow < 3000) or (vsnow < -2000 and vsnow > -3000)) {
-		setprop("/it-autoflight/internal/captvs", 600);
-		setprop("/it-autoflight/internal/captvsneg", -600);
-	} else  if ((vsnow >= 3000 and vsnow < 4000) or (vsnow < -3000 and vsnow > -4000)) {
-		setprop("/it-autoflight/internal/captvs", 900);
-		setprop("/it-autoflight/internal/captvsneg", -900);
-	} else  if ((vsnow >= 4000 and vsnow < 5000) or (vsnow < -4000 and vsnow > -5000)) {
-		setprop("/it-autoflight/internal/captvs", 1200);
-		setprop("/it-autoflight/internal/captvsneg", -1200);
-	} else  if ((vsnow >= 5000) or (vsnow < -5000)) {
-		setprop("/it-autoflight/internal/captvs", 1500);
-		setprop("/it-autoflight/internal/captvsneg", -1500);
-	}
+	vsnow = getprop("/it-autoflight/internal/vert-speed-fpm");
+	setprop("/it-autoflight/internal/captvs", math.round(abs(vsnow) / (-1 * getprop("/it-autoflight/config/cmd/alt-gain")), 100));
+	setprop("/it-autoflight/internal/captvsneg", -1 * math.round(abs(vsnow) / (-1 * getprop("/it-autoflight/config/cmd/alt-gain")), 100));
 	var calt = getprop("/instrumentation/altimeter/indicated-altitude-ft");
 	var alt = getprop("/it-autoflight/internal/alt");
 	var dif = calt - alt;

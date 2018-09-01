@@ -15,42 +15,17 @@
 			<model type="int">4</model>
 		</rating>
 		
-		<hud>
-			<path n="1">Aircraft/PA28-Warrior/Huds/PA161HUD.xml</path>
-			<path n="2">Aircraft/PA28-Warrior/Huds/FGN.xml</path>
-			<path n="4">Aircraft/PA28-Warrior/Huds/ICAO.xml</path>
-			<path n="3">Aircraft/PA28-Warrior/Huds/default.xml</path>
-			<visibility n="0" type="bool">true</visibility>
-			<font>
-				<gui>
-					<name type="string">HELVETICA_12</name>
-					<size type="float">8</size>
-				</gui>
-			</font>
-			<palette>
-				<color n="0">
-					<alpha>1</alpha> 
-					<brightness>1</brightness>      	
-					<red type="float">255</red>
-					<green type="float">255</green>
-					<blue type="float">255</blue>
-				</color>
-				<color n="2">
-					<alpha>1</alpha> 
-					<brightness>1</brightness>             
-					<red type="float">0.9</red>
-					<green type="float">0</green>
-					<blue type="float">0</blue>
-				</color>
-				<color n="3">
-					<alpha>1</alpha>
-					<brightness>1</brightness>              
-					<red type="float">0.38</red>
-						<green type="float">1.0</green>
-					<blue type="float">0.22</blue>
-				</color>
-			</palette>
+		<hud n="0">
+			<enable3d n="0">false</enable3d>
+			<enable3d n="1">false</enable3d>
 		</hud>
+		
+		<flaps>
+			<setting>0.00</setting>
+			<setting>0.25</setting>
+			<setting>0.50</setting>
+			<setting>1.00</setting>
+		</flaps>
 		
 		<panel>
 			<visibility archive="y">false</visibility>
@@ -59,6 +34,20 @@
 		<startup>
 			<splash-texture>Aircraft/PA28-Warrior/Splash/splash1.png</splash-texture>
 		</startup>
+		
+		<tags>
+			<tag>ga</tag>
+			<tag>piper</tag>
+			<tag>1960s</tag>
+			<tag>1970s</tag>
+			<tag>1980s</tag>
+			<tag>1990s</tag>
+			<tag>2000s</tag>
+			<tag>ifr</tag>
+			<tag>fixed-gear</tag>
+			<tag>piston</tag>
+			<tag>1-engine</tag>
+		</tags>
 		
 		<previews>
 			<preview>
@@ -70,16 +59,6 @@
 				<type>exterior</type>
 				<splash type="bool">true</splash>
 				<path>Splash/Splash2.png</path>
-			</preview>
-			<preview>
-				<type>exterior</type>
-				<splash type="bool">true</splash>
-				<path>Splash/Splash3.png</path>
-			</preview>	
-			<preview>
-				<type>exterior</type>
-				<splash type="bool">true</splash>
-				<path>Splash/Splash4.png</path>
 			</preview>	
 		</previews>
 		
@@ -200,7 +179,7 @@
 		</menubar>
 		
 		<sound>
-			<path>Aircraft/PA28-Warrior/PNavSounds/sound.xml</path>
+			<path>Aircraft/PA28-Warrior/Sounds/sound.xml</path>
 		</sound>
 		
 		<chase-distance-m type="double" archive="y">-15.0</chase-distance-m>
@@ -252,6 +231,34 @@
 				<default-field-of-view-deg type="double">82</default-field-of-view-deg>
 			</config>
 		</view>
+		<view n="101">
+			<name>Right View</name>
+			<type>lookfrom</type>
+			<internal archive="y">true</internal>
+			<config>
+				<from-model type="bool">true</from-model>
+				<x-offset-m archive="y">0.24</x-offset-m>
+				<y-offset-m archive="y">0.5</y-offset-m>
+				<z-offset-m archive="y">2.6</z-offset-m>
+				<pitch-offset-deg>-15</pitch-offset-deg>
+				<heading-offset-deg>-95</heading-offset-deg>
+				<default-field-of-view-deg type="double">82</default-field-of-view-deg>
+			</config>
+		</view>
+		<view n="102">
+			<name>Left View</name>
+			<type>lookfrom</type>
+			<internal archive="y">true</internal>
+			<config>
+				<from-model type="bool">true</from-model>
+				<x-offset-m archive="y">-0.24</x-offset-m>
+				<y-offset-m archive="y">0.5</y-offset-m>
+				<z-offset-m archive="y">2.6</z-offset-m>
+				<pitch-offset-deg>-15</pitch-offset-deg>
+				<heading-offset-deg>95</heading-offset-deg>
+				<default-field-of-view-deg type="double">82</default-field-of-view-deg>
+			</config>
+		</view>
 		
 		<weight n="0">
 			<name>Pilot</name>
@@ -276,6 +283,10 @@
 				<float n="2" alias="/gear/gear[2]/compression-m"/>
 				<float n="3" alias="/fdm/jsbsim/fcs/steer-deg"/>
 				<float n="4" alias="/fdm/jsbsim/extra/door-main-norm"/>
+				<float n="5" alias="/fdm/jsbsim/fcs/aileron-deg"/>
+				<float n="6" alias="/fdm/jsbsim/fcs/elevator-deg"/>
+				<float n="7" alias="/fdm/jsbsim/fcs/elevator-tab-deg"/>
+				<float n="8" alias="/fdm/jsbsim/fcs/rudder-deg"/>
 				<string alias="/sim/multiplay/callsign"/>
 			</generic>
 		</multiplay>
@@ -388,7 +399,7 @@
 			<aileron-drives-tiller type="bool">0</aileron-drives-tiller>
 		</flight>
 		<gear>
-			<brake-parking type="double">1.0</brake-parking>
+			<brake-parking type="double">0</brake-parking>
 		</gear>
 		<switches>
 			<avionics-master type="bool">0</avionics-master>
@@ -404,6 +415,13 @@
 		</switches>
 	</controls>
 	
+	<engines n="0">
+		<engine n="0">
+			<egt-actual type="double">0</egt-actual>
+			<egt-bug type="double">1400</egt-bug>
+		</engine>
+	</engines>
+	
 	<environment>
 		<aircraft-effects>
 			<overlay-alpha type="double">0.5</overlay-alpha>
@@ -415,6 +433,14 @@
 			<extra n="0">
 				<door-main-cmd type="double">0</door-main-cmd>
 			</extra>
+			<fcs n="0">
+				<egt-feedback type="double">0</egt-feedback>
+				<oil-temp-feedback type="double">0</oil-temp-feedback>
+			</fcs>
+			<fuel n="0">
+				<pump-psi-feedback type="double">0</pump-psi-feedback>
+				<suck-psi-feedback type="double">0</suck-psi-feedback>
+			</fuel>
 			<helpers n="0">
 				<a-c-pid>0</a-c-pid>
 			</helpers>
@@ -574,17 +600,11 @@
 				</binding>
 			</key>
 			<key n="66">
-				<name>B</name>
+				<name>Shift-B</name>
 				<desc>Toggle parking brake on or off</desc>
 				<binding>
 					<command>nasal</command>
 					<script>controls.applyParkingBrake(1)</script>
-				</binding>
-				<binding>
-					<command>show-message</command>
-					<id>bs</id>
-					<label>ParkingBrake set</label>
-					<delay>3.75</delay>
 				</binding>
 				<mod-up>
 					<binding>
@@ -592,15 +612,6 @@
 						<script>controls.applyParkingBrake(0)</script>
 					</binding>
 				</mod-up>	
-				<binding>
-					<condition>
-						<not><property>/controls/gear/brake-parking</property></not>
-					</condition>	
-					<command>show-message</command>
-					<id>strap</id>
-					<label>Fasten Your Seat Belt</label>
-					<delay>3.75</delay>
-				</binding>
 			</key>
 			<key n="88">
 				<name>X</name>
@@ -686,32 +697,19 @@
 				<desc>toggle tanks</desc>
 				<binding>
 					<command>property-cycle</command>
-					<property>/controls/fuel-selector</property>
-					<value>1</value>
-					<value>2</value>
-				</binding>
-				<binding>
-					<command>property-cycle</command>
 					<property>/systems/fuel/selected-tank</property>
-					<property>/controls/fuel-selector</property>
 					<value>1</value>
 					<value>2</value>
 				</binding>
 			</key>
-			<key n="107">
-				<name>k</name>
-				<desc>Show Map</desc>
+			<key n="115">
+				<name>s</name>
+				<desc>Kill starter-key</desc>
 				<binding>
-					<command>dialog-show</command>
-					<dialog-name>map</dialog-name>
-				</binding>
-			</key>
-			<key n="114">
-				<name>r</name>
-				<desc>Show RM</desc>
-				<binding>
-					<command>dialog-show</command>
-					<dialog-name>route-manager</dialog-name>
+					<command>nasal</command>
+					<script>
+					setprop("/sim/unused/nothing", 0);
+					</script>
 				</binding>
 			</key>
 			<key n="117">
@@ -840,7 +838,9 @@
 			<cmd>
 				<roll-kp>-1.0</roll-kp>
 				<vorloc>-2.0</vorloc>
-				<vs>0.0017</vs>
+				<alt-gain>-5</alt-gain>
+				<vs-low>0.0051</vs-low> <!-- Kp at low speed -->
+				<vs-high>0.0029</vs-high> <!-- Kp at high speed -->
 			</cmd>
 		</config>
 		<settings>
@@ -865,11 +865,15 @@
 	</options>
 	
 	<systems n="0">
+		<electrical n="0">
+			<outputs n="0">
+				<fuel-pump type="double">0</fuel-pump>
+			</outputs>
+		</electrical>
 		<fuel n="0">
 			<selected-tank type="int">1</selected-tank>
 			<suck-fuel type="bool">0</suck-fuel>
 		</fuel>
-
 	</systems>
 	
 	<nasal n="0">
@@ -877,7 +881,7 @@
 			<file>Aircraft/PA28-Warrior/Nasal/libraries.nas</file>
 			<file>Aircraft/PA28-Warrior/Nasal/immat.nas</file>
 			<!--file>Aircraft/PA28-Warrior/Nasal/lighting.nas</file-->
-			<file>Aircraft/PA28-Warrior/Models/instruments/elt/ELTmessage.nas</file>
+			<file>Aircraft/PA28-Warrior/Models/Instruments/ELT/ELTmessage.nas</file>
 			<file>Aircraft/PA28-Warrior/Nasal/kr87.nas</file>
 			<file>Aircraft/PA28-Warrior/Nasal/ki266.nas</file>
 			<file>Aircraft/PA28-Warrior/Nasal/kcs55.nas</file>
@@ -905,7 +909,7 @@
 			<file>Aircraft/PA28-Warrior/Nasal/tyresmoke.nas</file>
 		</tyresmoke>
 		<HobbsMeter>
-			<file>Aircraft/PA28-Warrior/Models/instruments/Hobbs/hobbs.nas</file>
+			<file>Aircraft/PA28-Warrior/Models/Instruments/Hobbs/hobbs.nas</file>
 			<script>
 			<![CDATA[HobbsMeter.new(index: 0, switchPath: 'gear/gear/wow', inverted: 1);]]>
 			</script>

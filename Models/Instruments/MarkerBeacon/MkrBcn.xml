@@ -44,38 +44,6 @@
       <factor-prop alias="../../../params/inner"/>
     </emission>
   </animation>
-  
-   <animation>
-    <type>pick</type>
-    <object-name>O</object-name>
-    <object-name>M</object-name>
-    <object-name>A</object-name>
-    <action>
-    <button>0</button>
-    <repeatable>false</repeatable>
-          <binding>
-	 <command>nasal</command>
-	    	  <script>
-	      		view.resetView();
-	    	  </script>
-          </binding>
-     </action>
-  </animation>
-  
-                   <animation>
-  <type>pick</type>
-  <object-name>O</object-name>
-    <object-name>M</object-name>
-    <object-name>A</object-name>
-  <hovered>
-            <binding>
-                <command>set-tooltip</command>
-                <tooltip-id>resetviews</tooltip-id>
-                <label>OMI/Reset current view </label>
-            </binding>
-        </hovered>
-  </animation>
-
 
 </PropertyList>
 

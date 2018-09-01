@@ -37,9 +37,9 @@
         <object-name>knobs.FLT</object-name>
         <object-name>knobs.SET</object-name>
         <emission>
-          <red>0.5</red>
-          <green>0.1</green>
-          <blue>0.00005</blue>
+			<red>0.1</red>
+			<green>0.1</green>
+			<blue>0.1</blue>
           <factor-prop>sim/model/material/instruments/factor</factor-prop>
         </emission>
     </animation>

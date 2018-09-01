@@ -1,10 +1,72 @@
 <!-- PA28-161 Fuel System -->
 
-<!-- Copyright (c) 2017 Joshua Davidson (it0uchpods) -->
+<!-- Copyright (c) 2018 Joshua Davidson (it0uchpods) -->
 
 <system name="fuel">
-
+	
+	<channel name="Fuel Pressure" execrate="8">
+		
+		<fcs_function name="fuel/pump-psi-dec">
+			<function>
+				<difference>
+					<property>fuel/pump-psi-feedback</property>
+					<value>0.001</value>
+				</difference>
+			</function>
+		</fcs_function>
+		
+		<switch name="fuel/pump-psi-switch">
+			<default value="fuel/pump-psi-switch"/>
+			<test value="0.4">
+				/systems/electrical/outputs/fuel-pump ge 8
+			</test>
+			<test value="fuel/pump-psi-dec">
+				fuel/pump-psi-feedback gt 0
+			</test>
+		</switch>
+		
+		<pure_gain name="fuel/pump-psi-update">
+			<input>fuel/pump-psi-switch</input>
+			<gain>1.0</gain>
+			<output>fuel/pump-psi-feedback</output>
+		</pure_gain>
+		
+		<fcs_function name="fuel/suck-psi-dec">
+			<function>
+				<difference>
+					<property>fuel/suck-psi-feedback</property>
+					<value>0.001</value>
+				</difference>
+			</function>
+		</fcs_function>
+		
+		<switch name="fuel/suck-psi-switch">
+			<default value="fuel/suck-psi-switch"/>
+			<test value="5.7">
+				/systems/fuel/suck-fuel eq 1
+			</test>
+			<test logic="AND" value="fuel/suck-psi-dec">
+				fuel/suck-psi-feedback gt 0
+				fuel/pump-psi-feedback lt 0.001
+			</test>
+		</switch>
+		
+		<pure_gain name="fuel/suck-psi-update">
+			<input>fuel/suck-psi-switch</input>
+			<gain>1.0</gain>
+			<output>fuel/suck-psi-feedback</output>
+		</pure_gain>
+		
+		<summer name="fuel/pressure-psi">
+			<input>fuel/pump-psi-feedback</input>
+			<input>fuel/suck-psi-feedback</input>
+			<output>/systems/fuel/pressure-psi</output>
+		</summer>
+	
+	</channel>
+	
 	<channel name="Fuel to Engine Pipes">
+		
 		<switch name="fuel/from-tank0-to-tank2">
 			<default value="0"/>
 			<test logic="AND" value="0.1">
@@ -24,26 +86,31 @@
 				propulsion/tank[2]/contents-lbs lt 0.008
 			</test>
 		</switch>
+	
 	</channel>
-
-	<channel name="Engine Pipes PPS">
+	
+	<channel name="Engine Pipe PPS">
+		
 		<summer name="tank0 and 1 to tank2">
 			<input>fuel/from-tank0-to-tank2</input>
 			<input>fuel/from-tank1-to-tank2</input>
 			<output>propulsion/tank[2]/external-flow-rate-pps</output>
 		</summer>
+	
 	</channel>
-
+	
     <channel name="Total PPS">
+		
         <summer name="fuel/tank0-flow-rate">
             <input>-fuel/from-tank0-to-tank2</input>
             <output>propulsion/tank[0]/external-flow-rate-pps</output>
         </summer>
-
+		
         <summer name="fuel/tank1-flow-rate">
             <input>-fuel/from-tank1-to-tank2</input>
             <output>propulsion/tank[1]/external-flow-rate-pps</output>
         </summer>
-    </channel>
 	
+    </channel>
+
 </system>

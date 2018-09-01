@@ -2,48 +2,81 @@
 # Joshua Davidson (it0uchpods)
 
 # doors ============================================================
-rightDoor = aircraft.door.new( "/sim/model/door-positions/rightDoor", 2, 0 );
-#baggageDoor = aircraft.door.new( "/sim/model/door-positions/baggageDoor", 2, 0 );
-
-# Use Nasal to make some properties persistent. <aircraft-data> does
-# not work reliably.
-aircraft.data.add("/instrumentation/nav[0]/radials/selected-deg");
-aircraft.data.save();
+rightDoor = aircraft.door.new("/sim/model/door-positions/rightDoor", 2, 0);
 
 # reset compass rose rotation for the ki228
-setlistener( "/instrumentation/adf[0]/model", func(n) {
-  if( n != nil ) {
-    var v = n.getValue();
-    if( v != nil and v == "ki228" )
-      setprop("instrumentation/adf[0]/rotation-deg", 0 );
-  }
-}, 1, 0 );
-
+setlistener("/instrumentation/adf[0]/model", func(n) {
+	if (n != nil) {
+		var v = n.getValue();
+		if (v != nil and v == "ki228")
+		setprop("/instrumentation/adf[0]/rotation-deg", 0);
+	}
+}, 1, 0);
 
 gui.Dialog.new("sim/gui/dialogs/windsim/dialog", "Aircraft/PA28-Warrior/Dialogs/windsim.xml");
 gui.Dialog.new("sim/gui/dialogs/sounddialog/dialog", "Aircraft/PA28-Warrior/Dialogs/sounddialog.xml");
 
+setlistener("/sim/sounde/switch1", func {
+	if (!getprop("/sim/sounde/switch1")) {
+		return;
+	}
+	settimer(func {
+		props.globals.getNode("/sim/sounde/switch1").setBoolValue(0);
+	}, 0.05);
+});
 
-setlistener("/sim/signals/fdm-initialized", func {
-	systems.elec_init();
-	systems.engine_init();
-	systems.fuel_init();
-    itaf.ap_init();
-    var autopilot = gui.Dialog.new("sim/gui/dialogs/autopilot/dialog", "Aircraft/PA28-Warrior/Systems/kap140-dlg.xml");
-	setprop("/it-autoflight/input/hdg", getprop("/orientation/heading-magnetic-deg"));
-	setprop("/it-autoflight/input/alt", 2000);
+setlistener("/sim/sounde/switch2", func {
+	if (!getprop("/sim/sounde/switch2")) {
+		return;
+	}
+	settimer(func {
+		props.globals.getNode("/sim/sounde/switch2").setBoolValue(0);
+	}, 0.05);
+});
+
+setlistener("/sim/sounde/switch3", func {
+	if (!getprop("/sim/sounde/switch3")) {
+		return;
+	}
+	settimer(func {
+		props.globals.getNode("/sim/sounde/switch3").setBoolValue(0);
+	}, 0.05);
+});
+
+setlistener("/sim/sounde/knob", func {
+	if (!getprop("/sim/sounde/knob")) {
+		return;
+	}
+	settimer(func {
+		props.globals.getNode("/sim/sounde/knob").setBoolValue(0);
+	}, 0.05);
+});
+
+var systemsInit = func {
+	systems.ELEC.init();
+	systems.ENG.init();
+	systems.FUEL.init();
+	itaf.ap_init();
+	variousReset();
+	var autopilot = gui.Dialog.new("sim/gui/dialogs/autopilot/dialog", "Aircraft/PA28-Warrior/Systems/kap140-dlg.xml");
 	setprop("/it-autoflight/settings/slave-gps-nav", 0);
-    setprop("engines/engine[0]/fuel-flow-gph", 0.0);
-    setprop("/surface-positions/flap-pos-norm", 0.0);
-    setprop("/instrumentation/airspeed-indicator/indicated-speed-kt", 0.0);
-    setprop("/instrumentation/airspeed-indicator/pressure-alt-offset-deg", 0.0);
-    setprop("/accelerations/pilot-g", 1.0);
-    setprop("/sim/model/material/LandingLight/factor", 0.0);  
-    setprop("/sim/model/material/LandingLight/factorAGL", 0.0); 
-});  
+	setprop("/engines/engine[0]/fuel-flow-gph", 0.0);
+	setprop("/sim/model/material/LandingLight/factor", 0.0);
+	setprop("/sim/model/material/LandingLight/factorAGL", 0.0);
+	systemsLoop.start();
+}
+
+setlistener("sim/signals/fdm-initialized", func {
+	systemsInit();
+});
+
+var systemsLoop = maketimer(0.1, func {
+	systems.ELEC.loop();
+	systems.FUEL.loop();
+});
 
 var variousReset = func {
-	setprop("/it-autoflight/input/hdg", getprop("/orientation/heading-magnetic-deg"));
+	setprop("/it-autoflight/input/hdg", math.round(getprop("/orientation/heading-magnetic-deg")));
 	setprop("/it-autoflight/input/alt", 2000);
 	setprop("/it-autoflight/settings/slave-gps-nav", 0);
 	setprop("/controls/switches/beacon", 0);

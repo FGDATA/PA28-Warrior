@@ -10,7 +10,7 @@
         <type>rotate</type>
         <object-name>Pedal.L</object-name>
         <object-name>Tubes.L</object-name>
-        <property>controls/flight/rudder</property>
+        <property>fdm/jsbsim/fcs/yaw-input</property>
         <factor>-20</factor>
         <axis>
             <x>0.0</x>
@@ -27,7 +27,7 @@
     <animation>
         <type>rotate</type>
         <object-name>Pedal.L</object-name>
-        <property>controls/flight/rudder</property>
+        <property>fdm/jsbsim/fcs/yaw-input</property>
         <factor>20</factor>
         <axis>
             <x>0.0</x>
@@ -62,7 +62,7 @@
         <type>rotate</type>
         <object-name>Pedal.R</object-name>
         <object-name>Tubes.R</object-name>
-        <property>controls/flight/rudder</property>
+        <property>fdm/jsbsim/fcs/yaw-input</property>
         <factor>20</factor>
         <axis>
             <x>0.0</x>
@@ -79,7 +79,7 @@
     <animation>
         <type>rotate</type>
         <object-name>Pedal.R</object-name>
-        <property>controls/flight/rudder</property>
+        <property>fdm/jsbsim/fcs/yaw-input</property>
         <factor>-20</factor>
         <axis>
             <x>0.0</x>

@@ -1,0 +1,36 @@
+<!-- PA28-161 JSBsim -->
+<!-- Joshua Davidson (it0uchpods) -->
+
+<!--
+##############################################
+# Copyright (c) Joshua Davidson (it0uchpods) #
+##############################################
+-->
+
+<metrics>
+	<wingarea unit="FT2">  160.00 </wingarea>
+	<wingspan unit="FT">    30.00 </wingspan>
+	<chord unit="FT">        5.18 </chord>
+	<htailarea unit="FT2">  37.18 </htailarea>
+	<htailarm unit="FT">    15.10 </htailarm>
+	<vtailarea unit="FT2">  28.60 </vtailarea>
+	<vtailarm unit="FT">     8.72 </vtailarm>
+	
+	<location name="AERORP" unit="M">
+		<x> 2.5003 </x>
+		<y> 0 </y>
+		<z> 0.2512 </z>
+	</location>
+
+	<location name="EYEPOINT" unit="M">
+		<x> 1.9543 </x>
+		<y> -0.2618 </y>
+		<z> 0.5289 </z>
+	</location>
+
+	<location name="VRP" unit="M">
+		<x> 0 </x>
+		<y> 0 </y>
+		<z> 0 </z>
+	</location>
+</metrics>

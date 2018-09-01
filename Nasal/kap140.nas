@@ -164,6 +164,11 @@ var kapVarious = func {
 	} else {
 		setprop("/it-autoflight/kap140/display-mode", "ALT");
 	}
+	if (getprop("/systems/electrical/outputs/autopilot") < 8) {
+		if (getprop("/it-autoflight/output/ap") == 1) {
+			setprop("/it-autoflight/input/ap", 0);
+		}
+	}
 }
 
 var apLight = func {
