@@ -91,14 +91,6 @@ var writeSettings = func {
 	io.write_properties(getprop("/sim/fg-home") ~ "/Export/PA28-Warrior-config.xml", "/systems/acconfig/options");
 }
 
-var systemsReset = func {
-	systems.elec_init();
-	systems.engine_init();
-	systems.fuel_init();
-    itaf.ap_init();
-	libraries.variousReset();
-}
-
 ################
 # Panel States #
 ################
@@ -111,7 +103,7 @@ var colddark = func {
 	# Initial shutdown, and reinitialization.
 	setprop("/controls/flight/flaps", 0.0);
 	setprop("/controls/flight/elevator-trim", 0);
-	systemsReset();
+	libraries.systemsInit();
 	if (getprop("/engines/engine[0]/rpm") < 421) {
 		colddark_b();
 	} else {
@@ -139,7 +131,7 @@ var beforestart = func {
 	# First, we set everything to cold and dark.
 	setprop("/controls/flight/flaps", 0.0);
 	setprop("/controls/flight/elevator-trim", 0);
-	systemsReset();
+	libraries.systemsInit();
 	
 	# Now the Startup!
 	setprop("/controls/electrical/battery", 1);
@@ -162,7 +154,7 @@ var taxi = func {
 	# First, we set everything to cold and dark.
 	setprop("/controls/flight/flaps", 0.0);
 	setprop("/controls/flight/elevator-trim", 0);
-	systemsReset();
+	libraries.systemsInit();
 	
 	# Now the Startup!
 	setprop("/controls/electrical/battery", 1);

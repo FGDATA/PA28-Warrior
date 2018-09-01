@@ -52,23 +52,28 @@ setlistener("/sim/sounde/knob", func {
 	}, 0.05);
 });
 
-setlistener("/sim/signals/fdm-initialized", func {
-	systems.elec_init();
-	systems.engine_init();
-	systems.fuel_init();
+var systemsInit = func {
+	systems.ELEC.init();
+	systems.ENG.init();
+	systems.FUEL.init();
 	itaf.ap_init();
+	variousReset();
 	var autopilot = gui.Dialog.new("sim/gui/dialogs/autopilot/dialog", "Aircraft/PA28-Warrior/Systems/kap140-dlg.xml");
-	setprop("/it-autoflight/input/hdg", getprop("/orientation/heading-magnetic-deg"));
-	setprop("/it-autoflight/input/alt", 2000);
 	setprop("/it-autoflight/settings/slave-gps-nav", 0);
-	setprop("engines/engine[0]/fuel-flow-gph", 0.0);
-	setprop("/surface-positions/flap-pos-norm", 0.0);
-	setprop("/instrumentation/airspeed-indicator/indicated-speed-kt", 0.0);
-	setprop("/instrumentation/airspeed-indicator/pressure-alt-offset-deg", 0.0);
-	setprop("/accelerations/pilot-g", 1.0);
-	setprop("/sim/model/material/LandingLight/factor", 0.0);  
-	setprop("/sim/model/material/LandingLight/factorAGL", 0.0); 
-});  
+	setprop("/engines/engine[0]/fuel-flow-gph", 0.0);
+	setprop("/sim/model/material/LandingLight/factor", 0.0);
+	setprop("/sim/model/material/LandingLight/factorAGL", 0.0);
+	systemsLoop.start();
+}
+
+setlistener("sim/signals/fdm-initialized", func {
+	systemsInit();
+});
+
+var systemsLoop = maketimer(0.1, func {
+	systems.ELEC.loop();
+	systems.FUEL.loop();
+});
 
 var variousReset = func {
 	setprop("/it-autoflight/input/hdg", getprop("/orientation/heading-magnetic-deg"));
