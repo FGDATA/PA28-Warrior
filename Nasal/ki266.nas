@@ -55,7 +55,6 @@ ki266.new = func(idx) {
 
   obj.update();
 
-  print( "KI266 dme indicator #" ~ idx ~ " initialized" ); 
   return obj;
 };
 

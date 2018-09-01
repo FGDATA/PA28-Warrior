@@ -48,7 +48,3 @@ setlistener("instrumentation/elt/test", func(tst) {
         print(help_string);
     }
 });
-
-setlistener("sim/signals/fdm-initialized", func {
-    print("Emergency Locator Transmitter (ELT) initialized");
-});

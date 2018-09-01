@@ -372,12 +372,10 @@ var KI525 = {
   getReferencedProperty : func( name ) {
     var n = me.rootNode.getNode( name );
     if( n == nil ) {
-      print( "WARNING: ki525: property not defined: " ~ name );
       return nil;
     }
     var s = n.getValue();
     if( s == nil ) {
-      print( "WARNING: ki525: property no value defined: " ~ name );
       return nil;
     }
     return props.globals.getNode( s, 1 );
@@ -423,7 +421,6 @@ var KCS55 = {
     obj.lastRun = obj.elapsedTimeSecNode.getValue();
     obj.update(obj.lastRun);
 
-    print( "KCS55 pictorial navigation system initialized" );
     return obj;
   },
   

@@ -97,7 +97,6 @@ var HobbsMeter = {
             runtime: 0
         );
 
-        print('Hobbs Meter #', index, ' loaded');
         return m;        
     },
 
