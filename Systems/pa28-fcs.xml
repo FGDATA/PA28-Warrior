@@ -131,14 +131,14 @@
 		
 		<switch name="helpers/a-c-d-gain">
 			<default value="0"/>
-			<test logic="AND" value="3.5">
+			<test logic="AND" value="3.8">
 				helpers/a-c-gs eq 0
 			</test>
 		</switch>
 		
 		<pid name="helpers/a-c-pid-v">
 			<input>aero/beta-rad</input>
-			<kp>2.5</kp>
+			<kp>2.9</kp>
 			<ki>0.0</ki>
 			<kd>helpers/a-c-d-gain</kd>
 			<clipto>

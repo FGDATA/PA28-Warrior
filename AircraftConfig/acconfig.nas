@@ -186,7 +186,7 @@ var takeoff = func {
 			removelistener(eng_one_chk_c);
 			setprop("/controls/switches/fuel-pump", 1);
 			setprop("/controls/switches/landing-light", 1);
-			setprop("/controls/flight/elevator-trim", 0.04);
+			setprop("/controls/flight/elevator-trim", -0.01);
 		}
 	});
 }
